@@ -1,0 +1,18 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "\"Don't retry card declines (4xx errors)\" is imprecise: 4xx covers more than declines, and 409 and 429 are 4xx errors that the answer itself says to retry.",
+  "\"Retry only on network errors, 5xx responses, and rate limits\" does not match its 409 conflict advice. The 409 retry is a separate case, so the list reads as inconsistent.",
+  "Idempotency keys with an attempt number (\"order ID plus an attempt number\") are risky as written. If the attempt number increments on each retry, the key changes and the protection is lost. This contradicts the \"reuse on every retry\" point.",
+  "\"Stripe returns an error\" when parameters differ is correct, but the answer leaves out that the error is returned even if the first request failed. This is minor."
+ ]
+}

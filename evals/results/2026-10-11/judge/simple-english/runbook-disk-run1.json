@@ -1,0 +1,21 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 7,
+ "clarity": 8,
+ "scan": 7,
+ "errors": [
+  "Step 9: CHECKPOINT does not reliably free WAL when a replication slot or archiving is the cause; it only helps after the cause is fixed. The step is placed after both fixes, but a failing archive_command also needs the archiver to catch up, not just a CHECKPOINT.",
+  "Step 4: The find command only matches *.gz files older than 7 days. Active or uncompressed old logs are not covered, and the answer does not tell the reader to compress logs first.",
+  "Step 10: pg_class query lists tables from the current database only and includes indexes and toast tables. It does not say which database to connect to.",
+  "Step 7: Dropping a replication slot is irreversible and may force a replica rebuild. The step only says to confirm with the owner.",
+  "The warning says Postgres can 'lose data' if pg_wal files are deleted. This is roughly right, but the cause is not explained.",
+  "Step 5 says 'Go to step 6', which is redundant because step 6 is the next step. Steps 6\u20139 apply only to pg_wal, but the numbering does not show the branches."
+ ]
+}

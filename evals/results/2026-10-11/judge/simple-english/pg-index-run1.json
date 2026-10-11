@@ -1,0 +1,19 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 8,
+ "scan": 6,
+ "errors": [
+  "Partitioned tables: CREATE INDEX CONCURRENTLY is not supported on a partitioned parent, which is right. The advice to build on each partition and then create the index on the parent is incomplete: it should be CREATE INDEX ON ONLY parent, followed by ALTER INDEX ... ATTACH PARTITION. A plain CREATE INDEX on the parent would build non-concurrently and lock partitions.",
+  "The line 'a single long-running transaction can stall it' is correct. But 'end or wait for them' is risky advice for production because it could mean killing application transactions.",
+  "The temp-space figure of 20 to 40 percent of the table size is given as a rule of thumb with no basis. Index size depends on the column, so this is imprecise.",
+  "SET lock_timeout = '5s' is in the example without explanation. It can make the concurrent build fail at its brief lock steps and leave an invalid index, and the answer never says so.",
+  "The unique-index remark is only partly right: a duplicate causes the failure, and the invalid index remains. The answer does not say whether 'check for duplicates first' applies to a non-unique index."
+ ]
+}

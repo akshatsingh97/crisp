@@ -1,0 +1,39 @@
+{
+  "name": "crisp",
+  "version": "1.1.0",
+  "description": "Clear, to-the-point answers. Answer first, max 20 words per sentence, one idea per sentence, plain words. Rules adapted from ASD-STE100 Simplified Technical English.",
+  "author": {
+    "name": "Akshat Singh",
+    "url": "https://github.com/akshatsingh97"
+  },
+  "license": "MIT",
+  "keywords": [
+    "readability",
+    "plain-english",
+    "ste",
+    "asd-ste100",
+    "writing",
+    "clarity"
+  ],
+  "skills": "./skills/",
+  "hooks": "./.codex-plugin/hooks.json",
+  "interface": {
+    "displayName": "Crisp",
+    "shortDescription": "Clear, to-the-point answers with ASD-STE100 rules.",
+    "longDescription": "Loads Crisp writing rules at the start of each session. Every answer leads with the answer, uses sentences of 20 words or fewer, and uses plain words. Also rewrites hard-to-read text, gives a TL;DR, and scores text for readability.",
+    "developerName": "Akshat Singh",
+    "category": "Productivity",
+    "capabilities": [
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Explain this code in Crisp style.",
+      "Clarify this text so it is easy to understand.",
+      "Check this README for readability problems."
+    ],
+    "brandColor": "#16A34A",
+    "websiteURL": "https://github.com/akshatsingh97/crisp"
+  },
+  "homepage": "https://github.com/akshatsingh97/crisp",
+  "repository": "https://github.com/akshatsingh97/crisp"
+}

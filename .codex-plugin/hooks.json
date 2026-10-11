@@ -1,0 +1,19 @@
+{
+  "description": "Load the Crisp writing rules at the start of each Codex session.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^(startup|resume|clear|compact)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -n \"${PLUGIN_ROOT}\" ] && sh \"${PLUGIN_ROOT}/hooks/session-start.sh\" || true",
+            "timeout": 5,
+            "statusMessage": "Loading Crisp...",
+            "additionalContextLimit": 0
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 8,
+ "scan": 8,
+ "errors": [
+  "Fact 4 is only partly met: the rewritten user-facing message omits ERR_UPLOAD_413 and the answer only advises keeping it in logs or a Details section.",
+  "Suggesting that users split a large file into parts may be impractical or wrong for some file types. It also assumes the app supports multi-part sharing.",
+  "Fact 1 is only implied. The headline says the file is too large to upload but never says the upload failed."
+ ]
+}

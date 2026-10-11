@@ -1,0 +1,2081 @@
+{
+ "meta": {
+  "date": "2026-10-11",
+  "runs": 2,
+  "claude_version": "2.1.296 (Claude Code)",
+  "isolated": true,
+  "conditions": [
+   "none",
+   "crisp",
+   "simple-english"
+  ]
+ },
+ "summary": {
+  "none": {
+   "Fact coverage (judge, %)": 93.12,
+   "Accuracy (judge, 1-10)": 8.54,
+   "Clarity (judge, 1-10)": 9,
+   "Scan speed (judge, 1-10)": 8.88,
+   "Crisp checker score (/100)": 73.62,
+   "Words per answer": 224.25,
+   "Longest sentence (words)": 20.92,
+   "Sentences over the limit (per answer)": 1.04
+  },
+  "crisp": {
+   "Fact coverage (judge, %)": 97.29,
+   "Accuracy (judge, 1-10)": 8.38,
+   "Clarity (judge, 1-10)": 8.83,
+   "Scan speed (judge, 1-10)": 8.5,
+   "Crisp checker score (/100)": 95.67,
+   "Words per answer": 192.17,
+   "Longest sentence (words)": 18.71,
+   "Sentences over the limit (per answer)": 0.21
+  },
+  "simple-english": {
+   "Fact coverage (judge, %)": 96.04,
+   "Accuracy (judge, 1-10)": 8.5,
+   "Clarity (judge, 1-10)": 8.58,
+   "Scan speed (judge, 1-10)": 7.33,
+   "Crisp checker score (/100)": 87.88,
+   "Words per answer": 213.12,
+   "Longest sentence (words)": 24.75,
+   "Sentences over the limit (per answer)": 2.21
+  }
+ },
+ "rows": [
+  {
+   "condition": "none",
+   "id": "charge-retry",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 66,
+    "words": 374,
+    "longest_sentence": 27,
+    "sentences_over_limit": 5
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "\"Don't retry card declines (4xx errors)\" is imprecise: 4xx covers more than declines, and 409 and 429 are 4xx errors that the answer itself says to retry.",
+     "\"Retry only on network errors, 5xx responses, and rate limits\" does not match its 409 conflict advice. The 409 retry is a separate case, so the list reads as inconsistent.",
+     "Idempotency keys with an attempt number (\"order ID plus an attempt number\") are risky as written. If the attempt number increments on each retry, the key changes and the protection is lost. This contradicts the \"reuse on every retry\" point.",
+     "\"Stripe returns an error\" when parameters differ is correct, but the answer leaves out that the error is returned even if the first request failed. This is minor."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "charge-retry",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 47,
+    "words": 339,
+    "longest_sentence": 28,
+    "sentences_over_limit": 5
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 8,
+    "errors": [
+     "The answer says that reusing a key with different parameters returns an error that is 'safe' but 'shows the key is being reused when it shouldn't be'. That is slightly confusing, because a key reused with different parameters is often a bug. The answer is not clearly wrong, though.",
+     "The answer says 'Keys are kept for at least 24 hours'. Stripe documents that keys can be removed after they are at least 24 hours old. 'At least' is acceptable, but a reader may take it as a guaranteed retention period.",
+     "The answer says 'SDK retries: the official Stripe libraries can add idempotency keys automatically when you configure retries'. That is broadly correct, but it depends on the library and version. The answer does not say so."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "charge-retry",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 99,
+    "words": 296,
+    "longest_sentence": 18,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 7,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "\"Do not retry 4xx card errors with the same key, because Stripe returns the saved result\" is misleading: Stripe saves and replays the result of the first request, including 4xx errors, so retrying with the same key just returns the same error. The point should be that a corrected request needs a new key, not that retrying is dangerous.",
+     "\"Retry only on network errors, timeouts, and 5xx responses\" is too narrow. Stripe also saves 5xx results, so a same-key retry replays the saved 500. Stripe's guidance is that retrying with the same key is safe in any case where the outcome is unknown.",
+     "\"Stripe keeps keys for at least 24 hours\" is slightly off. Stripe says keys can be removed once they are at least 24 hours old, so 'at least' reads as a guarantee of longer retention.",
+     "The claim that `maxNetworkRetries` 'sets a key automatically' is only partly right. The library generates a key for its own retries of POST requests, but the answer doesn't say this applies per call and isn't reused across separate calls. It also says 'You must set one yourself' without noting that this is a client-library detail that differs by SDK."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "charge-retry",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 97,
+    "words": 229,
+    "longest_sentence": 18,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "The claim that 'Recent SDKs add idempotency keys for their own retries' is broadly accurate for Stripe's official libraries, but the answer does not say which SDKs or versions. This is vague rather than wrong.",
+     "The answer says to store the key before the first call. It does not say to store the key with the order. This is a minor gap and does not mislead.",
+     "The answer treats the create-charge API as the current Stripe recommendation. Stripe now steers new integrations toward PaymentIntents. This is a minor omission and does not make any statement false."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "charge-retry",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 86,
+    "words": 321,
+    "longest_sentence": 34,
+    "sentences_over_limit": 4
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 6,
+    "errors": [
+     "Stripe's \"create-charge API\" (Charges) is legacy; the answer doesn't mention PaymentIntents, which Stripe recommends. The advice still applies, though.",
+     "\"Stripe keeps keys for at least 24 hours\" is slightly off. Stripe says keys can be removed after they are at least 24 hours old, so it is a minimum, not a guarantee of how long they are kept. This is a minor point.",
+     "Using an order ID or cart ID as the key is not always safe. If the first attempt is declined and the customer retries the same order with a new card, the same key returns the cached decline. The answer does not say so.",
+     "Saying Stripe's libraries \"attach a key automatically\" is mostly right for stripe-node's network retries, but the answer doesn't say this is library-specific."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "charge-retry",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 90,
+    "words": 308,
+    "longest_sentence": 24,
+    "sentences_over_limit": 3
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 8,
+    "errors": [
+     "The example key `order_8841_attempt_1` contains \"attempt_1\", which suggests a per-attempt key. That conflicts with the advice to reuse one key across all retries and could mislead readers into incrementing the attempt number.",
+     "The answer says a PaymentIntent retry \"cannot create a second payment\". That is only true if you reuse the same PaymentIntent object. Creating a new PaymentIntent on each retry can still double-charge unless you also use an idempotency key.",
+     "The answer says an order or cart ID protects against a double-click on the pay button. That is only true if the same key is reused for the same request parameters. Stripe also warns that keys can be pruned after 24 hours, and the answer states this only as a minimum."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "react-race",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 91,
+    "words": 242,
+    "longest_sentence": 19,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "The Fix 2 snippet doesn't guard setError or loading state, and it doesn't reset the previous user's data. Related details mention these points, so this is a minor gap rather than an error.",
+     "Fact 4 is only implied: both code samples include [userId] in the dependency array, and the text says the effect fires each time userId changes. The answer never states it as a requirement."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "react-race",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 75,
+    "words": 299,
+    "longest_sentence": 30,
+    "sentences_over_limit": 2
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "Minor: the Strict Mode bullet says React 'mounts, unmounts and remounts effects' and calls the double fetch intentional. That is accurate for development, but it can read as if it explains the user's bug.",
+     "Minor: the Fix 2 snippet leaves out setLoading and setError(null) resets, and it doesn't define setError. This is a small omission."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "react-race",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 93,
+    "words": 151,
+    "longest_sentence": 25,
+    "sentences_over_limit": 1
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 8,
+    "errors": [
+     "The first AbortController example calls setUser and setError without showing they exist, and it does not check res.ok. This is minor.",
+     "The answer implies `userId` is in the dependency array by showing `[userId]` in the examples. It never says this needs to be there, so fact 4 is covered only implicitly.",
+     "The claim that 'React does not cancel the old effect's async work' is accurate. The explanation of why the stale data appears is slightly informal."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "react-race",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 94,
+    "words": 210,
+    "longest_sentence": 27,
+    "sentences_over_limit": 1
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 8,
+    "errors": [
+     "The first example's .then(setUser) path in the AbortController snippet is fine, but the answer's claim that the cleanup 'does not cancel the old request unless you write that code' is true; no error. Minor: the AbortController snippet references setError without defining it, and a late non-abort response can still be handled after abort only if the body parse resolves, which is a negligible edge case."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "react-race",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 95,
+    "words": 221,
+    "longest_sentence": 23,
+    "sentences_over_limit": 1
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 8,
+    "errors": [
+     "Slightly misleading: \"React does not cancel the old request when the effect runs again\" is fine, but \"If you use only one, the flag is the more important part\" is a mild oversimplification (abort alone also prevents the late setState because the promise rejects with AbortError).",
+     "The dependency-array point is framed as causing 'stale data for a different reason' without explaining that a missing userId would prevent refetching entirely; it is brief but not wrong."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "react-race",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 80,
+    "words": 182,
+    "longest_sentence": 35,
+    "sentences_over_limit": 4
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 8,
+    "errors": [
+     "Both snippets show [userId] in the dependency array, but the answer never explains that userId must be listed there. Fact 4 is only implied by the code.",
+     "The AbortController example has a minor gap. It calls setUser(data) and setError(err) without defining them. This is normal for a snippet and is not misleading."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "force-push",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 56,
+    "words": 151,
+    "longest_sentence": 19,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     false
+    ],
+    "coverage": 0.75,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 8,
+    "errors": []
+   }
+  },
+  {
+   "condition": "none",
+   "id": "force-push",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 66,
+    "words": 191,
+    "longest_sentence": 19,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": []
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "force-push",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 93,
+    "words": 151,
+    "longest_sentence": 17,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 8,
+    "errors": [
+     "Step 2 `git log HEAD..origin/<branch>` lists remote commits not in local HEAD, which after a rebase may include your own pre-rebase commits (rewritten with different hashes). The 'list is empty' check is therefore unreliable. A better check is `git range-diff` or inspecting the author of those commits. The 'or you know those commits are in your rebase' clause only partly covers this.",
+     "The claim that force pushing 'updates' a PR and that 'existing review comments can lose their position' is broadly true but is stated loosely. Comments are usually marked outdated rather than lost."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "force-push",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 98,
+    "words": 122,
+    "longest_sentence": 14,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": []
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "force-push",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 81,
+    "words": 193,
+    "longest_sentence": 23,
+    "sentences_over_limit": 3
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 8,
+    "errors": [
+     "Slightly misleading: `--force-with-lease` only protects against changes since your last fetch; if a background fetch updated the remote-tracking ref, the lease can still overwrite unseen work. The answer says it refuses if the remote changed since your last fetch, which is roughly right but overstates the protection.",
+     "Minor: saying 'you must rewrite the remote history' is slightly overstated, since rebasing is not always required, and 'push to a shared branch such as main' implies the main branch is the only concern."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "force-push",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 73,
+    "words": 132,
+    "longest_sentence": 28,
+    "sentences_over_limit": 3
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 8,
+    "errors": []
+   }
+  },
+  {
+   "condition": "none",
+   "id": "jwt-storage",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 67,
+    "words": 241,
+    "longest_sentence": 17,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "Calling localStorage 'often acceptable' and a 'reasonable compromise' understates the risk, since a strong CSP does not remove XSS exposure.",
+     "The claim that an attacker can use a stolen token 'from anywhere' is true for bearer tokens, but the answer doesn't say that token binding or short lifetimes limit this.",
+     "The in-memory access token is presented as a safe fix, but XSS can still call the refresh endpoint to get a new token. The answer only says this about cookies."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "jwt-storage",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 65,
+    "words": 264,
+    "longest_sentence": 30,
+    "sentences_over_limit": 2
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "The claim 'It isn't vulnerable to CSRF' is accurate but could mislead if read as the app being safe overall. The answer does not point out that an XSS attacker can still act as the user from inside the page with an in-memory token, so the recommended pattern is only partly protective.",
+     "Saying 'SameSite covers most of it' is slightly overconfident. SameSite=Lax does not protect against same-site attacks, and some older browsers do not support it."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "jwt-storage",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 98,
+    "words": 176,
+    "longest_sentence": 19,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 8,
+    "scan": 7,
+    "errors": [
+     "Slightly misleading ending: says a cookie 'only prevents token theft', but a stolen token and injected-script requests are different risks. The statement is mostly correct though it may understate that XSS still allows full account abuse.",
+     "Calling SameSite=Lax/Strict plus an optional CSRF token sufficient is a simplification. Lax still allows some top-level GET requests, and same-site subdomain attacks are not covered."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "jwt-storage",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 95,
+    "words": 177,
+    "longest_sentence": 20,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 8,
+    "scan": 7,
+    "errors": [
+     "Step 1 of the preferred setup says to send the access token in a cookie, then step 3 adds a refresh token cookie. The sequence is slightly muddled but not wrong.",
+     "The opening line says localStorage is acceptable only if you accept the risk, which is fine. 'Never store a long-lived refresh token there' is stated as absolute, but it is a common best practice, not a strict rule."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "jwt-storage",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 93,
+    "words": 252,
+    "longest_sentence": 24,
+    "sentences_over_limit": 2
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 8,
+    "scan": 5,
+    "errors": [
+     "Describing the refresh-token cookie as restoring the session is fine, but the answer never says that the refresh endpoint needs its own CSRF protection, since it relies on a cookie.",
+     "SameSite=Lax is described as blocking 'most CSRF'. That is broadly right but slightly overstated, because Lax still allows top-level GET navigations."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "jwt-storage",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 88,
+    "words": 223,
+    "longest_sentence": 25,
+    "sentences_over_limit": 3
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 6,
+    "errors": []
+   }
+  },
+  {
+   "condition": "none",
+   "id": "node-heap",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 76,
+    "words": 255,
+    "longest_sentence": 27,
+    "sentences_over_limit": 2
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "`--heapsnapshot-signal=SIGUSR2` is correct, but the claim that snapshots need 'roughly 2x the heap in memory' is an approximation presented as fact.",
+     "'Newer Node versions respect cgroup limits' is vague. Node's default heap sizing is only partly cgroup-aware, and the answer does not say which versions, so the reader may wrongly assume the default is safe in containers.",
+     "'Memory spikes and then crashes: a single huge allocation' is oversimplified, because a spike can also come from a burst of concurrent requests."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "node-heap",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 80,
+    "words": 236,
+    "longest_sentence": 21,
+    "sentences_over_limit": 1
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "`--heapsnapshot-near-heap-limit=2` is not strictly 'on the way out'. It writes snapshots as the heap nears its limit, which can itself use a lot of memory and slow or crash the process.",
+     "The `kill -USR2` step is under-explained. It does not say the snapshot signal handler blocks the process while the file is written, which matters in production.",
+     "The Chrome DevTools Comparison view gives the best results when you load the earlier snapshot first. The answer does not say which to load first."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "node-heap",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 99,
+    "words": 278,
+    "longest_sentence": 20,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": []
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "node-heap",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 99,
+    "words": 253,
+    "longest_sentence": 19,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "Calling the --heapsnapshot-signal=SIGUSR2 approach 'without a debugger' is accurate, but the answer never mentions that the flag must be set at startup, so the process has to be restarted before a snapshot can be taken. It does say 'Start with', so this is only a minor gap.",
+     "The advice to 'Keep the limit below the container memory limit' is correct but gives no margin. Native memory, buffers and the stack also count toward the container limit, so the heap limit should sit well below it.",
+     "'Take one snapshot after warm-up and another after some hours of load' is vague. Snapshots taken closer together, such as 10\u201330 minutes apart under steady load, are often enough, and waiting hours risks the crash happening first."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "node-heap",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 85,
+    "words": 350,
+    "longest_sentence": 30,
+    "sentences_over_limit": 5
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 6,
+    "errors": [
+     "Slight imprecision: \"If it jumps once and crashes, you have one large allocation instead\" is oversimplified, because a sudden spike can have other causes.",
+     "The advice to set the Node limit lower than the container limit is correct, but it is not precise. The answer does not say that --max-old-space-size covers only the old-generation heap, so total process memory is higher.",
+     "The answer is written as dense paragraphs with no headings or numbered steps, so the reader cannot scan quickly. This hurts scan, not accuracy."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "node-heap",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 93,
+    "words": 378,
+    "longest_sentence": 29,
+    "sentences_over_limit": 3
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 8,
+    "scan": 6,
+    "errors": [
+     "The \"--heapsnapshot-near-heap-limit=1\" flag is described as writing a snapshot \"just before it crashes\". That is roughly right. But snapshotting near the limit can itself run out of memory and fail, and the answer doesn't say so.",
+     "The SIGUSR2 handler writes snapshots from inside the process. The answer says to run it \"on one instance\" because snapshots pause the process. It doesn't say that writeHeapSnapshot blocks the event loop and needs roughly twice the heap in extra memory, so this can crash a process that is already near its limit.",
+     "The answer says heapUsed \"never drops after garbage collection\" confirms a leak. A steadily rising heapUsed can also come from lazy garbage collection or legitimate load growth. Checking it after forced GC, or using the post-GC low points, would be more accurate.",
+     "The 4096 MB example for --max-old-space-size is given with no mention that it should fit the container or host memory limit. Otherwise the process may be OOM-killed, so the crash is not avoided."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "pg-index",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 75,
+    "words": 403,
+    "longest_sentence": 21,
+    "sentences_over_limit": 1
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 8,
+    "errors": [
+     "Says CREATE INDEX CONCURRENTLY does 'two table scans' and implies it is simply slower; fine, but 'Bloat on a busy table' claim is vague and not a well-established concern.",
+     "Says 'CONCURRENTLY isn't supported on the parent' for partitioned tables and to 'build on each partition, then attach'; this is roughly right (use CREATE INDEX ON ONLY parent, then concurrent per-partition, then ATTACH) but the omitted ON ONLY step is misleading.",
+     "Setting statement_timeout = 0 is advised as protection from a 'global timeout'; fine, but lock_timeout of 5s may cause the build to fail and leave an invalid index, which is not warned about.",
+     "Index size estimate of '10\u201330% of table size' is a loose guess presented as typical."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "pg-index",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 62,
+    "words": 389,
+    "longest_sentence": 23,
+    "sentences_over_limit": 1
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "Claims CREATE INDEX CONCURRENTLY is 'not supported on the parent' of a partitioned table as a reason for a different approach; this is true (must build on partitions then attach), but the answer gives no guidance, leaving it vague.",
+     "States concurrent builds take 'roughly 2\u20133x' the time of a plain build; this is a loose rule of thumb, not a documented figure, and can vary a lot.",
+     "Says a long-running transaction 'blocks the finish' and that cancelling leaves invalid index; mostly correct, but a uniqueness violation or deadlock failing is only one cause, and the phrasing 'Don't leave invalid indexes around, because they still add write overhead' is correct but omits that an invalid unique index still enforces uniqueness checks on inserts."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "pg-index",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 80,
+    "words": 245,
+    "longest_sentence": 21,
+    "sentences_over_limit": 1
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 8,
+    "errors": [
+     "Says concurrent build 'scans the table twice' and implies it is mainly slower; fine, but 'Duplicate values in a UNIQUE index cause this failure' is correct only for unique indexes and is presented without that qualification being prominent.",
+     "Says the build 'takes brief locks at the start and end' and that lock_timeout prevents blocking; actually CONCURRENTLY takes a SHARE UPDATE EXCLUSIVE lock for the whole build (blocks other DDL/vacuum), so 'brief locks' is slightly misleading.",
+     "Says 'Long transactions stall the build: waits for every older open transaction'; true, but advice to 'end idle-in-transaction sessions' is risky production guidance without caution."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "pg-index",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 97,
+    "words": 301,
+    "longest_sentence": 24,
+    "sentences_over_limit": 1
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 8,
+    "errors": [
+     "Step 2 is slightly misleading: CONCURRENTLY waits for transactions that could hold older snapshots, including ones that start before each phase. It does not only wait for old ones at the start. The advice to end or wait out old ones is still reasonable.",
+     "Step 3 rationale is loose. lock_timeout makes the build fail instead of queuing behind a conflicting lock. The answer implies a stall-avoidance effect but does not say the build may fail and need a retry, and that failure can leave an INVALID index.",
+     "'Scans the table twice' is correct. But 'sorting can use temporary files' and the disk-space note omit that a failed build wastes that space. This is minor.",
+     "The partitioned-table note is correct in substance. It omits that the parent index stays invalid until all partition indexes are attached. This is minor."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "pg-index",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 88,
+    "words": 305,
+    "longest_sentence": 26,
+    "sentences_over_limit": 4
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 8,
+    "scan": 6,
+    "errors": [
+     "Partitioned tables: CREATE INDEX CONCURRENTLY is not supported on a partitioned parent, which is right. The advice to build on each partition and then create the index on the parent is incomplete: it should be CREATE INDEX ON ONLY parent, followed by ALTER INDEX ... ATTACH PARTITION. A plain CREATE INDEX on the parent would build non-concurrently and lock partitions.",
+     "The line 'a single long-running transaction can stall it' is correct. But 'end or wait for them' is risky advice for production because it could mean killing application transactions.",
+     "The temp-space figure of 20 to 40 percent of the table size is given as a rule of thumb with no basis. Index size depends on the column, so this is imprecise.",
+     "SET lock_timeout = '5s' is in the example without explanation. It can make the concurrent build fail at its brief lock steps and leave an invalid index, and the answer never says so.",
+     "The unique-index remark is only partly right: a duplicate causes the failure, and the invalid index remains. The answer does not say whether 'check for duplicates first' applies to a non-unique index."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "pg-index",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 88,
+    "words": 325,
+    "longest_sentence": 26,
+    "sentences_over_limit": 3
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 8,
+    "scan": 6,
+    "errors": [
+     "The build \"waits for older transactions to finish\" and \"scans the table twice\" are correct, but the claim that an invalid index \"slows down every write\" is true only for the index maintenance. It is fine in practice, though slightly imprecise.",
+     "The pg_index query casts the index name with ::regclass, which is fine, but it does not check the schema. This is a minor omission.",
+     "Setting statement_timeout to 0 is advised without noting that lock_timeout may still matter. This is a minor omission."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "docker-latest",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 76,
+    "words": 220,
+    "longest_sentence": 20,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     false
+    ],
+    "coverage": 0.75,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "The offer to scan Dockerfiles with the remark that none were seen in the working directory is irrelevant to the question, though harmless.",
+     "The answer does not say that pinning needs regular rebuilds to pick up security patches. Pinning an old digest without rebuilding can leave known CVEs in place. This is an omission, not a false statement."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "docker-latest",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 70,
+    "words": 224,
+    "longest_sentence": 24,
+    "sentences_over_limit": 2
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": []
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "docker-latest",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 100,
+    "words": 203,
+    "longest_sentence": 19,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": []
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "docker-latest",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 92,
+    "words": 158,
+    "longest_sentence": 18,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "The claim that registries and tools treat :latest as mutable so cached layers can be stale is vague and partly misleading: mutability is a property of the tag itself, and stale caches are mainly a local-build issue.",
+     "The 'Risk' section says to update the pin on a regular schedule, which implies rebuilding but never says to rebuild images regularly to pick up patches (including patches within the same pinned tag)."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "docker-latest",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 84,
+    "words": 172,
+    "longest_sentence": 37,
+    "sentences_over_limit": 3
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     false
+    ],
+    "coverage": 0.75,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": []
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "docker-latest",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 94,
+    "words": 176,
+    "longest_sentence": 23,
+    "sentences_over_limit": 1
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     false
+    ],
+    "coverage": 0.75,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 8,
+    "errors": [
+     "\"A digest never changes, so the build always uses the same bytes\" is slightly overstated: the tag-plus-digest form is fine, but the answer does not mention that the digest must be updated to receive patches, and a registry can remove old digests.",
+     "\"you must not\" is stronger than the usual guidance (it is a strong recommendation, not a hard rule), though not seriously misleading.",
+     "The answer says a pinned image \"does not receive security patches by itself\", but it does not say to rebuild regularly to pick up patches in the same tag, which can leave readers thinking updates only come through version bumps."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "cors",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 58,
+    "words": 293,
+    "longest_sentence": 24,
+    "sentences_over_limit": 2
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "Minor: the Spring Boot @CrossOrigin snippet is shown without noting that it does not cover Spring Security setups, which need separate CORS configuration.",
+     "Minor: the answer says the `no-cors` mode 'doesn't fix anything', which is slightly overstated, since it does let a request be sent. Its main point, that the response is unreadable, is correct."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "cors",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 71,
+    "words": 262,
+    "longest_sentence": 28,
+    "sentences_over_limit": 2
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "The nginx snippet is shown without any mention that preflight OPTIONS handling needs additional config (return 204 plus Allow-Methods/Headers), so it will not fully work for preflighted requests.",
+     "Redirect point is vague: a redirect can fail a preflight, but a simple cross-origin redirect does not itself cause this error.",
+     "Spring `@CrossOrigin` and the Django note omit the credentials caveat, which is a minor omission rather than an error."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "cors",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 95,
+    "words": 223,
+    "longest_sentence": 16,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": []
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "cors",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 92,
+    "words": 281,
+    "longest_sentence": 23,
+    "sentences_over_limit": 1
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "The raw headers example omits Access-Control-Allow-Credentials and doesn't mention that the server must echo the request origin if multiple origins are allowed, but this is minor.",
+     "Minor: the \"Do not use * in production for private APIs\" advice is fine, but the answer doesn't note that FastAPI's allow_headers=[\"*\"] combined with credentials is not allowed with wildcard origins; not stated incorrectly though."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "cors",
+   "type": "reply",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 81,
+    "words": 315,
+    "longest_sentence": 31,
+    "sentences_over_limit": 6
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 6,
+    "errors": [
+     "Says a preflight is triggered by 'a method other than GET or POST'. In fact HEAD is also a simple method, and the main triggers are PUT, DELETE and PATCH.",
+     "Says preflight is triggered by 'a custom header such as Authorization'. This is fine, but the answer leaves out that the preflight must also include Access-Control-Allow-Origin. It does list that header, so this is a minor point only.",
+     "Says the server must answer the preflight with status 200 or 204. Any 2xx status works, so this is slightly too narrow but not wrong in practice."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "cors",
+   "type": "reply",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 88,
+    "words": 358,
+    "longest_sentence": 26,
+    "sentences_over_limit": 5
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 8,
+    "scan": 6,
+    "errors": [
+     "Saying a preflight must be answered with status 200 or 204 is slightly oversimplified, but it is not wrong. Any 2xx works.",
+     "The advice to use `origin: \"*\"` for a public API with no cookies is correct, but it is brief and does not warn about other risks."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "readme-install",
+   "type": "doc",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 85,
+    "words": 27,
+    "longest_sentence": 11,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true,
+     false
+    ],
+    "coverage": 0.8,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": []
+   }
+  },
+  {
+   "condition": "none",
+   "id": "readme-install",
+   "type": "doc",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 66,
+    "words": 35,
+    "longest_sentence": 11,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true,
+     false
+    ],
+    "coverage": 0.8,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": []
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "readme-install",
+   "type": "doc",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 100,
+    "words": 59,
+    "longest_sentence": 16,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true,
+     false
+    ],
+    "coverage": 0.8,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": []
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "readme-install",
+   "type": "doc",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 100,
+    "words": 93,
+    "longest_sentence": 14,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true,
+     false
+    ],
+    "coverage": 0.8,
+    "accuracy": 7,
+    "clarity": 8,
+    "scan": 8,
+    "errors": [
+     "The sentence \"logtail follows `app.log` and keeps reading as the file changes\" states an assumption about `--follow` as fact. The answer then admits the assumption is unverified, which contradicts the confident claim.",
+     "The closing note about `--follow` and `tail -f` is meta-commentary addressed to the user. It does not belong in README text.",
+     "The `node --version` check only verifies the Node.js version. It does not confirm that logtail itself is installed or working."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "readme-install",
+   "type": "doc",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 100,
+    "words": 47,
+    "longest_sentence": 14,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "The `--follow` description (keeps running and shows new lines) is an assumption, though the answer flags it as such.",
+     "Fact 5 is only covered weakly: the `node --version` check verifies Node, not that logtail works, and no expected output or `logtail --version` check is given."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "readme-install",
+   "type": "doc",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 100,
+    "words": 48,
+    "longest_sentence": 16,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true,
+     false
+    ],
+    "coverage": 0.8,
+    "accuracy": 9,
+    "clarity": 8,
+    "scan": 9,
+    "errors": [
+     "The parenthetical definition of an environment variable is fine, but `export` is bash-specific and the section does not say how to set it in other shells such as Windows.",
+     "The `node --version` check only confirms the Node version. It does not confirm that logtail itself is installed or working."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "runbook-disk",
+   "type": "doc",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 90,
+    "words": 271,
+    "longest_sentence": 18,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "Fact 4 is partly met: the 'never delete pg_wal by hand' rule is at the top, before every cleanup step, so it works as a warning. But section 2 says to `rm` rotated logs with no caution about the pg_wal rule, which is fine for logs.",
+     "Step 2.2 says to force rotation with pg_rotate_logfile() and 'then handle the old file'. This is vague, and it only works if logging_collector is on. If logs go through syslog or logrotate, it does nothing.",
+     "Step 3 table says to run CHECKPOINT as a fix for long transactions or write bursts. A checkpoint does not release WAL held by a long transaction, a slot or an archive failure. It is only useful after the cause is removed.",
+     "Dropping a replication slot is shown as a fix, with only 'confirm with the owner first'. It can break a replica or logical consumer, and it may force a rebuild.",
+     "The `replay_lag` column in pg_stat_replication exists only on PG 10 and later. The pg_stat_archiver query is correct on all versions.",
+     "There is no explicit step to re-run df to confirm usage is under 90%. The text only says 'check again after a checkpoint'. The escalation threshold of 95% is stated, but a verification step is missing."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "runbook-disk",
+   "type": "doc",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 80,
+    "words": 367,
+    "longest_sentence": 19,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "The 'du -sh /var/lib/postgresql/*/main/...' paths assume a Debian-style layout (version/main), which may not match this host, though the glob is reasonable.",
+     "A manual CHECKPOINT does not by itself make Postgres recycle WAL held by archiving failures or replication slots. It only helps after the cause is fixed, which the text does say, but it is placed under 'Settings' and is slightly misleading.",
+     "Truncating the active log with ': > current.log' is fine, but the 'remove oldest logs' advice does not warn to check that logs aren't needed for an investigation.",
+     "The 'Rule: never delete or move' warning sits at the top, before triage. The cleanup steps follow it, so this is fine, but 'move' goes beyond the user's 'delete' requirement. This is harmless."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "runbook-disk",
+   "type": "doc",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 95,
+    "words": 319,
+    "longest_sentence": 15,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "Dropping a replication slot is presented as a way to free WAL, and 'Wait for the next checkpoint' is slightly imprecise: WAL removal happens at checkpoints but the slot's WAL may need several checkpoints. It is minor.",
+     "'If the WAL disk fills completely, Postgres can stop and refuse to start' assumes pg_wal is on a separate disk, but the runbook never says so. The data directory path may also differ.",
+     "The warning is not placed immediately before the cleanup steps. A one-line version sits at the top, with the full warning right after it, so the order is acceptable but not perfect.",
+     "Case A step 3 offers deleting old logs, which is fine. The runbook does not give a command to confirm that rotation or compression freed space, although Case B step 5 does."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "runbook-disk",
+   "type": "doc",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 93,
+    "words": 225,
+    "longest_sentence": 17,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "Dropping a replication slot is described as a routine fix; it can break a standby or consumer permanently, though the answer does say to confirm with the slot owner first.",
+     "\"PostgreSQL will remove old WAL itself\" and \"Wait for the next checkpoint\" are oversimplified. WAL removal also depends on archiving status, wal_keep_size and slot state, and the answer gives no way to force it.",
+     "The log section says to delete or compress old logs but gives no command for it. It also does not warn against removing logs that other processes may still need, such as audit or compliance logs.",
+     "The du command uses -x with several paths and may not show which filesystem a path belongs to. The df and du steps assume the three paths are on the same filesystem, but the data, WAL and logs may be on separate mounts."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "runbook-disk",
+   "type": "doc",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 97,
+    "words": 311,
+    "longest_sentence": 17,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 7,
+    "clarity": 8,
+    "scan": 7,
+    "errors": [
+     "Step 9: CHECKPOINT does not reliably free WAL when a replication slot or archiving is the cause; it only helps after the cause is fixed. The step is placed after both fixes, but a failing archive_command also needs the archiver to catch up, not just a CHECKPOINT.",
+     "Step 4: The find command only matches *.gz files older than 7 days. Active or uncompressed old logs are not covered, and the answer does not tell the reader to compress logs first.",
+     "Step 10: pg_class query lists tables from the current database only and includes indexes and toast tables. It does not say which database to connect to.",
+     "Step 7: Dropping a replication slot is irreversible and may force a replica rebuild. The step only says to confirm with the owner.",
+     "The warning says Postgres can 'lose data' if pg_wal files are deleted. This is roughly right, but the cause is not explained.",
+     "Step 5 says 'Go to step 6', which is redundant because step 6 is the next step. Steps 6\u20139 apply only to pg_wal, but the numbering does not show the branches."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "runbook-disk",
+   "type": "doc",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 96,
+    "words": 247,
+    "longest_sentence": 17,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 8,
+    "scan": 8,
+    "errors": [
+     "The pg_class query in step 6 is not limited to tables (it includes indexes, TOAST tables and other relations), and it does not filter by database or schema. It is also run in whichever database the user is connected to, so it may not show the biggest tables overall.",
+     "Step 2 deletes compressed logs older than 14 days with `find -delete`. That is a reasonable default, but it is not fitted to the situation, and it is irreversible if the logs are needed for an investigation. The runbook does not say to check this first.",
+     "The runbook mentions the replication slot and archiving checks but does not mention other common causes of a WAL backlog, such as a long-running transaction or a standby that is lagging. This is an omission, not an error.",
+     "The warning about pg_wal is in the opening paragraph, before the steps. It is correct, but step 4 tells the reader to drop a replication slot, which is a risky action. It does not warn that a dropped slot may break the standby that uses it, though it does say to ask the owner first."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "error-413",
+   "type": "doc",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 82,
+    "words": 44,
+    "longest_sentence": 16,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     false,
+     true,
+     true,
+     false
+    ],
+    "coverage": 0.5,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": []
+   }
+  },
+  {
+   "condition": "none",
+   "id": "error-413",
+   "type": "doc",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 81,
+    "words": 43,
+    "longest_sentence": 13,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     false
+    ],
+    "coverage": 0.75,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": []
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "error-413",
+   "type": "doc",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 90,
+    "words": 117,
+    "longest_sentence": 17,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 8,
+    "scan": 8,
+    "errors": [
+     "Fact 4 is only partly met: the rewritten user-facing message omits ERR_UPLOAD_413 and the answer only advises keeping it in logs or a Details section.",
+     "Suggesting that users split a large file into parts may be impractical or wrong for some file types. It also assumes the app supports multi-part sharing.",
+     "Fact 1 is only implied. The headline says the file is too large to upload but never says the upload failed."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "error-413",
+   "type": "doc",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 100,
+    "words": 80,
+    "longest_sentence": 16,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     false,
+     true,
+     true,
+     true
+    ],
+    "coverage": 0.75,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 8,
+    "errors": []
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "error-413",
+   "type": "doc",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 88,
+    "words": 64,
+    "longest_sentence": 18,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     false
+    ],
+    "coverage": 0.75,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 8,
+    "errors": [
+     "The suggested message omits ERR_UPLOAD_413; the answer only suggests keeping it in logs or small text, so the rewrite itself does not keep the code."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "error-413",
+   "type": "doc",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 77,
+    "words": 62,
+    "longest_sentence": 24,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 9,
+    "clarity": 9,
+    "scan": 9,
+    "errors": []
+   }
+  },
+  {
+   "condition": "none",
+   "id": "release-notes",
+   "type": "doc",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 96,
+    "words": 94,
+    "longest_sentence": 15,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "The `client.on('error')` example uses a `client` variable the user never mentioned, and the 'set the retry option explicitly to 3' advice refers to an option the user never named. The answer flags both as invented, but they are still unverified.",
+     "The statement that calling `init()` without `apiKey` 'will now fail' is a plausible inference but is not stated in the request, so it is slightly speculative.",
+     "The 'Before' example shows `init()` with no arguments, which may not match real usage."
+    ]
+   }
+  },
+  {
+   "condition": "none",
+   "id": "release-notes",
+   "type": "doc",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 86,
+    "words": 118,
+    "longest_sentence": 22,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "The 'Before (2.x)' snippet uses `sdk.init()` and the answer says init() 'will now fail' without apiKey; the failure mode is assumed, not stated in the request.",
+     "The retries advice ('set the retry option explicitly to `3`') refers to an option whose name the answer admits it does not know, and gives no snippet.",
+     "The claim that the memory leak fix 'improv[es] stability for long-running connections' goes beyond the facts given.",
+     "The `sdk.on('error', ...)` handler and `sdk.init({ apiKey: ... })` snippets use invented API shapes. The closing note discloses this, but the snippets themselves are not marked as placeholders.",
+     "The checklist calls the `on('error')` handler optional. The request does not say whether it is optional."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "release-notes",
+   "type": "doc",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 98,
+    "words": 126,
+    "longest_sentence": 13,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "The `retries` option name is an assumption, though the answer flags it as one.",
+     "The 'Changes' section implies the retry default is the only change. It doesn't mention that more retries can mean longer waits before a failure surfaces.",
+     "The `on('error')` example calls `on` as a bare global function. It doesn't show it as a method on the SDK client, so it may mislead readers.",
+     "'Long-running apps will now use less memory' is a mild extrapolation beyond the stated fix."
+    ]
+   }
+  },
+  {
+   "condition": "crisp",
+   "id": "release-notes",
+   "type": "doc",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 99,
+    "words": 139,
+    "longest_sentence": 23,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 9,
+    "scan": 9,
+    "errors": [
+     "The breaking change is not the first section; a summary sentence comes before it, though it also mentions apiKey first.",
+     "\"Requests that fail will now retry up to two more times\" is an inference; the default goes from 3 to 5 retries, which is two more than before. This is correct but slightly loose wording.",
+     "\"Long-running apps that reconnect often will now use stable memory\" overstates the fix. The input only says a leak was fixed, not that memory is stable.",
+     "\"If you do not pass it, init() will not work\" is vague. It does not say whether init() throws, returns an error, or fails silently.",
+     "The example for on('error') is shown as a bare on() call, with an assumption note on handler arguments. This is flagged honestly but adds uncertainty."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "release-notes",
+   "type": "doc",
+   "run": 1,
+   "metrics": {
+    "crisp_score": 70,
+    "words": 53,
+    "longest_sentence": 19,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 8,
+    "scan": 8,
+    "errors": [
+     "States that calling init() without apiKey 'fails' \u2014 plausible but not given in the request.",
+     "Says 'The websocket reconnect code leaked memory' without noting it affected earlier versions; minor wording imprecision.",
+     "The retries sentence tells readers to 'set the number of retries to 3 in your configuration' without naming the option, so it is not actionable until the user edits it (the answer flags this at the end)."
+    ]
+   }
+  },
+  {
+   "condition": "simple-english",
+   "id": "release-notes",
+   "type": "doc",
+   "run": 2,
+   "metrics": {
+    "crisp_score": 94,
+    "words": 72,
+    "longest_sentence": 25,
+    "sentences_over_limit": 0
+   },
+   "judge": {
+    "covered": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "coverage": 1.0,
+    "accuracy": 8,
+    "clarity": 8,
+    "scan": 8,
+    "errors": [
+     "Intro says 'one new default', and the 'If you want the old behavior, set the number of retries to 3' line gives no option name, so readers can't act on it.",
+     "'Memory use no longer grows each time the connection reconnects' is an assumed cause, which the answer itself admits it did not know.",
+     "'A call to init() without apiKey is no longer valid' does not say what happens (error or not), so the upgrade impact is vague."
+    ]
+   }
+  }
+ ]
+}

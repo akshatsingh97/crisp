@@ -1,0 +1,19 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "Dropping a replication slot is described as a routine fix; it can break a standby or consumer permanently, though the answer does say to confirm with the slot owner first.",
+  "\"PostgreSQL will remove old WAL itself\" and \"Wait for the next checkpoint\" are oversimplified. WAL removal also depends on archiving status, wal_keep_size and slot state, and the answer gives no way to force it.",
+  "The log section says to delete or compress old logs but gives no command for it. It also does not warn against removing logs that other processes may still need, such as audit or compliance logs.",
+  "The du command uses -x with several paths and may not show which filesystem a path belongs to. The df and du steps assume the three paths are on the same filesystem, but the data, WAL and logs may be on separate mounts."
+ ]
+}

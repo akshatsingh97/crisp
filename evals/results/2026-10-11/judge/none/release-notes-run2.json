@@ -1,0 +1,19 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "The 'Before (2.x)' snippet uses `sdk.init()` and the answer says init() 'will now fail' without apiKey; the failure mode is assumed, not stated in the request.",
+  "The retries advice ('set the retry option explicitly to `3`') refers to an option whose name the answer admits it does not know, and gives no snippet.",
+  "The claim that the memory leak fix 'improv[es] stability for long-running connections' goes beyond the facts given.",
+  "The `sdk.on('error', ...)` handler and `sdk.init({ apiKey: ... })` snippets use invented API shapes. The closing note discloses this, but the snippets themselves are not marked as placeholders.",
+  "The checklist calls the `on('error')` handler optional. The request does not say whether it is optional."
+ ]
+}

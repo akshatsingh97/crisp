@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 8,
+ "errors": [
+  "Says concurrent build 'scans the table twice' and implies it is mainly slower; fine, but 'Duplicate values in a UNIQUE index cause this failure' is correct only for unique indexes and is presented without that qualification being prominent.",
+  "Says the build 'takes brief locks at the start and end' and that lock_timeout prevents blocking; actually CONCURRENTLY takes a SHARE UPDATE EXCLUSIVE lock for the whole build (blocks other DDL/vacuum), so 'brief locks' is slightly misleading.",
+  "Says 'Long transactions stall the build: waits for every older open transaction'; true, but advice to 'end idle-in-transaction sessions' is risky production guidance without caution."
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 8,
+ "scan": 5,
+ "errors": [
+  "Describing the refresh-token cookie as restoring the session is fine, but the answer never says that the refresh endpoint needs its own CSRF protection, since it relies on a cookie.",
+  "SameSite=Lax is described as blocking 'most CSRF'. That is broadly right but slightly overstated, because Lax still allows top-level GET navigations."
+ ]
+}

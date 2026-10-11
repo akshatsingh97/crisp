@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "Minor: the Strict Mode bullet says React 'mounts, unmounts and remounts effects' and calls the double fetch intentional. That is accurate for development, but it can read as if it explains the user's bug.",
+  "Minor: the Fix 2 snippet leaves out setLoading and setError(null) resets, and it doesn't define setError. This is a small omission."
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 6,
+ "errors": [
+  "Stripe's \"create-charge API\" (Charges) is legacy; the answer doesn't mention PaymentIntents, which Stripe recommends. The advice still applies, though.",
+  "\"Stripe keeps keys for at least 24 hours\" is slightly off. Stripe says keys can be removed after they are at least 24 hours old, so it is a minimum, not a guarantee of how long they are kept. This is a minor point.",
+  "Using an order ID or cart ID as the key is not always safe. If the first attempt is declined and the customer retries the same order with a new card, the same key returns the cached decline. The answer does not say so.",
+  "Saying Stripe's libraries \"attach a key automatically\" is mostly right for stripe-node's network retries, but the answer doesn't say this is library-specific."
+ ]
+}

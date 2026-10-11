@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 6,
+ "errors": [
+  "Slight imprecision: \"If it jumps once and crashes, you have one large allocation instead\" is oversimplified, because a sudden spike can have other causes.",
+  "The advice to set the Node limit lower than the container limit is correct, but it is not precise. The answer does not say that --max-old-space-size covers only the old-generation heap, so total process memory is higher.",
+  "The answer is written as dense paragraphs with no headings or numbered steps, so the reader cannot scan quickly. This hurts scan, not accuracy."
+ ]
+}

@@ -1,0 +1,5 @@
+No, do not use `:latest` for the base image in production Dockerfiles. The tag points to a different image each time the publisher pushes a new version, so two builds of the same Dockerfile can produce different results. A rebuild on a new day can pull a new major version of the OS or the language runtime and break your app, and you cannot easily tell which version ran in production when a bug appears.
+
+Pin the image to a specific version instead, for example `FROM node:22.11-bookworm-slim`. This makes builds repeatable (the same input gives the same output) and makes rollbacks simple. For the strongest guarantee, also pin the digest (the unique hash of one exact image), as in `FROM node:22.11-bookworm-slim@sha256:<digest>`. A digest cannot change, even if someone re-pushes the version tag.
+
+A pinned image does not get security fixes on its own. You must update the pin on a schedule, and a tool such as Dependabot or Renovate can open pull requests for you when a new version or digest is available. Use `:latest` only for quick local tests, where a surprise change costs little.

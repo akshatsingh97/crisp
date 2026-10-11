@@ -1,0 +1,18 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "The `retries` option name is an assumption, though the answer flags it as one.",
+  "The 'Changes' section implies the retry default is the only change. It doesn't mention that more retries can mean longer waits before a failure surfaces.",
+  "The `on('error')` example calls `on` as a bare global function. It doesn't show it as a method on the SDK client, so it may mislead readers.",
+  "'Long-running apps will now use less memory' is a mild extrapolation beyond the stated fix."
+ ]
+}

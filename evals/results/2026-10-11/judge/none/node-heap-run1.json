@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "`--heapsnapshot-signal=SIGUSR2` is correct, but the claim that snapshots need 'roughly 2x the heap in memory' is an approximation presented as fact.",
+  "'Newer Node versions respect cgroup limits' is vague. Node's default heap sizing is only partly cgroup-aware, and the answer does not say which versions, so the reader may wrongly assume the default is safe in containers.",
+  "'Memory spikes and then crashes: a single huge allocation' is oversimplified, because a spike can also come from a burst of concurrent requests."
+ ]
+}

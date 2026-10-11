@@ -1,0 +1,15 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  false
+ ],
+ "coverage": 0.75,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 8,
+ "errors": [
+  "The suggested message omits ERR_UPLOAD_413; the answer only suggests keeping it in logs or small text, so the rewrite itself does not keep the code."
+ ]
+}

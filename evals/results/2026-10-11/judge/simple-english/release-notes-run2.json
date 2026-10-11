@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 8,
+ "scan": 8,
+ "errors": [
+  "Intro says 'one new default', and the 'If you want the old behavior, set the number of retries to 3' line gives no option name, so readers can't act on it.",
+  "'Memory use no longer grows each time the connection reconnects' is an assumed cause, which the answer itself admits it did not know.",
+  "'A call to init() without apiKey is no longer valid' does not say what happens (error or not), so the upgrade impact is vague."
+ ]
+}

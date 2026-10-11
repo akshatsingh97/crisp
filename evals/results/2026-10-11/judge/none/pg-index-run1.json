@@ -1,0 +1,18 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 8,
+ "errors": [
+  "Says CREATE INDEX CONCURRENTLY does 'two table scans' and implies it is simply slower; fine, but 'Bloat on a busy table' claim is vague and not a well-established concern.",
+  "Says 'CONCURRENTLY isn't supported on the parent' for partitioned tables and to 'build on each partition, then attach'; this is roughly right (use CREATE INDEX ON ONLY parent, then concurrent per-partition, then ATTACH) but the omitted ON ONLY step is misleading.",
+  "Setting statement_timeout = 0 is advised as protection from a 'global timeout'; fine, but lock_timeout of 5s may cause the build to fail and leave an invalid index, which is not warned about.",
+  "Index size estimate of '10\u201330% of table size' is a loose guess presented as typical."
+ ]
+}

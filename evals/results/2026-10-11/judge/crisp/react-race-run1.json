@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 8,
+ "errors": [
+  "The first AbortController example calls setUser and setError without showing they exist, and it does not check res.ok. This is minor.",
+  "The answer implies `userId` is in the dependency array by showing `[userId]` in the examples. It never says this needs to be there, so fact 4 is covered only implicitly.",
+  "The claim that 'React does not cancel the old effect's async work' is accurate. The explanation of why the stale data appears is slightly informal."
+ ]
+}

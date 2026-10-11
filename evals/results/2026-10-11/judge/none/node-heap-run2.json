@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "`--heapsnapshot-near-heap-limit=2` is not strictly 'on the way out'. It writes snapshots as the heap nears its limit, which can itself use a lot of memory and slow or crash the process.",
+  "The `kill -USR2` step is under-explained. It does not say the snapshot signal handler blocks the process while the file is written, which matters in production.",
+  "The Chrome DevTools Comparison view gives the best results when you load the earlier snapshot first. The answer does not say which to load first."
+ ]
+}

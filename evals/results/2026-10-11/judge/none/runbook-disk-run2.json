@@ -1,0 +1,19 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "The 'du -sh /var/lib/postgresql/*/main/...' paths assume a Debian-style layout (version/main), which may not match this host, though the glob is reasonable.",
+  "A manual CHECKPOINT does not by itself make Postgres recycle WAL held by archiving failures or replication slots. It only helps after the cause is fixed, which the text does say, but it is placed under 'Settings' and is slightly misleading.",
+  "Truncating the active log with ': > current.log' is fine, but the 'remove oldest logs' advice does not warn to check that logs aren't needed for an investigation.",
+  "The 'Rule: never delete or move' warning sits at the top, before triage. The cleanup steps follow it, so this is fine, but 'move' goes beyond the user's 'delete' requirement. This is harmless."
+ ]
+}

@@ -1,0 +1,136 @@
+[
+  {
+    "id": "charge-retry",
+    "type": "reply",
+    "prompt": "Our checkout calls Stripe's create-charge API and retries on network errors. Can that double-charge customers?",
+    "must_cover": [
+      "Yes, retries can double-charge when the first request reached Stripe",
+      "A network error or timeout does not tell you whether the first charge succeeded",
+      "Send an Idempotency-Key header with the request",
+      "Reuse the same key for every retry of the same charge"
+    ]
+  },
+  {
+    "id": "react-race",
+    "type": "reply",
+    "prompt": "My React component fetches data in useEffect and sometimes shows the wrong user's data after I switch users quickly. Why?",
+    "must_cover": [
+      "It is a race condition: an older request finishes after a newer one",
+      "The late response overwrites the state with the old user's data",
+      "Use the effect cleanup function to ignore or cancel the old request (an ignore flag or AbortController)",
+      "The user id must be in the effect's dependency array"
+    ]
+  },
+  {
+    "id": "force-push",
+    "type": "reply",
+    "prompt": "I rebased my feature branch and now git push is rejected. Should I use --force?",
+    "must_cover": [
+      "The push is rejected because the rebase rewrote the branch history",
+      "Use --force-with-lease instead of --force",
+      "A force push can delete commits that teammates pushed to the same branch",
+      "Teammates who use the branch must reset or rebase onto the new history"
+    ]
+  },
+  {
+    "id": "jwt-storage",
+    "type": "reply",
+    "prompt": "Is it OK to store a JWT in localStorage in my single-page app?",
+    "must_cover": [
+      "Any XSS bug lets an attacker's script read localStorage and steal the token",
+      "An httpOnly cookie is the common alternative because scripts cannot read it",
+      "Cookies need CSRF protection, for example SameSite",
+      "Keep access tokens short-lived"
+    ]
+  },
+  {
+    "id": "node-heap",
+    "type": "reply",
+    "prompt": "Our Node.js service crashes with 'JavaScript heap out of memory' after a few hours. What do I do?",
+    "must_cover": [
+      "Memory that grows over hours usually means a memory leak",
+      "--max-old-space-size raises the limit but does not fix a leak",
+      "Take heap snapshots at different times and compare them to find what grows",
+      "Common causes: caches with no size limit, event listeners that are never removed, and global references"
+    ]
+  },
+  {
+    "id": "pg-index",
+    "type": "reply",
+    "prompt": "I need to add an index to a 50 GB Postgres table in production. Anything to watch out for?",
+    "must_cover": [
+      "A plain CREATE INDEX blocks writes to the table until it finishes",
+      "Use CREATE INDEX CONCURRENTLY",
+      "CREATE INDEX CONCURRENTLY cannot run inside a transaction block",
+      "If a concurrent build fails, it leaves an INVALID index that you must drop and build again"
+    ]
+  },
+  {
+    "id": "docker-latest",
+    "type": "reply",
+    "prompt": "Is it fine to use the :latest tag for the base image in our production Dockerfiles?",
+    "must_cover": [
+      "No: :latest can change without notice, so builds are not reproducible",
+      "Pin a specific version tag, or a digest for full reproducibility",
+      "Update the pinned version on purpose, for example with Dependabot or Renovate",
+      "Rebuild images regularly to get security patches"
+    ]
+  },
+  {
+    "id": "cors",
+    "type": "reply",
+    "prompt": "The browser says 'No Access-Control-Allow-Origin header is present' when my frontend calls my API. How do I fix it?",
+    "must_cover": [
+      "Fix it on the API server, not in the frontend code",
+      "The server must send Access-Control-Allow-Origin with the frontend's origin",
+      "Requests with custom headers or methods send a preflight OPTIONS request that the server must answer",
+      "With credentials (cookies), the origin must be explicit, not *"
+    ]
+  },
+  {
+    "id": "readme-install",
+    "type": "doc",
+    "prompt": "Write the 'Install and run' section of a README for a Node.js CLI named logtail. It needs Node.js 18 or later. Install it with `npm install -g logtail`. It reads an API token from the LOGTAIL_TOKEN environment variable. Run it with `logtail --follow app.log`.",
+    "must_cover": [
+      "Node.js 18 or later is required",
+      "npm install -g logtail",
+      "Set the LOGTAIL_TOKEN environment variable before running",
+      "logtail --follow app.log",
+      "How to know that it works (expected output or a version check)"
+    ]
+  },
+  {
+    "id": "runbook-disk",
+    "type": "doc",
+    "prompt": "Write a short runbook for the alert 'disk usage over 90% on the database host'. The data is in /var/lib/postgresql, WAL files are in pg_wal, and logs are in /var/log/postgresql. Nobody must ever delete files in pg_wal by hand.",
+    "must_cover": [
+      "Confirm the usage, for example with df -h",
+      "Find what uses the space, for example with du",
+      "Remove or compress old logs in /var/log/postgresql",
+      "A warning, before the cleanup steps, to never delete files in pg_wal by hand",
+      "How to verify that usage is back under the threshold, or when to escalate"
+    ]
+  },
+  {
+    "id": "error-413",
+    "type": "doc",
+    "prompt": "Rewrite this error message for end users of a file-sharing app: 'ERR_UPLOAD_413: Request entity too large. Payload exceeded configured maximum (25MB).'",
+    "must_cover": [
+      "The upload failed",
+      "The file is larger than the 25 MB limit",
+      "What the user can do: choose a smaller file or compress it",
+      "Keeps the code ERR_UPLOAD_413"
+    ]
+  },
+  {
+    "id": "release-notes",
+    "type": "doc",
+    "prompt": "Write release notes for version 3.0 of our JavaScript SDK. Changes: init() now requires an apiKey option (breaking). The default number of retries changed from 3 to 5. A new on('error') event was added. A memory leak in the websocket reconnect was fixed.",
+    "must_cover": [
+      "The breaking change comes first: init() now requires apiKey, with what the user must change",
+      "The default retries changed from 3 to 5",
+      "The new on('error') event",
+      "The fixed memory leak in the websocket reconnect"
+    ]
+  }
+]

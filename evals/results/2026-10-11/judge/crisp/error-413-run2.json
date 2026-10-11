@@ -1,0 +1,13 @@
+{
+ "covered": [
+  false,
+  true,
+  true,
+  true
+ ],
+ "coverage": 0.75,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 8,
+ "errors": []
+}

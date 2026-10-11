@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "The `--follow` description (keeps running and shows new lines) is an assumption, though the answer flags it as such.",
+  "Fact 5 is only covered weakly: the `node --version` check verifies Node, not that logtail works, and no expected output or `logtail --version` check is given."
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  false
+ ],
+ "coverage": 0.75,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 8,
+ "errors": [
+  "\"A digest never changes, so the build always uses the same bytes\" is slightly overstated: the tag-plus-digest form is fine, but the answer does not mention that the digest must be updated to receive patches, and a registry can remove old digests.",
+  "\"you must not\" is stronger than the usual guidance (it is a strong recommendation, not a hard rule), though not seriously misleading.",
+  "The answer says a pinned image \"does not receive security patches by itself\", but it does not say to rebuild regularly to pick up patches in the same tag, which can leave readers thinking updates only come through version bumps."
+ ]
+}

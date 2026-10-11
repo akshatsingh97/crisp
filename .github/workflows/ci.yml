@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.8", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit tests (checker, hooks, package consistency)
+        run: python -m unittest discover -v tests
+      - name: Checker self-check on the README
+        run: python skills/crisp/scripts/crisp_check.py README.md --type doc --fail-under 80
+
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate the Claude Code plugin and marketplace
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          claude plugin validate .
+          claude plugin validate .claude-plugin/plugin.json --strict
+      - name: Check that the JSON files parse
+        run: |
+          for f in .claude-plugin/*.json .codex-plugin/*.json .agents/plugins/*.json hooks/hooks.json evals/scenarios.json; do
+            python3 -m json.tool "$f" > /dev/null || exit 1
+          done

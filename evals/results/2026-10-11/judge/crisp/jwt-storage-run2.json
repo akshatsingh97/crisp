@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 8,
+ "scan": 7,
+ "errors": [
+  "Step 1 of the preferred setup says to send the access token in a cookie, then step 3 adds a refresh token cookie. The sequence is slightly muddled but not wrong.",
+  "The opening line says localStorage is acceptable only if you accept the risk, which is fine. 'Never store a long-lived refresh token there' is stated as absolute, but it is a common best practice, not a strict rule."
+ ]
+}

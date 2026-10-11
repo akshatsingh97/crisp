@@ -1,0 +1,18 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 7,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "\"Do not retry 4xx card errors with the same key, because Stripe returns the saved result\" is misleading: Stripe saves and replays the result of the first request, including 4xx errors, so retrying with the same key just returns the same error. The point should be that a corrected request needs a new key, not that retrying is dangerous.",
+  "\"Retry only on network errors, timeouts, and 5xx responses\" is too narrow. Stripe also saves 5xx results, so a same-key retry replays the saved 500. Stripe's guidance is that retrying with the same key is safe in any case where the outcome is unknown.",
+  "\"Stripe keeps keys for at least 24 hours\" is slightly off. Stripe says keys can be removed once they are at least 24 hours old, so 'at least' reads as a guarantee of longer retention.",
+  "The claim that `maxNetworkRetries` 'sets a key automatically' is only partly right. The library generates a key for its own retries of POST requests, but the answer doesn't say this applies per call and isn't reused across separate calls. It also says 'You must set one yourself' without noting that this is a client-library detail that differs by SDK."
+ ]
+}

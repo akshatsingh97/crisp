@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "Claims CREATE INDEX CONCURRENTLY is 'not supported on the parent' of a partitioned table as a reason for a different approach; this is true (must build on partitions then attach), but the answer gives no guidance, leaving it vague.",
+  "States concurrent builds take 'roughly 2\u20133x' the time of a plain build; this is a loose rule of thumb, not a documented figure, and can vary a lot.",
+  "Says a long-running transaction 'blocks the finish' and that cancelling leaves invalid index; mostly correct, but a uniqueness violation or deadlock failing is only one cause, and the phrasing 'Don't leave invalid indexes around, because they still add write overhead' is correct but omits that an invalid unique index still enforces uniqueness checks on inserts."
+ ]
+}

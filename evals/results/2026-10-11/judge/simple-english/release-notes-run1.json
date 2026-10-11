@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 8,
+ "scan": 8,
+ "errors": [
+  "States that calling init() without apiKey 'fails' \u2014 plausible but not given in the request.",
+  "Says 'The websocket reconnect code leaked memory' without noting it affected earlier versions; minor wording imprecision.",
+  "The retries sentence tells readers to 'set the number of retries to 3 in your configuration' without naming the option, so it is not actionable until the user edits it (the answer flags this at the end)."
+ ]
+}

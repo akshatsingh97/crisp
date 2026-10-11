@@ -1,0 +1,16 @@
+{
+  "name": "crisp",
+  "interface": {
+    "displayName": "Crisp"
+  },
+  "plugins": [
+    {
+      "name": "crisp",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

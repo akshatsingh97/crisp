@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 8,
+ "errors": [
+  "The answer says that reusing a key with different parameters returns an error that is 'safe' but 'shows the key is being reused when it shouldn't be'. That is slightly confusing, because a key reused with different parameters is often a bug. The answer is not clearly wrong, though.",
+  "The answer says 'Keys are kept for at least 24 hours'. Stripe documents that keys can be removed after they are at least 24 hours old. 'At least' is acceptable, but a reader may take it as a guaranteed retention period.",
+  "The answer says 'SDK retries: the official Stripe libraries can add idempotency keys automatically when you configure retries'. That is broadly correct, but it depends on the library and version. The answer does not say so."
+ ]
+}

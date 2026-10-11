@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "The claim 'It isn't vulnerable to CSRF' is accurate but could mislead if read as the app being safe overall. The answer does not point out that an XSS attacker can still act as the user from inside the page with an in-memory token, so the recommended pattern is only partly protective.",
+  "Saying 'SameSite covers most of it' is slightly overconfident. SameSite=Lax does not protect against same-site attacks, and some older browsers do not support it."
+ ]
+}

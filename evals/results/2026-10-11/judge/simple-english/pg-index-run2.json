@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 8,
+ "scan": 6,
+ "errors": [
+  "The build \"waits for older transactions to finish\" and \"scans the table twice\" are correct, but the claim that an invalid index \"slows down every write\" is true only for the index maintenance. It is fine in practice, though slightly imprecise.",
+  "The pg_index query casts the index name with ::regclass, which is fine, but it does not check the schema. This is a minor omission.",
+  "Setting statement_timeout to 0 is advised without noting that lock_timeout may still matter. This is a minor omission."
+ ]
+}

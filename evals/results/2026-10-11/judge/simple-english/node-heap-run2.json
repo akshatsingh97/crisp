@@ -1,0 +1,18 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 8,
+ "scan": 6,
+ "errors": [
+  "The \"--heapsnapshot-near-heap-limit=1\" flag is described as writing a snapshot \"just before it crashes\". That is roughly right. But snapshotting near the limit can itself run out of memory and fail, and the answer doesn't say so.",
+  "The SIGUSR2 handler writes snapshots from inside the process. The answer says to run it \"on one instance\" because snapshots pause the process. It doesn't say that writeHeapSnapshot blocks the event loop and needs roughly twice the heap in extra memory, so this can crash a process that is already near its limit.",
+  "The answer says heapUsed \"never drops after garbage collection\" confirms a leak. A steadily rising heapUsed can also come from lazy garbage collection or legitimate load growth. Checking it after forced GC, or using the post-GC low points, would be more accurate.",
+  "The 4096 MB example for --max-old-space-size is given with no mention that it should fit the container or host memory limit. Otherwise the process may be OOM-killed, so the crash is not avoided."
+ ]
+}

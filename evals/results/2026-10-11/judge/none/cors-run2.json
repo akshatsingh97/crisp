@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "The nginx snippet is shown without any mention that preflight OPTIONS handling needs additional config (return 204 plus Allow-Methods/Headers), so it will not fully work for preflighted requests.",
+  "Redirect point is vague: a redirect can fail a preflight, but a simple cross-origin redirect does not itself cause this error.",
+  "Spring `@CrossOrigin` and the Django note omit the credentials caveat, which is a minor omission rather than an error."
+ ]
+}

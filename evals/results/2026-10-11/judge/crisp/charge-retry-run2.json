@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "The claim that 'Recent SDKs add idempotency keys for their own retries' is broadly accurate for Stripe's official libraries, but the answer does not say which SDKs or versions. This is vague rather than wrong.",
+  "The answer says to store the key before the first call. It does not say to store the key with the order. This is a minor gap and does not mislead.",
+  "The answer treats the create-charge API as the current Stripe recommendation. Stripe now steers new integrations toward PaymentIntents. This is a minor omission and does not make any statement false."
+ ]
+}

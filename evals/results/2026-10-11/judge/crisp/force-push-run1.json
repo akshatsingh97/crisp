@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 8,
+ "errors": [
+  "Step 2 `git log HEAD..origin/<branch>` lists remote commits not in local HEAD, which after a rebase may include your own pre-rebase commits (rewritten with different hashes). The 'list is empty' check is therefore unreliable. A better check is `git range-diff` or inspecting the author of those commits. The 'or you know those commits are in your rebase' clause only partly covers this.",
+  "The claim that force pushing 'updates' a PR and that 'existing review comments can lose their position' is broadly true but is stated loosely. Comments are usually marked outdated rather than lost."
+ ]
+}

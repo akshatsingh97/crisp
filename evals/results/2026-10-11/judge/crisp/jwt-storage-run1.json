@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 8,
+ "scan": 7,
+ "errors": [
+  "Slightly misleading ending: says a cookie 'only prevents token theft', but a stolen token and injected-script requests are different risks. The statement is mostly correct though it may understate that XSS still allows full account abuse.",
+  "Calling SameSite=Lax/Strict plus an optional CSRF token sufficient is a simplification. Lax still allows some top-level GET requests, and same-site subdomain attacks are not covered."
+ ]
+}

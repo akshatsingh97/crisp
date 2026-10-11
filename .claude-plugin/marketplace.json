@@ -1,0 +1,22 @@
+{
+  "name": "crisp",
+  "owner": {
+    "name": "Akshat Singh",
+    "url": "https://github.com/akshatsingh97"
+  },
+  "metadata": {
+    "description": "Crisp: clear, to-the-point LLM answers with rules from ASD-STE100."
+  },
+  "plugins": [
+    {
+      "name": "crisp",
+      "source": "./",
+      "description": "Clear, to-the-point answers. Answer first, max 20 words per sentence, one idea per sentence, plain words.",
+      "homepage": "https://github.com/akshatsingh97/crisp",
+      "repository": "https://github.com/akshatsingh97/crisp",
+      "author": {
+        "name": "Akshat Singh"
+      }
+    }
+  ]
+}

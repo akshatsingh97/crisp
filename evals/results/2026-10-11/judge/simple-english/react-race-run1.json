@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 8,
+ "errors": [
+  "Slightly misleading: \"React does not cancel the old request when the effect runs again\" is fine, but \"If you use only one, the flag is the more important part\" is a mild oversimplification (abort alone also prevents the late setState because the promise rejects with AbortError).",
+  "The dependency-array point is framed as causing 'stale data for a different reason' without explaining that a missing userId would prevent refetching entirely; it is brief but not wrong."
+ ]
+}

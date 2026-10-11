@@ -1,0 +1,18 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 8,
+ "errors": [
+  "Step 2 is slightly misleading: CONCURRENTLY waits for transactions that could hold older snapshots, including ones that start before each phase. It does not only wait for old ones at the start. The advice to end or wait out old ones is still reasonable.",
+  "Step 3 rationale is loose. lock_timeout makes the build fail instead of queuing behind a conflicting lock. The answer implies a stall-avoidance effect but does not say the build may fail and need a retry, and that failure can leave an INVALID index.",
+  "'Scans the table twice' is correct. But 'sorting can use temporary files' and the disk-space note omit that a failed build wastes that space. This is minor.",
+  "The partitioned-table note is correct in substance. It omits that the parent index stays invalid until all partition indexes are attached. This is minor."
+ ]
+}

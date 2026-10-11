@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "Calling localStorage 'often acceptable' and a 'reasonable compromise' understates the risk, since a strong CSP does not remove XSS exposure.",
+  "The claim that an attacker can use a stolen token 'from anywhere' is true for bearer tokens, but the answer doesn't say that token binding or short lifetimes limit this.",
+  "The in-memory access token is presented as a safe fix, but XSS can still call the refresh endpoint to get a new token. The answer only says this about cookies."
+ ]
+}

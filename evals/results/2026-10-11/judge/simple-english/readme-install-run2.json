@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true,
+  false
+ ],
+ "coverage": 0.8,
+ "accuracy": 9,
+ "clarity": 8,
+ "scan": 9,
+ "errors": [
+  "The parenthetical definition of an environment variable is fine, but `export` is bash-specific and the section does not say how to set it in other shells such as Windows.",
+  "The `node --version` check only confirms the Node version. It does not confirm that logtail itself is installed or working."
+ ]
+}

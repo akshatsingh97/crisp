@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 8,
+ "errors": [
+  "Both snippets show [userId] in the dependency array, but the answer never explains that userId must be listed there. Fact 4 is only implied by the code.",
+  "The AbortController example has a minor gap. It calls setUser(data) and setError(err) without defining them. This is normal for a snippet and is not misleading."
+ ]
+}

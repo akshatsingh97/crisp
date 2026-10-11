@@ -1,0 +1,15 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 8,
+ "errors": [
+  "The first example's .then(setUser) path in the AbortController snippet is fine, but the answer's claim that the cleanup 'does not cancel the old request unless you write that code' is true; no error. Minor: the AbortController snippet references setError without defining it, and a late non-abort response can still be handled after abort only if the body parse resolves, which is a negligible edge case."
+ ]
+}

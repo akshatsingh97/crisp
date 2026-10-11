@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "crisp",
+  "displayName": "Crisp",
+  "version": "1.1.0",
+  "description": "Clear, to-the-point answers. Answer first, max 20 words per sentence, one idea per sentence, plain words. Rules adapted from ASD-STE100 Simplified Technical English.",
+  "author": {
+    "name": "Akshat Singh",
+    "url": "https://github.com/akshatsingh97"
+  },
+  "license": "MIT",
+  "keywords": [
+    "readability",
+    "plain-english",
+    "ste",
+    "asd-ste100",
+    "writing",
+    "clarity"
+  ],
+  "userConfig": {
+    "mode": {
+      "type": "string",
+      "title": "Crisp mode",
+      "description": "always = apply Crisp to every answer. on-demand = apply Crisp only when you ask (/crisp:level lite, 'be crisp', /crisp:clarify, and more).",
+      "options": [
+        "always",
+        "on-demand"
+      ],
+      "default": "always"
+    },
+    "level": {
+      "type": "string",
+      "title": "Crisp level",
+      "description": "lite = answer shape, sentence, word, and completeness rules. strict = also the full STE word discipline. off = no rules at session start.",
+      "options": [
+        "lite",
+        "strict",
+        "off"
+      ],
+      "default": "lite"
+    },
+    "reply_check": {
+      "type": "string",
+      "title": "Reply check",
+      "description": "After each answer, check it with the Crisp checker. notify = show you a one-line warning when the answer breaks the rules. fix = ask Claude to rewrite it one time. off = no check.",
+      "options": [
+        "notify",
+        "fix",
+        "off"
+      ],
+      "default": "notify"
+    }
+  },
+  "homepage": "https://github.com/akshatsingh97/crisp",
+  "repository": "https://github.com/akshatsingh97/crisp"
+}

@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "The claim that registries and tools treat :latest as mutable so cached layers can be stale is vague and partly misleading: mutability is a property of the tag itself, and stale caches are mainly a local-build issue.",
+  "The 'Risk' section says to update the pin on a regular schedule, which implies rebuilding but never says to rebuild images regularly to pick up patches (including patches within the same pinned tag)."
+ ]
+}

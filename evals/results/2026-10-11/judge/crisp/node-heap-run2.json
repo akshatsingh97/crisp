@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "Calling the --heapsnapshot-signal=SIGUSR2 approach 'without a debugger' is accurate, but the answer never mentions that the flag must be set at startup, so the process has to be restarted before a snapshot can be taken. It does say 'Start with', so this is only a minor gap.",
+  "The advice to 'Keep the limit below the container memory limit' is correct but gives no margin. Native memory, buffers and the stack also count toward the container limit, so the heap limit should sit well below it.",
+  "'Take one snapshot after warm-up and another after some hours of load' is vague. Snapshots taken closer together, such as 10\u201330 minutes apart under steady load, are often enough, and waiting hours risks the crash happening first."
+ ]
+}

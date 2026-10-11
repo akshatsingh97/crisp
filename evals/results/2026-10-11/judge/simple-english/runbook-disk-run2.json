@@ -1,0 +1,19 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 8,
+ "scan": 8,
+ "errors": [
+  "The pg_class query in step 6 is not limited to tables (it includes indexes, TOAST tables and other relations), and it does not filter by database or schema. It is also run in whichever database the user is connected to, so it may not show the biggest tables overall.",
+  "Step 2 deletes compressed logs older than 14 days with `find -delete`. That is a reasonable default, but it is not fitted to the situation, and it is irreversible if the logs are needed for an investigation. The runbook does not say to check this first.",
+  "The runbook mentions the replication slot and archiving checks but does not mention other common causes of a WAL backlog, such as a long-running transaction or a standby that is lagging. This is an omission, not an error.",
+  "The warning about pg_wal is in the opening paragraph, before the steps. It is correct, but step 4 tells the reader to drop a replication slot, which is a risky action. It does not warn that a dropped slot may break the standby that uses it, though it does say to ask the owner first."
+ ]
+}

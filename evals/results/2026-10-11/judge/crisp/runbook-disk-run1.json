@@ -1,0 +1,19 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "Dropping a replication slot is presented as a way to free WAL, and 'Wait for the next checkpoint' is slightly imprecise: WAL removal happens at checkpoints but the slot's WAL may need several checkpoints. It is minor.",
+  "'If the WAL disk fills completely, Postgres can stop and refuse to start' assumes pg_wal is on a separate disk, but the runbook never says so. The data directory path may also differ.",
+  "The warning is not placed immediately before the cleanup steps. A one-line version sits at the top, with the full warning right after it, so the order is acceptable but not perfect.",
+  "Case A step 3 offers deleting old logs, which is fine. The runbook does not give a command to confirm that rotation or compression freed space, although Case B step 5 does."
+ ]
+}

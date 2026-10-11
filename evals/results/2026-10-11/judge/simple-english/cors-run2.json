@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 8,
+ "scan": 6,
+ "errors": [
+  "Saying a preflight must be answered with status 200 or 204 is slightly oversimplified, but it is not wrong. Any 2xx works.",
+  "The advice to use `origin: \"*\"` for a public API with no cookies is correct, but it is brief and does not warn about other risks."
+ ]
+}

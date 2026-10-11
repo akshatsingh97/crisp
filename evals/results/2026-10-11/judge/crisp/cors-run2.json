@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "The raw headers example omits Access-Control-Allow-Credentials and doesn't mention that the server must echo the request origin if multiple origins are allowed, but this is minor.",
+  "Minor: the \"Do not use * in production for private APIs\" advice is fine, but the answer doesn't note that FastAPI's allow_headers=[\"*\"] combined with credentials is not allowed with wildcard origins; not stated incorrectly though."
+ ]
+}

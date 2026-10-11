@@ -1,0 +1,17 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 8,
+ "errors": [
+  "The example key `order_8841_attempt_1` contains \"attempt_1\", which suggests a per-attempt key. That conflicts with the advice to reuse one key across all retries and could mislead readers into incrementing the attempt number.",
+  "The answer says a PaymentIntent retry \"cannot create a second payment\". That is only true if you reuse the same PaymentIntent object. Creating a new PaymentIntent on each retry can still double-charge unless you also use an idempotency key.",
+  "The answer says an order or cart ID protects against a double-click on the pay button. That is only true if the same key is reused for the same request parameters. Stripe also warns that keys can be pruned after 24 hours, and the answer states this only as a minimum."
+ ]
+}

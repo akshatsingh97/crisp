@@ -1,0 +1,7 @@
+It works, but it is not the safest choice. Any JavaScript that runs on your page can read localStorage, so one XSS (cross-site scripting, where an attacker injects their own script into your page) bug lets the attacker steal the token. They can then use it from their own machine until it expires.
+
+A better option is to keep the token in a cookie with the HttpOnly, Secure, and SameSite flags. JavaScript cannot read an HttpOnly cookie, so an XSS bug cannot copy the token. SameSite=Lax or Strict blocks most CSRF (cross-site request forgery, where another site tricks the browser into sending your cookie). For extra protection, add a CSRF token to requests that change data.
+
+A common pattern combines both ideas. The server sends a short-lived access token that your app keeps only in memory, and it sends a longer-lived refresh token in an HttpOnly cookie. When the page reloads, the app calls a refresh endpoint to get a new access token. An attacker who injects a script can still make requests while the page is open, but cannot take a long-lived token away.
+
+If you must use localStorage, reduce the damage. Set a short expiry on the token, such as 15 minutes. Add a strict Content-Security-Policy header (a rule that limits which scripts the browser will run). Avoid third-party scripts where you can, and never insert untrusted data into the page as raw HTML. Keep in mind that none of these steps fully removes the risk, because XSS is the root problem.

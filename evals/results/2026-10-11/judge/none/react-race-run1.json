@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "The Fix 2 snippet doesn't guard setError or loading state, and it doesn't reset the previous user's data. Related details mention these points, so this is a minor gap rather than an error.",
+  "Fact 4 is only implied: both code samples include [userId] in the dependency array, and the text says the effect fires each time userId changes. The answer never states it as a requirement."
+ ]
+}

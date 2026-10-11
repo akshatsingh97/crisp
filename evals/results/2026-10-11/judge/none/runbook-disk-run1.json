@@ -1,0 +1,21 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "Fact 4 is partly met: the 'never delete pg_wal by hand' rule is at the top, before every cleanup step, so it works as a warning. But section 2 says to `rm` rotated logs with no caution about the pg_wal rule, which is fine for logs.",
+  "Step 2.2 says to force rotation with pg_rotate_logfile() and 'then handle the old file'. This is vague, and it only works if logging_collector is on. If logs go through syslog or logrotate, it does nothing.",
+  "Step 3 table says to run CHECKPOINT as a fix for long transactions or write bursts. A checkpoint does not release WAL held by a long transaction, a slot or an archive failure. It is only useful after the cause is removed.",
+  "Dropping a replication slot is shown as a fix, with only 'confirm with the owner first'. It can break a replica or logical consumer, and it may force a rebuild.",
+  "The `replay_lag` column in pg_stat_replication exists only on PG 10 and later. The pg_stat_archiver query is correct on all versions.",
+  "There is no explicit step to re-run df to confirm usage is under 90%. The text only says 'check again after a checkpoint'. The escalation threshold of 95% is stated, but a verification step is missing."
+ ]
+}

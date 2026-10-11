@@ -1,0 +1,19 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 8,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "The breaking change is not the first section; a summary sentence comes before it, though it also mentions apiKey first.",
+  "\"Requests that fail will now retry up to two more times\" is an inference; the default goes from 3 to 5 retries, which is two more than before. This is correct but slightly loose wording.",
+  "\"Long-running apps that reconnect often will now use stable memory\" overstates the fix. The input only says a leak was fixed, not that memory is stable.",
+  "\"If you do not pass it, init() will not work\" is vague. It does not say whether init() throws, returns an error, or fails silently.",
+  "The example for on('error') is shown as a bare on() call, with an assumption note on handler arguments. This is flagged honestly but adds uncertainty."
+ ]
+}

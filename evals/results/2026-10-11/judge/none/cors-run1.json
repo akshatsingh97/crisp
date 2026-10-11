@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 9,
+ "errors": [
+  "Minor: the Spring Boot @CrossOrigin snippet is shown without noting that it does not cover Spring Security setups, which need separate CORS configuration.",
+  "Minor: the answer says the `no-cors` mode 'doesn't fix anything', which is slightly overstated, since it does let a request be sent. Its main point, that the response is unreadable, is correct."
+ ]
+}

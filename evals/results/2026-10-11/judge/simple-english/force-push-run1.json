@@ -1,0 +1,16 @@
+{
+ "covered": [
+  true,
+  true,
+  true,
+  true
+ ],
+ "coverage": 1.0,
+ "accuracy": 9,
+ "clarity": 9,
+ "scan": 8,
+ "errors": [
+  "Slightly misleading: `--force-with-lease` only protects against changes since your last fetch; if a background fetch updated the remote-tracking ref, the lease can still overwrite unseen work. The answer says it refuses if the remote changed since your last fetch, which is roughly right but overstates the protection.",
+  "Minor: saying 'you must rewrite the remote history' is slightly overstated, since rebasing is not always required, and 'push to a shared branch such as main' implies the main branch is the only concern."
+ ]
+}
