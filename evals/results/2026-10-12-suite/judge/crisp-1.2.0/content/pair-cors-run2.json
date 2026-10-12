@@ -1,0 +1,121 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.5,
+  "useful": 1.5,
+  "minor": 4.0
+ },
+ "added": {
+  "critical": 1.0,
+  "useful": 2.5,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Flask example using flask_cors",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation that a 500 error or redirect response can lack CORS headers, so the browser shows a CORS message that hides the real error; check server logs",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit explanation with example that cross-origin means differing scheme/host/port (localhost:3000 vs localhost:8000)",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to avoid * in production unless API is public and uses no cookies",
+   "importance": "minor"
+  },
+  {
+   "item": "Request for URL, framework and response headers from the Network tab to diagnose",
+   "importance": "minor"
+  },
+  {
+   "item": "Flask example using flask_cors",
+   "importance": "useful"
+  },
+  {
+   "item": "Error responses (500, redirects) may lack CORS headers so the browser shows the CORS message and hides the real error; check server logs",
+   "importance": "critical"
+  },
+  {
+   "item": "Concrete example of cross-origin (localhost:3000 calling localhost:8000)",
+   "importance": "minor"
+  },
+  {
+   "item": "Most CORS libraries handle preflight automatically",
+   "importance": "minor"
+  },
+  {
+   "item": "Wildcard * is acceptable if API is public and uses no cookies",
+   "importance": "minor"
+  },
+  {
+   "item": "Asks user for request URL, framework, and response headers from Network tab to diagnose",
+   "importance": "minor"
+  },
+  {
+   "item": "Proxy/gateway may not add headers at all (not only strip) and should be configured if it answers the request",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Concrete raw header set (Allow-Origin, Allow-Methods, Allow-Headers) to return on both the response and the OPTIONS response for any other server",
+   "importance": "useful"
+  },
+  {
+   "item": "Origin must match exactly: localhost vs 127.0.0.1 are different origins, and a trailing slash in the allowed origin causes a mismatch",
+   "importance": "critical"
+  },
+  {
+   "item": "Debug step: inspect the OPTIONS request in the Network tab; 404/401/500 on OPTIONS must be fixed first, and a redirect on OPTIONS breaks CORS",
+   "importance": "useful"
+  },
+  {
+   "item": "Step to restart the API and reload the page; step to identify the exact frontend origin first",
+   "importance": "minor"
+  },
+  {
+   "item": "Dev proxy is a workaround when you cannot change the API, and works for development only",
+   "importance": "minor"
+  },
+  {
+   "item": "Do not use * for APIs that need authentication",
+   "importance": "minor"
+  },
+  {
+   "item": "Find the exact origin of your frontend first (scheme+host+port) before configuring",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit raw headers example including Access-Control-Allow-Methods and Allow-Headers values to return on both the response and the OPTIONS response for any other server",
+   "importance": "useful"
+  },
+  {
+   "item": "Preflight OPTIONS returning 404/401/500 must be fixed first; check OPTIONS request in Network tab; redirect on OPTIONS breaks CORS",
+   "importance": "useful"
+  },
+  {
+   "item": "Origin must match exactly: localhost vs 127.0.0.1 are different origins; trailing slash in allowed origin causes mismatch",
+   "importance": "critical"
+  },
+  {
+   "item": "Do not use * in production for authenticated APIs",
+   "importance": "useful"
+  },
+  {
+   "item": "Restart the API and reload the page after changes",
+   "importance": "minor"
+  },
+  {
+   "item": "Dev proxy only works for development, not production",
+   "importance": "minor"
+  }
+ ]
+}

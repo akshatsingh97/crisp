@@ -1,0 +1,177 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 4.0,
+  "minor": 4.0
+ },
+ "added": {
+  "critical": 1.0,
+  "useful": 4.5,
+  "minor": 6.0
+ },
+ "cut_items": [
+  {
+   "item": "Distinguish a leak from load-proportional growth: if memory rises with traffic and falls when traffic stops, you need headroom rather than a leak fix",
+   "importance": "useful"
+  },
+  {
+   "item": "Use the 'Objects allocated between Snapshot 1 and Snapshot 2' view and sort by retained size",
+   "importance": "minor"
+  },
+  {
+   "item": "Programmatic snapshot via v8.writeHeapSnapshot() or heapdump for production",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that a snapshot needs about twice the heap size in free memory",
+   "importance": "useful"
+  },
+  {
+   "item": "Closures retaining large objects such as request or response objects as a cause",
+   "importance": "minor"
+  },
+  {
+   "item": "Growing queues where producers outpace consumers as a cause",
+   "importance": "minor"
+  },
+  {
+   "item": "Use lru-cache with a max as a concrete fix",
+   "importance": "minor"
+  },
+  {
+   "item": "Verify the fix with a load test, watching heapUsed for several hours for a stable band",
+   "importance": "useful"
+  },
+  {
+   "item": "Offer to search the code in the directory for the patterns",
+   "importance": "minor"
+  },
+  {
+   "item": "Distinguish leak from traffic-driven growth: if memory falls when traffic stops, it needs headroom not a leak fix",
+   "importance": "useful"
+  },
+  {
+   "item": "heapdump or v8.writeHeapSnapshot() for production snapshots",
+   "importance": "useful"
+  },
+  {
+   "item": "Snapshot needs about twice heap size in free memory",
+   "importance": "useful"
+  },
+  {
+   "item": "Use 'Objects allocated between Snapshot 1 and 2' view and sort by retained size",
+   "importance": "minor"
+  },
+  {
+   "item": "Verify fix with multi-hour load test, heapUsed in stable band",
+   "importance": "useful"
+  },
+  {
+   "item": "Closures retaining request/response objects and growing queues where producers outpace consumers as causes",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to search the local code for the patterns",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "If rss grows but heapUsed stays flat, the leak is outside the heap (Buffers, native addons, streams)",
+   "importance": "critical"
+  },
+  {
+   "item": "--heapsnapshot-near-heap-limit=3 (Node 16+) captures snapshots just before the crash",
+   "importance": "critical"
+  },
+  {
+   "item": "Fallback diagnostics if snapshots do not show the cause: node --trace-gc, clinic doctor/heapprofiler, and the heap profiler allocation view",
+   "importance": "useful"
+  },
+  {
+   "item": "A ready-to-use setInterval logging snippet for heapUsed and rss",
+   "importance": "useful"
+  },
+  {
+   "item": "chrome://inspect steps and the Comparison view sorted by Size Delta",
+   "importance": "useful"
+  },
+  {
+   "item": "kill -USR2 <pid> command to trigger the snapshot",
+   "importance": "useful"
+  },
+  {
+   "item": "In containers, a heap limit above the container memory limit means the OOM killer ends the process first",
+   "importance": "useful"
+  },
+  {
+   "item": "Set a memory-based alert so you can act before the crash",
+   "importance": "useful"
+  },
+  {
+   "item": "Look for MaxListenersExceededWarning to spot listener leaks",
+   "importance": "minor"
+  },
+  {
+   "item": "Per-request data stored in module-level variables as a cause",
+   "importance": "minor"
+  },
+  {
+   "item": "Unbounded metrics label sets such as a user ID used as a label",
+   "importance": "minor"
+  },
+  {
+   "item": "Streams never consumed or closed as a cause",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that the default heap limit depends on Node version and system memory",
+   "importance": "minor"
+  },
+  {
+   "item": "Distinguish heap leak from non-heap leak: if rss grows but heapUsed flat, check Buffers, native addons, streams",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete setInterval code snippet for logging memoryUsage heapUsed and rss",
+   "importance": "minor"
+  },
+  {
+   "item": "Use Comparison view sorted by Size Delta in DevTools; step-by-step chrome://inspect workflow",
+   "importance": "minor"
+  },
+  {
+   "item": "--heapsnapshot-near-heap-limit=3 (Node 16+) captures snapshots just before crash",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that exceeding container limit with max-old-space-size lets OOM killer kill process first (explicit reason)",
+   "importance": "minor"
+  },
+  {
+   "item": "Look for MaxListenersExceededWarning as a sign of listener leak",
+   "importance": "minor"
+  },
+  {
+   "item": "Streams never consumed/closed and per-request data in module-level variables as causes",
+   "importance": "minor"
+  },
+  {
+   "item": "Fallback diagnostics: node --trace-gc, clinic doctor/heapprofiler, allocation heap profiler in inspect",
+   "importance": "useful"
+  },
+  {
+   "item": "Set memory-based alert to act before crash",
+   "importance": "minor"
+  },
+  {
+   "item": "kill -USR2 <pid> command to write the snapshot",
+   "importance": "minor"
+  }
+ ]
+}

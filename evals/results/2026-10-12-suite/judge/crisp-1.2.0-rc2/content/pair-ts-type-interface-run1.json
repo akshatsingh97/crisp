@@ -1,0 +1,101 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "candidate",
+  "equal"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Error messages and hover text often show interface names more clearly, while type aliases may expand into full structure",
+   "importance": "minor"
+  },
+  {
+   "item": "Compiler check speed: interfaces are usually slightly faster in large codebases, though the gap rarely matters",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggestion to check whether a linter enforces a choice, naming @typescript-eslint/consistent-type-definitions",
+   "importance": "useful"
+  },
+  {
+   "item": "Example of function type alias (Handler) and Status string-literal union",
+   "importance": "minor"
+  },
+  {
+   "item": "Error messages and hover text often show interface names more clearly, while type aliases may expand to full structure",
+   "importance": "useful"
+  },
+  {
+   "item": "Performance gap between interface and type is usually small and rarely matters",
+   "importance": "minor"
+  },
+  {
+   "item": "Linter rule @typescript-eslint/consistent-type-definitions can enforce the choice; check if the project has one",
+   "importance": "useful"
+  },
+  {
+   "item": "A class cannot implement a union type (explicit limitation, though X mentions the object-shape caveat as well)",
+   "importance": "minor"
+  },
+  {
+   "item": "Examples of type aliases for string-literal union (Status) and function type (Handler)",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Concrete declaration merging example (augmenting Window interface)",
+   "importance": "useful"
+  },
+  {
+   "item": "Example of extending via intersection for type (Cat = Animal & {...}), contrasting with interface extends",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation that the compiler caches interface relationships by name, and deep & chains can be slower with harder error messages",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that many teams use type everywhere, or interface for objects and type for the rest",
+   "importance": "minor"
+  },
+  {
+   "item": "Practical fallback heuristic: start with interface for objects and switch to type when a type-only feature is needed",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit mention that type uses & intersection for extending, and that both can combine shapes",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete code example of declaration merging (Window augmentation)",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete example of type intersection extending (Cat = Animal & {...}) alongside interface extends, and mapped type example Flags<T>",
+   "importance": "minor"
+  },
+  {
+   "item": "Interface relationships are cached by name, so deep & chains can be slower and give harder error messages (explains the performance cause)",
+   "importance": "minor"
+  },
+  {
+   "item": "Start with interface for objects and switch to type when a type-only feature is needed (concrete default strategy)",
+   "importance": "useful"
+  },
+  {
+   "item": "Note that many teams use type everywhere, or interface for objects and type for the rest (common team conventions)",
+   "importance": "minor"
+  }
+ ]
+}

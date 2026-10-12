@@ -1,0 +1,133 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.5,
+  "useful": 5.0,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Error responses (500, proxy/gateway failures) often lack CORS headers, so the browser shows the CORS message and hides the real error; check the status code in the Network tab",
+   "importance": "useful"
+  },
+  {
+   "item": "A redirect (e.g. HTTP to HTTPS) can drop the CORS headers; call the final URL",
+   "importance": "useful"
+  },
+  {
+   "item": "CORS middleware must be registered before the routes",
+   "importance": "useful"
+  },
+  {
+   "item": "Flask example using flask-cors",
+   "importance": "minor"
+  },
+  {
+   "item": "The browser sends an Origin header and the server must reply with Access-Control-Allow-Origin set to that origin (mechanism explanation)",
+   "importance": "minor"
+  },
+  {
+   "item": "Asks for the Network tab request headers to help diagnose",
+   "importance": "minor"
+  },
+  {
+   "item": "Flask setup with flask-cors",
+   "importance": "useful"
+  },
+  {
+   "item": "Redirects (e.g. HTTP to HTTPS) can drop CORS headers; call the final URL",
+   "importance": "useful"
+  },
+  {
+   "item": "Browser sends Origin header and the server must reply with Allow-Origin matching it",
+   "importance": "minor"
+  },
+  {
+   "item": "Libraries handle preflight automatically; manual setups often miss it",
+   "importance": "minor"
+  },
+  {
+   "item": "Ask for request headers from the Network tab to help diagnose",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Setting CORS headers in both a proxy and the app produces duplicate values that the browser rejects; set them in one place",
+   "importance": "critical"
+  },
+  {
+   "item": "Django setup with django-cors-headers (INSTALLED_APPS, CorsMiddleware at the top of MIDDLEWARE, CORS_ALLOWED_ORIGINS)",
+   "importance": "useful"
+  },
+  {
+   "item": "Raw header example (Allow-Origin, Allow-Methods, Allow-Headers) for any stack",
+   "importance": "useful"
+  },
+  {
+   "item": "Check in DevTools that the OPTIONS request returns 2xx with the headers",
+   "importance": "useful"
+  },
+  {
+   "item": "Make sure the proxy, gateway or CDN does not block OPTIONS or strip headers",
+   "importance": "useful"
+  },
+  {
+   "item": "Run CORS before auth middleware so 401/500 responses include the headers",
+   "importance": "useful"
+  },
+  {
+   "item": "Restart the API and reload the frontend after changing it",
+   "importance": "minor"
+  },
+  {
+   "item": "If you cannot change the API, use a dev proxy (dev only)",
+   "importance": "minor"
+  },
+  {
+   "item": "Expands the CORS acronym and explains what an origin is and why the browser blocks the response",
+   "importance": "minor"
+  },
+  {
+   "item": "Django setup (django-cors-headers, INSTALLED_APPS, middleware, CORS_ALLOWED_ORIGINS)",
+   "importance": "useful"
+  },
+  {
+   "item": "Raw CORS header example for any stack (Allow-Origin/Methods/Headers values)",
+   "importance": "useful"
+  },
+  {
+   "item": "Set headers in only one place: duplicate headers from proxy and app cause the browser to reject",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation of why CORS happens (origin mismatch, API must opt in)",
+   "importance": "minor"
+  },
+  {
+   "item": "Restart API and reload frontend",
+   "importance": "minor"
+  },
+  {
+   "item": "Use DevTools Network tab to verify the OPTIONS request returns 2xx with headers",
+   "importance": "useful"
+  },
+  {
+   "item": "Middleware ordering: CORS must run before auth so error responses like 401 carry the headers",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not use * in production unless API is public",
+   "importance": "minor"
+  }
+ ]
+}

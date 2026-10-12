@@ -1,0 +1,217 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 5.5,
+  "minor": 6.5
+ },
+ "added": {
+  "critical": 0.5,
+  "useful": 5.0,
+  "minor": 7.0
+ },
+ "cut_items": [
+  {
+   "item": "Explicit warning not to delete anything else in /var/lib/postgresql except via PostgreSQL commands",
+   "importance": "useful"
+  },
+  {
+   "item": "States old logs are safe to remove or compress",
+   "importance": "minor"
+  },
+  {
+   "item": "pg_rotate_logfile() SQL to rotate the active huge log",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests fixing causes such as log_statement='all'",
+   "importance": "minor"
+  },
+  {
+   "item": "Check pg_stat_replication for lagging replicas / long-running transactions",
+   "importance": "useful"
+  },
+  {
+   "item": "Run CHECKPOINT after fixing cause so WAL is recycled",
+   "importance": "useful"
+  },
+  {
+   "item": "Verify target: usage below 80%, no stuck slot, no new archiver failures",
+   "importance": "useful"
+  },
+  {
+   "item": "Add a lower-threshold alert (e.g. 75%) as follow-up",
+   "importance": "minor"
+  },
+  {
+   "item": "Escalation criteria: usage >95%, PostgreSQL stopped, or unsure about dropping a slot",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that VACUUM FULL does shrink disk use (vs plain VACUUM) ",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions archive old data / add disk if growth is real",
+   "importance": "minor"
+  },
+  {
+   "item": "Do not delete anything in /var/lib/postgresql except through PostgreSQL commands",
+   "importance": "useful"
+  },
+  {
+   "item": "SQL pg_rotate_logfile() to rotate the active log without shell tools",
+   "importance": "useful"
+  },
+  {
+   "item": "Check pg_stat_replication for lagging replicas, and check for long-running transactions",
+   "importance": "useful"
+  },
+  {
+   "item": "Run CHECKPOINT; after fixing the cause so PostgreSQL can recycle old WAL",
+   "importance": "useful"
+  },
+  {
+   "item": "Escalation criteria: page the DB owner if usage is above 95%, PostgreSQL has stopped, or it is unclear whether a slot can be dropped",
+   "importance": "useful"
+  },
+  {
+   "item": "Verify that usage is below 80%, and check that pg_stat_archiver shows no new failures and no slot is stuck",
+   "importance": "minor"
+  },
+  {
+   "item": "Add a lower-threshold alert (such as 75%) to get earlier warning",
+   "importance": "minor"
+  },
+  {
+   "item": "Check for the log-growth causes log_statement='all' and error loops",
+   "importance": "minor"
+  },
+  {
+   "item": "Compress old logs instead of deleting them",
+   "importance": "minor"
+  },
+  {
+   "item": "Fix archive_command or the archive target; WAL stays on disk until archiving works",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that VACUUM FULL does shrink disk use, in contrast to plain VACUUM",
+   "importance": "minor"
+  },
+  {
+   "item": "ls -lhS command to list the biggest log files",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that a wrong pg_wal delete can break replicas and recovery",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Also forbids moving or editing pg_wal files, not just deleting",
+   "importance": "useful"
+  },
+  {
+   "item": "Check whether data and logs share one filesystem",
+   "importance": "useful"
+  },
+  {
+   "item": "du -x command with sort across directories (stays on one filesystem)",
+   "importance": "minor"
+  },
+  {
+   "item": "logrotate -f command to rotate logs (with caveat that path is an assumption)",
+   "importance": "useful"
+  },
+  {
+   "item": "Delete old logs only if retention policy allows",
+   "importance": "minor"
+  },
+  {
+   "item": "Slot query shows retained WAL size via pg_wal_lsn_diff",
+   "importance": "useful"
+  },
+  {
+   "item": "pg_stat_archiver query includes last_failed_wal and last_failed_time",
+   "importance": "minor"
+  },
+  {
+   "item": "Specific archive failure causes to check (space, credentials, network)",
+   "importance": "minor"
+  },
+  {
+   "item": "Dropping a slot breaks the consumer, which then needs a rebuild",
+   "importance": "useful"
+  },
+  {
+   "item": "Ask the data owner before dropping or archiving table data",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not run VACUUM FULL on a nearly full disk because it needs extra space for a copy",
+   "importance": "critical"
+  },
+  {
+   "item": "Verify the alert clears and usage is not still rising",
+   "importance": "minor"
+  },
+  {
+   "item": "Escalate to DB on-call when extending volume, before 100%",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains PostgreSQL stops accepting writes when disk full and defines WAL/checkpoint",
+   "importance": "minor"
+  },
+  {
+   "item": "Rule that pg_wal files must not be moved or edited either, not just deleted, and that PostgreSQL removes old WAL itself once the cause is fixed",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning not to run VACUUM FULL on a nearly full disk because it needs extra space for a table copy",
+   "importance": "useful"
+  },
+  {
+   "item": "Query showing how much WAL each replication slot retains (pg_wal_lsn_diff with pg_size_pretty), which makes the culprit slot easy to spot",
+   "importance": "useful"
+  },
+  {
+   "item": "Specific logrotate -f command to force log rotation, with the caveat that the config path is an assumption",
+   "importance": "minor"
+  },
+  {
+   "item": "Delete old logs only if the retention policy allows it",
+   "importance": "minor"
+  },
+  {
+   "item": "Ask the data owner before dropping or archiving any table data",
+   "importance": "useful"
+  },
+  {
+   "item": "du command that lists the largest directories (du -xh --max-depth=2 sorted)",
+   "importance": "minor"
+  },
+  {
+   "item": "Extend the volume and escalate to the DB on-call before the disk reaches 100%",
+   "importance": "minor"
+  },
+  {
+   "item": "Record the root cause and fix in the incident notes",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that a checkpoint is a periodic flush, and that space returns after the next checkpoint",
+   "importance": "minor"
+  },
+  {
+   "item": "Dropping a slot breaks that consumer, which then needs a rebuild",
+   "importance": "minor"
+  }
+ ]
+}

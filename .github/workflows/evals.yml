@@ -1,0 +1,38 @@
+name: Evaluation suite
+
+# Runs the model-based evaluation suite. It needs an ANTHROPIC_API_KEY secret,
+# makes about 400 model calls, and runs only when started by hand.
+on:
+  workflow_dispatch:
+    inputs:
+      suites:
+        description: "Comma-separated suites (content,strict,on_demand,tldr,clarify,check,creative)"
+        default: "content,strict,on_demand,tldr,clarify,check,creative"
+      runs:
+        description: "Runs per content scenario"
+        default: "2"
+
+jobs:
+  suite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Run the suite
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python evals/run_suite.py --suites "${{ inputs.suites }}" --runs "${{ inputs.runs }}" --jobs 8 --out suite-results
+      - name: Upload the results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: suite-results
+          path: suite-results

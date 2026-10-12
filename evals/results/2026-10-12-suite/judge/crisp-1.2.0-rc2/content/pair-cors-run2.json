@@ -1,0 +1,121 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 3.5
+ },
+ "added": {
+  "critical": 0.5,
+  "useful": 5.5,
+  "minor": 1.5
+ },
+ "cut_items": [
+  {
+   "item": "Explains origin definition and gives a concrete cross-origin example (localhost:3000 vs localhost:8000)",
+   "importance": "minor"
+  },
+  {
+   "item": "Flask (flask_cors) example",
+   "importance": "minor"
+  },
+  {
+   "item": "Redirects/500 errors can lack CORS headers so the browser shows the CORS message and hides the real error; check server logs",
+   "importance": "useful"
+  },
+  {
+   "item": "Preflight OPTIONS is triggered by PUT, DELETE, JSON bodies or Authorization header, and most CORS libraries handle it automatically",
+   "importance": "minor"
+  },
+  {
+   "item": "Flask example using flask_cors",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation of what makes a request cross-origin with an example (localhost:3000 vs localhost:8000)",
+   "importance": "minor"
+  },
+  {
+   "item": "Check server logs because the CORS message hides the real error",
+   "importance": "useful"
+  },
+  {
+   "item": "Most CORS libraries handle preflight automatically",
+   "importance": "minor"
+  },
+  {
+   "item": "Wildcard * is acceptable when the API is public and uses no cookies",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to diagnose if user provides request URL, framework, and response headers",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "The request often reaches the server; the browser only hides the result",
+   "importance": "minor"
+  },
+  {
+   "item": "Find the exact frontend origin; trailing slash or different port counts as a different origin",
+   "importance": "useful"
+  },
+  {
+   "item": "Restart the API, reload the frontend, and verify the Access-Control-Allow-Origin header in the Network tab",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit preflight response header example (Allow-Methods, Allow-Headers values)",
+   "importance": "useful"
+  },
+  {
+   "item": "Redirect (e.g., HTTP to HTTPS) can break preflight; preflight must not redirect",
+   "importance": "useful"
+  },
+  {
+   "item": "If you can't change the API, put your own backend or proxy in between, since CORS applies only to browsers",
+   "importance": "useful"
+  },
+  {
+   "item": "Wildcard * in production lets any website read the responses (reason for the warning)",
+   "importance": "minor"
+  },
+  {
+   "item": "Request often reaches the server; browser only hides the result (clarifies that it's a browser-enforced block)",
+   "importance": "useful"
+  },
+  {
+   "item": "Trailing slashes/different port count as a different origin; find exact frontend origin",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit preflight header example (Allow-Origin, Allow-Methods, Allow-Headers values) for manual servers",
+   "importance": "useful"
+  },
+  {
+   "item": "Restart the API and verify in Network tab that Access-Control-Allow-Origin appears in response headers",
+   "importance": "useful"
+  },
+  {
+   "item": "Redirect (e.g., HTTP to HTTPS) breaks preflight; preflight must not redirect",
+   "importance": "useful"
+  },
+  {
+   "item": "Error pages (404/500/proxy errors) often lack CORS headers, producing the same message",
+   "importance": "useful"
+  },
+  {
+   "item": "If you cannot change the API, put your own backend/proxy in between since CORS applies only to browsers",
+   "importance": "critical"
+  },
+  {
+   "item": "Wildcard * lets any website read responses for private APIs (reason to avoid)",
+   "importance": "minor"
+  }
+ ]
+}

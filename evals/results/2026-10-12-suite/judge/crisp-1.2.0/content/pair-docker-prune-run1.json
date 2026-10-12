@@ -1,0 +1,125 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "baseline",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 3.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 4.0,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Warning to back up database/other volume data before running the command (data loss is permanent)",
+   "importance": "useful"
+  },
+  {
+   "item": "Docker asks for confirmation by default; -f skips it",
+   "importance": "minor"
+  },
+  {
+   "item": "Lists what prune -a --volumes removes (stopped containers, unused networks, unused images, build cache, unused volumes)",
+   "importance": "minor"
+  },
+  {
+   "item": "Compact three-command sequence to stop and remove all containers including running ones, then prune everything (docker rm -f)",
+   "importance": "useful"
+  },
+  {
+   "item": "Claim that on recent Docker versions --volumes removes only anonymous volumes, with fix via docker volume prune -a for named volumes (partly inaccurate: system prune --volumes with -a prunes all unused volumes on newer versions; but flags the named-volume nuance)",
+   "importance": "minor"
+  },
+  {
+   "item": "Individual per-type prune commands: docker container prune, image prune -a, volume prune -a, builder prune -a",
+   "importance": "useful"
+  },
+  {
+   "item": "Docker Desktop 'Clean / Purge data' setting and lowering disk image size to reclaim space",
+   "importance": "minor"
+  },
+  {
+   "item": "Docker prompts for confirmation by default; -f skips it (lets reader keep a safety check)",
+   "importance": "useful"
+  },
+  {
+   "item": "Claim that on recent Docker versions --volumes removes only anonymous volumes and named volumes need `docker volume prune -a` (this is accurate for Docker 23+ for `docker volume prune`, but not for `system prune --volumes`, which in practice also needs -a; the suggested '--filter' is vague)",
+   "importance": "minor"
+  },
+  {
+   "item": "Individual per-type prune commands including `docker container prune`, `docker image prune -a`, `docker volume prune -a`, `docker builder prune -a`",
+   "importance": "useful"
+  },
+  {
+   "item": "Back up any database or other data before running (backup advice)",
+   "importance": "useful"
+  },
+  {
+   "item": "Docker Desktop setting name 'Clean / Purge data' for reclaiming space",
+   "importance": "minor"
+  },
+  {
+   "item": "States prune -a --volumes also deletes build cache",
+   "importance": "minor"
+  },
+  {
+   "item": "Shorter full-removal path: stop, rm -f all containers, then system prune -a --volumes -f (also covers networks and build cache in one command)",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Check what volumes exist first with docker volume ls before deleting",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit step-by-step full wipe: rmi -f for all images, volume rm for all volumes, builder prune, network prune",
+   "importance": "useful"
+  },
+  {
+   "item": "Note that empty lists cause a harmless usage error from the commands",
+   "importance": "minor"
+  },
+  {
+   "item": "Safer alternatives: docker system prune (no -a), docker image prune for dangling only, docker volume prune",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicitly notes prune skips running containers and the images/volumes they use",
+   "importance": "useful"
+  },
+  {
+   "item": "Advise checking what exists first with `docker volume ls` before deleting volumes",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit step-by-step full wipe with separate commands for stopping containers, removing containers, removing images (rmi -f), and removing volumes (docker volume rm)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit command to explicitly remove all volumes including named ones (docker volume rm $(docker volume ls -q)) so the full wipe really covers volumes",
+   "importance": "useful"
+  },
+  {
+   "item": "Network prune command (docker network prune -f) as a cleanup step",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that empty lists cause a harmless usage error from the commands",
+   "importance": "minor"
+  },
+  {
+   "item": "Safer options: plain `docker system prune` (stopped containers, dangling images, unused networks) and `docker image prune` for dangling only",
+   "importance": "useful"
+  },
+  {
+   "item": "Note that prune skips running containers and images/volumes they use (stated before the full wipe)",
+   "importance": "minor"
+  }
+ ]
+}

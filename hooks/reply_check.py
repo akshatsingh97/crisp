@@ -157,7 +157,7 @@ def decide(event, env_mode=None, env_level=None, env_check=None):
         "reason": (
             f"Crisp reply check: your last answer scored {report['score']}/100 ({summary}). "
             "Write the answer again with the Crisp rules. Keep every fact, number, caveat, "
-            "step, and code block (completeness rules E1 to E8). Add no new content. "
+            "step, warning, example, alternative, and code block (completeness rules E1 to E14). Change only the wording and order. "
             "Do not mention this check."
         ),
     }

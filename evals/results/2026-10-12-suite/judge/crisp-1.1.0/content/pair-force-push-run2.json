@@ -1,0 +1,81 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Explains why the rejection happens: after a rebase the local history no longer extends the remote history",
+   "importance": "minor"
+  },
+  {
+   "item": "Command `git log HEAD..origin/your-branch` to specifically show unfetched remote commits not in local branch",
+   "importance": "useful"
+  },
+  {
+   "item": "Open pull request is updated by the push, but review comments on old commits may become outdated",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative: merge the target branch into the feature branch instead of rebasing, which pushes without force but adds a merge commit",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns that a plain git pull by teammates would merge old and new history together (explains why reset is needed)",
+   "importance": "minor"
+  },
+  {
+   "item": "Specific check command `git log HEAD..origin/your-branch` showing only remote commits not in local history, which more precisely detects others' commits",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that if the branch has an open pull request, the force push updates it and review comments on old commits can become outdated",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative: merge the target branch into the feature branch instead of rebasing, which pushes without force at the cost of a merge commit",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains that a normal `git pull` by teammates would merge old and new history together",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit full command in a code block with `--force-with-lease` usage",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Explicit ordered workflow: fetch, inspect log of origin/your-branch, then push with lease",
+   "importance": "minor"
+  },
+  {
+   "item": "Says to stop if unrecognized commits are present, because a force push will delete their work (explicit stop instruction)",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to tell teammates before force-pushing if they share the branch",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains why the push is rejected (remote has old commits) and that replacing remote history is the correct fix",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit step to run `git fetch origin` and `git log origin/your-branch` to verify commits before pushing",
+   "importance": "minor"
+  }
+ ]
+}

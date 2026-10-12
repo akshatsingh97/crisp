@@ -24,4 +24,4 @@ The checker cannot see missing facts. Also review the text against Part E (compl
 
 If the text is a document (README, runbook, guide), add `--type doc` to the checker command.
 
-Use only the rule IDs from the crisp skill and its `references/docs.md` (A1 to A12, B1 to B14, C1 to C6, E1 to E8, F1 to F10).
+Use only the rule IDs from the crisp skill and its `references/docs.md` (A1 to A12, B1 to B14, C1 to C6, E1 to E14, F1 to F10).

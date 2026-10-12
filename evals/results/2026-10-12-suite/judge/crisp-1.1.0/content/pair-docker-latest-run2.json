@@ -1,0 +1,85 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "baseline",
+  "equal"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 4.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 1.0
+ },
+ "cut_items": [
+  {
+   "item": "Upgrades are silent: breaking changes (e.g., Python 3.12 to 3.13, Debian bookworm to trixie) surface as unrelated CI/prod failures",
+   "importance": "minor"
+  },
+  {
+   "item": "Caching pitfall: stale local `latest` vs newer pull on a clean CI runner leads to inconsistent builds between environments",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning to avoid bare major tags like `python:3`",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that keeping the tag alongside the digest preserves readability",
+   "importance": "minor"
+  },
+  {
+   "item": "Bot-driven bumps keep security patches flowing through review and CI",
+   "importance": "minor"
+  },
+  {
+   "item": "Even for dev use, a pinned tag is a good habit",
+   "importance": "minor"
+  },
+  {
+   "item": "Silent upgrades example: breaking changes such as Python 3.12 to 3.13 or Debian bookworm to trixie surface as CI/prod failures",
+   "importance": "minor"
+  },
+  {
+   "item": "Caching pitfall: stale local 'latest' vs newer pull on clean CI runner causes disagreement",
+   "importance": "useful"
+  },
+  {
+   "item": "Avoid bare major tags like python:3 (not specific enough)",
+   "importance": "useful"
+  },
+  {
+   "item": "Tag stays for readability while digest guarantees exact bytes; patches go through review and CI via bot PRs",
+   "importance": "minor"
+  },
+  {
+   "item": "Auditing/CVE response: can't tell which base image a deployment was built from",
+   "importance": "minor"
+  },
+  {
+   "item": "Even in dev/throwaway use, pinned tag is a good habit",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Explicit risk caveat: a pinned digest won't receive patches on its own, so it must be updated often",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains what a digest is (a unique hash of the image content)",
+   "importance": "minor"
+  },
+  {
+   "item": "Pinned digest will not receive patches on its own; must update it often (caveat of digest pinning)",
+   "importance": "useful"
+  },
+  {
+   "item": "Security scans cannot tie an image to a fixed base",
+   "importance": "minor"
+  }
+ ]
+}

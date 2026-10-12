@@ -1,0 +1,73 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 0.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 3.5
+ },
+ "cut_items": [
+  {
+   "item": "Explains that --follow keeps logtail open and shows new lines as they're added to app.log (an inference not given in the request)",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns that if LOGTAIL_TOKEN is not set logtail cannot read the token, and says to set it in the same terminal session before running",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation that --follow keeps logtail open and shows new lines as they are added to app.log",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that if LOGTAIL_TOKEN is not set logtail cannot read the token, and it must be set in the same terminal session as the run command",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Tip to check Node version with `node --version`",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that the export command works in Bash/Zsh and that a Windows line may need adding",
+   "importance": "minor"
+  },
+  {
+   "item": "States the token must be set before running logtail",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to add a 'Get a token' step if the user supplies the steps",
+   "importance": "minor"
+  },
+  {
+   "item": "Flags that --follow was left undescribed because its behavior is unknown",
+   "importance": "minor"
+  },
+  {
+   "item": "How to check Node version (`node --version`)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit statement that the token must be set before running logtail",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that the export command works only in Bash/Zsh and Windows needs a different command",
+   "importance": "useful"
+  },
+  {
+   "item": "Placeholder token format <your-token>",
+   "importance": "minor"
+  }
+ ]
+}

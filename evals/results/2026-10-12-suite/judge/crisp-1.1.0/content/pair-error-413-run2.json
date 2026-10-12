@@ -1,0 +1,65 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Suggests compressing or choosing a smaller file as a next step in the main message",
+   "importance": "minor"
+  },
+  {
+   "item": "Alternative message suggesting sharing a link from cloud storage instead",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains what was removed (error code and jargon) and why",
+   "importance": "minor"
+  },
+  {
+   "item": "Alternative message suggesting sharing a link from cloud storage instead",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains which jargon was removed and why (request entity, payload, configured maximum)",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests choosing a smaller file as a next step",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers a second alternative message that includes multiple next steps (compress, split, cloud link)",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Suggests splitting the file into smaller parts in the main message",
+   "importance": "minor"
+  },
+  {
+   "item": "Advises keeping the error code in logs, in addition to a Details link for support",
+   "importance": "minor"
+  },
+  {
+   "item": "Advises keeping ERR_UPLOAD_413 in logs (as well as a Details link) for support/debugging",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests splitting the file into smaller parts as a next step in the main message",
+   "importance": "minor"
+  }
+ ]
+}

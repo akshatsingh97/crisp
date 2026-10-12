@@ -1,0 +1,165 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 4.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 7.5,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "Distinguish leak from legitimate load-driven memory: if heap rises with traffic and falls when traffic stops, need more headroom not leak fix",
+   "importance": "useful"
+  },
+  {
+   "item": "DevTools 'Objects allocated between Snapshot 1 and 2' view and sort by retained size",
+   "importance": "minor"
+  },
+  {
+   "item": "Closures holding request/response objects as a specific example",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to search code in the directory for the patterns",
+   "importance": "minor"
+  },
+  {
+   "item": "Distinguish leak from load-proportional memory: if memory falls when traffic stops, need headroom rather than leak fix",
+   "importance": "useful"
+  },
+  {
+   "item": "Specific DevTools view 'Objects allocated between Snapshot 1 and Snapshot 2' and sort by retained size",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests heapdump module as production option",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions lru-cache package with max option",
+   "importance": "minor"
+  },
+  {
+   "item": "Closures holding request/response objects example",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to search the local code for the patterns",
+   "importance": "minor"
+  },
+  {
+   "item": "Expected healthy pattern: heapUsed rises and falls in a stable band",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "--heapsnapshot-near-heap-limit=3 flag to auto-write snapshots when nearing the limit (captures the crash state in production)",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that snapshots contain sensitive data (tokens, user records) and must be stored securely",
+   "importance": "useful"
+  },
+  {
+   "item": "If RSS grows but heap flat, leak is outside V8 heap: check Buffers, native addons, external and arrayBuffers",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative profiling tools: clinic heapprofiler and node --heap-prof for allocation sites",
+   "importance": "useful"
+  },
+  {
+   "item": "Restart on schedule or memory threshold with PM2 max_memory_restart / Kubernetes limit (specific mechanisms)",
+   "importance": "minor"
+  },
+  {
+   "item": "chrome://inspect to attach to the inspector",
+   "importance": "minor"
+  },
+  {
+   "item": "MaxListenersExceededWarning in logs signals listener leak",
+   "importance": "useful"
+  },
+  {
+   "item": "Protect any admin route used to trigger snapshots",
+   "importance": "minor"
+  },
+  {
+   "item": "Unbounded metrics labels (user IDs) create unlimited time series",
+   "importance": "minor"
+  },
+  {
+   "item": "Large result sets loaded into memory: use streams/pagination",
+   "importance": "useful"
+  },
+  {
+   "item": "Check large payloads/JSON parsing/buffers if no leak; workload may simply need more memory",
+   "importance": "useful"
+  },
+  {
+   "item": "Use --expose-gc and global.gc() to force GC when verifying in tests",
+   "importance": "minor"
+  },
+  {
+   "item": "Scheduled/threshold restarts via PM2 max_memory_restart or Kubernetes memory limit, with note that it only hides the leak",
+   "importance": "useful"
+  },
+  {
+   "item": "--heapsnapshot-near-heap-limit=3 flag to auto-write snapshots when nearing the limit",
+   "importance": "useful"
+  },
+  {
+   "item": "Snapshots contain sensitive data (tokens, user records); store securely",
+   "importance": "useful"
+  },
+  {
+   "item": "Take baseline snapshot then apply load 10-30 min; use Comparison view sorted by Size Delta",
+   "importance": "minor"
+  },
+  {
+   "item": "MaxListenersExceededWarning in logs indicates listener leak",
+   "importance": "minor"
+  },
+  {
+   "item": "Unbounded per-request metric labels (e.g., user IDs) create unlimited time series",
+   "importance": "useful"
+  },
+  {
+   "item": "Large result sets loaded into memory: use streams or pagination",
+   "importance": "useful"
+  },
+  {
+   "item": "If no clear leak: workload may need more memory (large payloads, big JSON parsing, buffers); add streaming",
+   "importance": "useful"
+  },
+  {
+   "item": "If RSS grows but heap flat, leak is outside V8 heap: check Buffers, native addons, memoryUsage().external and arrayBuffers",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative profiling tools: clinic heapprofiler and node --heap-prof for allocation hot spots",
+   "importance": "useful"
+  },
+  {
+   "item": "Force GC in tests with --expose-gc and global.gc() to verify the fix",
+   "importance": "minor"
+  },
+  {
+   "item": "Protect admin route / signal handler used to trigger snapshots",
+   "importance": "minor"
+  },
+  {
+   "item": "Define GC and LRU for readers",
+   "importance": "minor"
+  }
+ ]
+}

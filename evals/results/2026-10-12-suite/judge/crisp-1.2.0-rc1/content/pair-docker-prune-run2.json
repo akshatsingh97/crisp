@@ -1,0 +1,125 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 1.0,
+  "useful": 3.5,
+  "minor": 6.5
+ },
+ "cut_items": [
+  {
+   "item": "Single combined command sequence including stopping running containers first before prune",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit note that the prune command also removes build cache and that the Docker Engine 25+ caveat applies to --volumes (anonymous only); gives docker volume prune -a -f",
+   "importance": "minor"
+  },
+  {
+   "item": "Stops running containers first with `docker stop $(docker ps -q)` so a single prune command can clean up everything, including the stopped containers (this answers the user's 'delete all' intent directly)",
+   "importance": "useful"
+  },
+  {
+   "item": "Pairs docker volume prune -a -f to remove named volumes, with the version caveat",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Clarifies that docker system prune -a --volumes keeps running containers and the images/volumes they use (X's stop-first step makes it wipe everything, but Y states the actual behavior)",
+   "importance": "useful"
+  },
+  {
+   "item": "Docker Desktop on Mac/Windows: virtual disk file doesn't shrink on its own; use Settings > Resources disk image size or Clean/Purge data",
+   "importance": "critical"
+  },
+  {
+   "item": "Troubleshooting: 'volume is in use' and 'image is being used' errors, remove the container first",
+   "importance": "useful"
+  },
+  {
+   "item": "Per-type targeted cleanup commands (container prune, image prune dangling vs -a, volume prune, builder prune -a)",
+   "importance": "useful"
+  },
+  {
+   "item": "docker builder prune -a -f in the full-wipe sequence to clear build cache",
+   "importance": "minor"
+  },
+  {
+   "item": "Distinguishes quick prune (unused only) from full wipe including running containers, with warning scoped to the destructive full wipe",
+   "importance": "useful"
+  },
+  {
+   "item": "Confirmation prompt behavior (y to confirm, -f to skip)",
+   "importance": "minor"
+  },
+  {
+   "item": "Identifies the empty-list error message text ('requires at least 1 argument') and says to skip that command",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation of dangling images (untagged layers) vs all unused images",
+   "importance": "minor"
+  },
+  {
+   "item": "docker rm -f runs after docker stop with -aq (covers stopped containers too)",
+   "importance": "minor"
+  },
+  {
+   "item": "Run `docker system df` before cleanup to check usage (Y mentions before and after)",
+   "importance": "minor"
+  },
+  {
+   "item": "Prune command keeps running containers and the images and volumes they use",
+   "importance": "useful"
+  },
+  {
+   "item": "Confirmation prompt: type y, or use -f to skip it",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit warning that deleted data is unrecoverable (Y also has this)",
+   "importance": "minor"
+  },
+  {
+   "item": "Docker 23+ caveat that --volumes may remove only anonymous volumes, with docker volume prune -a for named ones (Y gives a similar caveat tied to Engine 25)",
+   "importance": "minor"
+  },
+  {
+   "item": "Full wipe sequence also includes `docker builder prune -a -f` for build cache",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains the 'requires at least 1 argument' error means the list is empty and can be skipped (Y says the error is harmless)",
+   "importance": "minor"
+  },
+  {
+   "item": "Per-type prune commands: docker container prune, docker image prune (dangling), docker image prune -a, docker volume prune, docker builder prune -a",
+   "importance": "useful"
+  },
+  {
+   "item": "Docker Desktop on Mac/Windows: the virtual disk file does not shrink on its own, so use Settings > Resources > Disk image size or Clean/Purge data",
+   "importance": "critical"
+  },
+  {
+   "item": "Troubleshooting: 'volume is in use' or 'image is being used' errors mean you must remove the container using it first",
+   "importance": "useful"
+  },
+  {
+   "item": "Lists exactly what system prune removes, including that it covers networks and build cache",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit warning to back up database or upload data before the full wipe",
+   "importance": "minor"
+  }
+ ]
+}

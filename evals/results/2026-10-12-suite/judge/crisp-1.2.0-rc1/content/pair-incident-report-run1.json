@@ -1,0 +1,165 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 7.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "Possible reasons for the value change (typo, wrong environment value, test value leaking to production) and a prompt to confirm which applies",
+   "importance": "useful"
+  },
+  {
+   "item": "Open question of why the value changed from 50 to 5",
+   "importance": "useful"
+  },
+  {
+   "item": "Hypotheses for why only 18% failed (some requests got a connection, or only some instances received the change)",
+   "importance": "useful"
+  },
+  {
+   "item": "What went well: rollback restored service within two minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: require review for config changes to database settings",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: alert on database pool exhaustion with a specific 5-minute 5xx alert target",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: reject pool size below a safe minimum (absolute floor validation)",
+   "importance": "minor"
+  },
+  {
+   "item": "Prompt to add first-alert time and investigation start time to the timeline",
+   "importance": "minor"
+  },
+  {
+   "item": "Reminder that each action item needs an owner and due date",
+   "importance": "minor"
+  },
+  {
+   "item": "Stated that the checkout API needs more than 5 connections at normal load",
+   "importance": "minor"
+  },
+  {
+   "item": "Open question on how long detection took",
+   "importance": "minor"
+  },
+  {
+   "item": "What went well section: rollback restored service within two minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Possible reasons the value changed (typo, wrong environment value, test value reaching prod) and a prompt to confirm which",
+   "importance": "useful"
+  },
+  {
+   "item": "Open question: why the value changed from 50 to 5",
+   "importance": "useful"
+  },
+  {
+   "item": "Hypotheses for why only 18% failed (some requests got a connection, or only some instances received the change)",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: alert on checkout 5xx rate that fires within 5 minutes (specific target)",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: validation rejecting pool size below a safe minimum",
+   "importance": "minor"
+  },
+  {
+   "item": "Requires review for config changes to database settings",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that the checkout API needs more connections than 5 at normal load",
+   "importance": "minor"
+  },
+  {
+   "item": "Open question: how long detection took",
+   "importance": "minor"
+  },
+  {
+   "item": "Asks for the time of first alert and the time investigation started",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Explicit assumption flagged in the timeline that deploy time equals start of impact",
+   "importance": "useful"
+  },
+  {
+   "item": "Gap to investigate: why the 10x pool reduction passed review or deploy checks",
+   "importance": "useful"
+  },
+  {
+   "item": "Staged rollout with automatic rollback when the checkout error rate rises",
+   "importance": "useful"
+  },
+  {
+   "item": "Definition of a connection pool for readers unfamiliar with the term",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests confirming with pool metrics that the pool was undersized but not fully exhausted",
+   "importance": "minor"
+  },
+  {
+   "item": "Prompt to add alert name and responder actions to the timeline",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: validation that flags large relative changes to pool size",
+   "importance": "minor"
+  },
+  {
+   "item": "Prompt to investigate why detection or response took 33 minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes assumption that deploy time matches start of impact",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains what a connection pool is",
+   "importance": "minor"
+  },
+  {
+   "item": "Gap: asks why change passed review/deploy checks despite a 10x reduction",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests confirming with pool metrics that the pool was undersized rather than fully exhausted",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: automatic rollback if checkout error rate rises during staged rollout",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: review the config change process for database settings",
+   "importance": "minor"
+  },
+  {
+   "item": "Reminder to assign owners and due dates before publishing",
+   "importance": "minor"
+  }
+ ]
+}

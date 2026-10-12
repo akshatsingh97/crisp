@@ -1,0 +1,181 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 10.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 4.5
+ },
+ "cut_items": [
+  {
+   "item": "Explicit warning not to delete anything else in /var/lib/postgresql except via PostgreSQL commands",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that wrong pg_wal deletion can also break replicas and recovery (not only corruption)",
+   "importance": "minor"
+  },
+  {
+   "item": "Command to compare sizes of pg_wal, base, and logs directly",
+   "importance": "minor"
+  },
+  {
+   "item": "pg_rotate_logfile() to rotate a huge active log",
+   "importance": "useful"
+  },
+  {
+   "item": "Find root cause of log growth (log_statement='all', error loop)",
+   "importance": "useful"
+  },
+  {
+   "item": "Check pg_stat_replication for lagging replicas / long-running transactions",
+   "importance": "useful"
+  },
+  {
+   "item": "Run CHECKPOINT after fixing cause so WAL is removed; space may take minutes to return",
+   "importance": "useful"
+  },
+  {
+   "item": "Query to find largest tables via pg_total_relation_size",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains VACUUM vs VACUUM FULL (VACUUM doesn't shrink disk; FULL locks table and needs space)",
+   "importance": "useful"
+  },
+  {
+   "item": "Extend the volume as fast fallback when space cannot be freed",
+   "importance": "useful"
+  },
+  {
+   "item": "Verify target of below 80% usage, and note cause plus add lower-threshold (75%) alert",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit escalation triggers: >95% usage, PostgreSQL stopped, unsure about dropping slot",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that a full disk stops PostgreSQL (urgency)",
+   "importance": "minor"
+  },
+  {
+   "item": "Rotate an oversized active log with pg_rotate_logfile() instead of deleting it",
+   "importance": "useful"
+  },
+  {
+   "item": "Find and fix the root cause of log growth (e.g., log_statement='all', error loop)",
+   "importance": "useful"
+  },
+  {
+   "item": "Check long-running transactions / pg_stat_replication for lagging replicas as a cause of WAL retention",
+   "importance": "useful"
+  },
+  {
+   "item": "Run CHECKPOINT after fixing cause so PostgreSQL removes old WAL; space may take minutes to return",
+   "importance": "useful"
+  },
+  {
+   "item": "Fallback: extend the volume if space cannot be freed quickly, safer than manual deletion",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning not to delete anything else in /var/lib/postgresql except via PostgreSQL commands",
+   "importance": "useful"
+  },
+  {
+   "item": "Query to list the largest tables (pg_total_relation_size)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation that plain VACUUM only makes space reusable and does not shrink disk; VACUUM FULL shrinks but locks the table",
+   "importance": "useful"
+  },
+  {
+   "item": "Verification target of below 80% and check that no slot is stuck / no new archiver failures",
+   "importance": "minor"
+  },
+  {
+   "item": "Post-incident follow-up: document cause and add a lower-threshold (75%) alert",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit escalation criteria: usage above 95%, PostgreSQL stopped, or unsure about dropping a slot",
+   "importance": "useful"
+  },
+  {
+   "item": "Goal/context: if the disk fills PostgreSQL stops",
+   "importance": "minor"
+  },
+  {
+   "item": "Use wildcard path /var/lib/postgresql/*/pg_wal and du comparison of pg_wal, base, logs to choose the section",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that a replica whose slot is dropped cannot resume; restart a merely-down replica so it catches up",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Also forbids moving or editing pg_wal files, and says corruption can prevent startup",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning not to run VACUUM FULL on nearly full disk because it needs extra space",
+   "importance": "useful"
+  },
+  {
+   "item": "Per-command expected results (what output to look for, e.g. inactive slot with old restart_lsn, failed_count/last_failed_time)",
+   "importance": "useful"
+  },
+  {
+   "item": "du -x command with sudo to list largest directories 3 levels deep",
+   "importance": "minor"
+  },
+  {
+   "item": "Ask the data owner to archive/purge old rows",
+   "importance": "minor"
+  },
+  {
+   "item": "Assumptions: psql superuser access, adjust connection options and paths",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains WAL is write-ahead log, removed by PostgreSQL at next checkpoint after slot drop",
+   "importance": "minor"
+  },
+  {
+   "item": "Command to find largest directories under /var/lib/postgresql (du --max-depth=3 sorted)",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning not to run VACUUM FULL on a nearly full disk because it needs extra space to copy the table",
+   "importance": "useful"
+  },
+  {
+   "item": "Dropping a replication slot makes PostgreSQL remove freed WAL at next checkpoint",
+   "importance": "minor"
+  },
+  {
+   "item": "Assumption that psql is run as superuser and paths/connection options must be adjusted",
+   "importance": "minor"
+  },
+  {
+   "item": "Ask data owner to archive or purge old rows for large tables",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit instruction not to move or edit pg_wal files either",
+   "importance": "useful"
+  }
+ ]
+}

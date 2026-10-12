@@ -1,0 +1,81 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 4.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 1.5
+ },
+ "cut_items": [
+  {
+   "item": "Alternative of using key={userId} on the component so React resets state on user switch",
+   "importance": "useful"
+  },
+  {
+   "item": "Catch handler sets an error state (setError) for non-abort errors rather than only logging",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicitly recommends AbortController as the better option and says to use the flag approach when the fetch library cannot abort",
+   "importance": "minor"
+  },
+  {
+   "item": "Missing dependency symptom: with userId absent, old user's data stays permanently",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests setting a loading state at the start of the effect as an alternative to clearing data",
+   "importance": "minor"
+  },
+  {
+   "item": "Recommends AbortController as the better primary fix and notes the flag approach is for fetch libraries that cannot abort",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests key={userId} on the component so React resets state on user change",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests setting a loading state at the start of the effect",
+   "importance": "minor"
+  },
+  {
+   "item": "Catch handler sets error state rather than only logging, showing error handling",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that TanStack Query/SWR also handle caching and ordering",
+   "importance": "minor"
+  },
+  {
+   "item": "States that a missing userId dependency means the old user's data is shown permanently",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Explains that React does not cancel the old request and that network timing means response order differs from request order",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that React does not cancel the old request and network timing varies so response order differs from request order",
+   "importance": "minor"
+  },
+  {
+   "item": "Shows the ignore-flag fix with fetch, plus the AbortController variant as an alternative (both fixes provided)",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests resetting user to null when userId changes to avoid showing old data while loading",
+   "importance": "useful"
+  }
+ ]
+}

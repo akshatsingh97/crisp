@@ -1,0 +1,550 @@
+{
+ "meta": {
+  "date": "2026-10-12",
+  "runs": 2,
+  "isolated": true,
+  "claude_version": "2.1.296 (Claude Code)",
+  "suites": [
+   "content",
+   "strict",
+   "on_demand",
+   "tldr",
+   "clarify",
+   "check",
+   "creative"
+  ],
+  "candidates": [
+   "crisp-1.1.0",
+   "crisp-1.2.0"
+  ],
+  "errors": []
+ },
+ "metrics": {
+  "crisp-1.1.0": {
+   "incomplete_suites": [
+    "creative"
+   ],
+   "incomplete_generation": false,
+   "missing_calls": 1,
+   "meta_leaks": 0,
+   "pairs": 36,
+   "wins": 1,
+   "losses": 30,
+   "ties": 5,
+   "critical_cut_per_pair": 0.181,
+   "critical_added_per_pair": 0.056,
+   "critical_cut_minus_added_per_pair": 0.125,
+   "useful_cut_per_pair": 3.86,
+   "useful_added_per_pair": 1.56,
+   "useful_cut_to_added_ratio": 2.48,
+   "preference_margin": -0.736,
+   "coverage_delta_pts": 1.4,
+   "accuracy_delta": 0.03,
+   "candidate_checker_score": 96.4,
+   "candidate_over_limit_per_answer": 0.42,
+   "length_ratio": 0.827,
+   "depth_length_ratio": 0.772,
+   "code_compile_rate": 1.0,
+   "by_category": {
+    "safety": {
+     "pairs": 8,
+     "wins": 1,
+     "losses": 7,
+     "critical_cut": 2.0,
+     "useful_cut": 27.5,
+     "useful_added": 11.0
+    },
+    "debug": {
+     "pairs": 4,
+     "wins": 0,
+     "losses": 4,
+     "critical_cut": 1.5,
+     "useful_cut": 14.5,
+     "useful_added": 5.0
+    },
+    "decision": {
+     "pairs": 6,
+     "wins": 0,
+     "losses": 3,
+     "critical_cut": 2.0,
+     "useful_cut": 16.5,
+     "useful_added": 11.0
+    },
+    "alternatives": {
+     "pairs": 4,
+     "wins": 0,
+     "losses": 4,
+     "critical_cut": 0.0,
+     "useful_cut": 13.5,
+     "useful_added": 4.0
+    },
+    "doc": {
+     "pairs": 10,
+     "wins": 0,
+     "losses": 8,
+     "critical_cut": 0.5,
+     "useful_cut": 38.0,
+     "useful_added": 13.5
+    },
+    "depth": {
+     "pairs": 2,
+     "wins": 0,
+     "losses": 2,
+     "critical_cut": 0.5,
+     "useful_cut": 22.5,
+     "useful_added": 9.5
+    },
+    "code": {
+     "pairs": 2,
+     "wins": 0,
+     "losses": 2,
+     "critical_cut": 0.0,
+     "useful_cut": 6.5,
+     "useful_added": 2.0
+    }
+   },
+   "critical_cut_examples": [
+    "charge-retry-run1: Stripe stores and replays the first result including errors: after a card decline, same key returns same decline, so use a new key only for a new customer attempt",
+    "charge-retry-run1: Stripe stores and replays the first result, including errors. A retry with the same key after a card decline returns the same decline, so a new key is needed when the customer starts a new attempt",
+    "node-heap-run1: In containers, keep --max-old-space-size below the container memory limit or the OS OOM-kills the process",
+    "node-heap-run1: In a container, keep --max-old-space-size below the container memory limit, or the OS OOM-kills the process",
+    "node-heap-run1: --heapsnapshot-near-heap-limit=3 writes a snapshot just before the crash, giving production evidence",
+    "pg-index-run1: Set statement_timeout = 0 for the session, since a default statement_timeout can kill the long build and leave an INVALID index",
+    "runbook-disk-run1: Do not run VACUUM FULL on a nearly full disk because it needs extra space",
+    "deep-react-fiber-run2: Caveat: time slicing works between fibers, not inside one slow function; a slow render cannot be split",
+    "docker-prune-run1: Docker Desktop (Mac/Windows) virtual disk may not shrink; use Clean/Purge data or reduce the disk image size",
+    "queue-choice-run1: Set Redis maxmemory-policy noeviction (in addition to AOF) or Redis can drop queued jobs when memory is full",
+    "queue-choice-run1: Both options are at-least-once delivery, so every job must be idempotent",
+    "queue-choice-run1: Set maxmemory-policy noeviction in Redis, otherwise queued jobs can be dropped when memory is full",
+    "queue-choice-run1: Both options deliver at-least-once, so jobs must be idempotent / safe to run twice"
+   ],
+   "strict_coverage_delta_pts": 91.7,
+   "strict_minus_lite_checker": -1.2,
+   "on_demand_skill_loads": 0,
+   "tldr_format_rate": 0.5,
+   "tldr_caveat_rate": 1.0,
+   "clarify_fact_rate": 1.0,
+   "clarify_added_facts": 0,
+   "clarify_format_rate": 1.0,
+   "check_invalid_rule_ids": 0,
+   "check_invalid_examples": [],
+   "creative_not_worse_rate": 1.0
+  },
+  "crisp-1.2.0": {
+   "incomplete_suites": [],
+   "incomplete_generation": false,
+   "missing_calls": 0,
+   "meta_leaks": 0,
+   "pairs": 36,
+   "wins": 18,
+   "losses": 8,
+   "ties": 10,
+   "critical_cut_per_pair": 0.097,
+   "critical_added_per_pair": 0.181,
+   "critical_cut_minus_added_per_pair": -0.083,
+   "useful_cut_per_pair": 2.29,
+   "useful_added_per_pair": 3.31,
+   "useful_cut_to_added_ratio": 0.69,
+   "preference_margin": 0.417,
+   "coverage_delta_pts": 3.3,
+   "accuracy_delta": 0.08,
+   "candidate_checker_score": 92.6,
+   "candidate_over_limit_per_answer": 0.53,
+   "length_ratio": 1.081,
+   "depth_length_ratio": 1.004,
+   "code_compile_rate": 1.0,
+   "by_category": {
+    "safety": {
+     "pairs": 8,
+     "wins": 5,
+     "losses": 1,
+     "critical_cut": 1.0,
+     "useful_cut": 14.0,
+     "useful_added": 30.5
+    },
+    "debug": {
+     "pairs": 4,
+     "wins": 2,
+     "losses": 2,
+     "critical_cut": 0.0,
+     "useful_cut": 11.0,
+     "useful_added": 11.0
+    },
+    "decision": {
+     "pairs": 6,
+     "wins": 4,
+     "losses": 0,
+     "critical_cut": 1.5,
+     "useful_cut": 9.0,
+     "useful_added": 21.0
+    },
+    "alternatives": {
+     "pairs": 4,
+     "wins": 3,
+     "losses": 1,
+     "critical_cut": 0.5,
+     "useful_cut": 5.5,
+     "useful_added": 9.5
+    },
+    "doc": {
+     "pairs": 10,
+     "wins": 2,
+     "losses": 3,
+     "critical_cut": 0.5,
+     "useful_cut": 22.5,
+     "useful_added": 22.0
+    },
+    "depth": {
+     "pairs": 2,
+     "wins": 1,
+     "losses": 1,
+     "critical_cut": 0.0,
+     "useful_cut": 16.0,
+     "useful_added": 19.5
+    },
+    "code": {
+     "pairs": 2,
+     "wins": 1,
+     "losses": 0,
+     "critical_cut": 0.0,
+     "useful_cut": 4.5,
+     "useful_added": 5.5
+    }
+   },
+   "critical_cut_examples": [
+    "cors-run2: Error responses (500, redirects) may lack CORS headers so the browser shows the CORS message and hides the real error; check server logs",
+    "runbook-disk-run1: Do not run VACUUM FULL on a nearly full disk (needs extra space); run normal VACUUM to reuse dead space",
+    "docker-prune-run2: Docker Engine 25+ caveat: --volumes only removes anonymous volumes, so a separate `docker volume prune -a -f` is needed to remove named volumes",
+    "docker-prune-run2: Docker Engine 25+ `--volumes` on prune removes only anonymous volumes, so named volumes may remain and `docker volume prune -a -f` is needed to remove them",
+    "queue-choice-run1: Redis must be configured with maxmemory-policy noeviction (plus AOF) or it can evict/drop queued jobs when memory is full",
+    "queue-choice-run1: Set Redis maxmemory-policy noeviction, otherwise Redis can drop queued jobs when memory is full",
+    "queue-choice-run1: Both options deliver at-least-once, so write every job to be idempotent/safe to run twice"
+   ],
+   "strict_coverage_delta_pts": 100.0,
+   "strict_minus_lite_checker": 2.8,
+   "on_demand_skill_loads": 0,
+   "tldr_format_rate": 0.5,
+   "tldr_caveat_rate": 1.0,
+   "clarify_fact_rate": 1.0,
+   "clarify_added_facts": 0,
+   "clarify_format_rate": 1.0,
+   "check_invalid_rule_ids": 0,
+   "check_invalid_examples": [],
+   "creative_not_worse_rate": 1.0
+  }
+ },
+ "gates": {
+  "crisp-1.1.0": [
+   {
+    "id": "G1",
+    "name": "No net loss of critical information",
+    "value": 0.125,
+    "target": "<= 0.0",
+    "status": "FAIL"
+   },
+   {
+    "id": "G2",
+    "name": "Few critical items cut at all",
+    "value": 0.181,
+    "target": "<= 0.1",
+    "status": "FAIL"
+   },
+   {
+    "id": "G3",
+    "name": "Useful information is not net-cut",
+    "value": 2.48,
+    "target": "<= 1.25",
+    "status": "FAIL"
+   },
+   {
+    "id": "G4",
+    "name": "Not less useful than no plugin (preference)",
+    "value": -0.736,
+    "target": ">= 0.0",
+    "status": "FAIL"
+   },
+   {
+    "id": "G5",
+    "name": "Must-cover fact coverage",
+    "value": 1.4,
+    "target": ">= -2.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G6",
+    "name": "Accuracy holds",
+    "value": 0.03,
+    "target": ">= -0.3",
+    "status": "PASS"
+   },
+   {
+    "id": "G7",
+    "name": "Readability score",
+    "value": 96.4,
+    "target": ">= 85",
+    "status": "PASS"
+   },
+   {
+    "id": "G8",
+    "name": "Sentences over the limit",
+    "value": 0.42,
+    "target": "<= 0.5",
+    "status": "PASS"
+   },
+   {
+    "id": "G9",
+    "name": "Not longer than no plugin",
+    "value": 0.827,
+    "target": "<= 1.1",
+    "status": "PASS"
+   },
+   {
+    "id": "G10",
+    "name": "Requests for depth get full answers",
+    "value": 0.772,
+    "target": ">= 0.85",
+    "status": "FAIL"
+   },
+   {
+    "id": "G11",
+    "name": "Code in answers still compiles",
+    "value": 1.0,
+    "target": ">= 1.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G12",
+    "name": "Never mentions Crisp or its rules",
+    "value": 0,
+    "target": "<= 0",
+    "status": "PASS"
+   },
+   {
+    "id": "G13",
+    "name": "Strict level keeps content",
+    "value": 91.7,
+    "target": ">= -5.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G14",
+    "name": "Strict level is at least as readable as lite",
+    "value": -1.2,
+    "target": ">= -3.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G15",
+    "name": "On-demand mode does not load Crisp for ordinary questions",
+    "value": 0,
+    "target": "<= 0",
+    "status": "PASS"
+   },
+   {
+    "id": "G16",
+    "name": "TL;DR format (one sentence, at most three bullets)",
+    "value": 0.5,
+    "target": ">= 1.0",
+    "status": "FAIL"
+   },
+   {
+    "id": "G17",
+    "name": "TL;DR keeps the critical caveat",
+    "value": 1.0,
+    "target": ">= 1.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G18",
+    "name": "Clarify keeps the source facts",
+    "value": 1.0,
+    "target": ">= 0.95",
+    "status": "PASS"
+   },
+   {
+    "id": "G19",
+    "name": "Clarify adds no new facts",
+    "value": 0,
+    "target": "<= 0",
+    "status": "PASS"
+   },
+   {
+    "id": "G20",
+    "name": "Clarify starts with a bottom line",
+    "value": 1.0,
+    "target": ">= 1.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G21",
+    "name": "Check cites only real rule IDs",
+    "value": 0,
+    "target": "<= 0",
+    "status": "PASS"
+   },
+   {
+    "id": "G22",
+    "name": "Creative writing keeps its voice",
+    "value": 1.0,
+    "target": ">= 1.0",
+    "status": "INCOMPLETE"
+   }
+  ],
+  "crisp-1.2.0": [
+   {
+    "id": "G1",
+    "name": "No net loss of critical information",
+    "value": -0.083,
+    "target": "<= 0.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G2",
+    "name": "Few critical items cut at all",
+    "value": 0.097,
+    "target": "<= 0.1",
+    "status": "PASS"
+   },
+   {
+    "id": "G3",
+    "name": "Useful information is not net-cut",
+    "value": 0.69,
+    "target": "<= 1.25",
+    "status": "PASS"
+   },
+   {
+    "id": "G4",
+    "name": "Not less useful than no plugin (preference)",
+    "value": 0.417,
+    "target": ">= 0.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G5",
+    "name": "Must-cover fact coverage",
+    "value": 3.3,
+    "target": ">= -2.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G6",
+    "name": "Accuracy holds",
+    "value": 0.08,
+    "target": ">= -0.3",
+    "status": "PASS"
+   },
+   {
+    "id": "G7",
+    "name": "Readability score",
+    "value": 92.6,
+    "target": ">= 85",
+    "status": "PASS"
+   },
+   {
+    "id": "G8",
+    "name": "Sentences over the limit",
+    "value": 0.53,
+    "target": "<= 0.5",
+    "status": "FAIL"
+   },
+   {
+    "id": "G9",
+    "name": "Not longer than no plugin",
+    "value": 1.081,
+    "target": "<= 1.1",
+    "status": "PASS"
+   },
+   {
+    "id": "G10",
+    "name": "Requests for depth get full answers",
+    "value": 1.004,
+    "target": ">= 0.85",
+    "status": "PASS"
+   },
+   {
+    "id": "G11",
+    "name": "Code in answers still compiles",
+    "value": 1.0,
+    "target": ">= 1.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G12",
+    "name": "Never mentions Crisp or its rules",
+    "value": 0,
+    "target": "<= 0",
+    "status": "PASS"
+   },
+   {
+    "id": "G13",
+    "name": "Strict level keeps content",
+    "value": 100.0,
+    "target": ">= -5.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G14",
+    "name": "Strict level is at least as readable as lite",
+    "value": 2.8,
+    "target": ">= -3.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G15",
+    "name": "On-demand mode does not load Crisp for ordinary questions",
+    "value": 0,
+    "target": "<= 0",
+    "status": "PASS"
+   },
+   {
+    "id": "G16",
+    "name": "TL;DR format (one sentence, at most three bullets)",
+    "value": 0.5,
+    "target": ">= 1.0",
+    "status": "FAIL"
+   },
+   {
+    "id": "G17",
+    "name": "TL;DR keeps the critical caveat",
+    "value": 1.0,
+    "target": ">= 1.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G18",
+    "name": "Clarify keeps the source facts",
+    "value": 1.0,
+    "target": ">= 0.95",
+    "status": "PASS"
+   },
+   {
+    "id": "G19",
+    "name": "Clarify adds no new facts",
+    "value": 0,
+    "target": "<= 0",
+    "status": "PASS"
+   },
+   {
+    "id": "G20",
+    "name": "Clarify starts with a bottom line",
+    "value": 1.0,
+    "target": ">= 1.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G21",
+    "name": "Check cites only real rule IDs",
+    "value": 0,
+    "target": "<= 0",
+    "status": "PASS"
+   },
+   {
+    "id": "G22",
+    "name": "Creative writing keeps its voice",
+    "value": 1.0,
+    "target": ">= 1.0",
+    "status": "PASS"
+   }
+  ]
+ }
+}

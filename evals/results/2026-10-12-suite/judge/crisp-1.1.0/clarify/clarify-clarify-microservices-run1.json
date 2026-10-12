@@ -1,0 +1,33 @@
+{
+ "kept": [
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "claims": [
+  {
+   "claim": "Microservices give you scalability and resilience",
+   "kind": "restated"
+  },
+  {
+   "claim": "Independent deployment, scaling and updating matters most for teams that ship often",
+   "kind": "restated"
+  },
+  {
+   "claim": "A strategy for data consistency is needed because each service usually owns its own database",
+   "kind": "restated"
+  },
+  {
+   "claim": "Because network calls add latency and failure modes, timeouts and retries are essential",
+   "kind": "restated"
+  },
+  {
+   "claim": "If your team has fewer than ten engineers, start with a well-structured modular monolith",
+   "kind": "restated"
+  }
+ ]
+}

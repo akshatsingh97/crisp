@@ -1,0 +1,97 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Explicit note that the prune command removes unused networks, build cache (stated plainly), and a single-command-first approach with -f to skip prompt after stopping containers",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to back up needed data before deleting volumes",
+   "importance": "useful"
+  },
+  {
+   "item": "Fallback command `docker volume prune -a -f` if named volumes remain",
+   "importance": "useful"
+  },
+  {
+   "item": "Note that individual remove commands print an error on empty lists, which is harmless",
+   "importance": "useful"
+  },
+  {
+   "item": "Stop step comes first so prune also removes the containers (docker stop $(docker ps -q))",
+   "importance": "minor"
+  },
+  {
+   "item": "Provides `docker volume prune -a -f` as a follow-up to remove remaining volumes if prune left some behind",
+   "importance": "useful"
+  },
+  {
+   "item": "Advises backing up anything needed before deleting",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that empty-list errors from the per-type removal commands are harmless",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests running `docker system df` before and after to measure freed space",
+   "importance": "minor"
+  },
+  {
+   "item": "Presents per-type removal (containers, images, volumes) as separate alternative commands with labels",
+   "importance": "minor"
+  },
+  {
+   "item": "Concise ordering: stop running containers first, then prune in one go",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Suggests inspecting volumes with `docker volume ls` before deleting",
+   "importance": "useful"
+  },
+  {
+   "item": "Step to remove all containers with `docker rm -f $(docker ps -aq)` in a numbered flow (X also lists it as an alternative)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that `-a` is needed with `--volumes` to remove named volumes, in Docker 23+ (version number differs from X's 25)",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests checking volumes with `docker volume ls` before deleting",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit step to stop all containers including stopped ones via `docker stop $(docker ps -aq)`",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that prune also removes the unused networks, which is stated alongside the step to clear leftover networks and build cache after manual removal",
+   "importance": "minor"
+  },
+  {
+   "item": "Gives the simple single prune command without stopping containers first, for removing only unused resources (non-destructive to running containers)",
+   "importance": "useful"
+  },
+  {
+   "item": "Clarifies that with --volumes (Docker 23+), only anonymous volumes are removed unless -a is added, which also removes unused named volumes (note: version attribution differs from Y)",
+   "importance": "useful"
+  }
+ ]
+}

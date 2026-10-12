@@ -1,0 +1,189 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.5,
+  "useful": 5.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.5,
+  "useful": 5.5,
+  "minor": 6.0
+ },
+ "cut_items": [
+  {
+   "item": "Distinguish leak vs. limit too low: heap rises and falls but peaks near limit means limit is too low",
+   "importance": "useful"
+  },
+  {
+   "item": "Use --heapsnapshot-near-heap-limit=3 to write a snapshot just before the crash for production evidence",
+   "importance": "useful"
+  },
+  {
+   "item": "Run under a process manager (PM2, systemd, Kubernetes) so the service restarts after a crash",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning: do not expose --inspect on a public port",
+   "importance": "useful"
+  },
+  {
+   "item": "MaxListenersExceededWarning as a signal for listener leaks",
+   "importance": "minor"
+  },
+  {
+   "item": "Unbounded queues or streams without backpressure when producer outpaces consumer",
+   "importance": "useful"
+  },
+  {
+   "item": "Per-request data attached to long-lived objects, e.g. DB connection or high-cardinality metrics labels",
+   "importance": "useful"
+  },
+  {
+   "item": "Use an LRU cache with a max size as the fix for unbounded caches",
+   "importance": "minor"
+  },
+  {
+   "item": "Closures that keep large objects alive",
+   "importance": "minor"
+  },
+  {
+   "item": "Distinguish leak from limit too low: heap rises and falls but peaks near the limit",
+   "importance": "useful"
+  },
+  {
+   "item": "--heapsnapshot-near-heap-limit=3 to capture a snapshot just before the crash in production",
+   "importance": "critical"
+  },
+  {
+   "item": "Run under process manager (PM2, systemd, Kubernetes) so service restarts",
+   "importance": "useful"
+  },
+  {
+   "item": "Don't expose --inspect on a public port",
+   "importance": "useful"
+  },
+  {
+   "item": "Use LRU cache with max size",
+   "importance": "minor"
+  },
+  {
+   "item": "MaxListenersExceededWarning signals listener leak",
+   "importance": "minor"
+  },
+  {
+   "item": "Unbounded queues / streams without backpressure",
+   "importance": "useful"
+  },
+  {
+   "item": "Per-request data on long-lived objects, high-cardinality metrics labels",
+   "importance": "useful"
+  },
+  {
+   "item": "Closures keeping large objects alive",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Heap snapshots pause the process and can need about 2x heap memory, so take them on one instance, not all of production",
+   "importance": "critical"
+  },
+  {
+   "item": "If the heap looks stable but the process dies, check non-heap memory (rss, external, Buffers, native addons), which does not appear in heap snapshots",
+   "importance": "useful"
+  },
+  {
+   "item": "Use the Retainers view to see what holds the growing objects",
+   "importance": "useful"
+  },
+  {
+   "item": "Take snapshots at start, after 1 hour and after 2 hours (a concrete schedule)",
+   "importance": "minor"
+  },
+  {
+   "item": "Tools clinic.js (clinic heapprofiler) and memlab as alternatives to hand-reading snapshots",
+   "importance": "useful"
+  },
+  {
+   "item": "Restart the service on a schedule as a stopgap",
+   "importance": "minor"
+  },
+  {
+   "item": "--max-old-space-size value is in MB; default depends on Node version and system memory",
+   "importance": "minor"
+  },
+  {
+   "item": "Without a container limit lower than the heap, the kernel OOM-kills (OOMKilled) before Node can report an error",
+   "importance": "minor"
+  },
+  {
+   "item": "Large request/response bodies held in memory instead of streamed",
+   "importance": "useful"
+  },
+  {
+   "item": "Unclosed resources such as DB connections, sockets, streams",
+   "importance": "useful"
+  },
+  {
+   "item": "Libraries with known leaks; check their issue trackers",
+   "importance": "useful"
+  },
+  {
+   "item": "Final step: fix the cause then confirm heapUsed stays flat",
+   "importance": "minor"
+  },
+  {
+   "item": "chrome://inspect as the way to connect DevTools to --inspect",
+   "importance": "minor"
+  },
+  {
+   "item": "Snapshot pauses process and can need ~2x heap memory; do it on one instance, not all of production",
+   "importance": "useful"
+  },
+  {
+   "item": "Compare snapshots using Retainers view to see what holds objects",
+   "importance": "useful"
+  },
+  {
+   "item": "Large request/response bodies kept in memory instead of streamed",
+   "importance": "useful"
+  },
+  {
+   "item": "Unclosed resources such as DB connections, sockets, streams",
+   "importance": "useful"
+  },
+  {
+   "item": "Libraries with known leaks; check issue trackers",
+   "importance": "minor"
+  },
+  {
+   "item": "If heap is stable but process dies, check non-heap memory (rss, external, Buffers, native addons)",
+   "importance": "useful"
+  },
+  {
+   "item": "Tools clinic.js heapprofiler and memlab",
+   "importance": "minor"
+  },
+  {
+   "item": "Default heap limit depends on Node version and system memory",
+   "importance": "minor"
+  },
+  {
+   "item": "Verify fix by confirming heapUsed stays flat",
+   "importance": "minor"
+  },
+  {
+   "item": "Heap snapshots at specific intervals (start, 1h, 2h) and a scheduled restart as stopgap",
+   "importance": "minor"
+  },
+  {
+   "item": "Watch heapUsed in metrics tool and that it does not drop after GC",
+   "importance": "minor"
+  }
+ ]
+}

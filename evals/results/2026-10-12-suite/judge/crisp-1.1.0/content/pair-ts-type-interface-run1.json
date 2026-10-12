@@ -1,0 +1,109 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 4.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Intersections (&) with type are less strict and can silently produce never on conflicts, whereas interface extends reports a clear compiler error",
+   "importance": "useful"
+  },
+  {
+   "item": "Linter rule @typescript-eslint/consistent-type-definitions can enforce a choice; check it",
+   "importance": "useful"
+  },
+  {
+   "item": "Declaration merging lets library users augment public interfaces (rationale for interface in public APIs)",
+   "importance": "useful"
+  },
+  {
+   "item": "Type aliases can name function types (with example Handler)",
+   "importance": "minor"
+  },
+  {
+   "item": "Hover text/error display: type aliases may expand into full structure while interface names stay clear",
+   "importance": "minor"
+  },
+  {
+   "item": "Interfaces usually slightly faster to check in large codebases, but gap rarely matters",
+   "importance": "minor"
+  },
+  {
+   "item": "Example of a mapped type and a string-literal union Status",
+   "importance": "minor"
+  },
+  {
+   "item": "Intersections (&) are less strict than extends and can silently produce never on conflicting properties, whereas extends reports a clear error",
+   "importance": "useful"
+  },
+  {
+   "item": "Declaration merging lets library users augment public interfaces (a rationale for choosing interface for public APIs)",
+   "importance": "useful"
+  },
+  {
+   "item": "Linter rule @typescript-eslint/consistent-type-definitions can enforce a choice; check project config",
+   "importance": "useful"
+  },
+  {
+   "item": "Function types listed as something to name with type (with Handler example)",
+   "importance": "minor"
+  },
+  {
+   "item": "Mapped type code example (Readonly2) and string-literal union Status example",
+   "importance": "minor"
+  },
+  {
+   "item": "Hover text/error display: type alias may expand into full structure vs interface names shown clearly",
+   "importance": "minor"
+  },
+  {
+   "item": "Performance gap rarely matters in practice",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Warning: accidentally reusing an interface name silently merges declarations with no warning, a risk",
+   "importance": "useful"
+  },
+  {
+   "item": "Interface can describe object, function, or class shapes (not just objects)",
+   "importance": "minor"
+  },
+  {
+   "item": "Example of intersection type AdminUser = User & {...} showing how types combine",
+   "importance": "minor"
+  },
+  {
+   "item": "Large extends chains can type-check faster than & chains",
+   "importance": "minor"
+  },
+  {
+   "item": "Intersection example for combining types (type AdminUser = User & {role}) shown in code",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that accidental interface name reuse silently merges declarations without any warning (risk of declaration merging)",
+   "importance": "useful"
+  },
+  {
+   "item": "Interfaces can describe object, function, or class shapes (not only objects)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit statement that large extends chains can type-check faster than & chains",
+   "importance": "minor"
+  }
+ ]
+}

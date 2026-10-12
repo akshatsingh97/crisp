@@ -1,0 +1,101 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 3.5
+ },
+ "cut_items": [
+  {
+   "item": "Stripe returns an error if a key is reused with different parameters is in both; but X uniquely notes that a decline is also stored, so retrying with the same key returns the same decline and a new key is needed only for a new customer attempt",
+   "importance": "useful"
+  },
+  {
+   "item": "Order-based key rather than per-click key protects against double click/repeat browser requests (also in Y, not unique)",
+   "importance": "minor"
+  },
+  {
+   "item": "If retries come from a queue/job runner, ensure each retry reads the saved key",
+   "importance": "useful"
+  },
+  {
+   "item": "Use a new key only when the customer starts a new attempt",
+   "importance": "useful"
+  },
+  {
+   "item": "A retry with the same key after a card decline returns the same decline; use a new key only when the customer starts a new attempt",
+   "importance": "useful"
+  },
+  {
+   "item": "If retries come from a queue or job runner, make sure each retry reads the saved key",
+   "importance": "useful"
+  },
+  {
+   "item": "Calls out creating a new key inside the retry loop as the most common mistake",
+   "importance": "minor"
+  },
+  {
+   "item": "States that it has not seen the user's code, so the answer is the general rule",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Retry only on network errors, timeouts and 5xx; do not retry 4xx card declines",
+   "importance": "useful"
+  },
+  {
+   "item": "Confirm uncertain outcomes via webhook (charge.succeeded) or lookup by order ID in metadata",
+   "importance": "useful"
+  },
+  {
+   "item": "Keys can be up to 255 characters",
+   "importance": "minor"
+  },
+  {
+   "item": "If request fails validation before running, key is not saved and retry runs again",
+   "importance": "minor"
+  },
+  {
+   "item": "Saved results include 500 errors",
+   "importance": "minor"
+  },
+  {
+   "item": "SDK maxNetworkRetries adds idempotency keys automatically",
+   "importance": "minor"
+  },
+  {
+   "item": "Keys can be up to 255 characters",
+   "importance": "minor"
+  },
+  {
+   "item": "Saved results include 500 errors, so retrying with same key returns the stored 500",
+   "importance": "minor"
+  },
+  {
+   "item": "Validation failures before the request starts are not saved, so a retry with the same key re-runs",
+   "importance": "useful"
+  },
+  {
+   "item": "Retry only on network errors, timeouts and 5xx; don't retry card declines (4xx)",
+   "importance": "useful"
+  },
+  {
+   "item": "For uncertain outcomes, verify via a charge.succeeded webhook or by looking up the charge by order ID in metadata",
+   "importance": "useful"
+  },
+  {
+   "item": "SDK maxNetworkRetries adds idempotency keys automatically",
+   "importance": "minor"
+  }
+ ]
+}

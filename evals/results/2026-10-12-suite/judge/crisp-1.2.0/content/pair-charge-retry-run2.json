@@ -1,0 +1,121 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.5,
+  "useful": 3.5,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Only retry on network errors, 5xx and 429; don't retry card declines or other 4xx errors",
+   "importance": "useful"
+  },
+  {
+   "item": "Double-clicking Pay or page refresh can cause the same duplicate; deriving the key from order ID covers it",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit step-by-step failure sequence (request sent, charged, response lost, retry creates a second charge)",
+   "importance": "minor"
+  },
+  {
+   "item": "Using a fresh UUID inside the retry loop protects nothing",
+   "importance": "useful"
+  },
+  {
+   "item": "Offer to inspect the checkout code to check where the key is created",
+   "importance": "minor"
+  },
+  {
+   "item": "PaymentIntents also handles 3D Secure better and idempotency keys work the same there",
+   "importance": "minor"
+  },
+  {
+   "item": "Only retry on network errors, 5xx and 429; do not retry card declines or other 4xx",
+   "importance": "useful"
+  },
+  {
+   "item": "Double-click or refresh on Pay can cause duplicates; deriving the key from the order ID covers it",
+   "importance": "useful"
+  },
+  {
+   "item": "PaymentIntents handles retries and 3D Secure better, and idempotency keys work the same way there",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to inspect the checkout code to verify where the key is created",
+   "importance": "minor"
+  },
+  {
+   "item": "Generating a fresh UUID inside the retry loop protects nothing (explicit anti-pattern)",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Persist the key before the first call so a crash and restart reuses the same key",
+   "importance": "useful"
+  },
+  {
+   "item": "Reusing one key across different orders returns the first customer's result to the second customer",
+   "importance": "critical"
+  },
+  {
+   "item": "Search Stripe for existing duplicate charges (same customer, amount, order metadata within a short time) to audit past retries",
+   "importance": "useful"
+  },
+  {
+   "item": "stripe-node usage: pass { idempotencyKey } as a request option",
+   "importance": "useful"
+  },
+  {
+   "item": "Retry must reuse the exact same parameters as well as the same key",
+   "importance": "useful"
+  },
+  {
+   "item": "Check your SDK version before relying on maxNetworkRetries auto-keys",
+   "importance": "minor"
+  },
+  {
+   "item": "Retry within the 24-hour key window since keys may be removed after that",
+   "importance": "minor"
+  },
+  {
+   "item": "Persist the idempotency key before the first call so a crash/restart reuses it",
+   "importance": "useful"
+  },
+  {
+   "item": "stripe-node usage: pass { idempotencyKey } as a request option",
+   "importance": "minor"
+  },
+  {
+   "item": "Reusing one key across different orders returns the first customer's result (wrong-customer risk)",
+   "importance": "useful"
+  },
+  {
+   "item": "Must send the exact same parameters on every retry",
+   "importance": "minor"
+  },
+  {
+   "item": "Audit past retries by searching Stripe for duplicate charges (same customer, amount, order metadata, short time window)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit explanation that a network error does not tell you whether Stripe received the request",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to check your SDK version for automatic key behavior before relying on it",
+   "importance": "minor"
+  }
+ ]
+}

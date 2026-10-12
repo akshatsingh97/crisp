@@ -1,0 +1,129 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 4.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 8.5
+ },
+ "cut_items": [
+  {
+   "item": "Interface is not assignable to index-signature types like Record<string, unknown>, while a type alias of an object literal is; switching to type fixes that error",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete example of declaration merging vs duplicate type error, and Express Request/Window augmentation",
+   "importance": "minor"
+  },
+  {
+   "item": "Examples of keyof derived type and function type alias, and interface extends vs & example with literal conflict",
+   "importance": "minor"
+  },
+  {
+   "item": "Interfaces cannot name function types/primitives/tuples except as members (table)",
+   "importance": "minor"
+  },
+  {
+   "item": "Interfaces lack an implicit index signature, so an interface is not assignable to Record<string, unknown> while a type alias of an object literal is; switching to type fixes the error",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete example of duplicate type identifier error vs merged interface",
+   "importance": "minor"
+  },
+  {
+   "item": "Library augmentation example with Express Request",
+   "importance": "minor"
+  },
+  {
+   "item": "keyof derived type example and conditional type example",
+   "importance": "minor"
+  },
+  {
+   "item": "Summary comparison table",
+   "importance": "minor"
+  },
+  {
+   "item": "Interface extends reports conflict at declaration, shown with Admin example",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Template literal types are supported only by type",
+   "importance": "minor"
+  },
+  {
+   "item": "Class cannot implement a union type",
+   "importance": "minor"
+  },
+  {
+   "item": "Interface error messages often show the name rather than an expanded structure",
+   "importance": "minor"
+  },
+  {
+   "item": "Use type to block accidental merging",
+   "importance": "minor"
+  },
+  {
+   "item": "Use type when combining/transforming types with Pick, Omit, ReturnType",
+   "importance": "minor"
+  },
+  {
+   "item": "Follow the team's style rule",
+   "importance": "minor"
+  },
+  {
+   "item": "Interface suits deep hierarchies with extends",
+   "importance": "minor"
+  },
+  {
+   "item": "Interfaces can describe function signatures (call signatures)",
+   "importance": "minor"
+  },
+  {
+   "item": "Template literal types are also type-only",
+   "importance": "minor"
+  },
+  {
+   "item": "Interface can describe function signatures (call signatures), so both can",
+   "importance": "minor"
+  },
+  {
+   "item": "A class cannot implement a union type",
+   "importance": "minor"
+  },
+  {
+   "item": "Use type to block accidental declaration merging",
+   "importance": "minor"
+  },
+  {
+   "item": "Use type when combining or transforming types with Pick, Omit, ReturnType",
+   "importance": "minor"
+  },
+  {
+   "item": "Interfaces give error messages that show the name rather than expanded structure",
+   "importance": "minor"
+  },
+  {
+   "item": "Interface suits deep extends hierarchies",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete example of augmenting global Window via merging",
+   "importance": "minor"
+  },
+  {
+   "item": "Follow the team's style rule",
+   "importance": "minor"
+  }
+ ]
+}

@@ -1,0 +1,154 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "equal",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 5.0,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 6.0
+ },
+ "cut_items": [
+  {
+   "item": "Failed unique index build still enforces uniqueness on new rows (invalid index nuance)",
+   "importance": "minor"
+  },
+  {
+   "item": "Concurrent build holds back vacuum cleanup (xmin horizon) while running",
+   "importance": "useful"
+  },
+  {
+   "item": "Query to find invalid indexes (pg_index WHERE NOT indisvalid) for cleanup",
+   "importance": "useful"
+  },
+  {
+   "item": "Estimate of index size: roughly 10-30% of table size, depending on columns",
+   "importance": "useful"
+  },
+  {
+   "item": "WAL archive space should be monitored, not just replication lag",
+   "importance": "minor"
+  },
+  {
+   "item": "max_parallel_maintenance_workers (PG11+) can speed up the build",
+   "importance": "useful"
+  },
+  {
+   "item": "Offer to tailor advice given column types, version, partitions/replicas",
+   "importance": "minor"
+  },
+  {
+   "item": "Query to find all invalid indexes across the DB (WHERE NOT indisvalid)",
+   "importance": "useful"
+  },
+  {
+   "item": "A failed unique index still enforces uniqueness on new rows (so inserts may fail)",
+   "importance": "useful"
+  },
+  {
+   "item": "CONCURRENTLY build holds back vacuum cleanup (xmin horizon) while running",
+   "importance": "useful"
+  },
+  {
+   "item": "Disk space rule of thumb: 10 to 30% of table size, test on restored copy",
+   "importance": "useful"
+  },
+  {
+   "item": "Build generates a lot of WAL; watch WAL archive space as well as replication lag",
+   "importance": "useful"
+  },
+  {
+   "item": "max_parallel_maintenance_workers (PG 11+) to enable parallel build workers",
+   "importance": "useful"
+  },
+  {
+   "item": "Offer to tailor advice given column types, version, partitions/replicas, and estimate index size",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Framework-specific instructions to disable migration transaction: Rails disable_ddl_transaction!, Django atomic = False",
+   "importance": "useful"
+  },
+  {
+   "item": "Causes of invalid index: deadlock, cancel, uniqueness violation; check for duplicates before unique index",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete pg_stat_activity query to find long transactions older than 5 minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit warning that a default statement_timeout will kill the build partway (rationale for setting to 0)",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not set maintenance_work_mem globally, session only",
+   "importance": "minor"
+  },
+  {
+   "item": "Writes are slightly slower during the build",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete query to verify indisvalid of the specific index and DROP INDEX CONCURRENTLY retry step after failure",
+   "importance": "minor"
+  },
+  {
+   "item": "Alternative: build on a replica/restored copy and promote via planned failover",
+   "importance": "minor"
+  },
+  {
+   "item": "Rehearse on staging copy of similar size to estimate time",
+   "importance": "minor"
+  },
+  {
+   "item": "Rails (disable_ddl_transaction!) and Django (atomic = False) specific ways to disable migration transaction wrapping",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete pg_stat_activity query to find long-running transactions",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete query to verify the index is valid via indisvalid for a specific index",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit note that invalid index can result from deadlock, cancel, or uniqueness violation (causes of failure)",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to find the cause before retrying, e.g. unique index fails if duplicates exist",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that a default statement_timeout will kill the build partway; set to 0 explained as a checklist step",
+   "minor": "minor",
+   "importance": "minor"
+  },
+  {
+   "item": "Do not set maintenance_work_mem globally, session only",
+   "importance": "minor"
+  },
+  {
+   "item": "Rehearse on a staging copy to get a time estimate",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative: build on a replica/restored copy and promote, suited to planned failover",
+   "importance": "minor"
+  },
+  {
+   "item": "Index build adds I/O and CPU load and makes writes slightly slower",
+   "importance": "minor"
+  }
+ ]
+}

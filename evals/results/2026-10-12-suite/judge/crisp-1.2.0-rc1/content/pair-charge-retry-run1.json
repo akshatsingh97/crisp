@@ -1,0 +1,117 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 5.0,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Stripe caches declines: a retry with the same key returns the same decline, so use a new key only when the customer starts a new attempt",
+   "importance": "useful"
+  },
+  {
+   "item": "Offers to review the retry code (both offer this)",
+   "importance": "minor"
+  },
+  {
+   "item": "Save the key before the first call (persisting before sending)",
+   "importance": "minor"
+  },
+  {
+   "item": "If retries come from a queue/job runner, ensure each retry reads the saved key",
+   "importance": "useful"
+  },
+  {
+   "item": "Official SDKs can retry on their own and reuse the key; set maxNetworkRetries (lists several languages)",
+   "importance": "minor"
+  },
+  {
+   "item": "Stripe stores the first result including declines: retrying with same key returns same decline; use a new key only for a genuinely new customer attempt",
+   "importance": "useful"
+  },
+  {
+   "item": "If retries come from a queue/job runner, ensure each retry reads the saved key",
+   "importance": "minor"
+  },
+  {
+   "item": "SDKs list (Node, Python, Ruby) supporting maxNetworkRetries",
+   "importance": "minor"
+  },
+  {
+   "item": "PaymentIntents support the same idempotency keys",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Webhooks backup: mark order paid from charge.succeeded / payment_intent.succeeded events to cover cases where the client never learned the result",
+   "importance": "useful"
+  },
+  {
+   "item": "Check order state is not already paid before retrying",
+   "importance": "useful"
+  },
+  {
+   "item": "Reconciliation: look up the charge by metadata (store order ID) before creating a new one when outcome is unknown",
+   "importance": "useful"
+  },
+  {
+   "item": "Concurrent retry while the first request is still running can return a conflict error; wait and retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Keys held only in memory are lost on a crash between attempts; store the key with the order so restarts or other workers reuse it",
+   "importance": "useful"
+  },
+  {
+   "item": "A new random key per retry gives no protection (explicit anti-pattern)",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines idempotency key in plain terms",
+   "importance": "minor"
+  },
+  {
+   "item": "PaymentIntents track one payment through states, making duplicates harder",
+   "importance": "minor"
+  },
+  {
+   "item": "Store the key with the order so a restart or second worker reuses it (persistence across crashes)",
+   "importance": "useful"
+  },
+  {
+   "item": "Concurrent retry while first request is in flight can return a conflict error; wait and retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Backup protection: handle charge.succeeded / payment_intent.succeeded webhooks to mark order paid",
+   "importance": "useful"
+  },
+  {
+   "item": "Check order isn't already paid before retrying",
+   "importance": "useful"
+  },
+  {
+   "item": "Reconciliation: look up charge by metadata (order ID) before creating a new one when outcome unknown",
+   "importance": "useful"
+  },
+  {
+   "item": "Mistake: a key held only in memory is lost on crash",
+   "importance": "minor"
+  },
+  {
+   "item": "PaymentIntents track payment through states making duplicates harder",
+   "importance": "minor"
+  }
+ ]
+}

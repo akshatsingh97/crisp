@@ -1,0 +1,77 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 1.0
+ },
+ "cut_items": [
+  {
+   "item": "Before/after code example for init() showing the migration",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains consequence of more retries: failed requests take longer to report an error",
+   "importance": "useful"
+  },
+  {
+   "item": "Upgrade steps checklist (add apiKey, review retry default, optional error handler)",
+   "importance": "useful"
+  },
+  {
+   "item": "Note to replace the assumed SDK object name (sdk) and retry option name before publishing",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests adding an error handler to react to SDK errors in one place",
+   "importance": "minor"
+  },
+  {
+   "item": "Example uses sdk.on('error') with console.error logging",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains the consequence of more retries: failed requests take longer to report an error",
+   "importance": "useful"
+  },
+  {
+   "item": "Before/after migration example for init() showing existing options preserved alongside apiKey",
+   "importance": "minor"
+  },
+  {
+   "item": "Upgrade steps checklist, including reviewing whether the new default of 5 retries suits the app",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes the on('error') handler is optional and gives a rationale (handle SDK errors in one place)",
+   "importance": "minor"
+  },
+  {
+   "item": "Error handler example logs the error with console.error and uses an sdk object, with a note to replace sdk with the real object name",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Tells reader to check the SDK reference for the retry option name and the error event payload/handler signature",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that the handler signature in the example is an assumption",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicitly says the exact handler signature/event payload is an assumption and to check the SDK reference",
+   "importance": "minor"
+  }
+ ]
+}

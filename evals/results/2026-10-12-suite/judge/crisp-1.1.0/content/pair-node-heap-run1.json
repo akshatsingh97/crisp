@@ -1,0 +1,141 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 1.5,
+  "useful": 5.0,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 1.0,
+  "useful": 1.5,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Distinguish leak vs. limit too low: if heap rises and falls but peaks near the limit, raise the limit rather than hunt a leak",
+   "importance": "useful"
+  },
+  {
+   "item": "In containers, keep --max-old-space-size below the container memory limit or the OS OOM-kills the process",
+   "importance": "critical"
+  },
+  {
+   "item": "Use --heapsnapshot-near-heap-limit=3 to capture a snapshot just before the crash in production",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning not to expose node --inspect on a public port; option to attach DevTools to live process",
+   "importance": "useful"
+  },
+  {
+   "item": "Additional causes: unbounded queues/streams without backpressure; per-request data on long-lived objects / high-cardinality metrics labels",
+   "importance": "useful"
+  },
+  {
+   "item": "Use an LRU cache with a max size as the fix for unbounded caches",
+   "importance": "minor"
+  },
+  {
+   "item": "MaxListenersExceededWarning as a signal for listener leaks",
+   "importance": "minor"
+  },
+  {
+   "item": "Asks for Node version and container usage",
+   "importance": "minor"
+  },
+  {
+   "item": "Distinguishes a leak from a heap limit that is simply too low, by checking whether the heap rises and falls but peaks near the limit",
+   "importance": "useful"
+  },
+  {
+   "item": "In a container, keep --max-old-space-size below the container memory limit, or the OS OOM-kills the process",
+   "importance": "critical"
+  },
+  {
+   "item": "--heapsnapshot-near-heap-limit=3 writes a snapshot just before the crash, giving production evidence",
+   "importance": "critical"
+  },
+  {
+   "item": "Connect DevTools to the live process with node --inspect, and do not expose it on a public port",
+   "importance": "useful"
+  },
+  {
+   "item": "Use an LRU cache with a maximum size and expiry as the fix for unbounded caches",
+   "importance": "useful"
+  },
+  {
+   "item": "MaxListenersExceededWarning is the signal for listener leaks",
+   "importance": "useful"
+  },
+  {
+   "item": "Unbounded queues, or streams without backpressure when the producer outpaces the consumer, as a cause",
+   "importance": "useful"
+  },
+  {
+   "item": "Per-request data attached to long-lived objects, such as high-cardinality metrics labels or DB connections, as a cause",
+   "importance": "useful"
+  },
+  {
+   "item": "Asks whether the service runs in a container as a diagnostic question",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Warning: heap snapshots pause the process and can use as much memory as the heap, so take them on one instance only in production to avoid triggering the crash",
+   "importance": "critical"
+  },
+  {
+   "item": "Use the Retainers view to see what holds the growing objects",
+   "importance": "useful"
+  },
+  {
+   "item": "Take a third snapshot later and look for types that grow in every snapshot",
+   "importance": "minor"
+  },
+  {
+   "item": "Final step: fix, redeploy and re-watch the memory trend to verify",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains what a leak/GC is and notes a restart on memory threshold in the process manager",
+   "importance": "minor"
+  },
+  {
+   "item": "Unclosed streams, sockets, or database connections as a cause",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to help read snapshot output",
+   "importance": "minor"
+  },
+  {
+   "item": "Take three snapshots (early, later, even later) so growth can be seen across several, not just two",
+   "importance": "minor"
+  },
+  {
+   "item": "Open the Retainers view to see what holds the growing objects",
+   "importance": "useful"
+  },
+  {
+   "item": "Fix the code, redeploy, and watch the trend again to verify",
+   "importance": "minor"
+  },
+  {
+   "item": "Unclosed streams, sockets, or database connections as a cause",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that taking snapshots in production pauses the process and can use as much memory as the heap, so it could trigger the crash early; do it on one instance only",
+   "importance": "critical"
+  },
+  {
+   "item": "Explains what the GC and a heap snapshot are",
+   "importance": "minor"
+  }
+ ]
+}

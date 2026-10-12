@@ -1,0 +1,241 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 6.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 13.0,
+  "minor": 8.0
+ },
+ "cut_items": [
+  {
+   "item": "Explicit statement that Fiber doesn't make React faster in total, only more responsive",
+   "importance": "minor"
+  },
+  {
+   "item": "Starvation/expiration time mentioned for low-priority work (Y also mentions this, so not unique)",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions Offscreen/Activity: hidden subtree keeps state and renders at low priority",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions useDeferredValue renders a stale value first and then a fresh one",
+   "importance": "minor"
+  },
+  {
+   "item": "Order note that pointer swap sits between mutation and layout, so componentWillUnmount sees old tree and componentDidMount sees the new one",
+   "importance": "minor"
+  },
+  {
+   "item": "Brief explanation that the sync/concurrent distinction depends on the update type (still included by Y)",
+   "importance": "minor"
+  },
+  {
+   "item": "Reconciliation rules by host vs component same-type: host keeps DOM node and updates only changed props; component keeps instance/state",
+   "importance": "minor"
+  },
+  {
+   "item": "State belongs to position in tree",
+   "importance": "minor"
+  },
+  {
+   "item": "Table of fiber fields summary",
+   "importance": "minor"
+  },
+  {
+   "item": "Fiber doesn't make React faster in total, just more responsive",
+   "importance": "minor"
+  },
+  {
+   "item": "Offscreen/Activity: hidden subtree keeps state, rendered at low priority",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit ordering note: componentWillUnmount sees old tree, componentDidMount sees new tree due to pointer swap",
+   "importance": "minor"
+  },
+  {
+   "item": "useEffect dependency comparison happens in render phase while effects run in commit",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Distinguishes element vs component instance vs fiber",
+   "importance": "useful"
+  },
+  {
+   "item": "Shows actual performUnitOfWork code and workLoopSync alongside the concurrent loop",
+   "importance": "useful"
+  },
+  {
+   "item": "Code example of defining a component inside another component, which remounts and loses state",
+   "importance": "useful"
+  },
+  {
+   "item": "Eager bailout in dispatchSetState: skips scheduling if the queue is empty and the state is equal",
+   "importance": "useful"
+  },
+  {
+   "item": "Bailout mechanics: the same props reference check, the cloned-children case when only the subtree has work, and why new JSX props defeat the bailout and React.memo restores it",
+   "importance": "useful"
+  },
+  {
+   "item": "Dispatcher switching between mount, update and invalid-context versions, and why hooks called outside render throw",
+   "importance": "useful"
+  },
+  {
+   "item": "Details on useState/useReducer queues, useMemo/useCallback comparing deps with Object.is, and useRef",
+   "importance": "useful"
+  },
+  {
+   "item": "Context propagation internals: propagateContextChange, the dependencies list, and marking childLanes so updates reach consumers through memo",
+   "importance": "useful"
+  },
+  {
+   "item": "Consequence of context: all consumers re-render even if they use only part of the value, with splitting contexts or selectors as the mitigation",
+   "importance": "useful"
+  },
+  {
+   "item": "Error boundary mechanics: throwException, ShouldCapture, unwindWork, and that only classes can be error boundaries",
+   "importance": "useful"
+  },
+  {
+   "item": "Suspense with transitions keeps the old UI instead of showing the fallback",
+   "importance": "useful"
+  },
+  {
+   "item": "End-to-end walkthrough of one update from click to passive effects",
+   "importance": "useful"
+  },
+  {
+   "item": "All cleanups in a commit run before any new effect bodies",
+   "importance": "useful"
+  },
+  {
+   "item": "useLayoutEffect blocks paint and can trigger a synchronous re-render before paint, so keep it rare",
+   "importance": "useful"
+  },
+  {
+   "item": "Commit-phase detail that after commit React checks root.pendingLanes and schedules more work",
+   "importance": "minor"
+  },
+  {
+   "item": "Lane internals: 31-bit integer, multiple transition lanes, and batching of same-lane updates, including in promises and timeouts",
+   "importance": "useful"
+  },
+  {
+   "item": "Scheduler uses a setTimeout fallback",
+   "importance": "minor"
+  },
+  {
+   "item": "Specific function names such as createWorkInProgress, markUpdateLaneFromFiberToRoot, ensureRootIsScheduled, bubbleProperties and reconcileChildFibers branches",
+   "importance": "minor"
+  },
+  {
+   "item": "Retry lane on Suspense boundary when a promise resolves",
+   "importance": "minor"
+  },
+  {
+   "item": "Omitted keys fall back to index with a dev warning",
+   "importance": "minor"
+  },
+  {
+   "item": "Fuller source file list, including ReactFiber.js, ReactFiberCommitWork.js and packages/scheduler",
+   "importance": "minor"
+  },
+  {
+   "item": "Practical advice not to define components inside components and to pass stable references to memoized children",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete example of resetting state with <Form key={userId} />",
+   "importance": "minor"
+  },
+  {
+   "item": "Elements vs component instance vs fiber distinction, with element immutability",
+   "importance": "minor"
+  },
+  {
+   "item": "createWorkInProgress and reuse of alternate fibers (details of double buffering)",
+   "importance": "minor"
+  },
+  {
+   "item": "Code of performUnitOfWork and workLoopSync vs concurrent",
+   "importance": "minor"
+  },
+  {
+   "item": "Detailed bailout conditions: oldProps===newProps reference check, no context change, no lanes; clone children when only subtree has work; why new JSX props defeat bailout",
+   "importance": "useful"
+  },
+  {
+   "item": "completeWork details: bubbleProperties, updateQueue of changed props, flags bubbling",
+   "importance": "minor"
+  },
+  {
+   "item": "Hook internals: useState/useReducer queue with skipped lower-priority updates, useMemo/useCallback store [value,deps] compared with Object.is, useRef stable object, invalid dispatcher throws outside render",
+   "importance": "useful"
+  },
+  {
+   "item": "Update start details: dispatchSetState, eager bailout when state equal, markUpdateLaneFromFiberToRoot, ensureRootIsScheduled",
+   "importance": "useful"
+  },
+  {
+   "item": "Batching: automatic batching in React 18 even in promises/timeouts; lane bitmask operations; InputContinuous/Default lane details",
+   "importance": "useful"
+  },
+  {
+   "item": "Scheduler fallback to setTimeout, ~5ms frame budget; concurrent only with createRoot plus concurrent feature",
+   "importance": "minor"
+  },
+  {
+   "item": "Commit: all cleanups run before any new effect bodies; useLayoutEffect can trigger sync re-render before paint and blocks paint; useEffect default",
+   "importance": "useful"
+  },
+  {
+   "item": "After commit, root.pendingLanes checked for remaining work",
+   "importance": "minor"
+  },
+  {
+   "item": "Suspense with transitions keeps old UI instead of fallback; retry lane on resolve; use(promise)",
+   "importance": "useful"
+  },
+  {
+   "item": "Error boundaries: throwException/ShouldCapture/unwindWork; no function-component error boundaries (need getDerivedStateFromError/componentDidCatch)",
+   "importance": "useful"
+  },
+  {
+   "item": "Context propagation: propagateContextChange via dependencies list, bypasses memo bailout, all consumers re-render on any value change, split contexts/selectors advice",
+   "importance": "useful"
+  },
+  {
+   "item": "End-to-end walkthrough of a single update",
+   "importance": "useful"
+  },
+  {
+   "item": "Example code of inner component definition remounting and key reset <Form key={userId}/>",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that index keys cause wrong input values; missing keys fall back to index with dev warning",
+   "importance": "minor"
+  },
+  {
+   "item": "Practical advice: use useLayoutEffect rarely, pass stable references to memoized children",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit note that moving last item to front is expensive (correct direction)",
+   "importance": "useful"
+  }
+ ]
+}

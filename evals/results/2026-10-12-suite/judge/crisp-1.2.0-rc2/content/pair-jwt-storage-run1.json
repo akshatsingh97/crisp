@@ -1,0 +1,109 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 6.0
+ },
+ "cut_items": [
+  {
+   "item": "Cookie-based setup with a separate API domain requires CORS with credentials (BFF avoids this)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit note that localStorage is acceptable for internal tools/prototypes (low-risk examples)",
+   "importance": "minor"
+  },
+  {
+   "item": "A cookie-based setup with a separate API domain needs CORS with credentials, and a BFF avoids this",
+   "importance": "useful"
+  },
+  {
+   "item": "CSRF token is advised specifically for state-changing requests",
+   "importance": "minor"
+  },
+  {
+   "item": "Names internal tools and prototypes as acceptable low-risk cases for localStorage",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Refresh token should be rotated on each use",
+   "importance": "useful"
+  },
+  {
+   "item": "localStorage tokens persist after the tab closes and have no expiry or access protection",
+   "importance": "minor"
+  },
+  {
+   "item": "Audit and pin dependencies; npm dependencies and compromised packages are an XSS/supply-chain vector",
+   "importance": "useful"
+  },
+  {
+   "item": "CSP should block inline and third-party scripts (more specific CSP guidance)",
+   "importance": "minor"
+  },
+  {
+   "item": "Definitions of XSS, CSRF, CSP and BFF for less experienced readers",
+   "importance": "minor"
+  },
+  {
+   "item": "SameSite=Strict as an alternative to Lax",
+   "importance": "minor"
+  },
+  {
+   "item": "BFF is the strongest option for high-risk apps, with the browser getting only a session cookie",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete high-risk examples (banking, health, admin) and a decision guide combining a strict CSP and short-lived tokens for the localStorage-acceptable case",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines XSS and CSRF in plain terms",
+   "importance": "minor"
+  },
+  {
+   "item": "localStorage has no expiry, so the token persists after the tab closes",
+   "importance": "minor"
+  },
+  {
+   "item": "Names compromised npm dependencies and your own code as XSS sources",
+   "importance": "minor"
+  },
+  {
+   "item": "Rotate the refresh token on each use",
+   "importance": "useful"
+  },
+  {
+   "item": "Audit and pin dependencies",
+   "importance": "useful"
+  },
+  {
+   "item": "Never render untrusted HTML (extends the innerHTML/dangerouslySetInnerHTML advice to user data)",
+   "importance": "minor"
+  },
+  {
+   "item": "BFF is described as the strongest option for high-risk apps, with the browser holding only a session cookie",
+   "importance": "useful"
+  },
+  {
+   "item": "SameSite can be Strict as well as Lax",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit decision guide naming banking, health and admin apps as needing httpOnly cookies or a BFF",
+   "importance": "minor"
+  }
+ ]
+}

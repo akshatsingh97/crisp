@@ -1,0 +1,137 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 2.0,
+  "useful": 4.5,
+  "minor": 4.5
+ },
+ "cut_items": [
+  {
+   "item": "Redis without AOF can lose queued jobs on restart (shared with Y's AOF warning, but X frames restart)",
+   "importance": "minor"
+  },
+  {
+   "item": "Managed Redis adds cost",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis/BullMQ offers job flows and very low latency (flows specifically)",
+   "importance": "minor"
+  },
+  {
+   "item": "Moving to BullMQ later is easy if handlers are plain functions (Y has similar advice)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit warning not to write your own queue",
+   "importance": "useful"
+  },
+  {
+   "item": "Managed Redis adds cost",
+   "importance": "minor"
+  },
+  {
+   "item": "BullMQ offers job flows",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Set Redis maxmemory-policy noeviction, otherwise queued jobs can be silently evicted",
+   "importance": "critical"
+  },
+  {
+   "item": "Postgres queue churn causes table bloat; keep autovacuum healthy and delete old completed jobs",
+   "importance": "critical"
+  },
+  {
+   "item": "Long-running workers hold connections; size the connection pool accordingly",
+   "importance": "useful"
+  },
+  {
+   "item": "Heavy job traffic can slow main queries when sharing one database",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis offloads job load from the main database",
+   "importance": "useful"
+  },
+  {
+   "item": "BullMQ features: repeatable jobs, priorities, dashboard, delayed jobs",
+   "importance": "useful"
+  },
+  {
+   "item": "pg-boss/graphile-worker support retries, scheduling, delayed jobs",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains SKIP LOCKED lets many workers claim different rows without blocking",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis enqueue is not transactional with a Postgres write: if write succeeds and enqueue fails, job is lost",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit numeric decision rule (~1,000 jobs/sec threshold for BullMQ)",
+   "importance": "minor"
+  },
+  {
+   "item": "AOF explained as append-only log",
+   "importance": "minor"
+  },
+  {
+   "item": "Postgres risk: queue churn creates dead rows/table bloat; keep autovacuum healthy and delete old completed jobs",
+   "importance": "critical"
+  },
+  {
+   "item": "Postgres risk: long-running workers hold connections; size the connection pool accordingly",
+   "importance": "useful"
+  },
+  {
+   "item": "Postgres risk: heavy job traffic can slow main queries when sharing one database",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis must set maxmemory-policy noeviction, otherwise queued jobs can be silently evicted",
+   "importance": "critical"
+  },
+  {
+   "item": "Redis cannot enqueue in the same transaction as a Postgres write; a successful write with a failed enqueue loses the job",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains that SKIP LOCKED lets many workers claim different rows without blocking",
+   "importance": "minor"
+  },
+  {
+   "item": "Postgres handles thousands of jobs/sec with SKIP LOCKED, and the switch threshold is about 1,000 jobs/sec",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis advantage: jobs add no load to the main database",
+   "importance": "minor"
+  },
+  {
+   "item": "BullMQ features: delayed and repeatable jobs, priorities, dashboard",
+   "importance": "minor"
+  },
+  {
+   "item": "Library features: pg-boss and graphile-worker support retries, scheduling, and delayed jobs",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains AOF as an append-only log on disk",
+   "importance": "minor"
+  }
+ ]
+}

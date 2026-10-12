@@ -1,0 +1,125 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 2.0,
+  "useful": 2.5,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "Concrete Postgres throughput ceiling of a few hundred jobs/sec, which is enough for most small apps",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit advice not to write your own queue and to use a library",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis features like job flows are mentioned as a reason to choose Redis",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis managed hosting cost mentioned (also in Y)",
+   "importance": "minor"
+  },
+  {
+   "item": "Do not write your own queue; use an existing library",
+   "importance": "useful"
+  },
+  {
+   "item": "Postgres is enough up to a few hundred jobs/sec, which fits most small apps (a more generous threshold)",
+   "importance": "minor"
+  },
+  {
+   "item": "Job flows as a Redis/BullMQ feature",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Set maxmemory-policy noeviction on Redis, otherwise queue keys can be evicted when memory is full, which silently loses jobs",
+   "importance": "critical"
+  },
+  {
+   "item": "Postgres queue risks: extra write load and table bloat on the main DB, which can slow app queries. Mitigate with frequent vacuum, deleting old completed jobs, or a separate database",
+   "importance": "critical"
+  },
+  {
+   "item": "Redis persistence can lose jobs with periodic snapshots as well as with persistence off, so enable AOF",
+   "importance": "useful"
+  },
+  {
+   "item": "Postgres polling adds latency; pg-boss and graphile-worker mitigate it with LISTEN/NOTIFY",
+   "importance": "useful"
+  },
+  {
+   "item": "Failed jobs, retries and history are easy to inspect with plain SQL",
+   "importance": "useful"
+  },
+  {
+   "item": "SKIP LOCKED lets many workers claim jobs without blocking each other",
+   "importance": "minor"
+  },
+  {
+   "item": "BullMQ has a good dashboard ecosystem and mature features: delayed jobs, priorities, repeatable jobs",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis is a second system to host and secure",
+   "importance": "minor"
+  },
+  {
+   "item": "Decision checklist, including the transactional enqueue example (create user and queue welcome email atomically)",
+   "importance": "minor"
+  },
+  {
+   "item": "Set maxmemory-policy noeviction on Redis, otherwise Redis can evict queue keys when memory is full (job loss)",
+   "importance": "critical"
+  },
+  {
+   "item": "Postgres queues add write load and table bloat on the main DB; heavy traffic can slow app queries; mitigate with frequent vacuum, deleting old completed jobs, or a separate database",
+   "importance": "critical"
+  },
+  {
+   "item": "Redis can lose jobs on crash with persistence off or periodic snapshots (explains why AOF matters; Y only mentions AOF absence/restart)",
+   "importance": "minor"
+  },
+  {
+   "item": "Postgres polling adds latency; pg-boss and graphile-worker mitigate with LISTEN/NOTIFY",
+   "importance": "useful"
+  },
+  {
+   "item": "Postgres failed jobs, retries, and history are easy to inspect with plain SQL",
+   "importance": "minor"
+  },
+  {
+   "item": "BullMQ has a good dashboard ecosystem",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis has mature features: delayed jobs, priorities, repeatable jobs (Y mentions only rate limiting and flows)",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete decision rules, including choose Postgres when transactional enqueue is needed (example: create user and queue welcome email atomically)",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis is a second system to host and secure",
+   "importance": "minor"
+  },
+  {
+   "item": "Threshold of about 100 jobs/sec for Postgres (more conservative than Y's figure)",
+   "importance": "minor"
+  }
+ ]
+}

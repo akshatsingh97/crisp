@@ -1,0 +1,113 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 0.5,
+  "useful": 3.0,
+  "minor": 4.5
+ },
+ "cut_items": [
+  {
+   "item": "Explicitly stops running containers first with a single docker stop $(docker ps -q) before pruning, so the prune also removes the containers",
+   "importance": "useful"
+  },
+  {
+   "item": "Includes -f in the main command to skip the confirmation prompt, which is useful for scripting",
+   "importance": "minor"
+  },
+  {
+   "item": "Lists what system prune removes: stopped containers, unused images, networks, build cache, volumes",
+   "importance": "minor"
+  },
+  {
+   "item": "Gives docker volume prune -a -f for Docker 25+ so that named volumes are removed too",
+   "importance": "useful"
+  },
+  {
+   "item": "Single concise sequence: docker stop $(docker ps -q) then docker system prune -a --volumes -f, directly answering the request",
+   "importance": "minor"
+  },
+  {
+   "item": "Advises to back up anything needed (e.g., databases) before deleting",
+   "importance": "useful"
+  },
+  {
+   "item": "Follow-up command docker volume prune -a -f for when volumes remain after Engine 25+ where --volumes only removes anonymous volumes",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Defines 'unused' as not used by a running container, so running containers and their images and volumes survive the prune unless stopped first",
+   "importance": "useful"
+  },
+  {
+   "item": "Docker Desktop on Mac/Windows: the disk image file does not shrink after cleanup, so use Clean/Purge data or reduce the disk image size in Settings to actually free host disk space",
+   "importance": "critical"
+  },
+  {
+   "item": "Gives docker builder prune -a -f to clear the build cache and docker network prune -f for networks as explicit steps",
+   "importance": "useful"
+  },
+  {
+   "item": "Filter example, docker image prune -a --filter until=168h, for keeping recent items",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that without -f, Docker prompts for confirmation",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that the 'requires at least 1 argument' error on empty lists is safe to ignore",
+   "importance": "minor"
+  },
+  {
+   "item": "States docker system prune skips named volumes unless --volumes is used, in Docker 23+",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that 'unused' in prune means not used by a running container (or at least a container), and that you must stop containers first to remove everything",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns to check what you need before deleting",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit step-by-step full wipe including docker rm of containers (Y only mentions rm -f in the alternatives list, so mostly overlapping)",
+   "importance": "minor"
+  },
+  {
+   "item": "Separate cleanup of networks (docker network prune -f) and build cache (docker builder prune -a -f) as explicit commands",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that docker system prune asks for confirmation and -f skips it",
+   "importance": "minor"
+  },
+  {
+   "item": "Version note: Docker 23+ prune skips named volumes unless --volumes is given",
+   "importance": "minor"
+  },
+  {
+   "item": "On Docker Desktop (Mac/Windows) the disk image file doesn't shrink after cleanup; use Clean/Purge data or reduce disk image size in Settings",
+   "importance": "useful"
+  },
+  {
+   "item": "Filter example to keep recent items: docker image prune -a --filter \"until=168h\"",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicitly states volume removal deletes database data (in the step 4 text) and that 'requires at least 1 argument' message means nothing of that type exists",
+   "importance": "minor"
+  }
+ ]
+}

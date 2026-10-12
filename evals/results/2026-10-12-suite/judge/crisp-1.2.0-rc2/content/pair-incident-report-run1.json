@@ -1,0 +1,137 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 4.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Open question on why only 18% of requests failed (partial pool exhaustion or only some instances received the change), with a prompt to check",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests possible reasons the value changed (typo, wrong environment value, test value reaching production) and asks to confirm",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes rollback restored service within two minutes (09:45 to 09:47) as a positive",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: require review for config changes to database settings",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: checkout 5xx alert that fires within 5 minutes (specific target)",
+   "importance": "minor"
+  },
+  {
+   "item": "Prompt to add time of first alert and time investigation started",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit timeline row for 09:12 to 09:45 of ongoing errors",
+   "importance": "minor"
+  },
+  {
+   "item": "Stresses that every action item needs an owner and a due date",
+   "importance": "minor"
+  },
+  {
+   "item": "Open question: why only 18% of requests failed rather than all, with hypotheses (some requests got a connection, or only some instances got the change)",
+   "importance": "useful"
+  },
+  {
+   "item": "Candidate reasons for the change: wrong environment value or a test value reaching production (in addition to a typo)",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: require review for config changes to database settings",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: 5xx alert that fires within 5 minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Each action item needs an owner and a due date",
+   "importance": "minor"
+  },
+  {
+   "item": "Rollback restored service within two minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Timeline row showing the ongoing 500s from 09:12 to 09:45",
+   "importance": "minor"
+  },
+  {
+   "item": "Open questions section: how long detection took and time to first investigation",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Caveat that the root cause is an inference and should be confirmed with connection wait metrics and error logs",
+   "importance": "useful"
+  },
+  {
+   "item": "Says detection time, alert source, and responder names are missing and must be added before publishing",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: automatic rollback on error rate during staged rollout",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: review why the change passed review",
+   "importance": "minor"
+  },
+  {
+   "item": "Validation should reject values far below the current value (a relative rule, not an absolute minimum)",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to publish as a shareable page or adapt to a template",
+   "importance": "minor"
+  },
+  {
+   "item": "Action items marked proposed with Owner: TBD",
+   "importance": "minor"
+  },
+  {
+   "item": "Missing details to fill in: alert source and responder names (not just detection time)",
+   "importance": "minor"
+  },
+  {
+   "item": "Root cause flagged as an inference; confirm with connection wait metrics and error logs",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: automatic rollback on error rate for canary config rollouts",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: review why the change passed review",
+   "importance": "minor"
+  },
+  {
+   "item": "Action items marked as proposed with owners TBD",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to publish as a shareable page or adapt to the user's template",
+   "importance": "minor"
+  }
+ ]
+}

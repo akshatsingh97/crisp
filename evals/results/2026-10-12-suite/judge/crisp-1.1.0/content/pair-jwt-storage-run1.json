@@ -1,0 +1,117 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "equal",
+  "equal"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "Keep the refresh token in an HttpOnly Secure SameSite cookie when localStorage is used for the access token",
+   "importance": "useful"
+  },
+  {
+   "item": "Backend-for-frontend (BFF) holding tokens server-side as an alternative that avoids CORS-with-credentials complexity",
+   "importance": "useful"
+  },
+  {
+   "item": "Cookie setup with a separate API domain needs CORS with credentials",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit examples of acceptable localStorage use: internal tool or prototype",
+   "importance": "minor"
+  },
+  {
+   "item": "If using localStorage, keep the refresh token in an HttpOnly Secure SameSite cookie, out of JS",
+   "importance": "useful"
+  },
+  {
+   "item": "Cookie-based setup with a separate API domain needs CORS with credentials",
+   "importance": "useful"
+  },
+  {
+   "item": "A backend-for-frontend (BFF) holding tokens server-side is an alternative that avoids the CORS issue",
+   "importance": "useful"
+  },
+  {
+   "item": "Examples of low-risk apps: internal tool or prototype",
+   "importance": "minor"
+  },
+  {
+   "item": "CSRF token is advised for state-changing requests specifically",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Keep short-lived access token in memory only (not localStorage), with refresh token in HttpOnly cookie",
+   "importance": "useful"
+  },
+  {
+   "item": "Support server-side token revocation",
+   "importance": "useful"
+  },
+  {
+   "item": "Pin dependency versions and note compromised npm packages as an attack vector",
+   "importance": "minor"
+  },
+  {
+   "item": "Escape or sanitize all user content",
+   "importance": "minor"
+  },
+  {
+   "item": "CSP should block inline scripts and unknown origins (specifics)",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines XSS and CSRF acronyms",
+   "importance": "minor"
+  },
+  {
+   "item": "SameSite=Strict as an option alongside Lax",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines XSS and CSRF terms for the reader",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions a compromised npm package as an XSS source",
+   "importance": "minor"
+  },
+  {
+   "item": "Pattern of access token in memory only plus refresh token in HttpOnly cookie, which avoids localStorage entirely",
+   "importance": "useful"
+  },
+  {
+   "item": "Use Strict as an alternative SameSite value",
+   "importance": "minor"
+  },
+  {
+   "item": "Pin dependency versions",
+   "importance": "minor"
+  },
+  {
+   "item": "Escape or sanitize all user content",
+   "importance": "useful"
+  },
+  {
+   "item": "Support server-side token revocation",
+   "importance": "useful"
+  },
+  {
+   "item": "Strict CSP should block inline scripts and unknown origins (more specific)",
+   "importance": "minor"
+  }
+ ]
+}

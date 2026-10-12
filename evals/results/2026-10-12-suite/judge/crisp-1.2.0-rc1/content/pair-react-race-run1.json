@@ -1,0 +1,89 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "Alternative of giving the component key={userId} so React resets state on switch",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit walkthrough of A/B switch scenario noting UI shows B while setData runs with A's data",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that a missing userId dependency causes permanently stale data (similar to Y's point)",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions SWR/TanStack Query handle cancellation and ordering (Y says similar)",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests key={userId} on the component so React resets state on user switch (alternative fix for stale data)",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests setting a loading state (not only clearing data) at the start of the effect",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that a missing dependency makes the old user's data persist permanently",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Warning not to read userId from an old closure in async code; use value from effect scope",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains network responses do not arrive in request order, with the concrete user 1/user 2 example",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit setUser(null) example for clearing old data at effect start",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that the AbortError is expected and should be ignored, plus that abort prevents setUser from running",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions libraries key the cache by user ID",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete example of out-of-order network responses (user 1 then user 2, request 2 finishes first)",
+   "importance": "minor"
+  },
+  {
+   "item": "Warns not to read userId from an old closure inside async code; use the effect-scope value",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that responses don't arrive in request order (root cause detail)",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes AbortError is expected and should be ignored (explicit explanation); also uses async/await form with try/catch",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that TanStack Query/SWR key the cache by user ID",
+   "importance": "minor"
+  }
+ ]
+}

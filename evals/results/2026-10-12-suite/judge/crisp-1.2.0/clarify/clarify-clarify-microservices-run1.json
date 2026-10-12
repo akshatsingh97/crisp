@@ -1,0 +1,49 @@
+{
+ "kept": [
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "claims": [
+  {
+   "claim": "Microservices let teams deploy and scale each service alone",
+   "kind": "restated"
+  },
+  {
+   "claim": "This (independent deployment/scaling/updating) gives greater scalability and resilience",
+   "kind": "restated"
+  },
+  {
+   "claim": "Independent deployment helps teams that need to ship frequently",
+   "kind": "restated"
+  },
+  {
+   "claim": "Microservices can add significant operational complexity",
+   "kind": "restated"
+  },
+  {
+   "claim": "You need a strategy for data consistency",
+   "kind": "restated"
+  },
+  {
+   "claim": "Each service typically owns its own database",
+   "kind": "restated"
+  },
+  {
+   "claim": "You can no longer rely on a single ACID transaction across the whole system",
+   "kind": "restated"
+  },
+  {
+   "claim": "Timeouts and retries become essential",
+   "kind": "restated"
+  },
+  {
+   "claim": "A team of fewer than ten engineers is often better off starting with a modular monolith",
+   "kind": "restated"
+  }
+ ]
+}

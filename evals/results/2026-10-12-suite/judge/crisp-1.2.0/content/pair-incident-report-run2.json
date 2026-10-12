@@ -1,0 +1,109 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 4.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 3.5
+ },
+ "cut_items": [
+  {
+   "item": "Notes that the deploy time, alert time, and time the problem was first noticed are missing (Y mentions detection time, alert source, and deploy time, so this is mostly shared)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit statement that the exact failure mode is unconfirmed, with a pointer to check pool-exhaustion and timeout errors in logs (Y also says this)",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: decide whether affected customers need follow-up after counting failed checkouts",
+   "importance": "useful"
+  },
+  {
+   "item": "States that customers who got a 500 could not complete checkout in that request",
+   "importance": "minor"
+  },
+  {
+   "item": "Says the pool reduction was 90% with no validation on the value",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to complete the report if given missing times, owners, and log findings",
+   "importance": "minor"
+  },
+  {
+   "item": "Quantifies the change as a 90% pool reduction",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item to decide whether affected customers need follow-up after counting failed checkouts",
+   "importance": "useful"
+  },
+  {
+   "item": "States that checkout traffic needs more than 5 concurrent connections and the 18% rate fits this cause, while the exact failure mode is unconfirmed",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicitly asks for the missing times, owners and log findings to complete the report, and states no details were invented",
+   "importance": "minor"
+  },
+  {
+   "item": "Asks to add how the problem was detected and why the rollback took that long (response analysis section)",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Action item: confirm whether the value 5 was a typo or an intended change, and record the answer",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that the change from 50 to 5 passed review and deploy without a block (a review process gap)",
+   "importance": "useful"
+  },
+  {
+   "item": "Includes a What Went Well section noting that the rollback fixed the problem",
+   "importance": "minor"
+  },
+  {
+   "item": "Flags that the missing alert source is a gap to fill",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to publish the report as a shareable page",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item to confirm whether the value 5 was a typo or an intended change, and record the answer",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item to measure failed orders and lost revenue for the 35-minute window",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes the change passed review and deploy without a block (review process gap)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit 'What Went Well' section noting the rollback fixed the problem",
+   "importance": "minor"
+  },
+  {
+   "item": "Flags that the alert source/detection time is missing, in addition to the deploy time",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to publish the report as a shareable page",
+   "importance": "minor"
+  }
+ ]
+}

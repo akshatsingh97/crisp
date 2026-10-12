@@ -1,0 +1,57 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "equal",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 1.5
+ },
+ "cut_items": [
+  {
+   "item": "Rationale that error code and 'payload' jargon should be logged rather than shown to users",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggestion to add a pointer to other ways of sharing large files (link, paid tier) if the app has them",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests adding a pointer to alternative ways of sharing large files (link, paid tier) if the app has them",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains the rationale: the message states what happened, the limit and the next step",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests choosing a smaller file as a workaround",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Suggests splitting the file into smaller parts as an action, in addition to compressing",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests keeping the error code in a small 'Error details' line for the support team, as well as in logs",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests keeping the error code available in a small 'Error details' line for support staff (as well as logs)",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests splitting the file into smaller parts as a workaround",
+   "importance": "minor"
+  }
+ ]
+}

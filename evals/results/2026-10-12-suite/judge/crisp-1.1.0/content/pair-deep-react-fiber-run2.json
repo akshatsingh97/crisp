@@ -1,0 +1,249 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.5,
+  "useful": 13.0,
+  "minor": 7.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 5.5
+ },
+ "cut_items": [
+  {
+   "item": "Table distinguishing element, component, instance, fiber with lifetimes",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete code example of defining a component inside a component causing remount and lost focus/state",
+   "importance": "useful"
+  },
+  {
+   "item": "Motivation for Fiber in detail: stack reconciler can't pause, goals such as multiple children returns and error boundaries",
+   "importance": "minor"
+  },
+  {
+   "item": "Traversal order example (begin/complete sequence for sample tree)",
+   "importance": "useful"
+  },
+  {
+   "item": "Detailed beginWork per-tag behavior (class, host, context, Suspense, memo)",
+   "importance": "useful"
+  },
+  {
+   "item": "React 18 replaced effect list with subtreeFlags; deletions field; index field",
+   "importance": "minor"
+  },
+  {
+   "item": "lastPlacedIndex worked examples ([A,B,C,D] to [B,C,D,A] vs [D,A,B,C]) showing which moves are expensive",
+   "importance": "useful"
+  },
+  {
+   "item": "Bailout conditions detail: two cases by childLanes, reference equality of props, clones children when childLanes match; default children re-render; re-render isn't DOM update",
+   "importance": "useful"
+  },
+  {
+   "item": "Same-value setState with Object.is may still render once before bailing",
+   "importance": "minor"
+  },
+  {
+   "item": "setState step detail: marking alternate and walking return pointers to mark childLanes",
+   "importance": "minor"
+  },
+  {
+   "item": "Starvation: expired lanes treated as urgent and rendered without yielding",
+   "importance": "useful"
+  },
+  {
+   "item": "Entangled lanes render together; SyncLane runs in microtask",
+   "importance": "minor"
+  },
+  {
+   "item": "Rebasing worked example with base queue (update 1 low, 2 high, 3 low)",
+   "importance": "useful"
+  },
+  {
+   "item": "Interruption: React either finishes or abandons render, never resumes mid-tree",
+   "importance": "useful"
+  },
+  {
+   "item": "Features enabled by Fiber: automatic batching, useDeferredValue, Offscreen/Activity, useSyncExternalStore tearing, selective hydration, error boundaries unwindWork",
+   "importance": "useful"
+  },
+  {
+   "item": "End-to-end walkthrough of a single click update (10 steps)",
+   "importance": "useful"
+  },
+  {
+   "item": "Practical notes: time slicing works between fibers not inside one slow render; commit with thousands of DOM changes still blocks; use useDeferredValue for external values",
+   "importance": "useful"
+  },
+  {
+   "item": "Source file map in React repo",
+   "importance": "minor"
+  },
+  {
+   "item": "Passive effect cleanup ordering and the fact useLayoutEffect blocks paint while useEffect doesn't",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete lanes-based end-to-end walkthrough of a single click update (10 steps) including SyncLane microtask, ancestor childLanes marking, bailouts of siblings",
+   "importance": "useful"
+  },
+  {
+   "item": "Starvation prevention: lanes get expiration times and overdue lanes are rendered without yielding",
+   "importance": "useful"
+  },
+  {
+   "item": "Rebasing example with concrete low/high/low priority updates and base queue",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat: time slicing works between fibers, not inside one slow function; a slow render cannot be split",
+   "importance": "critical"
+  },
+  {
+   "item": "Caveat: commit is synchronous, so thousands of DOM changes in one commit still block the main thread",
+   "importance": "useful"
+  },
+  {
+   "item": "Code example of inner component defined in parent causing remount, losing focus and state",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete traversal order example for tree App/Header/Main/List/Footer showing begin/complete order",
+   "importance": "useful"
+  },
+  {
+   "item": "Move-cost examples table ([A,B,C,D] to [B,C,D,A] vs [D,A,B,C]) clarifying lastPlacedIndex behaviour",
+   "importance": "useful"
+  },
+  {
+   "item": "Elements/components/instances/fibers comparison including Component as distinct concept",
+   "importance": "minor"
+  },
+  {
+   "item": "Fiber history: React 16 stack reconciler replaced; goals incl. multiple children returns and error boundaries; effect list in 16/17 replaced by subtreeFlags in 18",
+   "importance": "useful"
+  },
+  {
+   "item": "Key fiber fields: deletions array, Ref/Passive flags, and function names (createWorkInProgress, renderWithHooks, reconcileChildFibers, requestUpdateLane, ensureRootIsScheduled, scheduleUpdateOnFiber, dispatchSetState, unwindWork)",
+   "importance": "useful"
+  },
+  {
+   "item": "Class component and host component beginWork branches",
+   "importance": "minor"
+  },
+  {
+   "item": "Bailout two cases: childLanes with matching work means clone children and continue down; same-value setState may still render once more",
+   "importance": "useful"
+  },
+  {
+   "item": "Features enabled by Fiber: automatic batching, useDeferredValue, error boundaries via unwindWork, Offscreen/Activity, hydration in priority order, Server Components",
+   "importance": "useful"
+  },
+  {
+   "item": "useSyncExternalStore and tearing prevention",
+   "importance": "useful"
+  },
+  {
+   "item": "Entangled lanes render together",
+   "importance": "minor"
+  },
+  {
+   "item": "Clarification that React abandons rather than pauses/resumes a render mid-tree",
+   "importance": "useful"
+  },
+  {
+   "item": "Practical advice: use useDeferredValue for externally received values, profile before memo, move state down",
+   "importance": "minor"
+  },
+  {
+   "item": "Source file map in react-reconciler/src to read",
+   "importance": "useful"
+  },
+  {
+   "item": "bailout condition list: oldProps === newProps reference equality so new object each render defeats it; default child rerenders",
+   "importance": "useful"
+  },
+  {
+   "item": "Hooks Rules: only call from components/custom hooks since a current fiber is needed",
+   "importance": "minor"
+  },
+  {
+   "item": "Passive effect cleanup runs before next effect",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "performUnitOfWork code snippet",
+   "importance": "minor"
+  },
+  {
+   "item": "Reconciler vs renderer split: react-reconciler host config functions (createInstance, appendChild, commitUpdate)",
+   "importance": "useful"
+  },
+  {
+   "item": "Passing same element object such as props.children avoids rerender (lifting content into children)",
+   "importance": "useful"
+  },
+  {
+   "item": "Context change: React walks subtree and marks only consumers",
+   "importance": "useful"
+  },
+  {
+   "item": "prepareFreshStack named as the restart mechanism on interruption",
+   "importance": "minor"
+  },
+  {
+   "item": "Eager state shortcut when queue empty and state equal",
+   "importance": "minor"
+  },
+  {
+   "item": "Diffing only compares siblings at same level, never searches for moved node across levels",
+   "importance": "minor"
+  },
+  {
+   "item": "Single child comparison: key first, then type",
+   "importance": "minor"
+  },
+  {
+   "item": "Lifting content into props.children (same element object) prevents child rerenders",
+   "importance": "useful"
+  },
+  {
+   "item": "On context change React walks the subtree and marks only consumers",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit note that sync-lane renders do not yield while concurrent renders do",
+   "importance": "minor"
+  },
+  {
+   "item": "Fiber field detail: tag types list (Fragment, Suspense) and `index` mentioned in a compact way; prepareFreshStack named for interruption restart",
+   "importance": "minor"
+  },
+  {
+   "item": "Reconciler vs renderer split: react-reconciler package and host config functions (createInstance, appendChild, commitUpdate, removeChild) enabling DOM/Native/custom targets",
+   "importance": "useful"
+  },
+  {
+   "item": "Eager state shortcut: if queue empty and new state equals current, skip scheduling",
+   "importance": "minor"
+  },
+  {
+   "item": "Same-position same-type: DOM node gets only changed attributes and two Counter instances at different positions have separate state",
+   "importance": "minor"
+  },
+  {
+   "item": "Transitions keep old UI on screen when they would hide visible content (Suspense nuance)",
+   "importance": "minor"
+  }
+ ]
+}

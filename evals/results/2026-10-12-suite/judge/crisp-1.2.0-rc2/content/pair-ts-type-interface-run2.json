@@ -1,0 +1,109 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 5.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Interface extends reports conflicting property types as an error, while & intersection silently reduces conflicts to never",
+   "importance": "useful"
+  },
+  {
+   "item": "Interfaces check faster on large codebases because TypeScript caches them by name (performance)",
+   "importance": "useful"
+  },
+  {
+   "item": "Interface is not assignable to index-signature types like Record<string, unknown>, while type alias of object literal is; switching to type fixes the error",
+   "importance": "useful"
+  },
+  {
+   "item": "Function types can only be declared with type (interface only as object members); example of function type alias",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete examples of mapped type and conditional type syntax",
+   "importance": "minor"
+  },
+  {
+   "item": "Real-world use of merging: libraries use interfaces for public types, e.g. extending Express Request",
+   "importance": "minor"
+  },
+  {
+   "item": "Example showing duplicate type identifier error vs merged interface",
+   "importance": "minor"
+  },
+  {
+   "item": "Interface extends reports conflicting property types as an error, while & intersection silently reduces conflicting property to never",
+   "importance": "useful"
+  },
+  {
+   "item": "Interfaces check faster / are cached by name on large codebases (performance)",
+   "importance": "minor"
+  },
+  {
+   "item": "Interfaces lack implicit index signature, so not assignable to Record<string, unknown>; switching to type fixes it",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete duplicate-declaration example showing the type error, and merged interface example",
+   "importance": "minor"
+  },
+  {
+   "item": "Examples of function type, mapped type, and conditional type syntax",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete real-world merging examples (Window, Express Request) explaining why libraries use interfaces",
+   "importance": "minor"
+  },
+  {
+   "item": "Common rule of thumb: interface by default, type when extra features are needed",
+   "importance": "minor"
+  },
+  {
+   "item": "Comparison table summarizing feature support",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Error messages/hovers: interface names often display clearer; large intersections of type aliases harder to read",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that declaration merging can silently change an interface if another file declares the same name, causing surprises in large codebases",
+   "importance": "useful"
+  },
+  {
+   "item": "Advice to follow existing team convention",
+   "importance": "minor"
+  },
+  {
+   "item": "Nullable<T> generic alias example",
+   "importance": "minor"
+  },
+  {
+   "item": "Error messages/hovers: interface names often display more clearly than large type intersections",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to follow existing team convention; consistency matters",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that declaration merging can silently alter an interface if another file declares the same name, causing surprises in large codebases",
+   "importance": "useful"
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "equal",
+  "equal"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 1.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 1.0
+ },
+ "cut_items": [
+  {
+   "item": "Suggests adding a pointer to alternative ways to share large files (link, paid tier) if the app has them",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains the rationale: log the error code and jargon rather than showing them to users",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests adding a line pointing to alternative ways to share large files (link, paid tier) if the app offers them",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains the rationale for the message structure: what happened, the limit, and what to do next",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Advises keeping ERR_UPLOAD_413 in logs for support",
+   "importance": "minor"
+  },
+  {
+   "item": "Option to show a small 'Error code: UPLOAD_413' line so users can report it to support",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests optionally showing a short user-facing error code (e.g. 'Error code: UPLOAD_413') so users can report it to support",
+   "importance": "useful"
+  },
+  {
+   "item": "Advises keeping ERR_UPLOAD_413 in logs for support",
+   "importance": "minor"
+  }
+ ]
+}

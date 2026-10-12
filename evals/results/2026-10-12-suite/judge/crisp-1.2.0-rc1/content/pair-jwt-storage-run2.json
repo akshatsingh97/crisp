@@ -1,0 +1,113 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 5.5,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Concrete note that localStorage is acceptable for low-value data with short-lived token, strict CSP, and audited dependencies (similar to Y's list but framed as acceptable conditions)",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to tailor a concrete setup if given backend and token lifetime",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests a CSRF token or custom header check as a stronger option than SameSite alone",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes many teams accept the localStorage risk for simplicity",
+   "importance": "minor"
+  },
+  {
+   "item": "CSRF protection advice: SameSite helps, and a CSRF token or custom header check is safer",
+   "importance": "minor"
+  },
+  {
+   "item": "Says many teams accept the localStorage risk for simplicity",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to suggest a concrete setup if the user shares their backend and token lifetime",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Option to keep the access token in memory (JS variable) with a refresh token in an httpOnly cookie, calling a refresh endpoint on page load and on expiry",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that in-memory tokens are lost on page reload so a refresh flow is needed",
+   "importance": "useful"
+  },
+  {
+   "item": "Cookies work best when API is same-site; cross-site APIs need extra CORS and cookie settings",
+   "importance": "useful"
+  },
+  {
+   "item": "If keeping localStorage: rotate refresh tokens",
+   "importance": "useful"
+  },
+  {
+   "item": "Avoid inline scripts and never use innerHTML/dangerouslySetInnerHTML with untrusted data",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not use localStorage tokens for banking, admin, or health data; keep tokens low-privilege",
+   "importance": "useful"
+  },
+  {
+   "item": "Defines XSS and CSRF acronyms",
+   "importance": "minor"
+  },
+  {
+   "item": "localStorage has no expiry and persists until removed",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that localStorage has no expiry, so the token stays until explicitly removed",
+   "importance": "minor"
+  },
+  {
+   "item": "Option of an in-memory access token with a refresh call on page load, and the trade-off that in-memory tokens are lost on reload",
+   "importance": "useful"
+  },
+  {
+   "item": "Limits of the cookie approach: a cookie works best when the API is same-site, and cross-site APIs need extra CORS and cookie configuration",
+   "importance": "useful"
+  },
+  {
+   "item": "Mitigations if you keep localStorage: rotate refresh tokens",
+   "importance": "useful"
+  },
+  {
+   "item": "Mitigations if you keep localStorage: avoid inline scripts, and avoid innerHTML or dangerouslySetInnerHTML with untrusted data",
+   "importance": "useful"
+  },
+  {
+   "item": "Mitigations if you keep localStorage: limit third-party scripts",
+   "importance": "minor"
+  },
+  {
+   "item": "Do not use localStorage for banking, admin or health data (keep tokens low-privilege)",
+   "importance": "useful"
+  },
+  {
+   "item": "Defines XSS and CSRF in plain words",
+   "importance": "minor"
+  }
+ ]
+}

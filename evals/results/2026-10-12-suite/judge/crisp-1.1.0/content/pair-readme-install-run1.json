@@ -1,0 +1,65 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "equal",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 0.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Explains that logtail keeps the file open and shows new lines as they arrive (describes what --follow does)",
+   "importance": "useful"
+  },
+  {
+   "item": "Advises setting the token in every shell where you run logtail (the export doesn't persist across shells)",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that the token must be set in every shell where you run logtail (export is per-shell)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation of what --follow does: keeps the file open and shows new lines as they arrive",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "States that if LOGTAIL_TOKEN is not set, logtail cannot authenticate (consequence of a missing token)",
+   "importance": "useful"
+  },
+  {
+   "item": "Says the node --version output must show v18.0.0 or higher (explicit pass criterion for the version check)",
+   "importance": "minor"
+  },
+  {
+   "item": "Tells the reader to replace your-api-token with their own token",
+   "importance": "minor"
+  },
+  {
+   "item": "Tells the reader to replace app.log with the path to their own log file",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit instruction to verify the Node version output is v18.0.0 or higher",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that without LOGTAIL_TOKEN set, logtail cannot authenticate",
+   "importance": "useful"
+  },
+  {
+   "item": "Note to replace app.log with the path to your own log file",
+   "importance": "minor"
+  }
+ ]
+}

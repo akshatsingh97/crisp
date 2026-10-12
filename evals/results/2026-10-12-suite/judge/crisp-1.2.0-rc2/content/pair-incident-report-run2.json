@@ -1,0 +1,121 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "equal",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 4.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 3.5
+ },
+ "cut_items": [
+  {
+   "item": "Notes that the number of failed orders and revenue lost is unknown and should be measured",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes the deploy time and first-noticed time are missing from the timeline (Y lists detection time/alert source/responders as missing)",
+   "importance": "minor"
+  },
+  {
+   "item": "Contributing factor: no automatic stop or halt of the deploy when the error rate rose after the deploy (flagged to confirm)",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: count failed checkouts and decide whether customers need follow-up",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: automatic rollback in staged rollout when error rate rises",
+   "importance": "useful"
+  },
+  {
+   "item": "Quantifies the change as a 90% pool reduction and states that checkout traffic needs more than 5 concurrent connections",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicitly states that the failure mode is unconfirmed, and says to check the logs for pool-exhaustion and timeout errors",
+   "importance": "minor"
+  },
+  {
+   "item": "Contributing factor: the change was a 90% pool reduction with no check on the value",
+   "importance": "minor"
+  },
+  {
+   "item": "Contributing factor: possibly no automatic stop when the error rate rose after the deploy (flagged to confirm)",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item to roll out config changes in stages with automatic rollback on rising error rate",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item to count failed checkouts and decide whether customers need follow-up",
+   "importance": "useful"
+  },
+  {
+   "item": "Customer impact statement: customers who got a 500 could not complete checkout in that request",
+   "importance": "minor"
+  },
+  {
+   "item": "Says the deploy time is missing, separate from the alert and detection times",
+   "importance": "minor"
+  },
+  {
+   "item": "Gives a reason why 5 connections fail: checkout traffic needs more than 5 at once",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Action item: investigate why the value was set to 5 (typo, wrong environment value, or unit error), to find the origin of the misconfiguration",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains the mechanism: requests waited for a free connection from the 5-connection pool and some failed with 500; defines what a pool is",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes responder names are missing from the report and need to be added",
+   "importance": "minor"
+  },
+  {
+   "item": "'What went well' section: rollback restored service within about 2 minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "States the bad value reached production without a block or review (review gap)",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes the cause of the 33-minute delay before rollback is not stated",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains what a connection pool is (fixed set of reusable connections) for non-expert readers",
+   "importance": "minor"
+  },
+  {
+   "item": "Lists missing responder names as a gap to fill",
+   "importance": "minor"
+  },
+  {
+   "item": "'What went well' section noting the rollback restored service in about 2 minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item to investigate why the value was set to 5 (typo, wrong environment value, unit error)",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes the bad value reached production without a block or review (review gap)",
+   "importance": "useful"
+  }
+ ]
+}

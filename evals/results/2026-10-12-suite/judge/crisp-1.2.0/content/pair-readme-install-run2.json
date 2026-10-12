@@ -1,0 +1,57 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "baseline",
+  "equal"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 1.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 1.0
+ },
+ "cut_items": [
+  {
+   "item": "Explains that --follow keeps logtail open and shows new lines as they are appended to the file",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns that if LOGTAIL_TOKEN is not set logtail cannot read the token, and that it must be set in the same terminal session before running",
+   "importance": "useful"
+  },
+  {
+   "item": "Numbered steps give explicit ordering (install, set token, run)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that --follow keeps logtail open and shows new lines as they are added",
+   "importance": "minor"
+  },
+  {
+   "item": "Warns that LOGTAIL_TOKEN must be set in the same terminal session before running the command",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Suggests checking the Node version with `node --version`",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that the export command is for bash/zsh and that Windows shells need a different command",
+   "importance": "useful"
+  },
+  {
+   "item": "Tells the reader how to check their Node.js version (`node --version`)",
+   "importance": "useful"
+  },
+  {
+   "item": "Note that the export syntax is for bash/zsh and Windows needs a different command",
+   "importance": "minor"
+  }
+ ]
+}

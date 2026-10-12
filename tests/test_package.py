@@ -80,6 +80,28 @@ class Skills(unittest.TestCase):
         self.assertIn("## Part E: Completeness", chatgpt)
 
 
+class ContentRules(unittest.TestCase):
+    """Crisp 1.1.0 cut useful content because of length limits. These tests keep the limits out."""
+    FILES = ["skills/crisp/SKILL.md", "hooks/context/lite.md", "output-styles/crisp.md",
+             "portable/system-prompt.md", "portable/AGENTS.md", "portable/chatgpt-custom-instructions.md"]
+
+    def test_no_length_caps(self):
+        for rel in self.FILES:
+            text = (ROOT / rel).read_text().lower()
+            for banned in ("one to three sentences", "1-3 sentences", "maximum seven", "max 7", "maximum of seven"):
+                self.assertNotIn(banned, text, f"{rel}: {banned}")
+
+    def test_content_rule_is_everywhere(self):
+        for rel in self.FILES:
+            text = (ROOT / rel).read_text().lower()
+            self.assertTrue("never what" in text or "never cut" in text or "change how you write" in text, rel)
+
+    def test_completeness_rules_e9_to_e14(self):
+        text = (ROOT / "skills" / "crisp" / "SKILL.md").read_text()
+        for n in range(9, 15):
+            self.assertIn(f"E{n}.", text)
+
+
 class Portable(unittest.TestCase):
     def test_chatgpt_block_fits_the_free_plan_limit(self):
         text = (ROOT / "portable" / "chatgpt-custom-instructions.md").read_text()

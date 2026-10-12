@@ -1,0 +1,89 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "candidate",
+  "equal"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Before/after migration example showing 2.x init() with no args versus 3.0 init({apiKey})",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit note that the longer retry default means failed requests take longer to give up",
+   "importance": "useful"
+  },
+  {
+   "item": "Flags to the publisher that the retry option name is unknown and must be filled in before publishing, and offers to add an on('error') example if given the handler signature",
+   "importance": "useful"
+  },
+  {
+   "item": "Tells the reader to read the migration step before upgrading",
+   "importance": "minor"
+  },
+  {
+   "item": "Before/after migration example showing 2.x init() vs 3.0 init({apiKey})",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes the practical effect of 5 retries: failed requests take longer to give up",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit note to the author that the retry option name is unknown and must be filled in before publishing",
+   "importance": "useful"
+  },
+  {
+   "item": "Offers to add an on('error') example if given the handler signature",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Code example of on('error') handler (sdk.on('error', (err) => console.error(err)))",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that the handler signature (error as first argument) is assumed and should be confirmed against the SDK reference",
+   "importance": "useful"
+  },
+  {
+   "item": "Step to find every init() call in the codebase and add apiKey before upgrading",
+   "importance": "useful"
+  },
+  {
+   "item": "Tells reader to check the SDK reference for the retry option name",
+   "importance": "minor"
+  },
+  {
+   "item": "Clarifies that retries increase unless the user sets the retry count themselves",
+   "importance": "minor"
+  },
+  {
+   "item": "Code example for on('error') handler (sdk.on('error', (err) => {...})), with caveat to confirm the handler signature against SDK reference",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns that requests will retry more often unless retry count is set explicitly",
+   "importance": "minor"
+  },
+  {
+   "item": "Advises finding every init() call in the codebase before upgrading",
+   "importance": "useful"
+  },
+  {
+   "item": "Tells reader to check the SDK reference for the retry option name",
+   "importance": "minor"
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 4.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Upgrade example: Python 3.12 to 3.13 or Debian bookworm to trixie can land silently in an unrelated commit and surface as CI/prod failure",
+   "importance": "minor"
+  },
+  {
+   "item": "Auditing/CVE response: can't tell which base image a deployment was built from",
+   "importance": "useful"
+  },
+  {
+   "item": "Advises avoiding bare major tags like python:3 (not specific enough)",
+   "importance": "minor"
+  },
+  {
+   "item": "Rebuild on a schedule so patches arrive deliberately",
+   "importance": "minor"
+  },
+  {
+   "item": "Bots (Renovate/Dependabot) bump pins so security patches flow through review and CI",
+   "importance": "minor"
+  },
+  {
+   "item": "Avoid bare major-only tags like python:3; pin a full version tag",
+   "importance": "useful"
+  },
+  {
+   "item": "Auditing/CVE response: can't tell which base image a deployment was built from",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete breaking-change examples (Python 3.12 to 3.13, Debian bookworm to trixie)",
+   "importance": "minor"
+  },
+  {
+   "item": "Pinning by digest while keeping the tag for readability",
+   "importance": "minor"
+  },
+  {
+   "item": "Renovate/Dependabot PRs go through review and CI so updates are deliberate",
+   "importance": "minor"
+  },
+  {
+   "item": "Rebuild on a schedule so patches arrive deliberately",
+   "importance": "useful"
+  },
+  {
+   "item": "Local build host cache can be stale and disagree with a clean CI runner",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Warning that a pinned image does not receive security patches automatically; you must bump it deliberately",
+   "importance": "useful"
+  },
+  {
+   "item": "Run an image scanner such as Trivy or Grype in CI",
+   "importance": "useful"
+  },
+  {
+   "item": "Mirror the base image in your own registry to protect from upstream tag changes or removal",
+   "importance": "useful"
+  },
+  {
+   "item": "Digest pinning protects even if someone retags the image",
+   "importance": "minor"
+  },
+  {
+   "item": "`latest` doesn't necessarily mean newest stable; the maintainer decides what it points to",
+   "importance": "minor"
+  },
+  {
+   "item": "Rollbacks are harder because you can't tell which base image a failing deploy used",
+   "importance": "minor"
+  },
+  {
+   "item": "Exception includes short-lived CI jobs",
+   "importance": "minor"
+  },
+  {
+   "item": "Pinned images don't get security patches automatically; you must bump them deliberately",
+   "importance": "useful"
+  },
+  {
+   "item": "Mirror the base image in your own registry to protect against upstream tag changes or removal",
+   "importance": "useful"
+  },
+  {
+   "item": "Run an image scanner such as Trivy or Grype in CI",
+   "importance": "useful"
+  },
+  {
+   "item": "Rollbacks are harder because you can't tell which base image a failing deploy used",
+   "importance": "minor"
+  },
+  {
+   "item": "latest doesn't necessarily mean newest stable; the maintainer decides what it points to",
+   "importance": "minor"
+  },
+  {
+   "item": "Example of pinning node:22.11-bookworm-slim",
+   "importance": "minor"
+  },
+  {
+   "item": "Short-lived CI jobs listed as an acceptable exception",
+   "importance": "minor"
+  }
+ ]
+}

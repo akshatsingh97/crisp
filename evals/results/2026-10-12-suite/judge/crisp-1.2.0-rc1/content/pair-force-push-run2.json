@@ -1,0 +1,73 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "equal",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 0.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Alternative: merge the target branch into the feature branch instead of rewriting history; pushes without force but adds a merge commit",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains that rebase rewrites commits so local history no longer extends remote history (the cause of the rejection)",
+   "importance": "minor"
+  },
+  {
+   "item": "Alternative: merge the target branch into the feature branch instead of rebasing/force pushing, which needs no force but adds a merge commit",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Guidance for a 'stale info' rejection from --force-with-lease: fetch again, review new commits, rebase onto them if needed",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit ordered workflow including the git fetch origin step before the push and the final push command as step 3",
+   "importance": "minor"
+  },
+  {
+   "item": "Use --oneline flag in the log check for readable output",
+   "importance": "minor"
+  },
+  {
+   "item": "Warn teammates before they reset their checkout",
+   "importance": "minor"
+  },
+  {
+   "item": "Naming 'develop' as another shared branch example",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit step to run git fetch origin before checking",
+   "importance": "minor"
+  },
+  {
+   "item": "If push fails with stale info, fetch again, review new commits, and rebase onto them",
+   "importance": "useful"
+  },
+  {
+   "item": "Old PR review comments can lose their position in the diff (Y says similar: comments become outdated)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation that the rebase causes remote rejection to protect history (both say this)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit explanation that --force-with-lease only succeeds if remote matches what you last fetched (and that a fetch refreshes that, which is why fetch+review matters)",
+   "importance": "minor"
+  }
+ ]
+}

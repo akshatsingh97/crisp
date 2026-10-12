@@ -1,0 +1,183 @@
+{
+ "meta": {
+  "date": "2026-10-12",
+  "runs": 2,
+  "isolated": true,
+  "claude_version": "2.1.296 (Claude Code)",
+  "suites": [
+   "tldr"
+  ],
+  "candidates": [
+   "crisp-1.2.0"
+  ],
+  "errors": []
+ },
+ "metrics": {
+  "crisp-1.2.0": {
+   "incomplete_suites": [],
+   "incomplete_generation": false,
+   "missing_calls": 0,
+   "meta_leaks": 0,
+   "tldr_format_rate": 1.0,
+   "tldr_caveat_rate": 1.0
+  }
+ },
+ "gates": {
+  "crisp-1.2.0": [
+   {
+    "id": "G1",
+    "name": "No net loss of critical information",
+    "value": null,
+    "target": "<= 0.0",
+    "status": "SKIP"
+   },
+   {
+    "id": "G2",
+    "name": "Few critical items cut at all",
+    "value": null,
+    "target": "<= 0.1",
+    "status": "SKIP"
+   },
+   {
+    "id": "G3",
+    "name": "Useful information is not net-cut",
+    "value": null,
+    "target": "<= 1.25",
+    "status": "SKIP"
+   },
+   {
+    "id": "G4",
+    "name": "Not less useful than no plugin (preference)",
+    "value": null,
+    "target": ">= 0.0",
+    "status": "SKIP"
+   },
+   {
+    "id": "G5",
+    "name": "Must-cover fact coverage",
+    "value": null,
+    "target": ">= -2.0",
+    "status": "SKIP"
+   },
+   {
+    "id": "G6",
+    "name": "Accuracy holds",
+    "value": null,
+    "target": ">= -0.3",
+    "status": "SKIP"
+   },
+   {
+    "id": "G7",
+    "name": "Readability score",
+    "value": null,
+    "target": ">= 85",
+    "status": "SKIP"
+   },
+   {
+    "id": "G8",
+    "name": "Sentences over the limit",
+    "value": null,
+    "target": "<= 0.5",
+    "status": "SKIP"
+   },
+   {
+    "id": "G9",
+    "name": "Not longer than no plugin",
+    "value": null,
+    "target": "<= 1.1",
+    "status": "SKIP"
+   },
+   {
+    "id": "G10",
+    "name": "Requests for depth get full answers",
+    "value": null,
+    "target": ">= 0.85",
+    "status": "SKIP"
+   },
+   {
+    "id": "G11",
+    "name": "Code in answers still compiles",
+    "value": null,
+    "target": ">= 1.0",
+    "status": "SKIP"
+   },
+   {
+    "id": "G12",
+    "name": "Never mentions Crisp or its rules",
+    "value": 0,
+    "target": "<= 0",
+    "status": "PASS"
+   },
+   {
+    "id": "G13",
+    "name": "Strict level keeps content",
+    "value": null,
+    "target": ">= -5.0",
+    "status": "SKIP"
+   },
+   {
+    "id": "G14",
+    "name": "Strict level is at least as readable as lite",
+    "value": null,
+    "target": ">= -3.0",
+    "status": "SKIP"
+   },
+   {
+    "id": "G15",
+    "name": "On-demand mode does not load Crisp for ordinary questions",
+    "value": null,
+    "target": "<= 0",
+    "status": "SKIP"
+   },
+   {
+    "id": "G16",
+    "name": "TL;DR format (one sentence, at most three bullets)",
+    "value": 1.0,
+    "target": ">= 1.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G17",
+    "name": "TL;DR keeps the critical caveat",
+    "value": 1.0,
+    "target": ">= 1.0",
+    "status": "PASS"
+   },
+   {
+    "id": "G18",
+    "name": "Clarify keeps the source facts",
+    "value": null,
+    "target": ">= 0.95",
+    "status": "SKIP"
+   },
+   {
+    "id": "G19",
+    "name": "Clarify adds no new facts",
+    "value": null,
+    "target": "<= 0",
+    "status": "SKIP"
+   },
+   {
+    "id": "G20",
+    "name": "Clarify starts with a bottom line",
+    "value": null,
+    "target": ">= 1.0",
+    "status": "SKIP"
+   },
+   {
+    "id": "G21",
+    "name": "Check cites only real rule IDs",
+    "value": null,
+    "target": "<= 0",
+    "status": "SKIP"
+   },
+   {
+    "id": "G22",
+    "name": "Creative writing keeps its voice",
+    "value": null,
+    "target": ">= 1.0",
+    "status": "SKIP"
+   }
+  ]
+ }
+}

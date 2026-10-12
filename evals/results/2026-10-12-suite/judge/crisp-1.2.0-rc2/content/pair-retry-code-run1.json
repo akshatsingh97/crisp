@@ -1,0 +1,109 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 4.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Cautions: don't retry non-transient errors like ValueError or HTTP 400 (overlaps with Y's narrow-exceptions note)",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that a timed-out POST may have succeeded; use an idempotency key or skip retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Example waits sequence shown with multiplier; example passes timeout=5 kwarg to the function to demonstrate forwarding kwargs",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation of why jitter matters (avoids synchronized retry load spikes) in dedicated section",
+   "importance": "minor"
+  },
+  {
+   "item": "Docstring in the function",
+   "importance": "minor"
+  },
+  {
+   "item": "Example passes a function kwarg (timeout=5) through to func, showing kwargs forwarding",
+   "importance": "minor"
+  },
+  {
+   "item": "Caution that a timed-out POST may have succeeded; suggests using an idempotency key or skipping retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not retry non-transient errors like HTTP 400 or ValueError since retrying cannot fix them",
+   "importance": "minor"
+  },
+  {
+   "item": "Dedicated explanation of why jitter matters (thundering herd / repeated load spikes)",
+   "importance": "minor"
+  },
+  {
+   "item": "Docstring in the function",
+   "importance": "minor"
+  },
+  {
+   "item": "Warns that using time.sleep in asyncio code blocks the event loop",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Decorator form `retrying(...)` with functools.wraps for reuse",
+   "importance": "useful"
+  },
+  {
+   "item": "Tip to set jitter=False for deterministic waits, e.g. in tests",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that default `Exception` will also retry bugs like TypeError that never succeed",
+   "importance": "useful"
+  },
+  {
+   "item": "Worst-case total wait with defaults is about 7.5s for 5 attempts (less with jitter)",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that a retried payment request can charge twice; defines idempotent",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that function blocks with time.sleep; async version needed (X also says this)",
+   "importance": "minor"
+  },
+  {
+   "item": "Decorator form `retrying(...)` using functools.wraps for reuse on functions",
+   "importance": "useful"
+  },
+  {
+   "item": "Worst-case total wait for defaults (~7.5s over 5 attempts, less with jitter)",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to set jitter=False for deterministic waits in tests",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that default exceptions=Exception retries bugs like TypeError that can never succeed",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that a retried payment request can charge twice (idempotency)",
+   "importance": "useful"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "kept": [
+  true,
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "claims": [
+  {
+   "claim": "Restore the backup to check that it works (as a distinct step)",
+   "kind": "restated"
+  },
+  {
+   "claim": "If the version is 10 or older, the migration will lock orders for the whole rewrite",
+   "kind": "restated"
+  },
+  {
+   "claim": "Without a timeout, the waiting ALTER TABLE blocks every query queued behind it",
+   "kind": "restated"
+  },
+  {
+   "claim": "Check that PostgreSQL is version 11 or later before the migration",
+   "kind": "restated"
+  },
+  {
+   "claim": "A backup that was never tested can fail when you need it",
+   "kind": "restated"
+  }
+ ]
+}

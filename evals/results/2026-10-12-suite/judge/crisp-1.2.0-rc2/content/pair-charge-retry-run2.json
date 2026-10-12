@@ -1,0 +1,149 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 4.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 5.0,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Only retry on network errors, 5xx and 429; do not retry card declines or other 4xx errors",
+   "importance": "useful"
+  },
+  {
+   "item": "User double-clicking Pay or refreshing can cause duplicate charges; deriving key from order ID covers it",
+   "importance": "useful"
+  },
+  {
+   "item": "Reusing a key with different parameters returns an error (also in Y)",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to inspect checkout code",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit step-by-step failure scenario (processed, response lost, retry)",
+   "importance": "minor"
+  },
+  {
+   "item": "SDK maxNetworkRetries only helps if you aren't also running your own retry loop around it (avoid nesting)",
+   "importance": "minor"
+  },
+  {
+   "item": "PaymentIntents handles retries and 3D Secure better",
+   "importance": "minor"
+  },
+  {
+   "item": "Only retry on network errors, 5xx and 429; do not retry card declines or other 4xx errors",
+   "importance": "useful"
+  },
+  {
+   "item": "A user double-clicking Pay or refreshing can cause duplicate charges; deriving the key from the order ID covers this",
+   "importance": "useful"
+  },
+  {
+   "item": "maxNetworkRetries only helps if you are not also running your own retry loop around the SDK (stacked retries)",
+   "importance": "useful"
+  },
+  {
+   "item": "PaymentIntents handles retries and 3D Secure better, and idempotency keys work the same way there",
+   "importance": "minor"
+  },
+  {
+   "item": "Step-by-step explanation of the failure mechanism (charge succeeds, response lost, retry creates second charge)",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to review the checkout code to check whether the key is created once per order or inside the retry loop",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests stable key sources like checkout-session ID",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Add a database unique constraint on order ID/payment record so two charges can't be recorded for one order",
+   "importance": "useful"
+  },
+  {
+   "item": "Store order ID in charge metadata and search for an existing charge before retrying after an unknown failure",
+   "importance": "useful"
+  },
+  {
+   "item": "Use webhooks as the source of truth for payment status",
+   "importance": "useful"
+  },
+  {
+   "item": "Stripe saves status code and body of the first request including 500 errors, and returns them on retry with same key",
+   "importance": "useful"
+  },
+  {
+   "item": "If the first request is still running, a retry can fail with a conflict error; wait and retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Don't rely on key for retries days later (keys may be removed after 24h)",
+   "importance": "minor"
+  },
+  {
+   "item": "SDK reuses one generated key across its own retries; make sure key is created outside your own retry loop",
+   "importance": "minor"
+  },
+  {
+   "item": "A network error does not tell you whether Stripe received the request",
+   "importance": "minor"
+  },
+  {
+   "item": "PaymentIntents state machine helps prevent duplicate payments",
+   "importance": "minor"
+  },
+  {
+   "item": "Stripe saves and replays the first result including 500 errors, so same-key retries return the saved error",
+   "importance": "useful"
+  },
+  {
+   "item": "If the first request is still in flight, a same-key retry can fail with a conflict error; wait and retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Add a database unique constraint on order/payment record to prevent recording two charges for one order",
+   "importance": "useful"
+  },
+  {
+   "item": "Store order ID in charge metadata and search for an existing charge before retrying after an unknown failure",
+   "importance": "useful"
+  },
+  {
+   "item": "Use webhooks as the source of truth for payment status",
+   "importance": "useful"
+  },
+  {
+   "item": "If a custom retry loop wraps the call, create the key outside the loop (explicit checklist item)",
+   "importance": "minor"
+  },
+  {
+   "item": "The SDK reuses one generated key across its own retries",
+   "importance": "minor"
+  },
+  {
+   "item": "Don't rely on a key for retries days later, since keys can be removed after 24 hours",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that the code has not been seen, so check it first",
+   "importance": "minor"
+  }
+ ]
+}

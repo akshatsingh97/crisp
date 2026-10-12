@@ -1,0 +1,89 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Describes behavior: logtail keeps the file open and shows new lines as they arrive (Y also says this via --follow explanation)",
+   "importance": "minor"
+  },
+  {
+   "item": "Warns the token must be set in every shell where logtail is run (Y covers this with 'lasts only for the current shell session')",
+   "importance": "minor"
+  },
+  {
+   "item": "Reminder to set the token in every shell where logtail runs",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Verification step: run `logtail --help` to confirm the install worked (flag is an assumption, flagged by Y)",
+   "importance": "minor"
+  },
+  {
+   "item": "Troubleshooting: if 'command not found', add npm global bin directory to PATH",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that the CLI cannot read the token if LOGTAIL_TOKEN is not set",
+   "importance": "useful"
+  },
+  {
+   "item": "Export command works in bash and zsh (shell-specific note)",
+   "importance": "minor"
+  },
+  {
+   "item": "Press Ctrl+C to stop the running follow command",
+   "importance": "useful"
+  },
+  {
+   "item": "Requirement that a Logtail API token is needed (listed as a prerequisite)",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that the --help assumption should be removed if unsupported",
+   "importance": "minor"
+  },
+  {
+   "item": "Verification step: run `logtail --help` to confirm install (flag is an unverified assumption)",
+   "importance": "minor"
+  },
+  {
+   "item": "Troubleshooting: if 'command not found', add the npm global bin directory to PATH",
+   "importance": "useful"
+  },
+  {
+   "item": "Export command works in bash/zsh and the variable lasts only for the current shell session (shell-specific caveat)",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that the CLI cannot read the token if LOGTAIL_TOKEN is not set",
+   "importance": "minor"
+  },
+  {
+   "item": "Press Ctrl+C to stop the following command; --follow keeps running",
+   "importance": "useful"
+  },
+  {
+   "item": "States a Logtail API token is a requirement up front",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that --help is an assumed flag and the step should be removed if unsupported",
+   "importance": "minor"
+  }
+ ]
+}

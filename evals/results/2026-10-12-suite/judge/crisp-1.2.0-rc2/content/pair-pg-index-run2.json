@@ -1,0 +1,145 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.5,
+  "useful": 3.5,
+  "minor": 3.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 4.0,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Query to find invalid indexes across DB (WHERE NOT indisvalid) and use DROP INDEX CONCURRENTLY on it",
+   "importance": "useful"
+  },
+  {
+   "item": "Long transactions also hold back vacuum cleanup (xmin horizon) while build runs",
+   "importance": "useful"
+  },
+  {
+   "item": "Disk estimate: index roughly 10-30% of table size; test real size on restored copy",
+   "importance": "useful"
+  },
+  {
+   "item": "Monitor WAL archive space in addition to replication lag",
+   "importance": "minor"
+  },
+  {
+   "item": "Partitioned tables: CONCURRENTLY not allowed on parent; build per partition, then CREATE INDEX ON ONLY parent and attach partition indexes",
+   "importance": "critical"
+  },
+  {
+   "item": "After build run ANALYZE on the table",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to tailor with column types, version, partitions/replicas",
+   "importance": "minor"
+  },
+  {
+   "item": "Partitioned tables: CONCURRENTLY can't be used on the parent; build per-partition indexes then create parent index with ON ONLY and attach",
+   "importance": "useful"
+  },
+  {
+   "item": "The concurrent build holds back vacuum cleanup while running",
+   "importance": "useful"
+  },
+  {
+   "item": "Disk space estimate of roughly 10-30% of table size, and test real size on a restored copy",
+   "importance": "useful"
+  },
+  {
+   "item": "Watch WAL archive space as well as replication lag",
+   "importance": "minor"
+  },
+  {
+   "item": "Run during a quiet period",
+   "importance": "minor"
+  },
+  {
+   "item": "Run ANALYZE on the table after the build",
+   "importance": "useful"
+  },
+  {
+   "item": "Query to find all invalid indexes across the database (WHERE NOT indisvalid)",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to tailor advice given column types, version, partitions and replicas",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Rails-specific disable_ddl_transaction! to disable migration transaction",
+   "importance": "useful"
+  },
+  {
+   "item": "Test on a staging copy to get time estimate",
+   "importance": "useful"
+  },
+  {
+   "item": "Run from a stable session like tmux; dropped connection cancels the build",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not raise maintenance_work_mem globally, session only",
+   "importance": "minor"
+  },
+  {
+   "item": "pg_stat_progress_create_index available from Postgres 12 (version note)",
+   "importance": "minor"
+  },
+  {
+   "item": "Partial index with WHERE clause to reduce build time and size",
+   "importance": "useful"
+  },
+  {
+   "item": "Each new index adds write overhead on inserts/updates; ensure it's worthwhile",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit query to check indisvalid for a specific table's indexes",
+   "importance": "minor"
+  },
+  {
+   "item": "Default statement_timeout will cancel the build, explicit caution",
+   "importance": "minor"
+  },
+  {
+   "item": "Run from a stable session (tmux) because a dropped connection cancels the build",
+   "importance": "useful"
+  },
+  {
+   "item": "Test on a staging copy to get a time estimate",
+   "importance": "useful"
+  },
+  {
+   "item": "Rails-specific disable_ddl_transaction! for turning off migration transaction",
+   "importance": "minor"
+  },
+  {
+   "item": "Partial index option to reduce build time and size",
+   "importance": "useful"
+  },
+  {
+   "item": "Every new index adds write cost on inserts/updates, so confirm it is needed",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit DROP INDEX CONCURRENTLY retry step plus a query to check indisvalid for the specific table",
+   "importance": "minor"
+  },
+  {
+   "item": "Pg 12+ pg_stat_progress_create_index version note",
+   "importance": "minor"
+  }
+ ]
+}

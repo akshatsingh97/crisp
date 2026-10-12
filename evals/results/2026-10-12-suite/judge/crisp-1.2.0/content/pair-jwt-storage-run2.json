@@ -1,0 +1,101 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 4.0,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Use a CSRF token or custom header check as a stronger CSRF defense than SameSite alone",
+   "importance": "minor"
+  },
+  {
+   "item": "Pair short-lived access token (5-15 min) with refresh token in HttpOnly cookie (as a recommended step)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit note that many teams accept localStorage for simplicity",
+   "importance": "minor"
+  },
+  {
+   "item": "CSRF token or custom header check is safer than SameSite alone",
+   "importance": "useful"
+  },
+  {
+   "item": "Offer to tailor a concrete setup if given backend and token lifetime",
+   "importance": "minor"
+  },
+  {
+   "item": "Says many teams accept localStorage for simplicity",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Keep access token in memory only, with refresh token in HttpOnly cookie; get new access token after page reload",
+   "importance": "useful"
+  },
+  {
+   "item": "Stateless JWTs cannot be revoked before expiry without a server-side denylist",
+   "importance": "useful"
+  },
+  {
+   "item": "Avoid innerHTML/dangerouslySetInnerHTML with untrusted data and sanitize rendered HTML (XSS prevention)",
+   "importance": "useful"
+  },
+  {
+   "item": "Give the token minimal scopes",
+   "importance": "minor"
+  },
+  {
+   "item": "Guidance on when localStorage is OK vs not: hobby/low-risk vs payments, personal data, admin access",
+   "importance": "useful"
+  },
+  {
+   "item": "CSP should block inline and unknown scripts (more specific)",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines XSS and CSRF acronyms",
+   "importance": "minor"
+  },
+  {
+   "item": "Stateless JWTs cannot be revoked before expiry without a server-side denylist",
+   "importance": "useful"
+  },
+  {
+   "item": "Option to keep short-lived access token in memory only, with refresh token in HttpOnly cookie (new token fetched after page reload)",
+   "importance": "useful"
+  },
+  {
+   "item": "Hardening if keeping localStorage: avoid innerHTML/dangerouslySetInnerHTML with untrusted data and sanitize HTML",
+   "importance": "useful"
+  },
+  {
+   "item": "Hardening if keeping localStorage: give token minimal scopes",
+   "importance": "minor"
+  },
+  {
+   "item": "Hardening if keeping localStorage: limit third-party scripts",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete guidance on when localStorage is a reasonable trade-off (hobby/no sensitive data) versus when to use cookies (payments, personal data, admin access)",
+   "importance": "useful"
+  },
+  {
+   "item": "Compromised npm packages named as a threat vector (Y mentions npm dependencies too, so overlap)",
+   "importance": "minor"
+  }
+ ]
+}

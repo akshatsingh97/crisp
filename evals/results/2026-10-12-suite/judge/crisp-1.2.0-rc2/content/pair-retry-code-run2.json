@@ -1,0 +1,125 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "candidate",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 3.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Two jitter modes selectable in code (full and equal), with equal jitter built in as an option and a guaranteed minimum wait",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that a timeout does not reveal whether the first call succeeded; for payments or writes, use an idempotency key",
+   "importance": "useful"
+  },
+  {
+   "item": "Advice to keep max_attempts times max_delay within the overall time budget",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains that without jitter, clients retry at the same moment, creating load spikes; says full jitter usually gives lowest total load",
+   "importance": "minor"
+  },
+  {
+   "item": "Warns that retrying a bug or HTTP 400 wastes time (narrow exceptions)",
+   "importance": "minor"
+  },
+  {
+   "item": "Example delay sequence of 0.5, 1, 2, 4 seconds shown for the defaults",
+   "importance": "minor"
+  },
+  {
+   "item": "Built-in selectable jitter modes: 'full' and 'equal' implemented in the code, not just described",
+   "importance": "useful"
+  },
+  {
+   "item": "Caution that a timeout doesn't reveal whether the first call succeeded; use an idempotency key for payments/writes",
+   "importance": "useful"
+  },
+  {
+   "item": "Keep max_attempts times max_delay within overall time budget",
+   "importance": "useful"
+  },
+  {
+   "item": "Full jitter usually gives lowest total load while equal jitter guarantees a minimum wait (tradeoff explanation)",
+   "importance": "minor"
+  },
+  {
+   "item": "Parameter table with defaults listed for each parameter",
+   "importance": "minor"
+  },
+  {
+   "item": "Decorator docstring usage example and example retries only transient errors (ConnectionError, Timeout)",
+   "importance": "minor"
+  },
+  {
+   "item": "Any unrecognized jitter value silently disables jitter",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Example calls raise_for_status() so HTTP errors actually trigger retries (X's example would not retry on 5xx responses)",
+   "importance": "useful"
+  },
+  {
+   "item": "Guidance for async code: use await asyncio.sleep and await func",
+   "importance": "useful"
+  },
+  {
+   "item": "Mentions the tenacity library as a tested alternative",
+   "importance": "useful"
+  },
+  {
+   "item": "Clarifies that max_retries counts retries after the first attempt (default 5 gives 6 calls), and explains the func parameter and argument pass-through",
+   "importance": "minor"
+  },
+  {
+   "item": "How to switch to equal jitter by changing one line of code",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines idempotent in plain words",
+   "importance": "minor"
+  },
+  {
+   "item": "Jitter can be turned off with jitter=False, giving the exact delay",
+   "importance": "minor"
+  },
+  {
+   "item": "Async variant guidance: use await asyncio.sleep and await func",
+   "importance": "useful"
+  },
+  {
+   "item": "Mention of tenacity library as a tested alternative",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit note that retrying non-idempotent functions can duplicate side effects (also in Y, but X defines idempotent)",
+   "importance": "minor"
+  },
+  {
+   "item": "Example schedule of limits with defaults (0.5,1,2,4,8) and total call count (6 calls) clarified",
+   "importance": "minor"
+  },
+  {
+   "item": "Example narrows exceptions to requests.RequestException and uses raise_for_status, plus advice not to retry HTTP 4xx",
+   "importance": "minor"
+  },
+  {
+   "item": "jitter=False option gives exact deterministic delay (simple on/off toggle)",
+   "importance": "minor"
+  }
+ ]
+}

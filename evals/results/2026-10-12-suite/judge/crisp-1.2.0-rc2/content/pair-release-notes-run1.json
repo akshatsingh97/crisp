@@ -1,0 +1,93 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Opening summary that 3.0 has exactly one breaking change and users should update init() calls before upgrading",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains the retry change's consequence: some calls take longer to report an error",
+   "importance": "useful"
+  },
+  {
+   "item": "Dedicated Upgrade steps checklist (add apiKey, review retry default of 5, optionally add error handler)",
+   "importance": "useful"
+  },
+  {
+   "item": "Before/after example preserves existing options alongside apiKey (init({ apiKey, /* your options */ }))",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that the retry option name and SDK object name are unknown and must be replaced before publishing",
+   "importance": "useful"
+  },
+  {
+   "item": "Advises reviewing whether the new retry default of 5 suits the app",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes the retry increase means some calls take longer to report an error (latency consequence)",
+   "importance": "useful"
+  },
+  {
+   "item": "Upgrade steps checklist, including reviewing whether the new default of 5 retries suits the app and setting it explicitly if not",
+   "importance": "useful"
+  },
+  {
+   "item": "Summary at top stating 3.0 has only one breaking change",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes the optional step of adding an on('error') handler",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that the option name for retry count and SDK object name (`sdk`) are unknown and must be replaced before publishing",
+   "importance": "useful"
+  },
+  {
+   "item": "Before/after example preserves other options in init() ({ /* your options */ }), showing apiKey is added alongside existing config",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Explicitly flags that the option name 'retries' is an assumption and should be checked against the SDK reference",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that the 'client' variable and callback argument in the on('error') example are illustrative and should be adapted",
+   "importance": "minor"
+  },
+  {
+   "item": "Gives a concrete guess for the retry option name ('retries') for restoring the old behavior",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicitly flags that the retry option name `retries` is an assumption and to check the SDK reference",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes the `client` variable and callback argument are example names to adapt",
+   "importance": "minor"
+  },
+  {
+   "item": "Tells the reader to add apiKey to every init() call before deploying 3.0 (also in Y's upgrade steps)",
+   "importance": "minor"
+  }
+ ]
+}

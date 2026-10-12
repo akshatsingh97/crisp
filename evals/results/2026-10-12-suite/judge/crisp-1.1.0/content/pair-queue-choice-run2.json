@@ -1,0 +1,117 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "candidate",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.5,
+  "useful": 2.5,
+  "minor": 3.5
+ },
+ "cut_items": [
+  {
+   "item": "Explicit warning not to write your own queue; use a library",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete threshold: Postgres suffices up to a few hundred jobs/sec",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis managed hosting adds cost",
+   "importance": "minor"
+  },
+  {
+   "item": "Migration path: if handlers are plain functions, moving from Postgres to BullMQ later is a small change",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis advanced features such as job flows",
+   "importance": "minor"
+  },
+  {
+   "item": "Do not write your own queue; use a library",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete threshold: Postgres sufficient up to a few hundred jobs/sec; Redis for thousands/sec",
+   "importance": "useful"
+  },
+  {
+   "item": "Managed Redis adds cost",
+   "importance": "minor"
+  },
+  {
+   "item": "Migration to BullMQ later is easy if handlers are plain functions",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis features like job flows and rate limiting as reasons to choose it",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis without AOF can lose queued jobs on restart (X also says enable AOF and test; Y's version is slightly less actionable)",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Postgres queue risk: added write load and table bloat from job churn can slow main queries",
+   "importance": "critical"
+  },
+  {
+   "item": "Redis jobs cannot join a DB transaction; a crash between the DB write and the enqueue can lose the job",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation of how SKIP LOCKED works, giving safe parallel workers",
+   "importance": "minor"
+  },
+  {
+   "item": "BullMQ features: retries, delays, dashboard ecosystem",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis keeps queue traffic off the main database",
+   "importance": "useful"
+  },
+  {
+   "item": "Advice to test Redis persistence, not just enable it",
+   "importance": "minor"
+  },
+  {
+   "item": "Trigger for moving to Redis: when queue load starts slowing the database",
+   "importance": "useful"
+  },
+  {
+   "item": "Postgres risk: queue adds write load and table bloat, heavy job churn can slow main queries",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis risk: if app crashes between DB write and enqueue, job can be lost (no shared transaction)",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis advantage: keeps queue traffic off main database",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis/BullMQ has dashboard ecosystem and delays/retries",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to start with Postgres and move to Redis when queue load slows the DB (trigger for migration)",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis has lower latency and higher throughput (general statement)",
+   "importance": "minor"
+  }
+ ]
+}

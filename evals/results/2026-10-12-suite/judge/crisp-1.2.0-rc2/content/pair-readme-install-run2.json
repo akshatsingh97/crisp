@@ -1,0 +1,78 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 1.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 4.5,
+  "minor": 0.5
+ },
+ "cut_items": [
+  {
+   "item": "Explains that --follow keeps logtail open and shows new lines as they are appended to the file",
+   "importance": "useful"
+  },
+  {
+   "item": "States that if LOGTAIL_TOKEN is not set logtail cannot read the token, so set it in the same terminal session before running",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation that `--follow` keeps logtail open and shows new lines as they are appended to the file",
+   "importance": "useful"
+  },
+  {
+   "item": "Note that if LOGTAIL_TOKEN is not set, logtail cannot read the token, and it must be set in the same terminal session before running",
+   "minor": "minor",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Step to check Node.js version with `node --version` and confirm v18 or later",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning not to commit the API token to source control",
+   "importance": "useful"
+  },
+  {
+   "item": "Windows alternatives for setting the variable (`set` in Command Prompt, `$env:LOGTAIL_TOKEN` in PowerShell) instead of `export`",
+   "importance": "useful"
+  },
+  {
+   "item": "Token is read each time logtail starts, so it must be set in every new shell session or added to the shell profile for persistence",
+   "importance": "useful"
+  },
+  {
+   "item": "Troubleshooting: if `logtail` is not found after install, ensure the npm global bin directory is in PATH; use `npm config get prefix` to find it",
+   "importance": "useful"
+  },
+  {
+   "item": "Step to verify Node.js version with `node --version` and expected v18+ output",
+   "importance": "minor"
+  },
+  {
+   "item": "Windows equivalents for setting the env var (`set` in Command Prompt, `$env:LOGTAIL_TOKEN` in PowerShell)",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning not to commit the token to source control",
+   "importance": "useful"
+  },
+  {
+   "item": "Token is read at each startup, so it must be set in every new shell session or added to the shell profile",
+   "importance": "useful"
+  },
+  {
+   "item": "Troubleshooting: if `logtail` is not found after install, check that the npm global bin directory is in PATH, and use `npm config get prefix` to find it",
+   "importance": "useful"
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 1.5,
+  "useful": 2.5,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "Postgres is enough up to a few hundred jobs/sec (explicit threshold); Redis for thousands/sec",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit advice not to write your own queue; use a library",
+   "importance": "useful"
+  },
+  {
+   "item": "Managed Redis adds cost",
+   "importance": "minor"
+  },
+  {
+   "item": "Moving to BullMQ later is easy if handlers are plain functions",
+   "importance": "minor"
+  },
+  {
+   "item": "Do not write your own queue; use a library",
+   "importance": "useful"
+  },
+  {
+   "item": "Managed Redis adds cost",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis suits thousands of jobs per second; job flows feature",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis may already be run for caching or sessions",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Redis must be configured with maxmemory-policy noeviction (in addition to AOF) or it can drop queued jobs",
+   "importance": "critical"
+  },
+  {
+   "item": "Postgres risk: heavy job churn creates dead rows/bloat; tune autovacuum and delete finished jobs often",
+   "importance": "useful"
+  },
+  {
+   "item": "Postgres polling latency can reach ~1s; LISTEN/NOTIFY can reduce it",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis enqueue is not transactional with the DB, so a crash can lose or duplicate a job; make jobs idempotent",
+   "importance": "critical"
+  },
+  {
+   "item": "pg-boss and Graphile Worker handle retries, scheduling and delayed jobs",
+   "importance": "minor"
+  },
+  {
+   "item": "BullMQ features: priorities, repeatable jobs, dashboard ecosystem",
+   "importance": "minor"
+  },
+  {
+   "item": "SKIP LOCKED lets many workers claim jobs without blocking each other",
+   "importance": "minor"
+  },
+  {
+   "item": "Sub-100ms pickup latency as a criterion for choosing Redis",
+   "importance": "minor"
+  },
+  {
+   "item": "Decision rule with concrete steps; keep handlers behind a small interface for migration",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis must be configured with maxmemory-policy noeviction (plus AOF) or it can drop queued jobs; Y only mentions AOF",
+   "importance": "critical"
+  },
+  {
+   "item": "Redis enqueue is not transactional with the DB, so a crash between writes can lose or duplicate jobs; make jobs idempotent",
+   "importance": "useful"
+  },
+  {
+   "item": "Postgres heavy job churn creates dead rows; tune autovacuum and delete finished jobs often",
+   "importance": "useful"
+  },
+  {
+   "item": "Postgres polling latency can reach about 1s; LISTEN/NOTIFY can reduce it",
+   "importance": "useful"
+  },
+  {
+   "item": "Graphile Worker and pg-boss handle retries, scheduling and delayed jobs",
+   "importance": "minor"
+  },
+  {
+   "item": "BullMQ offers priorities, repeatable jobs and a dashboard ecosystem",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit decision rule steps, including sub-100ms pickup as a Redis trigger",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis means running a second datastore",
+   "importance": "minor"
+  },
+  {
+   "item": "SKIP LOCKED lets many workers claim jobs without blocking",
+   "importance": "minor"
+  }
+ ]
+}

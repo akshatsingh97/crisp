@@ -1,0 +1,109 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "equal",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 1.5
+ },
+ "cut_items": [
+  {
+   "item": "Decorator form (retrying) for reuse, with functools.wraps",
+   "importance": "useful"
+  },
+  {
+   "item": "Equal jitter mode as an alternative, plus explanation of full vs equal tradeoffs (full gives lowest load, equal guarantees minimum wait)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation of why jitter matters (thundering herd, load spikes) with comparison to no jitter",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice that retried writes/payments need an idempotency key, and that a timeout doesn't tell you whether the first call succeeded",
+   "importance": "useful"
+  },
+  {
+   "item": "Caution to keep max_attempts times max_delay within the overall time budget",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that retrying a 400 Bad Request or a bug only wastes time",
+   "importance": "minor"
+  },
+  {
+   "item": "Decorator form (retrying) for applying retries to functions",
+   "importance": "useful"
+  },
+  {
+   "item": "Equal jitter strategy as an alternative to full jitter, with explanation of tradeoff (full gives lowest load, equal guarantees minimum wait)",
+   "importance": "useful"
+  },
+  {
+   "item": "Recommends idempotency key for payments/writes and explains a timeout doesn't tell you whether the first call succeeded",
+   "importance": "useful"
+  },
+  {
+   "item": "Advice to keep max_attempts times max_delay within overall time budget",
+   "importance": "useful"
+  },
+  {
+   "item": "Parameter table showing default values",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that retrying a bug or 400 Bad Request just wastes time",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Warning that func's kwargs named like retry parameters (max_attempts, etc.) will clash with the function's own parameters",
+   "importance": "useful"
+  },
+  {
+   "item": "Note that the function blocks the thread and that async code needs an async version using await asyncio.sleep",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggestion to honor the server's Retry-After header instead of the computed delay",
+   "importance": "useful"
+  },
+  {
+   "item": "Example calls raise_for_status so HTTP errors actually trigger retries, and shows an on_retry logging lambda",
+   "importance": "useful"
+  },
+  {
+   "item": "Jitter can be disabled explicitly with a boolean to get the deterministic ceiling",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that func's own kwargs must not be named like the retry parameters (max_attempts etc.) because names clash",
+   "importance": "useful"
+  },
+  {
+   "item": "Note that the function is blocking (time.sleep) and an async version with asyncio.sleep is needed for asyncio code",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggestion to honor the server's Retry-After header instead of own delay",
+   "importance": "useful"
+  },
+  {
+   "item": "Option to disable jitter explicitly via a boolean (Y can do it via any other value, but undocumented-ish)",
+   "importance": "minor"
+  },
+  {
+   "item": "Warns that retried payment request can double charge (idempotency caution, though without the key remedy)",
+   "importance": "minor"
+  }
+ ]
+}

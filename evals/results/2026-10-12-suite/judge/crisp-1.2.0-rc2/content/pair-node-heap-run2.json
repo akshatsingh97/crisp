@@ -1,0 +1,157 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 4.5,
+  "minor": 3.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 5.5
+ },
+ "cut_items": [
+  {
+   "item": "Memory that rises with traffic and falls when traffic stops indicates need for headroom rather than a leak fix (distinguishing load-related growth)",
+   "importance": "useful"
+  },
+  {
+   "item": "Use the 'Objects allocated between Snapshot 1 and Snapshot 2' view in DevTools",
+   "importance": "minor"
+  },
+  {
+   "item": "Alternative of using `node --inspect` plus heapdump or v8.writeHeapSnapshot() on production hosts",
+   "importance": "minor"
+  },
+  {
+   "item": "Use lru-cache with a max as a concrete fix for unbounded caches",
+   "importance": "useful"
+  },
+  {
+   "item": "Unbounded metrics labels and global request-log arrays as leak causes",
+   "importance": "useful"
+  },
+  {
+   "item": "Unresolved promises as a cause of growth",
+   "importance": "minor"
+  },
+  {
+   "item": "Verify the fix with a multi-hour load test and watch that heapUsed stays in a stable band",
+   "importance": "useful"
+  },
+  {
+   "item": "Offer to search the code directory for leak patterns and request Node version/framework",
+   "importance": "minor"
+  },
+  {
+   "item": "Distinguishes traffic-correlated memory (rises with traffic, falls when it stops) as needing headroom rather than a leak fix",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete fix suggestion: use lru-cache with a max for unbounded caches",
+   "importance": "useful"
+  },
+  {
+   "item": "Programmatic snapshot options for production: heapdump or v8.writeHeapSnapshot()",
+   "importance": "useful"
+  },
+  {
+   "item": "Snapshot needs about twice the heap size in free memory (memory-requirement warning)",
+   "importance": "useful"
+  },
+  {
+   "item": "Extra causes: unbounded metrics label cardinality, request logs in global arrays, unresolved promises",
+   "importance": "minor"
+  },
+  {
+   "item": "Verification step: load test and watch heapUsed for several hours to confirm it stays in a stable band",
+   "importance": "useful"
+  },
+  {
+   "item": "DevTools view 'Objects allocated between Snapshot 1 and Snapshot 2'",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to search the code in the directory and asks for Node version and framework",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Monitor rss and external as well as heapUsed; if rss grows but heapUsed is flat, the leak is outside the JS heap (Buffers, native addons, unclosed streams)",
+   "importance": "useful"
+  },
+  {
+   "item": "pm2 `--max-memory-restart 1500M` command and systemd restart as options for automatic restart",
+   "importance": "useful"
+  },
+  {
+   "item": "`node --heapsnapshot-near-heap-limit=3` writes snapshots automatically just before the crash",
+   "importance": "useful"
+  },
+  {
+   "item": "Take a third snapshot and compare via the Comparison view, sorting by size delta",
+   "importance": "minor"
+  },
+  {
+   "item": "Specific commands: `kill -USR2 <pid>` to trigger snapshot, loading via Load in DevTools Memory tab",
+   "importance": "minor"
+  },
+  {
+   "item": "clinic heapprofiler for finding allocating code paths",
+   "importance": "useful"
+  },
+  {
+   "item": "DevTools allocation timeline / live heap profiling via --inspect",
+   "importance": "minor"
+  },
+  {
+   "item": "Connection pools or streams never closed as a cause",
+   "importance": "minor"
+  },
+  {
+   "item": "Request or session data stored in module-level variables as a cause",
+   "importance": "minor"
+  },
+  {
+   "item": "Do snapshots on staging or one instance (staging option)",
+   "importance": "minor"
+  },
+  {
+   "item": "Distinguishes leak types using rss and external in process.memoryUsage(): if rss grows but heapUsed is flat, leak is off-heap (Buffers, native addons, unclosed streams)",
+   "importance": "useful"
+  },
+  {
+   "item": "If memory is stable but near the limit, raising the limit is the right fix",
+   "importance": "minor"
+  },
+  {
+   "item": "pm2 --max-memory-restart 1500M as a concrete restart-before-crash command",
+   "importance": "useful"
+  },
+  {
+   "item": "--heapsnapshot-near-heap-limit=3 writes snapshots automatically just before crash, a good option for capturing the failure",
+   "importance": "useful"
+  },
+  {
+   "item": "Take three snapshots and use Comparison view sorted by size delta; includes the exact kill -USR2 <pid> step",
+   "importance": "minor"
+  },
+  {
+   "item": "Extra causes: request/session data in module-level variables, connection pools or streams never closed",
+   "importance": "minor"
+  },
+  {
+   "item": "Other tools: clinic heapprofiler and live allocation timelines via node --inspect",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that snapshots should be taken on staging or one instance behind the load balancer, not all production instances",
+   "importance": "minor"
+  }
+ ]
+}

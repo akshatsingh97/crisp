@@ -1,0 +1,74 @@
+{
+  "strict_scenarios": [
+    "charge-retry",
+    "pg-index",
+    "docker-prune",
+    "queue-choice",
+    "runbook-disk",
+    "error-413"
+  ],
+  "on_demand_scenarios": [
+    "react-race",
+    "jwt-storage",
+    "docker-latest"
+  ],
+  "tldr": [
+    {
+      "id": "tldr-node-upgrade",
+      "text": "Great question! Upgrading from Node 16 to Node 20 is generally a smooth process, and most projects can do it in an afternoon. First, you'll want to update the version in your .nvmrc file and in your CI configuration so that every environment uses the same version. Then run your full test suite. In the vast majority of cases, pure JavaScript packages work without any changes at all. However, it's really important to note that native modules such as bcrypt, sharp, or node-sass are compiled against a specific Node ABI, so you must run npm rebuild (or delete node_modules and reinstall) after switching versions; otherwise your app will crash at startup with a NODE_MODULE_VERSION mismatch error. You should also update your Docker base image to node:20 if you deploy with containers. Hope this helps!",
+      "critical": "Native modules must be rebuilt (npm rebuild or a reinstall), or the app crashes at startup with a NODE_MODULE_VERSION error"
+    },
+    {
+      "id": "tldr-aws-keys",
+      "text": "Rotating AWS access keys is an important security practice that you should do regularly. The process involves a few steps. First, create a second access key for the IAM user, because a user can have two active keys at the same time. Next, update every application, CI pipeline, and developer machine that uses the old key so that they all use the new key. Then deactivate the old key rather than deleting it right away, and wait a few days while you watch CloudTrail and your error logs for failed requests that still use the old key. Only after nothing has used the old key for a while should you delete it, because deleting a key is permanent and anything still using it will break immediately with no way to restore it. Finally, consider moving to IAM roles or short-lived credentials so that you do not need long-lived keys at all.",
+      "critical": "Deactivate the old key first and delete it only after nothing uses it, because deletion is permanent and breaks anything still using it"
+    }
+  ],
+  "clarify": [
+    {
+      "id": "clarify-microservices",
+      "text": "Leveraging a microservices architecture enables organizations to achieve greater scalability and resilience, as each service can be deployed, scaled, and updated independently of the others, which is crucial for teams that need to ship frequently. That said, it's worth noting that microservices may introduce significant operational complexity: you'll need service discovery, distributed tracing to debug requests that cross several services, and a strategy for data consistency because each service typically owns its own database, which means you can no longer rely on a single ACID transaction across the whole system. Network calls between services also add latency and new failure modes, so timeouts and retries become essential. For a small team of fewer than ten engineers, a well-structured modular monolith is often the more pragmatic starting point.",
+      "facts": [
+        "Each service can be deployed, scaled, and updated independently",
+        "Microservices add operational complexity",
+        "You need service discovery",
+        "You need distributed tracing to debug requests across services",
+        "Each service usually owns its own database, so there is no single ACID transaction across the system",
+        "Network calls add latency and new failure modes, so timeouts and retries are needed",
+        "For a team of fewer than ten engineers, a modular monolith is often the better start"
+      ]
+    },
+    {
+      "id": "clarify-db-migration",
+      "text": "Before you run the migration in production, you should definitely take a full backup and verify that it can actually be restored, since a backup that has never been tested might not work when you need it. The migration adds a NOT NULL column with a default value to the orders table, which has about 120 million rows. On PostgreSQL 11 and later, adding a column with a constant default is a metadata-only change and is basically instant, but on PostgreSQL 10 or older it rewrites the entire table and holds an ACCESS EXCLUSIVE lock for the whole time, which blocks all reads and writes. So it's crucial to check your server version first with SELECT version(). Also, it would be wise to set lock_timeout to something like 5 seconds so that the ALTER TABLE gives up instead of queueing behind long-running queries and blocking everything else behind it.",
+      "facts": [
+        "Take a full backup before the migration and test that it can be restored",
+        "The migration adds a NOT NULL column with a default to the orders table of about 120 million rows",
+        "On PostgreSQL 11 and later, adding a column with a constant default is metadata-only and instant",
+        "On PostgreSQL 10 or older, it rewrites the table and holds an ACCESS EXCLUSIVE lock that blocks reads and writes",
+        "Check the server version first with SELECT version()",
+        "Set lock_timeout (about 5 seconds) so ALTER TABLE gives up instead of queueing and blocking other queries"
+      ]
+    }
+  ],
+  "check": [
+    {
+      "id": "check-readme",
+      "text": "## Getting Started\n\nIt's really easy to get up and running! You should first make sure that you've installed Node 18+, then simply run `npm install` and you'll be good to go; the app leverages a robust caching layer under the hood which seamlessly speeds things up. Run `npm start` if you want to start the server. Hope this helps!"
+    }
+  ],
+  "creative": [
+    {
+      "id": "creative-poem",
+      "prompt": "Write a short, playful four-line poem about a Friday deploy that goes wrong."
+    },
+    {
+      "id": "creative-story",
+      "prompt": "Write a three-sentence bedtime story about a robot who learns to bake bread."
+    },
+    {
+      "id": "creative-joke",
+      "prompt": "Tell me a short pun about JavaScript."
+    }
+  ]
+}

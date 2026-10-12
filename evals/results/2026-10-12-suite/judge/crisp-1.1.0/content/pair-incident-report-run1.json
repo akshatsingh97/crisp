@@ -1,0 +1,137 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 6.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Timeline explicitly places the deploy at 09:12 as the start of errors (Y labels it as an assumption, X states it as fact)",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests possible reasons the value changed (typo, wrong environment value, test value reaching production) and says to confirm",
+   "importance": "useful"
+  },
+  {
+   "item": "Open question on why only 18% of requests failed, with hypotheses (partial connection availability or only some instances got the change)",
+   "importance": "useful"
+  },
+  {
+   "item": "Open question on detection time and how long it took to detect",
+   "importance": "minor"
+  },
+  {
+   "item": "What went well: rollback restored service within two minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: release config changes to a small share of traffic and watch the 5xx rate before full rollout",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: alert on checkout 5xx rate firing within 5 minutes (concrete target)",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: require review for config changes to database settings",
+   "importance": "useful"
+  },
+  {
+   "item": "Says each action item needs an owner and due date",
+   "importance": "minor"
+  },
+  {
+   "item": "Root cause states the checkout API needs more than 5 connections at normal load, and that requests unable to get a connection failed with 500",
+   "importance": "minor"
+  },
+  {
+   "item": "Open question and caveat on why the value changed from 50 to 5, with possible causes (typo, wrong environment value, test value reaching production)",
+   "importance": "useful"
+  },
+  {
+   "item": "Open question on why only 18% of requests failed rather than all, with hypotheses (some requests got a connection, or only some instances got the change)",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item requiring review for config changes to database settings",
+   "importance": "useful"
+  },
+  {
+   "item": "Says to watch the 5xx rate before a full rollout in the canary step",
+   "importance": "minor"
+  },
+  {
+   "item": "Alert on 5xx rate should fire within 5 minutes (specific target)",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes the rollback restored service within two minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Says to add the time someone started investigating, in addition to the first alert time",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit open question on detection time",
+   "importance": "minor"
+  },
+  {
+   "item": "States that the checkout API needs more connections than 5 at normal load",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Defines what a connection pool is",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains failure mechanism: requests waited for a free connection and some failed; advises confirming exact failure mode (e.g., connection timeouts) from logs",
+   "importance": "useful"
+  },
+  {
+   "item": "Flags the 09:12 deploy timing as an assumption to verify",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: review why detection and rollback took 33 minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Asks to add the cause of the 33-minute delay before rollback",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that 09:12 as the deploy time is an assumption and flags that the deploy time needs confirming",
+   "importance": "useful"
+  },
+  {
+   "item": "Defines what a database pool is (set of reusable connections)",
+   "importance": "minor"
+  },
+  {
+   "item": "Says to confirm exact failure mode (e.g., connection timeouts) from logs",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item to review why detection and rollback took 33 minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that owners and dates are blank and must be assigned before publishing",
+   "importance": "minor"
+  }
+ ]
+}

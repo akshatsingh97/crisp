@@ -1,0 +1,117 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "`:latest` is just the maintainer's default tag, not necessarily newest or safest; may lag or be an unexpected variant",
+   "importance": "minor"
+  },
+  {
+   "item": "Option to pin a minor series (e.g. node:22-alpine) if accepting patch updates, with tradeoff",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that exact version tags can technically be re-pushed (so digest is stronger)",
+   "importance": "useful"
+  },
+  {
+   "item": "Ranking of pinning options from strongest to weakest",
+   "importance": "minor"
+  },
+  {
+   "item": "`:latest` doesn't mean newest or safest; it's just the maintainer's default tag and may lag or be an unexpected variant",
+   "importance": "useful"
+  },
+  {
+   "item": "Pinning options ranked by strength, with the caveat that exact version tags can technically be re-pushed (so digest is the only fully immutable option)",
+   "importance": "useful"
+  },
+  {
+   "item": "Option of pinning a minor series (e.g. node:22-alpine) if you accept patch updates without notice",
+   "importance": "minor"
+  },
+  {
+   "item": "CI tests each Renovate/Dependabot bump before it reaches production",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Include OS variant in the tag (e.g. slim-bookworm) so the OS doesn't change under you",
+   "importance": "useful"
+  },
+  {
+   "item": "Keep tag as a comment or beside the digest for readability",
+   "importance": "minor"
+  },
+  {
+   "item": "Mirror approved base images to your own registry to protect against upstream tag deletion/change",
+   "importance": "useful"
+  },
+  {
+   "item": "Pinned images don't receive security fixes automatically; must be actively updated",
+   "importance": "useful"
+  },
+  {
+   "item": "Bad or compromised upstream release reaches production without review",
+   "importance": "useful"
+  },
+  {
+   "item": "Can't determine which base image an old build used, so reproduce/debug is impossible",
+   "importance": "minor"
+  },
+  {
+   "item": "Rollbacks of old commits won't yield the old image",
+   "importance": "minor"
+  },
+  {
+   "item": "Acceptable use of :latest in a CI job that deliberately tests against upstream changes",
+   "importance": "minor"
+  },
+  {
+   "item": "Review, test, and merge the automated update PRs",
+   "importance": "minor"
+  },
+  {
+   "item": "Mirror approved base images to your own registry to protect against upstream tag deletion or change",
+   "importance": "useful"
+  },
+  {
+   "item": "Include OS variant in the pinned tag so the OS doesn't change under you",
+   "importance": "minor"
+  },
+  {
+   "item": "A bad or compromised upstream release reaches production with no review step (supply-chain risk)",
+   "importance": "useful"
+  },
+  {
+   "item": "Rebuilding an old commit won't give the old image, so rollbacks are unreliable (more explicit)",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggestion to keep the tag as a comment beside the digest for readability",
+   "importance": "minor"
+  },
+  {
+   "item": "Acceptable exception: CI job that deliberately tests against upstream changes",
+   "importance": "minor"
+  },
+  {
+   "item": "Pinned images must be reviewed, tested, and merged, since they don't get security fixes automatically",
+   "importance": "minor"
+  }
+ ]
+}

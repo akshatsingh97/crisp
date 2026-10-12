@@ -1,0 +1,85 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "equal",
+  "equal"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 4.5
+ },
+ "cut_items": [
+  {
+   "item": "Suggests key={userId} on the component so React resets state on user switch",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes the flag approach as the fallback when the fetch library cannot abort",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that, if userId is missing from the dependency array, the old user's data stays permanently",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests key={userId} on the component so React resets state on user switch",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes the ignore-flag approach is for fetch libraries that cannot abort",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes a missing dependency causes old user's data to show permanently",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Step-by-step timeline of the race, with B finishing first and A overwriting it",
+   "importance": "minor"
+  },
+  {
+   "item": "States that React does not cancel the earlier fetch and that responses can arrive in any order",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit warning that AbortError must be ignored in catch or it shows as a failure",
+   "importance": "useful"
+  },
+  {
+   "item": "Gives concrete fix for stale data during loading: setUser(null) at the start of the effect or a loading state",
+   "importance": "minor"
+  },
+  {
+   "item": "Tells the reader to add userId to the dependency array",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that TanStack Query or SWR key the cache by user ID and drop stale responses",
+   "importance": "minor"
+  },
+  {
+   "item": "Step-by-step sequence of the race (A then B, B finishes first, A overwrites)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that React does not cancel the first fetch and network responses can arrive in any order",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests setUser(null) at effect start as a way to clear stale data (concrete method)",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that library caches key by user ID and drops stale responses",
+   "importance": "minor"
+  }
+ ]
+}

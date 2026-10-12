@@ -1,0 +1,137 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 7.0,
+  "minor": 5.5
+ },
+ "cut_items": [
+  {
+   "item": "Short lock_timeout suggested (also in Y) \u2013 n/a",
+   "importance": "minor"
+  },
+  {
+   "item": "Idle-in-transaction session can stall the build for hours (explicit warning)",
+   "importance": "minor"
+  },
+  {
+   "item": "Check for duplicates before building a unique index (preventive step)",
+   "importance": "useful"
+  },
+  {
+   "item": "Estimate that the build takes 2-3x longer than a plain build",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Concrete migration-tool example (disable_ddl_transaction! in Rails)",
+   "importance": "minor"
+  },
+  {
+   "item": "Plain DROP INDEX takes a lock that blocks queries; use DROP INDEX CONCURRENTLY explicitly",
+   "importance": "useful"
+  },
+  {
+   "item": "max_parallel_maintenance_workers setting to speed build (PG11+) with I/O tradeoff",
+   "importance": "useful"
+  },
+  {
+   "item": "Long build holds back vacuum cleanup horizon, causing dead row bloat",
+   "importance": "useful"
+  },
+  {
+   "item": "Client disconnect cancels build; run from tmux/screen or a host near DB",
+   "importance": "useful"
+  },
+  {
+   "item": "Run off-peak because build competes with traffic for I/O and CPU",
+   "importance": "useful"
+  },
+  {
+   "item": "Partial index or INCLUDE columns to reduce size and build time",
+   "importance": "minor"
+  },
+  {
+   "item": "Verify benefit with EXPLAIN (ANALYZE, BUFFERS) and note extra indexes slow writes",
+   "importance": "useful"
+  },
+  {
+   "item": "Run ANALYZE after build",
+   "importance": "minor"
+  },
+  {
+   "item": "Partitioned tables: CREATE INDEX ON ONLY parent creates invalid placeholder, then build per partition and ATTACH with ALTER INDEX command",
+   "importance": "useful"
+  },
+  {
+   "item": "lock_timeout failure behavior: retry on timeout",
+   "importance": "minor"
+  },
+  {
+   "item": "Progress view columns query and version note (PG12+)",
+   "importance": "minor"
+  },
+  {
+   "item": "Low statement_timeout cancels build leaving invalid index (explicit rationale)",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete lock_timeout caveat: if it times out, retry; and max_parallel_maintenance_workers setting (PG11+) to speed the build, with I/O cost",
+   "importance": "useful"
+  },
+  {
+   "item": "Vacuum/cleanup horizon held back by long build causing dead row bloat",
+   "importance": "useful"
+  },
+  {
+   "item": "Client disconnect cancels the build; run from tmux/screen or a nearby host",
+   "importance": "useful"
+  },
+  {
+   "item": "Progress query columns detail and PG12+ version note",
+   "importance": "minor"
+  },
+  {
+   "item": "Plain DROP INDEX takes a blocking lock, hence use DROP INDEX CONCURRENTLY",
+   "importance": "minor"
+  },
+  {
+   "item": "Run build off-peak",
+   "importance": "minor"
+  },
+  {
+   "item": "Consider partial index or INCLUDE columns to reduce size and build time",
+   "importance": "useful"
+  },
+  {
+   "item": "Verify the index helps with EXPLAIN (ANALYZE, BUFFERS) before building; every extra index slows writes",
+   "importance": "useful"
+  },
+  {
+   "item": "Run ANALYZE on the table after the build",
+   "importance": "useful"
+  },
+  {
+   "item": "Partitioned table procedure in detail: CREATE INDEX ON ONLY parent, build each partition CONCURRENTLY, ALTER INDEX ATTACH PARTITION",
+   "importance": "useful"
+  },
+  {
+   "item": "Sizing maintenance_work_mem to free RAM",
+   "importance": "minor"
+  },
+  {
+   "item": "Rails example disable_ddl_transaction!",
+   "importance": "minor"
+  }
+ ]
+}

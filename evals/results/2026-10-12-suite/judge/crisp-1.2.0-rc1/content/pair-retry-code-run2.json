@@ -1,0 +1,125 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "candidate",
+  "equal"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 4.5,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Provides a decorator form (retrying) for applying retry to functions, with usage example",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns that a timeout doesn't reveal whether the first call succeeded; suggests using an idempotency key for payments/writes",
+   "importance": "useful"
+  },
+  {
+   "item": "Advises keeping max_attempts times max_delay within the overall time budget",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains why jitter matters (thundering herd / synchronized retry spikes) in a dedicated section",
+   "importance": "minor"
+  },
+  {
+   "item": "Decorator form `retrying` with functools.wraps for convenient use",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation of why jitter matters (thundering herd / synchronized retry spikes)",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that a timeout doesn't tell you whether the first call succeeded, and a recommendation to use an idempotency key for payments/writes",
+   "importance": "useful"
+  },
+  {
+   "item": "Advice to keep max_attempts \u00d7 max_delay within the overall time budget",
+   "importance": "useful"
+  },
+  {
+   "item": "Docstrings on the functions",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Validates max_attempts >= 1, raising ValueError (otherwise with max_attempts<1 the function silently returns None without calling func)",
+   "importance": "useful"
+  },
+  {
+   "item": "Raises ValueError on unknown jitter mode instead of silently disabling jitter (typos won't silently remove jitter)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit \"none\" jitter option, with advice to avoid it when many clients hit the same service",
+   "importance": "minor"
+  },
+  {
+   "item": "Injectable sleep parameter so tests can run instantly",
+   "importance": "useful"
+  },
+  {
+   "item": "Example uses raise_for_status() so HTTP errors actually trigger retries, plus an on_retry logging lambda example",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that the last exception is re-raised with its original traceback",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that the version is synchronous and describes how to adapt for asyncio (await asyncio.sleep / await func)",
+   "importance": "useful"
+  },
+  {
+   "item": "Advice not to retry on ValueError/HTTP 400 (shared in spirit but with ValueError example)",
+   "importance": "minor"
+  },
+  {
+   "item": "Parameter description for func and how args pass through *args/**kwargs",
+   "importance": "minor"
+  },
+  {
+   "item": "Validates max_attempts >= 1 (raises ValueError), preventing a silent no-op where the function returns None",
+   "importance": "useful"
+  },
+  {
+   "item": "Raises ValueError on unknown jitter mode, so typos don't silently disable jitter",
+   "importance": "useful"
+  },
+  {
+   "item": "Injectable `sleep` parameter so tests can run instantly",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit 'none' jitter mode, with a warning to avoid it when many clients call the same service",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that other exceptions pass through immediately and the last exception is re-raised with its original traceback",
+   "importance": "minor"
+  },
+  {
+   "item": "Note on adapting to asyncio (await asyncio.sleep and await func)",
+   "importance": "useful"
+  },
+  {
+   "item": "Example uses on_retry callback for logging",
+   "importance": "minor"
+  },
+  {
+   "item": "Mention that HTTP 400 / ValueError retries are pointless (also in Y, but X names the idempotency risk of double payment charge)",
+   "importance": "minor"
+  }
+ ]
+}

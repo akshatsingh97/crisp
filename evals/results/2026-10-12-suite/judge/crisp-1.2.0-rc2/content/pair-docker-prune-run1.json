@@ -1,0 +1,125 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 6.0,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "States what the prune command removes: stopped containers, unused networks, unused images, build cache, unused volumes",
+   "importance": "useful"
+  },
+  {
+   "item": "Says Docker asks for confirmation and that -f skips it",
+   "importance": "minor"
+  },
+  {
+   "item": "Says running containers are not removed by the prune command",
+   "importance": "useful"
+  },
+  {
+   "item": "Advises using docker system df to compare disk usage before and after",
+   "importance": "minor"
+  },
+  {
+   "item": "Lists what the prune command deletes: stopped containers, unused networks, unused images, build cache, unused volumes",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions -f flag skips confirmation for the basic prune command",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicitly states running containers are not removed by the prune command",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests checking docker system df before and after to measure space freed",
+   "importance": "minor"
+  },
+  {
+   "item": "Claims --volumes with system prune removes only anonymous volumes and suggests docker volume prune -a for named volumes (for system prune this is a different/less precise claim)",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Defines 'unused' and explains that stopped containers are removed first, so their images become unused too",
+   "importance": "useful"
+  },
+  {
+   "item": "Gives a step-by-step safe procedure: check with docker system df, run prune, confirm with y, and Docker prints the space reclaimed",
+   "importance": "minor"
+  },
+  {
+   "item": "Full-reset sequence also includes docker rmi -f for all images and docker volume rm for all volumes",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns that images will be downloaded again on the next pull or build",
+   "importance": "minor"
+  },
+  {
+   "item": "Troubleshooting: the 'docker rm requires at least 1 argument' error means nothing of that type exists and can be ignored",
+   "importance": "useful"
+  },
+  {
+   "item": "Troubleshooting: an image in use by a container cannot be removed until that container is removed first",
+   "importance": "useful"
+  },
+  {
+   "item": "Specifies the version in which docker volume prune changed to remove only anonymous volumes (Docker 23+), and that -a removes named volumes with that command",
+   "importance": "useful"
+  },
+  {
+   "item": "Gives the Docker Desktop settings path (Settings, Resources, Disk image size)",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines 'unused' (not used by a running container) and explains stopped containers are removed first so their images become unused",
+   "importance": "useful"
+  },
+  {
+   "item": "Step-by-step safe workflow: run docker system df first, then prune, then confirm with y and see space reclaimed",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit note that the command is permanent and to check what you need first",
+   "importance": "useful"
+  },
+  {
+   "item": "Full reset sequence also removes images (docker rmi -f $(docker images -aq)) and volumes explicitly (docker volume rm $(docker volume ls -q)), including stop of all containers",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that the next docker pull/build will re-download images",
+   "importance": "minor"
+  },
+  {
+   "item": "Troubleshooting: 'docker rm requires at least 1 argument' error just means nothing of that type exists",
+   "importance": "useful"
+  },
+  {
+   "item": "Troubleshooting: image cannot be removed if a container uses it; remove the container first",
+   "importance": "useful"
+  },
+  {
+   "item": "Docker Desktop: specific Settings > Resources path and 'Disk image size' to shrink disk",
+   "importance": "minor"
+  },
+  {
+   "item": "Correctly states docker volume prune without -a removes only anonymous volumes on Docker 23+, and -a is needed for named volumes (with version number)",
+   "importance": "useful"
+  }
+ ]
+}

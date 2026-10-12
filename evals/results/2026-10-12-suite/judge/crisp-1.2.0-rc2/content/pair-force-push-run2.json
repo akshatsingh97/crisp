@@ -1,0 +1,89 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "equal",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 1.0,
+  "useful": 2.0,
+  "minor": 0.5
+ },
+ "added": {
+  "critical": 0.5,
+  "useful": 2.5,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Teammates who have the branch checked out should run git fetch and git reset --hard origin/<branch> after the push; a normal git pull would merge old and new history together and cause trouble",
+   "importance": "critical"
+  },
+  {
+   "item": "If the branch has an open PR, the force-push updates it, and review comments on old commits can become outdated",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative that avoids force: merge the target branch into the feature branch (adds a merge commit, no force needed)",
+   "importance": "useful"
+  },
+  {
+   "item": "Teammates with the branch checked out should run git fetch and git reset --hard origin/branch; a normal git pull would merge old and new history",
+   "importance": "critical"
+  },
+  {
+   "item": "Open pull request will be updated by the push; review comments on old commits may become outdated",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative: merge target branch into the feature branch instead, which needs no force but adds a merge commit",
+   "importance": "useful"
+  },
+  {
+   "item": "Sample command with a concrete branch placeholder in a code block",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "If the push fails with a 'stale info' error, the remote changed after your last fetch; fetch again and repeat the check",
+   "importance": "useful"
+  },
+  {
+   "item": "If unknown commits show up in the remote, don't force push; rebase onto origin/<branch> again or ask the author",
+   "importance": "useful"
+  },
+  {
+   "item": "Recovery option: you can often recover overwritten commits via git reflog locally or the remote host's branch history",
+   "importance": "useful"
+  },
+  {
+   "item": "Uses --oneline in git log for a cleaner view of the remote-only commits, and states that empty output means nobody else pushed",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit ordered steps (fetch, inspect, push) that frame the safe workflow",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains why rejection happens: rebased commits get new hashes so remote no longer matches",
+   "importance": "minor"
+  },
+  {
+   "item": "If the lease push fails with 'stale info', fetch again and repeat the check",
+   "importance": "useful"
+  },
+  {
+   "item": "If unrecognized remote commits are listed, do not force push; rebase onto origin/<branch> again or ask the author",
+   "importance": "critical"
+  },
+  {
+   "item": "Recovery: overwritten commits can often be found via git reflog locally or remote host branch history",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit step order including git fetch origin before the log check",
+   "importance": "minor"
+  }
+ ]
+}

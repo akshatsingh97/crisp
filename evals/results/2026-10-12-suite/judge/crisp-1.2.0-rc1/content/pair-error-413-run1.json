@@ -1,0 +1,81 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "baseline",
+  "equal"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Provides a shorter version of the message for toasts or inline errors",
+   "importance": "useful"
+  },
+  {
+   "item": "Advises logging the error code and technical jargon rather than showing it to users",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests compressing the file as a way to get under the limit",
+   "importance": "minor"
+  },
+  {
+   "item": "Provides a shorter version of the message for a toast or inline error",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests compressing the file as a remedy",
+   "importance": "minor"
+  },
+  {
+   "item": "Recommends logging the error code and jargon rather than showing them to users",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions that other ways to share large files, such as a link, could be pointed to",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Suggests keeping the error code visible as a secondary support line (e.g., 'Error code: UPLOAD_413') so support can trace issues",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests splitting the file into smaller parts as an option",
+   "importance": "minor"
+  },
+  {
+   "item": "States the assumption that shrinking/splitting is feasible in the app, flagging a caveat to verify",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicitly says the file did not upload (confirms outcome)",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests keeping a small, secondary support line with the error code (UPLOAD_413) so support can trace the issue",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests splitting the file into smaller parts as a remedy",
+   "importance": "minor"
+  },
+  {
+   "item": "States the assumption that shrinking or splitting the file is possible in the app, and says to adapt the message if it isn't",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions that larger plans could be offered as an alternative, to be added as a third sentence",
+   "importance": "minor"
+  }
+ ]
+}

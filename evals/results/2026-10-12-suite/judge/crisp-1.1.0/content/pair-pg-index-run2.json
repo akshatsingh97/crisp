@@ -1,0 +1,137 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 5.0,
+  "minor": 5.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Concrete SQL query to find invalid indexes (pg_index WHERE NOT indisvalid)",
+   "importance": "useful"
+  },
+  {
+   "item": "A failed unique index build still enforces uniqueness on new rows",
+   "importance": "minor"
+  },
+  {
+   "item": "Concurrent build holds back vacuum cleanup (xmin horizon) while running",
+   "importance": "useful"
+  },
+  {
+   "item": "Disk space estimate (10-30% of table size) and advice to test on a restored copy",
+   "importance": "useful"
+  },
+  {
+   "item": "Heavy WAL generation; watch WAL archive space as well as replication lag",
+   "importance": "useful"
+  },
+  {
+   "item": "max_parallel_maintenance_workers (PG11+) for parallel build",
+   "importance": "minor"
+  },
+  {
+   "item": "Partitioned table procedure detail: create parent index with ON ONLY then attach partition indexes",
+   "importance": "useful"
+  },
+  {
+   "item": "Verify with EXPLAIN that the query uses the new index",
+   "importance": "minor"
+  },
+  {
+   "item": "Example SQL block with a concrete maintenance_work_mem value",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to tailor advice given column types, version, partitions, replicas",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete SQL example block with maintenance_work_mem value, statement_timeout and CREATE INDEX CONCURRENTLY",
+   "importance": "minor"
+  },
+  {
+   "item": "Query to find invalid indexes: SELECT indexrelid::regclass FROM pg_index WHERE NOT indisvalid",
+   "importance": "useful"
+  },
+  {
+   "item": "Concurrent build holds back vacuum cleanup (xmin horizon) while running",
+   "importance": "useful"
+  },
+  {
+   "item": "Index disk size rough estimate (10-30% of table) and advice to test on a restored copy",
+   "importance": "useful"
+  },
+  {
+   "item": "Build generates lots of WAL; watch WAL archive space as well as replication lag",
+   "importance": "useful"
+  },
+  {
+   "item": "max_parallel_maintenance_workers (PG11+) to parallelize build",
+   "importance": "minor"
+  },
+  {
+   "item": "Partitioned tables: create parent index with ON ONLY then attach partition indexes",
+   "importance": "useful"
+  },
+  {
+   "item": "A failed unique index still enforces uniqueness on new rows",
+   "importance": "minor"
+  },
+  {
+   "item": "Verify with EXPLAIN that the query uses the new index",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to tailor advice given column types, version, partitions/replicas",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Set lock_timeout for the session so brief lock steps don't queue behind other queries and block traffic",
+   "importance": "useful"
+  },
+  {
+   "item": "Rails-specific disable_ddl_transaction! to turn off migration transaction",
+   "importance": "minor"
+  },
+  {
+   "item": "Unique index build can fail if duplicate rows exist, leaving an invalid index",
+   "importance": "useful"
+  },
+  {
+   "item": "Cancelling the build (not just failure) also leaves an INVALID index; can be found with \\d tbl",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to cancel or wait for long-running transactions before starting",
+   "importance": "minor"
+  },
+  {
+   "item": "Set lock_timeout for the session so brief lock steps don't queue behind other queries and block traffic",
+   "importance": "useful"
+  },
+  {
+   "item": "Rails-specific disable_ddl_transaction! example for migrations",
+   "importance": "minor"
+  },
+  {
+   "item": "Unique index build can fail on duplicate rows and leaves an invalid index",
+   "importance": "useful"
+  },
+  {
+   "item": "Cancelled builds leave INVALID index; check via \\d tbl",
+   "importance": "minor"
+  }
+ ]
+}

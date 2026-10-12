@@ -1,0 +1,153 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 4.5
+ },
+ "added": {
+  "critical": 1.0,
+  "useful": 4.0,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Flask solution: flask-cors with CORS(app, origins=[...])",
+   "importance": "useful"
+  },
+  {
+   "item": "Origin must have no path and no trailing slash",
+   "importance": "useful"
+  },
+  {
+   "item": "Redirect (e.g. HTTP to HTTPS) drops headers; call the final URL directly",
+   "importance": "useful"
+  },
+  {
+   "item": "CORS middleware registered after routes can cause failure; register first (stated in the common causes list, covering all frameworks)",
+   "importance": "minor"
+  },
+  {
+   "item": "Proxies/API gateways (nginx, API Gateway) may block the request or strip headers, in addition to adding them",
+   "importance": "minor"
+  },
+  {
+   "item": "Error responses (e.g. 500) lacking CORS headers show a CORS message and hide the real error; check the status code in the Network tab",
+   "importance": "minor"
+  },
+  {
+   "item": "Preflight is also triggered by JSON Content-Type",
+   "importance": "minor"
+  },
+  {
+   "item": "Flask fix using flask-cors",
+   "importance": "useful"
+  },
+  {
+   "item": "Origin has no path and no trailing slash",
+   "importance": "useful"
+  },
+  {
+   "item": "Client must use credentials: 'include' context for cookies; Allow-Credentials true needed",
+   "importance": "minor"
+  },
+  {
+   "item": "CORS middleware registered after routes causes failure; register first (X mentions this only for Express)",
+   "importance": "minor"
+  },
+  {
+   "item": "Redirect HTTP to HTTPS drops headers; call final URL",
+   "importance": "minor"
+  },
+  {
+   "item": "API Gateway as a possible stripper of headers",
+   "importance": "minor"
+  },
+  {
+   "item": "Error responses (e.g. 500) lack CORS headers, so browser hides real error; check status in Network tab (X also covers it)",
+   "importance": "minor"
+  },
+  {
+   "item": "Libraries handle preflight automatically; manual setup often misses it",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Django solution: django-cors-headers with INSTALLED_APPS, MIDDLEWARE placement, and CORS_ALLOWED_ORIGINS",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not set CORS headers in both the proxy and the app, because duplicate values cause errors",
+   "importance": "critical"
+  },
+  {
+   "item": "Origin must match exactly: localhost vs 127.0.0.1 are different origins",
+   "importance": "critical"
+  },
+  {
+   "item": "If preflight OPTIONS returns 404/405, the route or a proxy is blocking it",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit list of raw headers to send, as a framework-agnostic option",
+   "importance": "useful"
+  },
+  {
+   "item": "Step to verify the fix by reloading and checking Network tab for Access-Control-Allow-Origin",
+   "importance": "minor"
+  },
+  {
+   "item": "Brief definition of CORS",
+   "importance": "minor"
+  },
+  {
+   "item": "Check server logs for crashes hiding behind the CORS error",
+   "importance": "minor"
+  },
+  {
+   "item": "credentials: true included in the Express and FastAPI examples",
+   "importance": "minor"
+  },
+  {
+   "item": "Django fix: django-cors-headers, INSTALLED_APPS, middleware placement, CORS_ALLOWED_ORIGINS",
+   "importance": "useful"
+  },
+  {
+   "item": "Allow-Credentials should be sent only if using cookies; browser rejects it combined with * (Y also covers the * restriction under credentials)",
+   "importance": "minor"
+  },
+  {
+   "item": "Duplicate CORS headers set in both proxy and app cause errors",
+   "importance": "useful"
+  },
+  {
+   "item": "Origin must match exactly: localhost vs 127.0.0.1 differ",
+   "importance": "useful"
+  },
+  {
+   "item": "Verify fix by checking Network tab for Access-Control-Allow-Origin in response",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit example headers block including Allow-Credentials and sample values",
+   "importance": "minor"
+  },
+  {
+   "item": "If preflight OPTIONS returns 404/405, the route or proxy blocks it",
+   "importance": "useful"
+  },
+  {
+   "item": "Use specific origin rather than * when sending cookies or auth headers; warning about * on private-data APIs",
+   "importance": "minor"
+  },
+  {
+   "item": "Express cors credentials: true option and FastAPI allow_credentials example",
+   "importance": "useful"
+  }
+ ]
+}

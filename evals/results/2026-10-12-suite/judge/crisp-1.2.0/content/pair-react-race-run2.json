@@ -1,0 +1,101 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 4.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Reset data/set loading state when userId changes, or use key={userId} to remount with fresh state (Y also mentions clearing/resetting user, but X adds the key={userId} alternative)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains that the old effect's async callback closes over setData and still writes to state after it is stale",
+   "importance": "minor"
+  },
+  {
+   "item": "Recommends AbortController as best fix and shows async/await version with setError for non-abort errors",
+   "importance": "minor"
+  },
+  {
+   "item": "Names RTK Query in addition to TanStack Query and SWR; notes data libraries handle cancellation and caching",
+   "importance": "minor"
+  },
+  {
+   "item": "Says the ignore flag is for cases where you can't abort, e.g. non-fetch async APIs",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to review the user's actual component",
+   "importance": "minor"
+  },
+  {
+   "item": "Alternative fix of using key={userId} to remount the component with fresh state per user",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete code example for resetting state (setData(null) / setLoading(true)) when userId changes",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains why the old async callback still writes state (closure remains alive after effect re-run)",
+   "importance": "minor"
+  },
+  {
+   "item": "Recommends abort as the preferred fix and says to use the ignore flag when you can't abort (non-fetch async APIs)",
+   "importance": "useful"
+  },
+  {
+   "item": "Error handling in the abort example sets error state (setError) for non-abort errors",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions RTK Query as an additional data library option",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to review the user's actual component",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Check that userId is in the useEffect dependency array, otherwise the effect won't re-run on switch",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that aborted fetches reject with AbortError and must be handled or unhandled errors appear in the console (X handles it in code but doesn't explain)",
+   "importance": "minor"
+  },
+  {
+   "item": "States that network responses do not return in request order and React does not cancel old requests",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes cleanup also runs on unmount",
+   "importance": "minor"
+  },
+  {
+   "item": "Make sure userId is in the dependency array, otherwise the effect won't re-run on a switch",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicitly notes network responses don't return in request order and React doesn't cancel old requests when the effect re-runs",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes unhandled AbortError appears in console if not handled (warning, though Y's code also handles it)",
+   "importance": "minor"
+  }
+ ]
+}

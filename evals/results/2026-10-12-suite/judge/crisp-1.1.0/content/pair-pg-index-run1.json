@@ -1,0 +1,141 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.5,
+  "useful": 4.0,
+  "minor": 4.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "Set statement_timeout = 0 for the session, since a default statement_timeout can kill the build, and the SQL example includes it",
+   "importance": "useful"
+  },
+  {
+   "item": "Query to find invalid indexes: SELECT indexrelid::regclass FROM pg_index WHERE NOT indisvalid",
+   "importance": "useful"
+  },
+  {
+   "item": "Temporary sort files need disk space in addition to the final index",
+   "importance": "minor"
+  },
+  {
+   "item": "Expect the build to take 2-3x longer than a plain build",
+   "importance": "minor"
+  },
+  {
+   "item": "Watch free WAL disk space on replicas/primary, not just replica lag",
+   "importance": "minor"
+  },
+  {
+   "item": "Partitioned tables: CONCURRENTLY is not supported on the parent; build on each partition then attach",
+   "importance": "useful"
+  },
+  {
+   "item": "Verify with EXPLAIN that the new index is actually used",
+   "importance": "minor"
+  },
+  {
+   "item": "Check for duplicates before building a unique index",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete example SQL block with index name and maintenance_work_mem 2GB",
+   "importance": "minor"
+  },
+  {
+   "item": "Set statement_timeout = 0 for the session, since a default statement_timeout can kill the long build and leave an INVALID index",
+   "importance": "critical"
+  },
+  {
+   "item": "Concrete SQL example with SET commands and CREATE INDEX CONCURRENTLY",
+   "importance": "useful"
+  },
+  {
+   "item": "Query to find invalid indexes: SELECT indexrelid::regclass FROM pg_index WHERE NOT indisvalid",
+   "importance": "useful"
+  },
+  {
+   "item": "Partitioned tables: CONCURRENTLY is not supported on the parent; build on each partition then attach",
+   "importance": "useful"
+  },
+  {
+   "item": "Check for duplicates before building a unique index",
+   "importance": "useful"
+  },
+  {
+   "item": "Idle-in-transaction sessions can stall the build for hours",
+   "importance": "minor"
+  },
+  {
+   "item": "Monitor free WAL disk space on replicas/primary, not only lag",
+   "importance": "minor"
+  },
+  {
+   "item": "Estimate that the build takes 2-3x longer than a plain build",
+   "importance": "minor"
+  },
+  {
+   "item": "After the build, verify with EXPLAIN that the new index is used",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Concurrent build lets reads and writes continue (explicit statement of the benefit)",
+   "importance": "minor"
+  },
+  {
+   "item": "Rails-specific fix: disable_ddl_transaction!",
+   "importance": "useful"
+  },
+  {
+   "item": "A unique index can also fail if a writer inserts a duplicate during the build",
+   "importance": "minor"
+  },
+  {
+   "item": "Run the build during a quiet period if possible",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that a short lock_timeout makes the build fail fast rather than block other queries queued behind it",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that the time estimate depends on hardware/load",
+   "importance": "minor"
+  },
+  {
+   "item": "Check free disk space before building (index plus temp sort files)",
+   "importance": "useful"
+  },
+  {
+   "item": "Rails-specific example: use disable_ddl_transaction!",
+   "importance": "minor"
+  },
+  {
+   "item": "Concurrent build costs more: scans the table twice and takes longer",
+   "importance": "minor"
+  },
+  {
+   "item": "Run in a quiet period if possible",
+   "importance": "minor"
+  },
+  {
+   "item": "Concurrent unique index can also fail if a writer inserts a duplicate during the build",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that time depends on hardware and load, so no number can be given",
+   "importance": "minor"
+  }
+ ]
+}

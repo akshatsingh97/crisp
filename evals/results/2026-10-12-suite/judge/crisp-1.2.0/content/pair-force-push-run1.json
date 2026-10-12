@@ -1,0 +1,89 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Rebase rewrites commits so local and remote diverged (explains why push is rejected)",
+   "importance": "minor"
+  },
+  {
+   "item": "Open PR updates automatically after force push",
+   "importance": "minor"
+  },
+  {
+   "item": "Shorter command form 'git push --force-with-lease' relying on the upstream default",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to look at the unrecognized commits before overwriting them",
+   "importance": "minor"
+  },
+  {
+   "item": "Open PR updates automatically after the push",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Explicit command with remote and branch: git push --force-with-lease origin <your-branch>",
+   "importance": "minor"
+  },
+  {
+   "item": "Run git fetch origin so the lease check is accurate",
+   "importance": "useful"
+  },
+  {
+   "item": "If others' commits appear, option to rebase again on top of their work instead of overwriting",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that force push permanently replaces remote history",
+   "importance": "minor"
+  },
+  {
+   "item": "Troubleshooting: if --force-with-lease is rejected with 'stale info', fetch and inspect remote changes, then decide to rebase again or overwrite",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit full command with origin and branch placeholder (git push --force-with-lease origin <your-branch>)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit step to run git fetch origin first so the lease check is accurate",
+   "importance": "useful"
+  },
+  {
+   "item": "What to do if other people's commits are found: ask them first or rebase again on top of their work",
+   "importance": "useful"
+  },
+  {
+   "item": "Force push permanently replaces remote history; others who based work on old commits will get conflicts",
+   "importance": "minor"
+  },
+  {
+   "item": "Many teams block force push to main via branch protection (partly in Y too)",
+   "importance": "minor"
+  },
+  {
+   "item": "Troubleshooting: if --force-with-lease is rejected with 'stale info', run git fetch, inspect what changed, then decide to rebase again or overwrite",
+   "importance": "useful"
+  },
+  {
+   "item": "Open PR: force push is normal and safe",
+   "importance": "minor"
+  }
+ ]
+}

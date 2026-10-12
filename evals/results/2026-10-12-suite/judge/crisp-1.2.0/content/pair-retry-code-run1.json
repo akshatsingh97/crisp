@@ -1,0 +1,93 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Cautions: a timed-out POST may have succeeded, so use an idempotency key or skip the retry (specific mitigation: idempotency key)",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete wait sequence example for the defaults: 0.5, 1, 2, 4 seconds",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that other exception types are not retried and raise at once, and ValueError/HTTP 400 as examples of non-retryable errors",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete caution that a timed-out POST may have succeeded, with the remedy of using an idempotency key",
+   "importance": "useful"
+  },
+  {
+   "item": "Specific examples of non-retryable errors: ValueError and HTTP 400",
+   "importance": "minor"
+  },
+  {
+   "item": "Docstring and inline comments in the code",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Input validation: raises ValueError if max_attempts < 1 (without it, the loop never runs and the function silently returns None)",
+   "importance": "useful"
+  },
+  {
+   "item": "Equal jitter option (half delay plus random half) that keeps a minimum wait",
+   "importance": "useful"
+  },
+  {
+   "item": "No-jitter option ('none') and validation that raises ValueError on an invalid jitter value",
+   "importance": "minor"
+  },
+  {
+   "item": "Type hints (Callable, TypeVar, return type)",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that retried payment requests can charge twice, with a definition of idempotent",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice not to retry authentication failures or bad input",
+   "importance": "minor"
+  },
+  {
+   "item": "Input validation: raises ValueError if max_attempts < 1 (otherwise the function would silently return None)",
+   "importance": "useful"
+  },
+  {
+   "item": "Multiple jitter strategies: 'equal' jitter (keeps a minimum wait) and 'none', in addition to 'full', with explanation of tradeoffs",
+   "importance": "useful"
+  },
+  {
+   "item": "Validation of the jitter parameter value (raises ValueError for invalid)",
+   "importance": "minor"
+  },
+  {
+   "item": "Type hints (generic TypeVar return type)",
+   "importance": "minor"
+  },
+  {
+   "item": "Tip that async code needs an async version that awaits the call (not just swapping sleep)",
+   "importance": "minor"
+  },
+  {
+   "item": "Summary up front of the delay formula base_delay * factor**attempt capped at max_delay",
+   "importance": "minor"
+  }
+ ]
+}

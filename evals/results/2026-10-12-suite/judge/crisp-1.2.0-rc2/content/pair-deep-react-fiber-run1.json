@@ -1,0 +1,253 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 4.5,
+  "minor": 7.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 10.0,
+  "minor": 7.5
+ },
+ "cut_items": [
+  {
+   "item": "Fiber field table includes explicit purpose per field, plus 'index' and explanation that linked-list layout lets React stop between any two fibers",
+   "importance": "minor"
+  },
+  {
+   "item": "Rebasing explained: skipped lower-priority updates kept in queue and reapplied in original order on new base state for consistency",
+   "importance": "useful"
+  },
+  {
+   "item": "Starvation: expiration time promotes starved low-priority work (Y also mentions lane expiry, so shared)",
+   "importance": "minor"
+  },
+  {
+   "item": "Interruption example: transition rendering interrupted by click, work discarded, click committed first, then transition restarted",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that concurrent rendering only applies with createRoot/opt-in APIs; plain setState in click handler is sync",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation of why swap between mutation and layout means componentWillUnmount sees old tree and componentDidMount sees new",
+   "importance": "minor"
+  },
+  {
+   "item": "Context implementation: provider stores value on fiber, walks subtree to mark consumer lanes",
+   "importance": "minor"
+  },
+  {
+   "item": "Offscreen/Activity: hidden subtree keeps state, can render at low priority",
+   "importance": "minor"
+  },
+  {
+   "item": "Pointer to specific source files to read (ReactFiberWorkLoop, BeginWork, etc.)",
+   "importance": "minor"
+  },
+  {
+   "item": "Practical takeaway: Fiber doesn't make React faster in total, only more responsive; rendering != DOM change",
+   "importance": "useful"
+  },
+  {
+   "item": "Practical tip: use transitions for heavy work",
+   "importance": "minor"
+  },
+  {
+   "item": "Class component getSnapshotBeforeUpdate/ refs detach details (shared)",
+   "importance": "minor"
+  },
+  {
+   "item": "Observable consequence: a component can render without any DOM change (render is not the same as DOM update)",
+   "importance": "useful"
+  },
+  {
+   "item": "Note that Fiber does not make React faster overall, only more responsive",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit rebasing explanation: skipped lower-priority updates are reapplied in original order on the new base state for consistency",
+   "importance": "useful"
+  },
+  {
+   "item": "Interruption example: transition interrupted by a click, then restarted with new state",
+   "importance": "useful"
+  },
+  {
+   "item": "Offscreen/Activity: hidden subtree retains state and can render at low priority",
+   "importance": "minor"
+  },
+  {
+   "item": "useEffect mechanics: effect object added to updateQueue with flag; deps compared in render, effects run in commit",
+   "importance": "minor"
+  },
+  {
+   "item": "Rule that componentWillUnmount sees the old tree and componentDidMount sees the new one due to the pointer swap ordering",
+   "importance": "minor"
+  },
+  {
+   "item": "Concurrent rendering is opt-in via createRoot and transitions; plain setState in a click handler still renders sync",
+   "importance": "useful"
+  },
+  {
+   "item": "Pointers to source files (ReactFiberWorkLoop, BeginWork, CompleteWork, ChildFiber, Hooks, Lane) for further reading",
+   "importance": "useful"
+  },
+  {
+   "item": "Summary table of fiber fields and a problem-framing intro on why diffing is needed",
+   "importance": "minor"
+  },
+  {
+   "item": "Context provider stores value on its fiber",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Three-tier distinction: elements vs fibers vs host tree",
+   "importance": "useful"
+  },
+  {
+   "item": "Fiber goals list incl. returning arrays/fragments, reusing work",
+   "importance": "minor"
+  },
+  {
+   "item": "Single-element child reconciliation and text child handling (reconcileChildFibers by shape)",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete code example of component defined inside component causing remount, with fix (define at module level)",
+   "importance": "useful"
+  },
+  {
+   "item": "Hook update path: setState update object with lane, eager state computation, bailout via Object.is when unchanged, dispatcher mount vs update",
+   "importance": "useful"
+  },
+  {
+   "item": "Insertion requires searching for next host sibling in mutation phase",
+   "importance": "minor"
+  },
+  {
+   "item": "Passive effects flushed before next render starts; discrete event sync flush",
+   "importance": "useful"
+  },
+  {
+   "item": "Sync lanes flush in microtask without yielding; getNextLanes picks lanes; prepareFreshStack on interruption",
+   "importance": "useful"
+  },
+  {
+   "item": "Lane is 31-bit mask; DefaultLane covers timers/network callbacks",
+   "importance": "minor"
+  },
+  {
+   "item": "Suspense during transitions keeps old UI instead of fallback; use() in React 19",
+   "importance": "useful"
+  },
+  {
+   "item": "Errors unwind via unwindWork to nearest error boundary (X also covers error boundaries)",
+   "importance": "minor"
+  },
+  {
+   "item": "Memoization details: React.memo shallow Object.is, PureComponent/sCU, useMemo/useCallback, Compiler",
+   "importance": "useful"
+  },
+  {
+   "item": "Children-prop element identity gives free bailout; move state down or pass children",
+   "importance": "useful"
+  },
+  {
+   "item": "Context consumers re-render even if intermediate components bail out",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to profile with DevTools Profiler before memoizing",
+   "importance": "minor"
+  },
+  {
+   "item": "Honest caveat on uncertainty about React 18 time-slicing of default updates",
+   "importance": "minor"
+  },
+  {
+   "item": "Bailout in beginWork clones child fibers if childLanes non-empty",
+   "importance": "minor"
+  },
+  {
+   "item": "Three-tree distinction: elements vs fibers vs host tree, with elements immutable and recreated each render",
+   "importance": "useful"
+  },
+  {
+   "item": "Specific fix for inline component definition: define components at module level (with code example)",
+   "importance": "useful"
+  },
+  {
+   "item": "Traversal without recursion: child, then sibling, then parent's sibling",
+   "importance": "minor"
+  },
+  {
+   "item": "Element identity bailout: passing the same children element or moving state down skips re-render",
+   "importance": "useful"
+  },
+  {
+   "item": "Context changes mark consumers; intermediate components can bail out but consumers still re-render",
+   "importance": "useful"
+  },
+  {
+   "item": "Hook update processing: skips updates not in rendered lanes and rebases them; eager state computation and Object.is bailout",
+   "importance": "useful"
+  },
+  {
+   "item": "Lane details: 31-bit mask, named lanes (SyncLane, InputContinuousLane, DefaultLane, TransitionLanes, IdleLane), getNextLanes, expired lanes promoted",
+   "importance": "useful"
+  },
+  {
+   "item": "Sync lanes flush in a microtask without yielding; in React 18 default updates are not time-sliced (with an honest uncertainty caveat)",
+   "importance": "useful"
+  },
+  {
+   "item": "prepareFreshStack discards the WIP tree when higher-priority update arrives",
+   "importance": "minor"
+  },
+  {
+   "item": "Commit detail: insertion needs next host sibling search; React 18 flushes passive effects synchronously after discrete events and before the next render",
+   "importance": "minor"
+  },
+  {
+   "item": "During a transition, Suspense keeps the old UI instead of showing the fallback; use() in React 19; unwindWork for errors",
+   "importance": "useful"
+  },
+  {
+   "item": "Version caveat: described for React 18/19, internals are a mental model not a public API",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit mapping of each fiber flag (Placement, Update, ChildDeletion, Ref, Passive) and fiber fields like index",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to profile with React DevTools Profiler before adding memoization",
+   "importance": "useful"
+  },
+  {
+   "item": "Single-element child reconcile and text reconcile cases; the first-pass index-matching detail",
+   "importance": "minor"
+  },
+  {
+   "item": "React.memo uses shallow Object.is; PureComponent/shouldComponentUpdate; useMemo/useCallback keep references stable",
+   "importance": "useful"
+  },
+  {
+   "item": "Goals enabled by Fiber: arrays/fragments returned from components, error boundaries and Suspense",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete sync vs concurrent work loop comparison",
+   "importance": "minor"
+  }
+ ]
+}

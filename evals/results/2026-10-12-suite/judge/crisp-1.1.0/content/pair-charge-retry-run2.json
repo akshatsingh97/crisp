@@ -1,0 +1,93 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Only retry on network errors, 5xx and 429; do not retry card declines or other 4xx errors",
+   "importance": "useful"
+  },
+  {
+   "item": "User double-clicking Pay or refreshing can cause the same duplicate; deriving the key from order ID covers it",
+   "importance": "useful"
+  },
+  {
+   "item": "PaymentIntents handles 3D Secure better and idempotency keys work the same way there",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit step-by-step explanation of how the failure occurs (response lost after charge succeeds)",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete key options: order ID, checkout-session ID, or UUID stored with order",
+   "importance": "minor"
+  },
+  {
+   "item": "Step-by-step description of how the duplicate happens (the charge succeeds, the response is lost, a retry creates a second charge)",
+   "importance": "minor"
+  },
+  {
+   "item": "Retry only on network errors, 5xx and 429. Do not retry card declines or other 4xx errors",
+   "importance": "useful"
+  },
+  {
+   "item": "A user double-clicking Pay or refreshing can also cause duplicates. A key derived from the order ID covers this",
+   "importance": "useful"
+  },
+  {
+   "item": "PaymentIntents handle retries and 3D Secure better. Idempotency keys work the same way there",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests a UUID stored with the order, or a checkout-session ID, as the key source",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Do not retry with the same key after the 24-hour key expiry window (keys may be removed)",
+   "importance": "useful"
+  },
+  {
+   "item": "PaymentIntents give a stable object to look up after an error",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicitly states the code has not been read, so cannot confirm whether a key is already sent",
+   "importance": "minor"
+  },
+  {
+   "item": "Save the key before the first call",
+   "importance": "useful"
+  },
+  {
+   "item": "Define idempotency key briefly",
+   "importance": "minor"
+  },
+  {
+   "item": "States explicitly that the code was not read, so it cannot say whether a key is already sent",
+   "importance": "minor"
+  },
+  {
+   "item": "Save the idempotency key before the first call so it persists across retries",
+   "importance": "useful"
+  },
+  {
+   "item": "PaymentIntents give a stable object to look up after an error",
+   "importance": "minor"
+  }
+ ]
+}

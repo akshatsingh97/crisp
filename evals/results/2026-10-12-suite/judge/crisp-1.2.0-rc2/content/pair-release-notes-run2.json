@@ -1,0 +1,93 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 3.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 1.0
+ },
+ "cut_items": [
+  {
+   "item": "Notes that failure occurs if apiKey is omitted (init() fails)",
+   "importance": "minor"
+  },
+  {
+   "item": "Before/after migration example showing 2.x init() vs 3.0 init({apiKey})",
+   "importance": "minor"
+  },
+  {
+   "item": "Warns that higher retry default means failed requests take longer to give up",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicitly flags that the retry option name is unknown and must be filled in before publishing",
+   "importance": "useful"
+  },
+  {
+   "item": "Offers to add an on('error') example if given handler signature",
+   "importance": "minor"
+  },
+  {
+   "item": "Summary up front that 3.0 has one breaking change and to read migration step",
+   "importance": "minor"
+  },
+  {
+   "item": "Retry-restore instruction is more specific: set the retry option to 3 in init() call",
+   "importance": "minor"
+  },
+  {
+   "item": "States that omitting apiKey causes init() to fail",
+   "importance": "useful"
+  },
+  {
+   "item": "Before/after migration example showing 2.x init() vs 3.0 init({apiKey})",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that higher retry default means failed requests take longer to give up",
+   "importance": "useful"
+  },
+  {
+   "item": "Flags that the retry option name is unknown and must be filled in before publishing",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit migration guidance to set retry to 3 in init() call to keep old behavior (X says set explicitly in configuration, less specific)",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to supply on('error') example if handler signature is provided",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Code example for on('error') handler logging the error",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that the handler's first-argument error signature is an assumption to verify against API reference",
+   "importance": "useful"
+  },
+  {
+   "item": "Instruction to add apiKey to every init() call before upgrading",
+   "importance": "minor"
+  },
+  {
+   "item": "Example handler code for on('error') with error as callback argument (flagged as assumption to verify)",
+   "importance": "useful"
+  },
+  {
+   "item": "Instruction to add apiKey to every init() call before upgrading",
+   "importance": "minor"
+  }
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Before/after code example showing init() change",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains consequence of more retries: failed calls take longer to report an error",
+   "importance": "useful"
+  },
+  {
+   "item": "Upgrade steps checklist including checking whether 5 retries suits the app",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes memory leak impact affects long-running apps that reconnect often",
+   "importance": "minor"
+  },
+  {
+   "item": "Flags that the retry option name and SDK object name (sdk) are assumed and must be replaced before publishing",
+   "importance": "useful"
+  },
+  {
+   "item": "Before/after code example of init() migration showing apiKey added alongside existing options",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns that higher retries mean some calls take longer to report an error (latency impact)",
+   "importance": "useful"
+  },
+  {
+   "item": "Dedicated upgrade steps checklist, including checking whether 5 retries suits the app and optionally adding an error handler",
+   "importance": "useful"
+  },
+  {
+   "item": "Error handler example logs the error via console.error",
+   "importance": "minor"
+  },
+  {
+   "item": "Flags that the SDK object name (sdk) is a placeholder to replace before publishing",
+   "importance": "minor"
+  },
+  {
+   "item": "Says long-running apps that reconnect often benefit from the memory leak fix",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Step-by-step instruction to find each init() call before adding apiKey",
+   "importance": "minor"
+  },
+  {
+   "item": "Tells reader to check the SDK reference for the retry option name",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that the error object shape is not documented and should be confirmed before relying on it",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that module name and error object details were not added",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that the retry option name is not in the draft and tells reader to check the SDK reference",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that the error object shape is unknown and should be confirmed before relying on it",
+   "importance": "minor"
+  },
+  {
+   "item": "Step to find each init() call in the code",
+   "importance": "minor"
+  }
+ ]
+}

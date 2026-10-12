@@ -1,0 +1,101 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Auditing/CVE response: can't tell which base image a deployment was built from",
+   "importance": "minor"
+  },
+  {
+   "item": "Caching pitfall: stale local 'latest' vs newer pull on clean CI runner causes inconsistent builds",
+   "importance": "useful"
+  },
+  {
+   "item": "Upgrades surface as CI/prod failures in unrelated commits, with concrete examples (Python 3.12 to 3.13, bookworm to trixie)",
+   "importance": "minor"
+  },
+  {
+   "item": "Even for dev, pinned tag is a good habit",
+   "importance": "minor"
+  },
+  {
+   "item": "Auditing and CVE response: you can't say which base image a deployment was built from",
+   "importance": "useful"
+  },
+  {
+   "item": "Cache inconsistency: a stale local :latest can differ from what a clean CI runner pulls",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete breaking-change examples: Python 3.12 to 3.13, Debian bookworm to trixie",
+   "importance": "minor"
+  },
+  {
+   "item": "The tag stays alongside the digest for readability while the digest guarantees the exact bytes",
+   "importance": "minor"
+  },
+  {
+   "item": "Even in dev, a pinned tag is a good habit",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Supply-chain risk: bad or compromised upstream push reaches production builds without review",
+   "importance": "useful"
+  },
+  {
+   "item": "Command to get digest: docker buildx imagetools inspect <image:tag>",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat: pinning a digest stops automatic patches, so the update bot is needed to stay current",
+   "importance": "useful"
+  },
+  {
+   "item": "Rollbacks unreliable: rebuilding an old commit doesn't give the old image",
+   "importance": "minor"
+  },
+  {
+   "item": ":latest doesn't necessarily mean newest or most stable; maintainer decides",
+   "importance": "minor"
+  },
+  {
+   "item": "Command to get the digest: docker buildx imagetools inspect <image:tag>",
+   "importance": "useful"
+  },
+  {
+   "item": "Rollback risk: rebuilding an old commit doesn't give back the old image",
+   "importance": "minor"
+  },
+  {
+   "item": "Supply-chain risk: a bad or compromised upstream push reaches production builds unreviewed",
+   "importance": "useful"
+  },
+  {
+   "item": ":latest doesn't necessarily mean newest or most stable; the maintainer decides what it points to",
+   "importance": "minor"
+  },
+  {
+   "item": "Pinning a digest stops automatic patches, so the update bot is what keeps you current",
+   "importance": "useful"
+  },
+  {
+   "item": "CI should test each bot-proposed bump before it reaches production",
+   "importance": "minor"
+  }
+ ]
+}

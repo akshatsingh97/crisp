@@ -1,0 +1,109 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 4.0,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Configurable jitter modes: 'full' and 'equal' (equal guarantees a minimum wait), plus option to disable jitter",
+   "importance": "useful"
+  },
+  {
+   "item": "Decorator form (retrying) with @wraps and a usage example, so functions can be wrapped directly",
+   "importance": "useful"
+  },
+  {
+   "item": "Caution: keep max_attempts times max_delay within the overall time budget",
+   "importance": "minor"
+  },
+  {
+   "item": "Caution: a timeout does not tell you whether the first call succeeded, so use an idempotency key for payments/writes",
+   "importance": "useful"
+  },
+  {
+   "item": "Caution: retrying bugs or 400 Bad Request errors only wastes time, so narrow exceptions",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation that full jitter usually gives the lowest total load, and that equal jitter guarantees a minimum wait",
+   "importance": "minor"
+  },
+  {
+   "item": "Decorator form `retrying`, so a function can be wrapped once with `@retrying(...)` and reused.",
+   "importance": "useful"
+  },
+  {
+   "item": "`jitter` parameter that selects between full jitter, equal jitter and no jitter. The answer explains each mode.",
+   "importance": "useful"
+  },
+  {
+   "item": "Says a timeout does not tell you whether the first call succeeded, and recommends an idempotency key for payments and writes.",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns that retrying a bug or a 400 Bad Request only wastes time, so `exceptions` should be narrowed to transient errors.",
+   "importance": "useful"
+  },
+  {
+   "item": "Advice to keep `max_attempts` times `max_delay` within the overall time budget.",
+   "importance": "useful"
+  },
+  {
+   "item": "Tradeoff note: full jitter usually gives the lowest total load, while equal jitter guarantees a minimum wait.",
+   "importance": "minor"
+  },
+  {
+   "item": "Parameter table lists the default of every parameter in one place.",
+   "importance": "minor"
+  },
+  {
+   "item": "Docstring on the function and on the decorator.",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Warning that the function blocks the thread while sleeping and that asyncio code needs an async version with await asyncio.sleep",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit args/kwargs parameters, which avoid collisions between the retry options and the target function's own keyword arguments",
+   "importance": "useful"
+  },
+  {
+   "item": "Example on_retry lambda that prints the attempt, error and delay",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines idempotent in parentheses and explains that a retried payment or write can run twice",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit `args` and `kwargs` parameters keep the retried function's arguments separate from the retry options, so there is no name collision. Y's `*args, **kwargs` signature would swallow an option name such as `max_attempts` that the target function also uses.",
+   "importance": "minor"
+  },
+  {
+   "item": "Warns that the function blocks the thread while it sleeps, and that asyncio code needs an async version using `await asyncio.sleep`.",
+   "importance": "useful"
+  },
+  {
+   "item": "Example call that shows the plain function form with `on_retry` logging.",
+   "importance": "minor"
+  },
+  {
+   "item": "States that each wait is random between 0 and the current cap, and gives the sample caps 1, 2, 4, 8 for the defaults.",
+   "importance": "minor"
+  }
+ ]
+}

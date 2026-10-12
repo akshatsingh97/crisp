@@ -1,0 +1,121 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 1.0,
+  "useful": 4.0,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Reuse of a key with different parameters returns an error (Y also says this) \u2013 no; instead: Stripe replays a stored decline on retry with same key, so use a new key only when the customer starts a new attempt",
+   "importance": "useful"
+  },
+  {
+   "item": "Use order-based key rather than per-click key to avoid double-click duplicates (Y covers double clicks too, so overlap)",
+   "importance": "minor"
+  },
+  {
+   "item": "If retries come from a queue/job runner, ensure each retry reads the saved key; save key before first call",
+   "importance": "useful"
+  },
+  {
+   "item": "PaymentIntents support the same idempotency keys",
+   "importance": "minor"
+  },
+  {
+   "item": "A retry with the same key after a card decline returns the same decline; use a new key only when the customer starts a new attempt",
+   "importance": "useful"
+  },
+  {
+   "item": "Save the key before the first call so it is persisted",
+   "importance": "useful"
+  },
+  {
+   "item": "For queue or job-runner retries, make sure each retry reads the saved key",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests UUID as a key option",
+   "importance": "minor"
+  },
+  {
+   "item": "PaymentIntents support the same idempotency keys",
+   "importance": "minor"
+  },
+  {
+   "item": "Names the SDK languages (Node, Python, Ruby) that support maxNetworkRetries",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Do not retry card declines; a decline is a valid answer, not a network error",
+   "importance": "useful"
+  },
+  {
+   "item": "Saved 500 errors are also replayed with the same key",
+   "importance": "minor"
+  },
+  {
+   "item": "Own retry loop wrapped around SDK maxNetworkRetries gets a new key per outer call unless a key is passed explicitly",
+   "importance": "useful"
+  },
+  {
+   "item": "Store order ID in charge metadata and search for an existing charge for that order after an ambiguous failure before creating a new one",
+   "importance": "critical"
+  },
+  {
+   "item": "Use webhooks such as charge.succeeded to confirm final state",
+   "importance": "useful"
+  },
+  {
+   "item": "One PaymentIntent per order means a retry confirms the same object instead of creating a new charge",
+   "importance": "useful"
+  },
+  {
+   "item": "Retries after the key expiry window can create a new charge (X says not to retry later than 24 hours with the same key, which is similar)",
+   "importance": "minor"
+  },
+  {
+   "item": "Store order ID in charge metadata and search for an existing charge for that order after an ambiguous failure before creating a new one",
+   "importance": "useful"
+  },
+  {
+   "item": "Use webhooks such as charge.succeeded to confirm final state",
+   "importance": "useful"
+  },
+  {
+   "item": "PaymentIntents: one per order so a retry confirms the same object rather than creating a new charge",
+   "importance": "useful"
+  },
+  {
+   "item": "Don't retry card declines since a decline is a valid answer, not a network error",
+   "importance": "useful"
+  },
+  {
+   "item": "If you wrap the SDK in your own retry loop, each outer call gets a new key unless you pass one explicitly (interaction with maxNetworkRetries)",
+   "importance": "critical"
+  },
+  {
+   "item": "Stripe also replays saved 500 errors under the same key",
+   "importance": "minor"
+  },
+  {
+   "item": "Queue redelivery and page refreshes also cause duplicates, covered by an order-ID key",
+   "importance": "minor"
+  },
+  {
+   "item": "Keys last at least 24 hours; retries after that window can create a new charge",
+   "importance": "minor"
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Alternative: merge target branch into feature branch to avoid force push (adds a merge commit)",
+   "importance": "useful"
+  },
+  {
+   "item": "If a teammate has the branch checked out, they should run git reset --hard origin/branch; a plain git pull would merge old and new history together",
+   "importance": "useful"
+  },
+  {
+   "item": "Open pull request is updated by the push; review comments on old commits may become outdated",
+   "importance": "minor"
+  },
+  {
+   "item": "Command git log HEAD..origin/branch to see unknown remote commits (note: Y's command direction is more precise)",
+   "importance": "minor"
+  },
+  {
+   "item": "Teammates should use git reset --hard origin/branch after the push; a normal git pull would merge old and new history together (explicit warning)",
+   "importance": "useful"
+  },
+  {
+   "item": "If branch has an open pull request, force push updates it, and review comments on old commits may become outdated",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative: merge the target branch into the feature branch instead of rebasing, which pushes without force but adds a merge commit",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not force-push main, master, or any shared branch (X mentions main/develop, so overlap)",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Troubleshooting: if --force-with-lease is rejected with stale info, fetch, inspect new remote commits, rebase onto them, and retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Force push permanently replaces remote history; commits only on the remote are lost unless someone has a local copy",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit explanation that the rejection is due to non-fast-forward because commits have new hashes",
+   "importance": "minor"
+  },
+  {
+   "item": "Uses git log --oneline origin/<branch> ^<branch> to list remote-only commits, which correctly shows what would be overwritten",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation that the rebase gives commits new hashes so push can't fast-forward (Y also says history rewritten, so mostly overlap)",
+   "importance": "minor"
+  },
+  {
+   "item": "Command to list remote commits not in local branch: git log origin/<branch> ^<branch> after fetch (Y gives HEAD..origin/branch, equivalent)",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that force push permanently replaces remote history and commits only on the remote are lost unless someone has a local copy",
+   "importance": "useful"
+  },
+  {
+   "item": "Teammates should tell/notify others first, then fetch and rebase onto origin/<branch> or reset",
+   "importance": "useful"
+  },
+  {
+   "item": "Troubleshooting: if --force-with-lease is rejected with 'stale info', fetch, inspect new remote commits, rebase onto them, retry",
+   "importance": "useful"
+  }
+ ]
+}

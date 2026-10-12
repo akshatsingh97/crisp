@@ -1,0 +1,117 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 4.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Action item: review the 33-minute gap between first error and rollback and shorten detection/response time",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: count failed checkouts and decide whether customers need follow-up",
+   "importance": "useful"
+  },
+  {
+   "item": "Contributing factor: no automatic stop or rollback on rising error rate after deploy (flagged to confirm)",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests checking pool-exhaustion and timeout errors in logs to confirm failure mode",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes the rollback ended errors within 2 minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicitly states that the report contains no invented details and offers to complete it given missing inputs",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes checkout traffic needs more than 5 concurrent connections (stated as fact)",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: count failed checkouts and decide if customers need follow-up",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: review the 33-minute gap between first error and rollback and shorten it",
+   "importance": "useful"
+  },
+  {
+   "item": "Contributing factor: no automatic stop when error rate rose after the deploy (flagged to confirm)",
+   "importance": "useful"
+  },
+  {
+   "item": "States rollback ended errors within 2 minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that the exact failure mode is unconfirmed and says to check pool-exhaustion and timeout errors in the logs",
+   "importance": "minor"
+  },
+  {
+   "item": "Asks to add how the problem was detected, and why the rollback took so long",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to complete the report if the user sends the missing times, owners and log findings",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Action item: add a config-review check that flags large changes to existing values",
+   "importance": "useful"
+  },
+  {
+   "item": "Defines the database pool (shared set of open DB connections) for non-expert readers",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit hypothesis that requests waited for a free connection then timed out, labeled as an assumption to verify",
+   "importance": "useful"
+  },
+  {
+   "item": "Asks to investigate why the 10x-lower value passed review or automated checks",
+   "importance": "useful"
+  },
+  {
+   "item": "Asks to find when the first alert fired and why detection or rollback took so long",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains what a database pool is (set of open connections shared by the API)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicitly labels the hypothesis that requests waited for a free connection and timed out as an assumption to confirm in logs",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: add a config review check that flags large changes to existing values",
+   "importance": "useful"
+  },
+  {
+   "item": "States pool size returned to 50 after rollback",
+   "importance": "minor"
+  },
+  {
+   "item": "Gap: asks why the deploy passed review or automated checks with a value 10x lower",
+   "importance": "useful"
+  }
+ ]
+}

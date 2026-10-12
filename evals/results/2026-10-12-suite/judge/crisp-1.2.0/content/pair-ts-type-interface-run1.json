@@ -1,0 +1,109 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 3.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 4.5
+ },
+ "cut_items": [
+  {
+   "item": "Interfaces are usually slightly faster for the compiler, but the gap rarely matters (caveat on performance)",
+   "importance": "minor"
+  },
+  {
+   "item": "Concise example showing a Status union and a Handler function type alongside an interface extends",
+   "importance": "minor"
+  },
+  {
+   "item": "Function types listed as something type names (example: type Handler = (event: Event) => void)",
+   "importance": "minor"
+  },
+  {
+   "item": "Interface declaration merging lets library users augment public types (rationale for using interface in library APIs)",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that the compiler performance gap rarely matters in practice",
+   "importance": "minor"
+  },
+  {
+   "item": "Hover and error text: a type alias may expand into its full structure, while interface names display more clearly",
+   "importance": "minor"
+  },
+  {
+   "item": "Closing example showing interface extends plus a union type and a function type",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Concrete code showing declaration merging vs duplicate identifier error for type",
+   "importance": "useful"
+  },
+  {
+   "item": "Intersection (&) as the type equivalent of extends, with example",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit explanation that conflicting property in an intersection becomes never and the error surfaces later at use rather than at declaration",
+   "importance": "useful"
+  },
+  {
+   "item": "Interface can describe functions and classes as well as object shapes",
+   "importance": "minor"
+  },
+  {
+   "item": "Examples of keyof and conditional types as type-only features",
+   "importance": "minor"
+  },
+  {
+   "item": "Use type when combining or transforming other types",
+   "importance": "minor"
+  },
+  {
+   "item": "Common team conventions: interface for objects and type for the rest, or type everywhere",
+   "importance": "minor"
+  },
+  {
+   "item": "Deep extension chains in large codebases check faster with interfaces due to caching",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete code examples for declaration merging, including the duplicate identifier error for type",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete code examples of extends versus intersection syntax",
+   "importance": "useful"
+  },
+  {
+   "item": "Conflicting members: extends errors at declaration, while intersection makes the property never and the error appears later at use",
+   "importance": "useful"
+  },
+  {
+   "item": "Interface can only describe object shapes (including functions and classes), while type can alias any type, with examples of keyof, mapped and conditional types",
+   "importance": "minor"
+  },
+  {
+   "item": "Performance detail: interfaces cache better, so deep extension chains in large codebases check faster",
+   "importance": "minor"
+  },
+  {
+   "item": "Mention that many teams default to interface for objects and type for the rest, while others use type everywhere",
+   "importance": "minor"
+  },
+  {
+   "item": "keyof as an example of a computed type alias",
+   "importance": "minor"
+  }
+ ]
+}

@@ -1,0 +1,237 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 6.0
+ },
+ "added": {
+  "critical": 0.5,
+  "useful": 14.5,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "Concrete caveat that concurrent rendering is opt-in; plain setState in click handler still renders sync",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit starvation/expiration handling mentioned (also in Y) - no; Context walk marking consumer lanes (also in Y) - no",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit phase-by-phase explanation that swap order explains componentWillUnmount sees old tree vs componentDidMount new (Y also has it)",
+   "importance": "minor"
+  },
+  {
+   "item": "Pointer to React source files to read (ReactFiberWorkLoop, BeginWork, CompleteWork, ReactChildFiber, Hooks, Lane)",
+   "importance": "useful"
+  },
+  {
+   "item": "Fiber table purpose of fields incl. index and effect on tree layout enabling resumable loop (largely shared)",
+   "importance": "minor"
+  },
+  {
+   "item": "Fiber does not make React faster in total, just more responsive",
+   "importance": "minor"
+  },
+  {
+   "item": "Commit phase uses subtreeFlags to skip subtrees; defining reconcile consequence 'state belongs to position' stated explicitly",
+   "importance": "minor"
+  },
+  {
+   "item": "Summary table of fiber fields",
+   "importance": "minor"
+  },
+  {
+   "item": "Clarification that rendering a component is not same as DOM change; Fiber doesn't make React faster overall, more responsive",
+   "importance": "minor"
+  },
+  {
+   "item": "Pointer to source files to read (ReactFiberWorkLoop, BeginWork, etc.)",
+   "importance": "minor"
+  },
+  {
+   "item": "Lane priority ordering list from most to least urgent (Sync, InputContinuous, Default, Transition, Idle/offscreen)",
+   "importance": "minor"
+  },
+  {
+   "item": "Interruption example: click interrupts transition, then transition restarts on new state",
+   "importance": "minor"
+  },
+  {
+   "item": "useEffect adds effect object to updateQueue and deps compared in render phase",
+   "importance": "minor"
+  },
+  {
+   "item": "Concurrent rendering only enabled via opt-in API; plain setState in click still sync",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Vocabulary: element, component, fiber, host node, reconciler package and renderer-supplied functions (createInstance, appendChild, commitUpdate)",
+   "importance": "useful"
+  },
+  {
+   "item": "performUnitOfWork code and concrete traversal example order for <A><B/><C/></A>",
+   "importance": "useful"
+  },
+  {
+   "item": "Single-child reconciliation rule (key+type match, delete extra siblings)",
+   "importance": "useful"
+  },
+  {
+   "item": "Key pitfalls: random keys force remount every render; missing key falls back to index with dev warning",
+   "importance": "useful"
+  },
+  {
+   "item": "Hook node structure (baseState, baseQueue, queue, next) and setState steps with circular queue; eager-state bailout via Object.is",
+   "importance": "useful"
+  },
+  {
+   "item": "Lane details: 31-bit bitmask, getNextLanes, lane selection by context, retry lanes, entanglement",
+   "importance": "useful"
+  },
+  {
+   "item": "Scheduler details: min-heap priority queue, fallbacks to setImmediate/setTimeout",
+   "importance": "minor"
+  },
+  {
+   "item": "Not all renders time-slice: SyncLane/DefaultLane render without yielding; sync work flushed in microtask",
+   "importance": "critical"
+  },
+  {
+   "item": "Batching in React 18 across promises/timeouts/native handlers; flushSync to read DOM",
+   "importance": "useful"
+  },
+  {
+   "item": "Bailout details: reference comparison of props, childLanes check, clone children vs return null; why parent re-render re-renders all children; memo/useMemo/useCallback; context bypasses memo",
+   "importance": "useful"
+  },
+  {
+   "item": "Suspense details: throwException, retry lane, avoiding hiding already-visible content in transitions",
+   "importance": "useful"
+  },
+  {
+   "item": "Error boundary specifics: getDerivedStateFromError/componentDidCatch, synchronous retry after concurrent error",
+   "importance": "useful"
+  },
+  {
+   "item": "Tearing and useSyncExternalStore",
+   "importance": "useful"
+  },
+  {
+   "item": "React 16/17 effect list replaced by flags in 18 (history)",
+   "importance": "minor"
+  },
+  {
+   "item": "Layout-effect state updates flush synchronously before paint; passive effect cleanups all run before new effects",
+   "importance": "useful"
+  },
+  {
+   "item": "End-to-end example of setCount click through all phases",
+   "importance": "useful"
+  },
+  {
+   "item": "Practical advice: define components at module scope, use DevTools Profiler, measure before adding memo, keep state close",
+   "importance": "useful"
+  },
+  {
+   "item": "Why Fiber also enables fragments/arrays return, error boundaries; 16ms frame budget; shipped React 16 in 2017",
+   "importance": "minor"
+  },
+  {
+   "item": "Hedge that exact lane groupings in React 19 uncertain; names approximate",
+   "importance": "minor"
+  },
+  {
+   "item": "React 19 additions (Actions, use, ref as prop, compiler)",
+   "importance": "minor"
+  },
+  {
+   "item": "Vocabulary definitions (element, component, host node, reconciler package/renderer interface like createInstance/appendChild)",
+   "importance": "minor"
+  },
+  {
+   "item": "Full simplified fiber field list including elementType, mode, dependencies, ref, deletions",
+   "importance": "minor"
+  },
+  {
+   "item": "Traversal order worked example (<A><B/><C/></A>) and detailed beginWork steps (bailout check, tag switch, renderWithHooks, class lifecycles)",
+   "importance": "useful"
+  },
+  {
+   "item": "performUnitOfWork code showing beginWork/completeUnitOfWork and memoizedProps assignment",
+   "importance": "minor"
+  },
+  {
+   "item": "Single-child reconciliation rule (key+type match reuse, delete extra siblings)",
+   "importance": "useful"
+  },
+  {
+   "item": "Quirk detail: moving first item to end is cheap vs last to front expensive (correct explanation)",
+   "importance": "useful"
+  },
+  {
+   "item": "Key pitfalls: missing key warning/fallback to index, Math.random() keys force remount, input text sticking to index",
+   "importance": "useful"
+  },
+  {
+   "item": "Hook node structure (baseState, baseQueue, queue, next), setState details: circular update queue, eager-state bailout with Object.is",
+   "importance": "useful"
+  },
+  {
+   "item": "Lane details: 31-bit bitmask, getNextLanes, lane assignment from context (discrete event -> SyncLane), entanglement, specific lane names",
+   "importance": "useful"
+  },
+  {
+   "item": "Rebasing example with updates A and B (intermediate screen can show B without A)",
+   "importance": "useful"
+  },
+  {
+   "item": "Batching in React 18 across promises/timeouts and flushSync for reading DOM",
+   "importance": "useful"
+  },
+  {
+   "item": "Scheduler details: min-heap priority queue, MessageChannel/setImmediate/setTimeout fallback, sync work flushed in microtask",
+   "importance": "useful"
+  },
+  {
+   "item": "Which lanes time-slice vs not (blocking lanes SyncLane/DefaultLane don't yield; transitions/retries/idle do) with uncertainty caveat",
+   "importance": "useful"
+  },
+  {
+   "item": "Commit details: React 16/17 effect list replaced by flags in 18; ChildDeletion details; layout-phase setState flushes synchronously before paint; passive effects run all cleanups then all effects",
+   "importance": "useful"
+  },
+  {
+   "item": "Bailout details: childLanes check, cloning child fibers; context propagation not blocked by memo; why parent rerender rerenders children (new props refs)",
+   "importance": "useful"
+  },
+  {
+   "item": "Suspense details: throwException, retry lane, transitions keep old UI instead of new fallback; error boundary getDerivedStateFromError/componentDidCatch and sync retry after concurrent error",
+   "importance": "useful"
+  },
+  {
+   "item": "Strict Mode double-mount effects; tearing and useSyncExternalStore",
+   "importance": "useful"
+  },
+  {
+   "item": "End-to-end click example walkthrough",
+   "importance": "useful"
+  },
+  {
+   "item": "Practical advice: useDeferredValue, DevTools Profiler, measure before memo; React 19 additions (Actions, use, ref as prop, compiler)",
+   "importance": "minor"
+  },
+  {
+   "item": "Version caveat that internal names are approximate",
+   "importance": "minor"
+  }
+ ]
+}

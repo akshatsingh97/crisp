@@ -1,0 +1,161 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 4.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 5.5,
+  "minor": 4.5
+ },
+ "cut_items": [
+  {
+   "item": "Distinguishes leak vs. limit too low (heap rises and falls but peaks near limit) so raising the limit may be the right fix",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that --max-old-space-size above the container memory limit leads to an OS OOM kill",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning not to expose --inspect on a public port",
+   "importance": "useful"
+  },
+  {
+   "item": "Extra causes: unbounded queues and streams without backpressure",
+   "importance": "minor"
+  },
+  {
+   "item": "Extra cause: per-request data attached to long-lived objects such as a DB connection",
+   "importance": "minor"
+  },
+  {
+   "item": "Asks for Node version and container info to narrow down the cause",
+   "importance": "minor"
+  },
+  {
+   "item": "Take the first snapshot early and the second after memory has grown",
+   "importance": "minor"
+  },
+  {
+   "item": "Diagnose leak versus a limit that is too low: if heapUsed rises and falls but peaks near the limit, raise the limit rather than hunt for a leak",
+   "importance": "useful"
+  },
+  {
+   "item": "In a container, a --max-old-space-size above the container memory limit leads to an OS OOM kill",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning not to expose --inspect on a public port",
+   "importance": "useful"
+  },
+  {
+   "item": "Take the first snapshot early and the second after memory has grown (a specific snapshot timing)",
+   "importance": "minor"
+  },
+  {
+   "item": "Unbounded queues or streams with no backpressure when the producer outpaces the consumer as a leak cause",
+   "importance": "minor"
+  },
+  {
+   "item": "Per-request data attached to long-lived objects such as a database connection",
+   "importance": "minor"
+  },
+  {
+   "item": "systemd as a process manager option",
+   "importance": "minor"
+  },
+  {
+   "item": "Asks for Node version and container details to narrow the cause",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Use the retainers list on growing objects to see which reference keeps them alive",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that writing a heap snapshot pauses the process and needs extra memory, so do it on one instance only",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that --heapsnapshot-near-heap-limit is slow and can fail, and that Node version support should be checked",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative: node --heap-prof in staging for a sampling allocation profile",
+   "importance": "useful"
+  },
+  {
+   "item": "Mentions that a restart manager hides the leak and does not fix it",
+   "importance": "minor"
+  },
+  {
+   "item": "Verify the fix by running under load and confirming heapUsed levels off",
+   "importance": "useful"
+  },
+  {
+   "item": "Value of --max-old-space-size is in MB, and heap is defined",
+   "importance": "minor"
+  },
+  {
+   "item": "Use a TTL as well as a max size on caches; promises that never resolve and connections that never close as causes",
+   "importance": "minor"
+  },
+  {
+   "item": "Use chrome://inspect to connect to the process",
+   "importance": "minor"
+  },
+  {
+   "item": "Use --heapsnapshot-signal with a warning that writing a snapshot pauses the process, needs extra memory, and should be done on one instance only",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that --heapsnapshot-near-heap-limit is slow, can fail on its own, and depends on Node version support",
+   "importance": "useful"
+  },
+  {
+   "item": "Step-by-step live-debugging workflow: node --inspect, chrome://inspect, take a snapshot, send traffic, take a second snapshot, compare",
+   "importance": "useful"
+  },
+  {
+   "item": "Open the retainers list to see which reference keeps the leaking objects alive",
+   "importance": "useful"
+  },
+  {
+   "item": "node --heap-prof in staging to get a sampling profile of where allocations happen",
+   "importance": "useful"
+  },
+  {
+   "item": "Add a TTL as well as a max size to the LRU cache",
+   "importance": "minor"
+  },
+  {
+   "item": "Streams, database connections or promises that never close or resolve as a leak cause",
+   "importance": "minor"
+  },
+  {
+   "item": "Verification step: after the fix, run under load and confirm heapUsed levels off and stays flat",
+   "importance": "useful"
+  },
+  {
+   "item": "Restarting via PM2 or Kubernetes hides the leak and does not fix it",
+   "importance": "minor"
+  },
+  {
+   "item": "A bigger heap only delays the crash",
+   "importance": "minor"
+  },
+  {
+   "item": "Definition of the heap",
+   "importance": "minor"
+  }
+ ]
+}

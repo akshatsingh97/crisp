@@ -1,0 +1,81 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "baseline",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 1.5
+ },
+ "cut_items": [
+  {
+   "item": "Alternative suggestion to split files or share a link from cloud storage instead",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggestion to show the error code in small text or a 'Details' expander as a way to keep it available for support",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit note on what was removed (error code, jargon) and why",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers a short toast/inline variant that states the limit without a next step, plus a second variant with more next-step options",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests choosing a smaller file as a remedy",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers an alternative of sharing a link from cloud storage instead of uploading",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests showing the error code in small text or a 'Details' expander if support needs it",
+   "importance": "minor"
+  },
+  {
+   "item": "Lists the removed jargon ('request entity', 'payload', 'configured maximum') and says why",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Error code ERR_UPLOAD_413 is kept visible in the message itself so support can find it",
+   "importance": "useful"
+  },
+  {
+   "item": "States the assumption that the app has no way to raise the limit, and advises adding a line about it (e.g. a paid plan) if there is one",
+   "importance": "useful"
+  },
+  {
+   "item": "Shorter toast version includes the next step (compress or split, then try again)",
+   "importance": "minor"
+  },
+  {
+   "item": "Keeps the error code ERR_UPLOAD_413 visible at the bottom of the message so support can find it",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests splitting the file into smaller parts as a remedy in the main message",
+   "importance": "useful"
+  },
+  {
+   "item": "States the assumption that the app has no way to raise the limit, and says to add a line about that option (e.g. a paid plan) if there is one",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains the rationale for the structure: what went wrong, what to do, and the code kept for support",
+   "importance": "minor"
+  }
+ ]
+}

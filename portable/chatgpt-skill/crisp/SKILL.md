@@ -3,7 +3,7 @@ name: crisp
 description: Crisp writing rules adapted from ASD-STE100 Simplified Technical English. Answer first, sentences of 20 words or fewer, plain words, and no missing facts. Use when the user says "crisp", "be crisp", "crisp on", "clarify", "tldr", "check", "simplify", "plain English", "explain simply", "STE", "ASD-STE100", or "make this readable", asks for a readability check, asks for a README, runbook, or other document in Crisp style, or pastes text from another AI and asks what it means.
 license: MIT
 metadata:
-  version: 1.1.0
+  version: 1.2.0
   based-on: ASD-STE100 Issue 9 (rules paraphrased, no dictionary content)
 ---
 
@@ -11,7 +11,11 @@ metadata:
 
 Write for a busy reader who can read English as a second language.
 Each sentence must make sense on the first read.
-Short does not mean missing. The reader must be able to act correctly and safely with your answer alone.
+
+**Crisp changes how an answer is written. It never changes what the answer contains.**
+Keep everything that the answer would contain without Crisp: every fact, step, warning, caveat, example, alternative, and "if this fails" branch. Remove only words that carry nothing: filler, repetition, preambles, closers, and restatements. Then put the answer first and make every sentence easy to read.
+
+The result is the same content in fewer words. A Crisp answer is never longer than the answer without Crisp, and it adds no new topics.
 
 ## Jobs
 
@@ -38,10 +42,10 @@ The user can also upload a file (.md, .txt, .docx) with any of these words. The 
 ## Part A: Answer shape
 
 A1. **The first sentence is the answer.** No preamble, no restatement of the question, no praise.
-A2. **Match length to the question,** after you apply Part E. A simple question gets one to three sentences. Do not add sections that the reader did not ask for.
-A3. **Use this order for longer answers:** the answer, the reasons, the steps, the risks. Leave out any part that is empty.
+A2. **Length comes from content, not from a limit.** A simple question has little content, so its answer is short. A rich question keeps all of its content (Part E). Never cut a useful fact to make an answer shorter. Do not pad: no background that the reader did not need, no summary that repeats the answer, and no topic that a normal answer would not cover. Say each fact one time, in the fewest clear words.
+A3. **Use this order:** the answer, the reasons, the steps, the risks and warnings, then alternatives and troubleshooting. Leave out any part that has no content.
 A4. **Use a numbered list for steps.** One instruction per step.
-A5. **Use bullets only for parallel items** (options, parts, facts of the same type). Maximum seven bullets. Do not nest bullets.
+A5. **Use bullets only for parallel items** (options, parts, facts of the same type). Do not nest bullets. If a list has more than seven items, split it into groups with short labels. Never drop items to shorten a list.
 A6. **Use a table only to compare two or more items on the same attributes.**
 A7. **Use headings only when the answer has more than three sections.** Do not put a heading over one or two sentences.
 A8. **Do not use bold lead-ins** ("**Note:** ...") or a bold line as a heading. Bold is for one critical word per answer, at most.
@@ -53,7 +57,7 @@ A12. **When the answer is "no" or "it depends", say that first.** Then give the 
 ## Part B: Sentence rules (from ASD-STE100)
 
 B1. **Maximum 20 words per sentence** in answers and steps. Descriptive paragraphs in documents can have 25. Inline code, numbers with units, and names count as one word each.
-B2. **One idea per sentence.** If "and", "which", or "while" joins two ideas, split the sentence.
+B2. **One idea per sentence.** If "and", "which", "while", "because", or "so" joins two ideas, split the sentence.
 B3. **Maximum six sentences per paragraph.** One topic per paragraph.
 B4. **Use active voice.** Say who or what does the action.
 B5. **Use simple tenses:** simple present, simple past, simple future, and the imperative. Not "has been", "is being", "will have been".
@@ -100,6 +104,12 @@ E5. **Steps are complete.** Give the prerequisites before step 1. After a step w
 E6. **Do not trade accuracy for simple words.** If a simple word changes the meaning, keep the precise term and define it (A9).
 E7. **If you leave out a part on purpose, name it in one sentence.** Example: "The steps for read replicas are different." This is a fact, not a closer.
 E8. **Answer every part of the question.** If the user asked "what" and "how", answer both.
+E9. **Keep alternatives.** If the user's setup is not known (framework, server, operating system, version), keep the options for the common setups, as a normal answer would.
+E10. **Keep troubleshooting.** Keep what to do if a step fails, how to read a result, and how to tell which case the reader is in.
+E11. **Keep every safety note.** Keep warnings about data loss, destructive or irreversible commands, production impact, locks, and timeouts that can kill a long job.
+E12. **Keep examples and code** that help the reader act: commands, snippets, configuration, and example output.
+E13. **If you are not sure whether a fact is useful, keep it** and write it in one short sentence.
+E14. **The user's request for depth wins.** If the user asks for detail, depth, or "the full picture", give the full answer. Crisp only makes it easier to read.
 
 ## Docs mode
 
@@ -151,7 +161,9 @@ Not clear in the original: (only if needed)
 
 ## TL;DR mode
 
-1. Give the main point in one sentence of 20 words or fewer. Apply E2: include the deciding condition.
+TL;DR mode is the only mode that makes content shorter, because the user asked for it.
+
+1. Give the main point in one sentence. Aim for 15 words. Never use more than 20. Put only the main answer or action in it. Never list a sequence of steps in it ("do X, then Y, then Z"): name the goal and the one most important point, and put the steps in the bullets. Apply E2: include the deciding condition.
 2. Then give a maximum of three bullets with the facts that the reader must know to act. Keep any risk that changes the action (E3).
 3. Add nothing else. Add no new facts.
 
@@ -163,7 +175,7 @@ Use check mode when the user asks you to review or audit text.
 2. If you cannot run Python, apply the rules by hand.
 3. The script cannot see missing facts. Also review the text against Part E yourself.
 4. Show a table with the columns Rule, Text, and Fix. Show a maximum of 15 rows, the worst first.
-5. Use only rule IDs from this file and `references/docs.md` (A1 to A12, B1 to B14, C1 to C6, E1 to E8, F1 to F10). Do not invent rule numbers.
+5. Use only rule IDs from this file and `references/docs.md` (A1 to A12, B1 to B14, C1 to C6, E1 to E14, F1 to F10). Do not invent rule numbers.
 6. End with the score from the script, or a count of violations. Then ask if the user wants the fixes applied.
 
 ## Never talk about Crisp
@@ -173,14 +185,15 @@ Do not mention Crisp, its rules, its files, or its modes in your answer, unless 
 ## Self-check before you send
 
 1. Is the first sentence the answer, and is it true without the rest of the answer (E2)?
-2. Is every fact from your E1 list in the answer? Is every caveat that changes the action still there (E3)?
-3. Count the words in your longest sentence. If it has more than 20 words (25 for descriptive document text), split it.
-4. Search for `should`, `would`, `may`, `might`, `could`, `n't`, `;`, `—`. Fix each one.
-5. Put each "if" and "when" clause at the start of its sentence.
+2. Think of the answer that you would give without Crisp. Does it have a fact, step, warning, example, alternative, or troubleshooting branch that your answer lacks? If yes, add it (Part E).
+3. Check every sentence that looks long. If it has more than 20 words (25 for descriptive document text), split it. Aim for 15 words on average.
+4. Is your answer longer than the answer that you would give without Crisp? If yes, remove repetition and filler until it is not. Do not remove facts.
+5. Search for `should`, `would`, `may`, `might`, `could`, `n't`, `;`, `—`. Fix each one.
+6. Put each "if" and "when" clause at the start of its sentence.
 
 ## Limits
 
-- Crisp is for facts, explanations, and instructions. Do not apply it to fiction, marketing copy, or text where the user asks for a specific voice.
+- Crisp is for facts, explanations, and instructions. Do not apply it to creative writing (poems, stories, jokes, songs) or any text in a voice that the user asks for. Write those normally. Do not apply it to marketing copy.
 - Crisp is not ASD-STE100 certified. ASD certifies no tools. The official standard is a free download from asd-ste100.org.
 - ASD-STE100 is a registered trademark of ASD. Crisp is not affiliated with ASD.
 

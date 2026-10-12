@@ -1,0 +1,201 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 6.0,
+  "minor": 6.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 7.5
+ },
+ "cut_items": [
+  {
+   "item": "Explicit warning not to delete anything else in /var/lib/postgresql except via PostgreSQL commands",
+   "importance": "useful"
+  },
+  {
+   "item": "pg_rotate_logfile() command to rotate a huge active log",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains that wrongly deleting WAL can break replicas and recovery, not just corrupt DB",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete example causes for log growth (log_statement='all')",
+   "importance": "minor"
+  },
+  {
+   "item": "Check for long-running transaction as a WAL retention cause",
+   "importance": "minor"
+  },
+  {
+   "item": "Step to extend the volume as a fast fallback when space cannot be freed",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit verification target: usage below 80%, no archiver failures, no stuck slot",
+   "importance": "minor"
+  },
+  {
+   "item": "Escalate if PostgreSQL has stopped or if unsure whether a slot can be dropped",
+   "importance": "minor"
+  },
+  {
+   "item": "Confirm with slot owner before dropping slot; if replica is only down, restart it to catch up",
+   "importance": "useful"
+  },
+  {
+   "item": "Space may take a few minutes to return after checkpoint",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that VACUUM (plain) makes space reusable but does not shrink disk use",
+   "importance": "useful"
+  },
+  {
+   "item": "pg_stat_archiver failed_count growing indicates broken archive_command; WAL stays until archiving works",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning not to delete anything in /var/lib/postgresql except through PostgreSQL commands",
+   "importance": "useful"
+  },
+  {
+   "item": "pg_rotate_logfile() to rotate a huge active log without deleting it",
+   "importance": "useful"
+  },
+  {
+   "item": "Specific log-growth causes: log_statement='all'",
+   "importance": "minor"
+  },
+  {
+   "item": "If a replica is merely down, restart it so it catches up; confirm with owner before dropping a slot",
+   "importance": "useful"
+  },
+  {
+   "item": "Check for failed_count growth in pg_stat_archiver and fix archive_command/target; WAL stays until archiving works",
+   "importance": "useful"
+  },
+  {
+   "item": "Check for long-running transaction (though query points to pg_stat_replication)",
+   "importance": "minor"
+  },
+  {
+   "item": "Space may take a few minutes to return after CHECKPOINT",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains VACUUM makes space reusable but doesn't shrink disk; VACUUM FULL shrinks",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative: extend the volume if space cannot be freed quickly (safer than manual deletion)",
+   "importance": "useful"
+  },
+  {
+   "item": "Verify target: usage below 80%, no new archiver failures, no stuck slot",
+   "importance": "minor"
+  },
+  {
+   "item": "Escalate if PostgreSQL has stopped or unsure whether slot can be dropped",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit explanation that deleting pg_wal files breaks replicas and recovery",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Rule also forbids moving files in pg_wal, not just deleting",
+   "importance": "useful"
+  },
+  {
+   "item": "Assumptions flagged: both paths may share a filesystem; the pg_wal path '*/main' depends on version/cluster name and must be adjusted",
+   "importance": "useful"
+  },
+  {
+   "item": "du -xh --max-depth=2 command to find largest directories under /var/lib/postgresql",
+   "importance": "minor"
+  },
+  {
+   "item": "Check log rotation works and investigate why logs grew",
+   "importance": "minor"
+  },
+  {
+   "item": "Stalled autovacuum as a cause of bloat to check",
+   "importance": "minor"
+  },
+  {
+   "item": "Advises avoiding VACUUM FULL on a nearly full disk",
+   "importance": "useful"
+  },
+  {
+   "item": "More detailed monitoring queries (last_failed_wal, last_failed_time, replay_lag)",
+   "importance": "minor"
+  },
+  {
+   "item": "Confirm pg_wal actually shrinks after the fix",
+   "importance": "minor"
+  },
+  {
+   "item": "Table query filters relkind='r' (avoids listing indexes/toast separately)",
+   "importance": "minor"
+  },
+  {
+   "item": "Escalate if cause unclear after step 2",
+   "importance": "minor"
+  },
+  {
+   "item": "Impact section: WAL cannot be written and PostgreSQL stops when disk fills",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains impact: if disk fills PostgreSQL cannot write WAL and stops (Y also says it stops, but not the WAL detail)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicitly flags assumptions (shared filesystem, */main path) and tells reader to adjust to version/cluster name",
+   "importance": "useful"
+  },
+  {
+   "item": "Query for last_archived_wal, last_failed_wal, last_failed_time in pg_stat_archiver (targeted columns)",
+   "importance": "minor"
+  },
+  {
+   "item": "Warns that dropping a slot requires the consumer to be fully rebuilt; only drop if consumer is gone for good",
+   "importance": "useful"
+  },
+  {
+   "item": "Check du with --max-depth=2 on /var/lib/postgresql to find largest subdirectories",
+   "importance": "minor"
+  },
+  {
+   "item": "Escalate if cause is not clear after step 2 or if slot drop is the only fix",
+   "importance": "useful"
+  },
+  {
+   "item": "Check for stalled autovacuum as a cause of bloat",
+   "importance": "minor"
+  },
+  {
+   "item": "Confirm that pg_wal shrinks after the fix",
+   "importance": "minor"
+  },
+  {
+   "item": "Record cause and fix in post-incident; alert at 80%",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation that manual deletion in pg_wal can make the database unable to start",
+   "importance": "minor"
+  }
+ ]
+}

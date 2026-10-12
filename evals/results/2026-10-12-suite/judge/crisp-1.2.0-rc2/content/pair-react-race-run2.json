@@ -1,0 +1,85 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 3.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 1.5
+ },
+ "cut_items": [
+  {
+   "item": "Explicit recommendation that abort-in-cleanup is the best fix, with a fully async/await example including try/catch",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions RTK Query as another data library option, plus caching benefit",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to look at the user's actual component",
+   "importance": "minor"
+  },
+  {
+   "item": "Recommends abort as the best fix and the ignore flag as the fallback for non-abortable async APIs",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to review the user's component if pasted",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions RTK Query as another data library option",
+   "importance": "minor"
+  },
+  {
+   "item": "Shows an async/await try/catch version of the abort fix",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Check that userId is in the dependency array; a missing dependency means the effect won't rerun on user switch",
+   "importance": "useful"
+  },
+  {
+   "item": "If using an async function in the effect, put the ignore check after every await, not only the last one",
+   "importance": "useful"
+  },
+  {
+   "item": "Loading and error state setters have the same race and should be guarded with the same flag",
+   "importance": "useful"
+  },
+  {
+   "item": "Aborting also saves bandwidth",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit note that network responses do not arrive in the order sent",
+   "importance": "minor"
+  },
+  {
+   "item": "Check that userId is in the dependency array; a missing dependency means the effect won't rerun on user switch",
+   "importance": "useful"
+  },
+  {
+   "item": "Put the ignore check after every await when using an async function inside the effect",
+   "importance": "useful"
+  },
+  {
+   "item": "Loading and error state setters have the same race and should be guarded with the same flag",
+   "importance": "useful"
+  },
+  {
+   "item": "Abort also saves bandwidth",
+   "importance": "minor"
+  }
+ ]
+}

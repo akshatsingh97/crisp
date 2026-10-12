@@ -1,0 +1,109 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 1.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 4.5
+ },
+ "cut_items": [
+  {
+   "item": "Cookie-based setup with a separate API domain needs CORS with credentials; BFF avoids this",
+   "importance": "useful"
+  },
+  {
+   "item": "Keep the refresh token out of JavaScript in an HttpOnly Secure SameSite cookie, even if using localStorage for the access token",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete guidance on when localStorage is acceptable (internal tool, prototype) versus when it isn't",
+   "importance": "minor"
+  },
+  {
+   "item": "Keep the refresh token in an HttpOnly Secure SameSite cookie while the access token is short-lived in JS (hybrid mitigation if using localStorage)",
+   "importance": "useful"
+  },
+  {
+   "item": "Cross-domain API with cookies requires CORS with credentials; BFF avoids this",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete examples of when localStorage is acceptable: internal tool or prototype",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Keep the access token only in memory and get a new one from an HttpOnly refresh cookie on page load",
+   "importance": "useful"
+  },
+  {
+   "item": "Rotate the refresh token on each use",
+   "importance": "useful"
+  },
+  {
+   "item": "Support server-side revocation of tokens",
+   "importance": "useful"
+  },
+  {
+   "item": "Audit dependencies, including npm packages, as an XSS and script-access vector",
+   "importance": "minor"
+  },
+  {
+   "item": "Current OAuth guidance for browser apps recommends the BFF pattern",
+   "importance": "minor"
+  },
+  {
+   "item": "SameSite=Strict as an alternative to Lax",
+   "importance": "minor"
+  },
+  {
+   "item": "localStorage has no expiry and no access controls",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains what XSS and CSRF stand for",
+   "importance": "minor"
+  },
+  {
+   "item": "Rotate the refresh token on each use",
+   "importance": "useful"
+  },
+  {
+   "item": "In-memory access token option with HttpOnly refresh cookie to re-obtain on page load (tradeoff: lost on refresh)",
+   "importance": "useful"
+  },
+  {
+   "item": "BFF pattern aligns with current OAuth guidance for browser apps; server holds tokens and browser gets only a session cookie",
+   "importance": "useful"
+  },
+  {
+   "item": "Never render untrusted HTML and audit dependencies (npm packages) as XSS mitigations",
+   "importance": "minor"
+  },
+  {
+   "item": "Support server-side revocation of tokens",
+   "importance": "useful"
+  },
+  {
+   "item": "localStorage has no expiry or access controls",
+   "importance": "minor"
+  },
+  {
+   "item": "Expands XSS definition and notes third-party scripts and npm dependencies can read localStorage",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests SameSite=Strict as an alternative to Lax",
+   "importance": "minor"
+  }
+ ]
+}

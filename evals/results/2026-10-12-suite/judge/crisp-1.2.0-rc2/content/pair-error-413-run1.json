@@ -1,0 +1,53 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 0.0
+ },
+ "cut_items": [
+  {
+   "item": "Suggests logging the error code and jargon rather than showing them to users",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests pointing to alternative ways to share large files (link, paid tier) if the app has them",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests pointing users to alternative ways to share large files (link, paid tier) if the app offers them",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains the rationale: error code and 'payload' jargon are not actionable for users, so log them instead",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Suggests keeping the error code available for support via small print or a 'Details' link",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests showing the user's actual file size alongside the limit (e.g. 'Your file is 31 MB') so they know how much to cut",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests keeping the error code available for support via small print or a 'Details' link rather than discarding it",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests showing the user's actual file size (e.g., 'Your file is 31 MB') so they know how much to cut",
+   "importance": "useful"
+  }
+ ]
+}

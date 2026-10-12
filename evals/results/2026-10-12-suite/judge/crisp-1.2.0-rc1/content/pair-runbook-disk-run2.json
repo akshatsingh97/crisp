@@ -1,0 +1,245 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 6.5,
+  "minor": 7.0
+ },
+ "added": {
+  "critical": 1.0,
+  "useful": 6.5,
+  "minor": 7.0
+ },
+ "cut_items": [
+  {
+   "item": "Explicitly says not to delete anything else in /var/lib/postgresql except via PostgreSQL commands",
+   "importance": "useful"
+  },
+  {
+   "item": "Provides pg_rotate_logfile() to rotate an oversized active log",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests finding the root cause of log growth (log_statement='all', error loops)",
+   "importance": "useful"
+  },
+  {
+   "item": "Names long-running transactions as a possible cause of WAL retention",
+   "importance": "minor"
+  },
+  {
+   "item": "Gives an actual SQL query to list largest tables",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that a replica that is merely down should be restarted, and that a dropped slot means the replica cannot resume",
+   "importance": "minor"
+  },
+  {
+   "item": "Says that wrong WAL deletion can break replicas and recovery, not just corrupt the database",
+   "importance": "minor"
+  },
+  {
+   "item": "Verification target: usage below 80% rather than just under 90%",
+   "importance": "minor"
+  },
+  {
+   "item": "Follow-up action: add a lower-threshold alert such as 75%",
+   "importance": "useful"
+  },
+  {
+   "item": "Escalation if PostgreSQL has stopped or if unsure whether a slot can be dropped",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that space may take a few minutes to return after a checkpoint",
+   "importance": "minor"
+  },
+  {
+   "item": "Compares du of pg_wal, base and logs in a single command",
+   "importance": "minor"
+  },
+  {
+   "item": "pg_rotate_logfile() to rotate a huge active log",
+   "importance": "useful"
+  },
+  {
+   "item": "Identify the root cause of log growth, for example log_statement='all' or an error loop",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not delete anything else in /var/lib/postgresql except through PostgreSQL commands",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that a wrong delete in pg_wal can break replicas and recovery, not only corrupt the database",
+   "importance": "minor"
+  },
+  {
+   "item": "An inactive replication slot holds WAL forever",
+   "importance": "useful"
+  },
+  {
+   "item": "Check pg_stat_archiver failed_count growing as the sign that archiving is failing",
+   "importance": "minor"
+  },
+  {
+   "item": "Check for a long-running transaction as a cause of retained WAL",
+   "importance": "minor"
+  },
+  {
+   "item": "Space may take a few minutes to return after CHECKPOINT",
+   "importance": "minor"
+  },
+  {
+   "item": "Check for bloat in table data",
+   "importance": "minor"
+  },
+  {
+   "item": "Archive old data as an option when growth is real",
+   "importance": "minor"
+  },
+  {
+   "item": "Extending the volume is safer than any manual deletion",
+   "importance": "useful"
+  },
+  {
+   "item": "Target usage below 80% for verification",
+   "importance": "minor"
+  },
+  {
+   "item": "Add a lower-threshold alert, for example 75%, if none exists",
+   "importance": "useful"
+  },
+  {
+   "item": "Escalate if PostgreSQL has stopped or if unsure whether a slot can be dropped",
+   "importance": "useful"
+  },
+  {
+   "item": "Goal statement that PostgreSQL stops if the disk fills",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Warns against moving or editing pg_wal files, not only deleting them",
+   "importance": "useful"
+  },
+  {
+   "item": "Confirm which filesystem is over 90% and notes that paths on a shared filesystem should be treated together",
+   "importance": "useful"
+  },
+  {
+   "item": "Flags that the pg_wal path is an assumption and must be adjusted to the version and layout",
+   "importance": "useful"
+  },
+  {
+   "item": "Uses du -x so the scan stays on one filesystem",
+   "importance": "minor"
+  },
+  {
+   "item": "Copy logs elsewhere before removing them if needed for audits",
+   "importance": "minor"
+  },
+  {
+   "item": "Check that log rotation is running and fix it if it is not",
+   "importance": "useful"
+  },
+  {
+   "item": "Slot query shows retained WAL size per slot",
+   "importance": "useful"
+  },
+  {
+   "item": "pg_stat_archiver query shows last failed WAL and time, plus advice to check the PostgreSQL log for the archive error",
+   "importance": "useful"
+  },
+  {
+   "item": "Dropping a slot may force the consumer to do a full resync",
+   "importance": "minor"
+  },
+  {
+   "item": "Expected result after checkpoint: pg_wal size shrinks",
+   "importance": "minor"
+  },
+  {
+   "item": "Remove data only after the owning team confirms it is not needed",
+   "importance": "useful"
+  },
+  {
+   "item": "VACUUM FULL needs free space for a full table copy, so do not run it on a nearly full disk",
+   "importance": "critical"
+  },
+  {
+   "item": "Recheck after 10 minutes that pg_wal is not growing",
+   "importance": "useful"
+  },
+  {
+   "item": "Confirm the alert clears and record the cause in incident notes",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines WAL and replication slots for readers who may not know them",
+   "importance": "minor"
+  },
+  {
+   "item": "Escalate when the disk is above 95% and still growing, and notes the database stops writing when the disk is full",
+   "importance": "minor"
+  },
+  {
+   "item": "Query showing retained WAL size per replication slot (pg_wal_lsn_diff), making the culprit slot easy to identify",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that dropping a slot may force the consumer into a full resync",
+   "importance": "minor"
+  },
+  {
+   "item": "Check pg_stat_archiver columns last_archived_wal, last_failed_wal and last_failed_time, and read the PostgreSQL log for the archive error",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit instruction not to move or edit pg_wal files, not only not to delete them",
+   "importance": "useful"
+  },
+  {
+   "item": "If data and logs share one filesystem, treat them together when reading df",
+   "importance": "minor"
+  },
+  {
+   "item": "Use du -xh --max-depth=1 on /var/lib/postgresql to see the breakdown, plus a note that the pg_wal path is an assumption to adapt to the version and layout",
+   "importance": "minor"
+  },
+  {
+   "item": "Copy old logs elsewhere first if they are needed for audits",
+   "importance": "minor"
+  },
+  {
+   "item": "Check that log rotation is running and fix it if not",
+   "importance": "useful"
+  },
+  {
+   "item": "VACUUM FULL needs free space for a full copy of the table, so do not run it on a nearly full disk",
+   "importance": "critical"
+  },
+  {
+   "item": "Remove data only after the owning team confirms it is not needed",
+   "importance": "useful"
+  },
+  {
+   "item": "Expected result of CHECKPOINT: the pg_wal size shrinks, and recheck after 10 minutes that pg_wal is not growing",
+   "importance": "useful"
+  },
+  {
+   "item": "Verify that the alert clears and record the cause and fix in the incident notes",
+   "importance": "minor"
+  },
+  {
+   "item": "Escalate when the disk is above 95% and still growing",
+   "importance": "minor"
+  }
+ ]
+}

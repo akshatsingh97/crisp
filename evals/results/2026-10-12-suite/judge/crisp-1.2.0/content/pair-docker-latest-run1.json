@@ -1,0 +1,97 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "equal",
+  "equal"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Caching is unpredictable: hosts/CI may reuse a stale local :latest, so different machines end up with different bases",
+   "importance": "useful"
+  },
+  {
+   "item": "Option to pin a minor series (e.g. node:22-alpine) if patch updates without notice are acceptable, as a tradeoff",
+   "importance": "minor"
+  },
+  {
+   "item": "Warns that exact version tags can technically be re-pushed (not fully immutable), which motivates digest pinning",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that :latest is just the maintainer's default tag and can lag behind or point to an unexpected variant",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions that a libc/OS/runtime major bump can break things (specific examples of what can change)",
+   "importance": "minor"
+  },
+  {
+   "item": "Caching is unpredictable: hosts and CI may reuse a stale local :latest, so different machines get different bases",
+   "importance": "useful"
+  },
+  {
+   "item": "Ranking of pinning options (digest > exact tag > minor series) with caveat that exact tags can technically be re-pushed",
+   "importance": "useful"
+  },
+  {
+   "item": "Pinning a minor series (e.g. node:22-alpine) is acceptable only if you accept patch updates without notice",
+   "importance": "minor"
+  },
+  {
+   "item": ":latest may point to an unexpected variant or lag behind",
+   "importance": "minor"
+  },
+  {
+   "item": "CI should test each Renovate/Dependabot bump before reaching production",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Keep the human-readable version tag alongside the digest so readers know what the digest represents",
+   "importance": "useful"
+  },
+  {
+   "item": "Avoid broad tags such as python:3",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicitly warns that pinning stops automatic security fixes, which is why a bot and regular rebuilds are needed",
+   "importance": "useful"
+  },
+  {
+   "item": "Recommends rebuilding regularly in addition to scanning",
+   "importance": "minor"
+  },
+  {
+   "item": "Avoid broad tags such as python:3 (major-only tags)",
+   "importance": "minor"
+  },
+  {
+   "item": "Keep the version tag alongside the digest so readers know what the digest represents",
+   "importance": "useful"
+  },
+  {
+   "item": "Rebuild regularly to pick up patches",
+   "importance": "useful"
+  },
+  {
+   "item": "Pinning stops automatic security fixes (explicit warning about the trade-off)",
+   "importance": "useful"
+  },
+  {
+   "item": "Rollbacks are hard because you can't tell which base image an old build used",
+   "importance": "minor"
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "equal",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "Interfaces can't express unions, primitives, tuples, function types, or mapped/conditional types (comparison table summarizing capability gaps)",
+   "importance": "minor"
+  },
+  {
+   "item": "Interfaces can be used to augment existing library types such as Window or Express Request (concrete examples)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation that interfaces are cached by name which makes them faster to check (rationale)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation that an interface is not assignable to index-signature types because of its open shape, plus the fix: switch to type if you hit that error",
+   "importance": "useful"
+  },
+  {
+   "item": "Summary comparison table of the features at a glance",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete real-world declaration merging use cases: augmenting Window or Express Request",
+   "importance": "useful"
+  },
+  {
+   "item": "Function type example (type Handler = (e: Event) => void) and note that interface cannot be a function type except as object members",
+   "importance": "minor"
+  },
+  {
+   "item": "Actionable troubleshooting tip: if you hit the Record<string, unknown> assignability error, switch the interface to a type",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains why libraries use interfaces for public types (extensibility via merging)",
+   "importance": "useful"
+  },
+  {
+   "item": "Example showing extends vs intersection with a literal role type",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Interfaces can describe callable objects",
+   "importance": "minor"
+  },
+  {
+   "item": "Classes cannot implement a union type alias (explicit caveat)",
+   "importance": "minor"
+  },
+  {
+   "item": "Hover text and error messages show the interface name rather than an expanded structure",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit decision rules: declaration merging requires interface, unions require type",
+   "importance": "minor"
+  },
+  {
+   "item": "Type alias for primitive (type Name = string) example",
+   "importance": "minor"
+  },
+  {
+   "item": "Index-signature caveat framed as passing an interface to a function expecting a dictionary",
+   "importance": "minor"
+  },
+  {
+   "item": "Interfaces can describe callable objects (call signatures), so interface isn't limited to plain object properties",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit rule: declaration merging requires interface, unions require type (decision shortcuts)",
+   "importance": "minor"
+  },
+  {
+   "item": "Hover text and error messages show the interface name rather than an expanded structure",
+   "importance": "minor"
+  },
+  {
+   "item": "Example of an interface-incompatible alias of a primitive (type Name = string)",
+   "importance": "minor"
+  }
+ ]
+}

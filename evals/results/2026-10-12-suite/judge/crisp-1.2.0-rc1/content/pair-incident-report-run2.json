@@ -1,0 +1,145 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "candidate",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 4.0,
+  "minor": 4.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 4.5
+ },
+ "cut_items": [
+  {
+   "item": "Customer impact stated: customers who got a 500 could not complete checkout in that request",
+   "importance": "minor"
+  },
+  {
+   "item": "Contributing factor: no automatic stop/rollback when error rate rose after deploy (flagged to confirm)",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: count failed checkouts and decide whether customers need follow-up",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: review the 33-minute gap between first error and rollback to shorten it (Y has a similar item about detection/rollback gap, but X frames it as shortening response time)",
+   "importance": "minor"
+  },
+  {
+   "item": "Automatic rollback when error rate rises as part of staged rollout",
+   "importance": "useful"
+  },
+  {
+   "item": "Reminder to add how the problem was detected and why rollback took so long in detection/response section",
+   "importance": "minor"
+  },
+  {
+   "item": "Checkout traffic needs more than 5 concurrent connections; check pool-exhaustion and timeout errors in logs",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to complete report once missing times, owners, and log findings are supplied",
+   "importance": "minor"
+  },
+  {
+   "item": "Customer impact statement: customers who got a 500 could not complete checkout in that request",
+   "importance": "useful"
+  },
+  {
+   "item": "Contributing factor: no automatic stop or halt when the error rate rose after the deploy (flagged as needing confirmation)",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: automatic rollback when error rate rises as part of staged rollout",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: count failed checkouts and decide whether customers need follow-up",
+   "importance": "useful"
+  },
+  {
+   "item": "Detection and response section: add how the problem was detected and why rollback took 33 minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns to fill in the missing times before sharing the report",
+   "importance": "minor"
+  },
+  {
+   "item": "Claims checkout traffic needs more than 5 concurrent connections (an assumption)",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to complete the report if the user supplies the missing times, owners and log findings",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Explains what a database connection pool is (reusable set of connections)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains why only 18% rather than all requests failed (requests waited for free connections, only some failed)",
+   "importance": "useful"
+  },
+  {
+   "item": "Open questions: was the change intentional or a typo? Which review step missed it? How many orders failed?",
+   "importance": "useful"
+  },
+  {
+   "item": "Contributing factor: a 10x lower value passed review and deploy (review process gap)",
+   "importance": "useful"
+  },
+  {
+   "item": "'What went well' section: rollback restored service within 2 minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: add a rollback runbook step for config deploys",
+   "importance": "minor"
+  },
+  {
+   "item": "Canary-style rollout to a small share of traffic first, then widen",
+   "importance": "minor"
+  },
+  {
+   "item": "Action items are proposals needing owner and due date (X also says this)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains what a connection pool is (set of reusable database connections) and that requests waited for a free connection",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains why only 18% failed rather than all requests (requests wait and only some fail)",
+   "importance": "useful"
+  },
+  {
+   "item": "What went well: rollback restored service within 2 minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Open questions: was the change intentional or a typo, which review step missed it, how many orders failed",
+   "importance": "useful"
+  },
+  {
+   "item": "What went wrong: a value 10x lower passed review and deploy",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: add a rollback runbook step for config deploys",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests adding failed order and revenue figures from request logs",
+   "importance": "minor"
+  }
+ ]
+}

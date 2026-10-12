@@ -1,0 +1,61 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 0.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Use key={userId} on the component so React resets its state on user change",
+   "importance": "useful"
+  },
+  {
+   "item": "Missing userId in the dependency array means the effect never re-runs and the old user's data stays permanently",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests key={userId} to make React reset the component state on user switch",
+   "importance": "useful"
+  },
+  {
+   "item": "Checks for a missing userId in the dependency array, which would cause the effect not to re-run and show the old user's data",
+   "importance": "useful"
+  },
+  {
+   "item": "Guidance on when to choose the abort approach versus the flag (use the flag if the fetch library cannot abort)",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "React cleanup does not cancel a fetch by itself; the code must ignore the stale response",
+   "importance": "minor"
+  },
+  {
+   "item": "React Strict Mode runs effects twice in development, producing duplicate requests without cleanup",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit note that an aborted fetch rejects with AbortError and must be filtered out or it shows as a real error (X's code handles it but does not explain it)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that cleanup runs on userId change but cannot cancel a fetch by itself, so code must ignore stale responses",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions React Strict Mode double-running effects in development, causing duplicate requests without cleanup",
+   "importance": "minor"
+  }
+ ]
+}

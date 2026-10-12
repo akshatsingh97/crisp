@@ -1,0 +1,93 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 1.0,
+  "useful": 4.5,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 1.5
+ },
+ "cut_items": [
+  {
+   "item": "Save the key before the first call so retries (including from queues/job runners) read the same stored key",
+   "importance": "useful"
+  },
+  {
+   "item": "Stripe stores and replays the first result including errors: after a card decline, same key returns same decline, so use a new key only for a new customer attempt",
+   "importance": "critical"
+  },
+  {
+   "item": "Use an order-based key rather than per-click key so double clicks/repeated browser requests don't create two charges",
+   "importance": "useful"
+  },
+  {
+   "item": "SDKs can retry automatically and reuse the key; configure maxNetworkRetries in Node/Python/Ruby libraries",
+   "importance": "useful"
+  },
+  {
+   "item": "Stripe recommends PaymentIntents over legacy Charges API, which supports the same idempotency keys",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains why: network error/timeout doesn't reveal whether Stripe received or charged the request",
+   "importance": "minor"
+  },
+  {
+   "item": "Key can be a UUID or derived from order ID; creating new key inside retry loop is the most common mistake",
+   "importance": "minor"
+  },
+  {
+   "item": "Stripe stores and replays the first result, including errors. A retry with the same key after a card decline returns the same decline, so a new key is needed when the customer starts a new attempt",
+   "importance": "critical"
+  },
+  {
+   "item": "Save the key before the first call and make sure queue or job-runner retries read the saved key",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not generate a new key inside the retry loop, which Y calls the most common mistake",
+   "importance": "useful"
+  },
+  {
+   "item": "Use an order-based key rather than a per-click key, so double clicks or repeated browser requests do not create two charges",
+   "importance": "useful"
+  },
+  {
+   "item": "Set maxNetworkRetries in the official SDKs (Node, Python, Ruby), which retry and reuse the key",
+   "importance": "useful"
+  },
+  {
+   "item": "Stripe recommends PaymentIntents over the older Charges API, and PaymentIntents support idempotency keys",
+   "importance": "useful"
+  },
+  {
+   "item": "A network error or timeout does not tell you whether Stripe received the first request",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests a UUID as the key",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Retries after 5xx errors or timeouts are safe with the same key",
+   "importance": "minor"
+  },
+  {
+   "item": "Retries after a 5xx error or timeout are safe with the same key",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests a key derived from the order or cart ID (also in Y as order ID)",
+   "importance": "minor"
+  }
+ ]
+}

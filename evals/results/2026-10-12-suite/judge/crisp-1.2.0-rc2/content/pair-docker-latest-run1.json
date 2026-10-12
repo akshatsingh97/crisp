@@ -1,0 +1,105 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 0.5,
+  "useful": 2.5,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Local/CI hosts may reuse a stale cached :latest, so different machines end up with different bases",
+   "importance": "useful"
+  },
+  {
+   "item": "Pin a minor series (e.g. node:22-alpine) as a third option, only if patch updates without notice are acceptable",
+   "importance": "minor"
+  },
+  {
+   "item": "Scan images with Trivy or Grype",
+   "importance": "useful"
+  },
+  {
+   "item": "CI tests each Renovate/Dependabot bump before it reaches production",
+   "importance": "minor"
+  },
+  {
+   "item": "Ranks pinning options from strongest (digest) to weakest, with an exact-tag example including the OS variant",
+   "importance": "minor"
+  },
+  {
+   "item": "Caching pitfall: hosts/CI may reuse a stale local :latest, so different machines end up with different bases",
+   "importance": "useful"
+  },
+  {
+   "item": "Pinning options ranked by strength, including the minor-series option (e.g. node:22-alpine) with the tradeoff of accepting patch updates",
+   "importance": "useful"
+  },
+  {
+   "item": "CI should test each Renovate/Dependabot bump before it reaches production",
+   "importance": "useful"
+  },
+  {
+   "item": "Scan images with Trivy or Grype",
+   "importance": "useful"
+  },
+  {
+   "item": ":latest may lag behind or point to an unexpected variant",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Command to get a digest: docker buildx imagetools inspect <image:tag>",
+   "importance": "useful"
+  },
+  {
+   "item": "Rebuild on a schedule to pick up OS security patches",
+   "importance": "useful"
+  },
+  {
+   "item": "Trade-off: a digest pin must be updated deliberately or you will miss security fixes",
+   "importance": "critical"
+  },
+  {
+   "item": "Security scans and audits cannot tie results to a fixed version when using :latest",
+   "importance": "minor"
+  },
+  {
+   "item": "You cannot tell which base version a running container uses, which makes rollbacks and debugging harder",
+   "importance": "minor"
+  },
+  {
+   "item": "Dependabot/Renovate PRs let you review each change",
+   "importance": "minor"
+  },
+  {
+   "item": "Command to get the digest: docker buildx imagetools inspect <image:tag>",
+   "importance": "useful"
+  },
+  {
+   "item": "Rebuild on a schedule to pick up OS security patches",
+   "importance": "useful"
+  },
+  {
+   "item": "Trade-off caveat: digest pins won't get security fixes unless updated deliberately",
+   "importance": "useful"
+  },
+  {
+   "item": "Security scans and audits cannot tie results to a fixed version when using :latest",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete example of a digest-pinned FROM line with a Debian slim tag (bookworm-slim)",
+   "importance": "minor"
+  }
+ ]
+}

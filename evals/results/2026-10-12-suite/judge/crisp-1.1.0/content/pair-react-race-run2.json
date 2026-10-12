@@ -1,0 +1,97 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 4.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Step-by-step timeline of the race (A slow, B fast, A overwrites B) explaining why it happens",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation that the old effect's async callback closes over setData and still writes to state after becoming irrelevant",
+   "importance": "minor"
+  },
+  {
+   "item": "Alternative fix: use key={userId} to remount the component with fresh state per user",
+   "importance": "useful"
+  },
+  {
+   "item": "Mentions RTK Query as another library option",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to review the user's actual component",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete code example for resetting state (setData(null)/setLoading(true)) inside the effect on userId change",
+   "importance": "useful"
+  },
+  {
+   "item": "Recommends AbortController as the best approach and uses try/catch with async/await in the example",
+   "importance": "minor"
+  },
+  {
+   "item": "Step-by-step timeline of how out-of-order responses cause the bug (A slow, B fast)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains the old effect's async callback stays alive and closes over setData, writing regardless of relevance",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative fix: use key={userId} on the component to remount with fresh state",
+   "importance": "useful"
+  },
+  {
+   "item": "Says when to prefer the ignore flag over abort (non-fetch async APIs that can't be aborted)",
+   "importance": "useful"
+  },
+  {
+   "item": "Shows the AbortController fix in async/await form with try/catch",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete snippet for resetting state (setData(null)/setLoading(true)) in the effect",
+   "importance": "minor"
+  },
+  {
+   "item": "Names RTK Query as an additional library option",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to review the user's actual component",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Explicit warning that AbortError must be filtered in catch or it will show as an error (X's code handles it but does not explain the warning)",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that the ignore flag alone does not cancel the network request, and AbortController is needed for that (distinction between ignoring and cancelling)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that network response ordering is not guaranteed",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that a data library handles caching and cancellation (shared with Y, so not unique)",
+   "importance": "minor"
+  }
+ ]
+}

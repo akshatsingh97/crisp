@@ -1,0 +1,85 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Backend-for-frontend (BFF) pattern as the strongest setup, with server holding tokens and browser only a session cookie",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit scenarios when localStorage is acceptable (low-value data, short-lived token, strict CSP, audited dependencies)",
+   "importance": "useful"
+  },
+  {
+   "item": "Custom header check as CSRF protection alternative",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to tailor advice given backend and token lifetime",
+   "importance": "minor"
+  },
+  {
+   "item": "Backend-for-frontend (BFF) pattern as strongest setup: server holds tokens, browser holds only a session cookie",
+   "importance": "useful"
+  },
+  {
+   "item": "CSRF token or custom header check is safer than SameSite alone",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete conditions when localStorage is acceptable (low-value data, short-lived token, strict CSP, audited dependencies) and note that many teams accept it for simplicity",
+   "importance": "useful"
+  },
+  {
+   "item": "Offer to tailor a concrete setup given backend and token lifetime",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Escape user content and avoid raw HTML injection to prevent XSS",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains that Secure flag means cookie is sent only over HTTPS",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines XSS, CSRF, and CSP in plain terms",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete mitigations list if localStorage must be used: strict CSP, short-lived tokens, refresh token in HttpOnly cookie, dependency audits (X mentions CSP/short-lived/refresh/audit across sections, but Y frames it explicitly as a damage-reduction list)",
+   "importance": "minor"
+  },
+  {
+   "item": "Escape all user content and avoid raw HTML injection as XSS mitigation",
+   "importance": "useful"
+  },
+  {
+   "item": "Defines XSS, CSRF, and CSP in plain terms",
+   "importance": "minor"
+  },
+  {
+   "item": "Secure flag explained: cookie sent only over HTTPS",
+   "importance": "minor"
+  },
+  {
+   "item": "Keeping the refresh token in an HttpOnly cookie is paired with localStorage as a mitigation (explicitly framed as damage reduction if localStorage is used)",
+   "importance": "minor"
+  }
+ ]
+}

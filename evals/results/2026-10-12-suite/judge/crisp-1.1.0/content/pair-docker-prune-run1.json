@@ -1,0 +1,105 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.5,
+  "useful": 5.0,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 0.5
+ },
+ "cut_items": [
+  {
+   "item": "Docker asks for confirmation first; -f skips the prompt",
+   "importance": "useful"
+  },
+  {
+   "item": "Lists what prune -a --volumes removes, including networks and build cache",
+   "importance": "useful"
+  },
+  {
+   "item": "Running containers are not removed by prune (stated explicitly as a caveat)",
+   "importance": "useful"
+  },
+  {
+   "item": "Concise stop/rm -f/prune sequence to remove running containers too",
+   "importance": "useful"
+  },
+  {
+   "item": "Note on Docker versions: --volumes may remove only anonymous volumes by default, and docker volume prune -a removes named volumes (partly inaccurate: --filter suggestion is odd)",
+   "importance": "useful"
+  },
+  {
+   "item": "Individual per-type prune commands (container, image, volume, builder)",
+   "importance": "useful"
+  },
+  {
+   "item": "Docker Desktop caveat: virtual disk file may not shrink; use Clean/Purge data or reduce disk image size",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning to back up database or other data before running",
+   "importance": "minor"
+  },
+  {
+   "item": "Prune command asks for confirmation; -f skips it",
+   "importance": "useful"
+  },
+  {
+   "item": "States what prune deletes in detail (stopped containers, unused networks, unused images, build cache, unused volumes)",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that on recent Docker versions --volumes removes only anonymous volumes by default; use docker volume prune -a for named volumes (note: the --filter advice is questionable)",
+   "importance": "useful"
+  },
+  {
+   "item": "Per-type prune commands: docker container prune, docker image prune -a, docker volume prune -a, docker builder prune -a",
+   "importance": "useful"
+  },
+  {
+   "item": "Docker Desktop (Mac/Windows) virtual disk may not shrink; use Clean/Purge data or reduce the disk image size",
+   "importance": "critical"
+  },
+  {
+   "item": "Check docker system df before and after",
+   "importance": "minor"
+  },
+  {
+   "item": "Shorter full-wipe sequence using docker rm -f then prune with -f",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Advice to inspect what will be removed first with docker ps -a, docker images, docker volume ls",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit step-by-step removal of images (docker rmi -f) and named volumes (docker volume rm) by ID lists",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicitly states the action cannot be undone",
+   "importance": "minor"
+  },
+  {
+   "item": "Prune removes only unused items; a running container keeps its image and volumes stay",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests inspecting what will be deleted first with docker ps -a, docker images, docker volume ls",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit step-by-step individual removal commands: docker rmi -f $(docker images -aq) and docker volume rm $(docker volume ls -q)",
+   "importance": "useful"
+  }
+ ]
+}

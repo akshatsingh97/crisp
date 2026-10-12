@@ -1,0 +1,269 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 9.5,
+  "minor": 7.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 7.0,
+  "minor": 7.0
+ },
+ "cut_items": [
+  {
+   "item": "Concrete observable consequence: state belongs to tree position, not component definition",
+   "importance": "useful"
+  },
+  {
+   "item": "Detailed lastPlacedIndex consequence: moving item to front is cheap, moving to end costs more moves",
+   "importance": "useful"
+  },
+  {
+   "item": "Rebasing explained in more detail: skipped updates reapplied in original order on new base state",
+   "importance": "useful"
+  },
+  {
+   "item": "Interruption example: click during transition discards transition WIP, renders click, then restarts transition",
+   "importance": "useful"
+  },
+  {
+   "item": "Different-type vs same-type rules spelled out for host elements (keep DOM node, update only changed props) and components (keep instance/state)",
+   "importance": "useful"
+  },
+  {
+   "item": "Commit phase includes passive effects as a distinct sub-step and notes pointer swap placement",
+   "importance": "minor"
+  },
+  {
+   "item": "Table of fiber fields including index field",
+   "importance": "minor"
+  },
+  {
+   "item": "Context propagation: provider walks subtree to find consumers and marks lanes",
+   "importance": "useful"
+  },
+  {
+   "item": "Error boundaries: unwinding to nearest boundary and re-rendering with error state",
+   "importance": "useful"
+  },
+  {
+   "item": "Offscreen/Activity: hidden subtree keeps state, rendered at low priority",
+   "importance": "minor"
+  },
+  {
+   "item": "setState scheduling steps: update object creation, marking lanes/childLanes up ancestors, scheduling root task",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that concurrent rendering requires opt-in via createRoot with transitions; plain setState in click stays sync",
+   "importance": "useful"
+  },
+  {
+   "item": "Concurrent features list: useDeferredValue, automatic batching, startTransition role",
+   "importance": "useful"
+  },
+  {
+   "item": "Fiber does not make React faster overall, only more responsive",
+   "importance": "minor"
+  },
+  {
+   "item": "Rendering a component is not the same as changing the DOM",
+   "importance": "minor"
+  },
+  {
+   "item": "React Compiler can add memoization automatically",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice: heavy work as transition so urgent input stays fast",
+   "importance": "minor"
+  },
+  {
+   "item": "useEffect adds effect object to updateQueue with flag; deps compared in render, effects run in commit",
+   "importance": "minor"
+  },
+  {
+   "item": "Reconciliation rules for same type at same position: host element keeps DOM node and updates props; component keeps instance and state",
+   "importance": "useful"
+  },
+  {
+   "item": "State belongs to position in the tree, not component definition",
+   "importance": "useful"
+  },
+  {
+   "item": "Index-as-key breaks state when list reorders (state stays at index, data moves)",
+   "importance": "useful"
+  },
+  {
+   "item": "Moving item to end can cost more moves than expected (lastPlacedIndex implication)",
+   "importance": "minor"
+  },
+  {
+   "item": "Context propagation mechanism: provider walks subtree to find consumers and marks lanes",
+   "importance": "useful"
+  },
+  {
+   "item": "Error boundaries: unwind to nearest boundary and re-render with error state",
+   "importance": "useful"
+  },
+  {
+   "item": "Offscreen/Activity: hidden subtree keeps state, rendered at low priority",
+   "importance": "minor"
+  },
+  {
+   "item": "useEffect mechanism: effect object in updateQueue, flag set, deps compared in render, run in commit",
+   "importance": "useful"
+  },
+  {
+   "item": "Concurrent features: useDeferredValue, automatic batching, startTransition marks interruptible",
+   "importance": "useful"
+  },
+  {
+   "item": "Concurrent rendering only opt-in via createRoot with concurrent API; plain setState in click handler is still sync",
+   "importance": "useful"
+  },
+  {
+   "item": "Interruption example: transition interrupted by click, click committed first, then transition restarted",
+   "importance": "useful"
+  },
+  {
+   "item": "Rendering a component does not imply DOM change; React Compiler can add memoization",
+   "importance": "minor"
+  },
+  {
+   "item": "Fiber doesn't make React faster overall, just more responsive",
+   "importance": "minor"
+  },
+  {
+   "item": "Do heavy work as a transition to keep urgent input fast",
+   "importance": "minor"
+  },
+  {
+   "item": "Table of fiber fields including index field; mentions ChildDeletion flag and completeWork moving to sibling then up",
+   "importance": "minor"
+  },
+  {
+   "item": "Source file list includes ReactFiberCompleteWork and ReactFiberHooks",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Distinction between elements, components, and fibers; elements are cheap per-render, fibers persist",
+   "importance": "useful"
+  },
+  {
+   "item": "React never searches for a moved subtree elsewhere; compares only same-position nodes",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit bailout conditions: props same reference, no context change, no own-lane update",
+   "importance": "useful"
+  },
+  {
+   "item": "When bailing out with descendant work, React clones child fibers and continues down",
+   "importance": "minor"
+  },
+  {
+   "item": "Single-child reconciliation case (key and type compared)",
+   "importance": "useful"
+  },
+  {
+   "item": "Legacy sync mode uses same loop without shouldYield",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete example of index keys: inserting at start makes every following item look changed",
+   "importance": "useful"
+  },
+  {
+   "item": "setState does not change state immediately; queued then processed in next render",
+   "importance": "useful"
+  },
+  {
+   "item": "Lane details: 31-bit mask, lower bits higher priority, DefaultLane for timeouts/network",
+   "importance": "minor"
+  },
+  {
+   "item": "Expired lanes render synchronously without yielding",
+   "importance": "minor"
+  },
+  {
+   "item": "Transition suspending keeps old UI on screen and commits only when ready",
+   "importance": "useful"
+  },
+  {
+   "item": "Suspense can use `use` to suspend",
+   "importance": "minor"
+  },
+  {
+   "item": "Child skip only when same element object reference or memo shallow-equal",
+   "importance": "useful"
+  },
+  {
+   "item": "End-to-end summary flow of the whole process",
+   "importance": "useful"
+  },
+  {
+   "item": "Mutation step includes componentWillUnmount on deletion and ref detach",
+   "importance": "minor"
+  },
+  {
+   "item": "Discarded render leaves no trace since render phase didn't touch DOM",
+   "importance": "minor"
+  },
+  {
+   "item": "Passive effects flushed at end of commit for discrete events before next render",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit rationale that Fiber enables returning to parent/sibling without recursion; elements vs components vs fibers distinction (elements cheap, fibers persist)",
+   "importance": "minor"
+  },
+  {
+   "item": "Detailed bailout conditions in beginWork (same props reference, no context change, no lanes) and cloning child fibers when only descendants have work",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains what React does with the single-child diff (key and type match \u2192 reuse, else delete and create)",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete example of why index keys hurt (insertion at start makes every following item look changed)",
+   "importance": "useful"
+  },
+  {
+   "item": "Hooks mount vs update dispatcher swap detail and setState queues update and processes in order on next render",
+   "importance": "useful"
+  },
+  {
+   "item": "Expired lanes rendered synchronously without yielding; legacy sync mode uses the loop without shouldYield",
+   "importance": "minor"
+  },
+  {
+   "item": "Discarded work-in-progress leaves no trace because render phase doesn't touch DOM/current tree; restart from root with urgent lane",
+   "importance": "useful"
+  },
+  {
+   "item": "Transition + Suspense behavior: keeps old UI on screen while new tree built in background, commits when ready; use() mentioned",
+   "importance": "useful"
+  },
+  {
+   "item": "Parent re-render skip only if same element object or memo shallow-compare",
+   "importance": "minor"
+  },
+  {
+   "item": "Side effects belong in handlers/effects, not render body (explicit practical rule)",
+   "importance": "minor"
+  },
+  {
+   "item": "Summary flow of full process from setState to commit",
+   "importance": "minor"
+  }
+ ]
+}

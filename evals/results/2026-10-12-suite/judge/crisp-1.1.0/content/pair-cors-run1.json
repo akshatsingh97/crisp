@@ -1,0 +1,129 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 4.0,
+  "minor": 4.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "Flask solution: install flask-cors and use CORS(app, origins=[...])",
+   "importance": "useful"
+  },
+  {
+   "item": "Origin format: scheme+host+port, no path, no trailing slash",
+   "importance": "useful"
+  },
+  {
+   "item": "Preflight is triggered by PUT/DELETE, JSON Content-Type, or Authorization header, and must return 2xx",
+   "importance": "useful"
+  },
+  {
+   "item": "Libraries handle preflight automatically; manual setups often miss it",
+   "importance": "minor"
+  },
+  {
+   "item": "Redirects (e.g. HTTP to HTTPS) drop CORS headers, so call the final URL",
+   "importance": "useful"
+  },
+  {
+   "item": "Dev proxy specifics: Vite server.proxy and CRA package.json proxy",
+   "importance": "minor"
+  },
+  {
+   "item": "Browser sends Origin header and server must echo it back in Access-Control-Allow-Origin",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to help further if given the Network tab request headers",
+   "importance": "minor"
+  },
+  {
+   "item": "Flask example using flask-cors with CORS(app, origins=[...])",
+   "importance": "useful"
+  },
+  {
+   "item": "Origin format: scheme+host+port, no path and no trailing slash (a common cause of mismatch)",
+   "importance": "useful"
+  },
+  {
+   "item": "Redirects (e.g., HTTP to HTTPS) drop CORS headers; call the final URL",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains when preflight is triggered (PUT/DELETE, JSON Content-Type, Authorization header)",
+   "importance": "useful"
+  },
+  {
+   "item": "Libraries handle preflight automatically; manual setups often miss it",
+   "importance": "minor"
+  },
+  {
+   "item": "Preflight must return 2xx status",
+   "importance": "minor"
+  },
+  {
+   "item": "Browser sends Origin header and server must reply with matching Allow-Origin (mechanism explanation)",
+   "importance": "minor"
+  },
+  {
+   "item": "Asks for request headers from Network tab in addition to framework for follow-up",
+   "importance": "minor"
+  },
+  {
+   "item": "Dev proxy for Create React App via package.json 'proxy'",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Preflight OPTIONS should respond with status 204",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit example values for Allow-Methods and Allow-Headers headers (GET, POST, PUT, DELETE, OPTIONS; Content-Type, Authorization)",
+   "importance": "minor"
+  },
+  {
+   "item": "Frontend must set credentials: 'include' when using cookies, shown alongside the server-side change",
+   "importance": "minor"
+  },
+  {
+   "item": "Code examples include allow_credentials/credentials: true for cookie scenario",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation that preflight is the browser's permission check before some requests",
+   "importance": "minor"
+  },
+  {
+   "item": "Webpack dev-server proxy mention",
+   "importance": "minor"
+  },
+  {
+   "item": "Preflight OPTIONS should return status 204 specifically",
+   "importance": "minor"
+  },
+  {
+   "item": "Dev-server proxy mention includes webpack proxy (Y mentions Vite and CRA instead)",
+   "importance": "minor"
+  },
+  {
+   "item": "Express example includes credentials: true; FastAPI example includes allow_credentials=True",
+   "importance": "minor"
+  },
+  {
+   "item": "Frontend must set credentials: 'include' is paired explicitly with the server header (Y also mentions this)",
+   "importance": "minor"
+  }
+ ]
+}

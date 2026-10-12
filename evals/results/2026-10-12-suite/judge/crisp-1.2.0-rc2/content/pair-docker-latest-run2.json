@@ -1,0 +1,113 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 3.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 4.5
+ },
+ "cut_items": [
+  {
+   "item": "Caching is misleading: a stale local `latest` vs a freshly pulled one on a clean CI runner can make environments disagree",
+   "importance": "minor"
+  },
+  {
+   "item": "Specific example of a breaking upgrade: Debian bookworm to trixie / Python 3.12 to 3.13 surfacing as an unrelated CI/prod failure",
+   "importance": "minor"
+  },
+  {
+   "item": "Avoid bare major tags like `python:3`, which are still moving",
+   "importance": "useful"
+  },
+  {
+   "item": "Pinning by digest guarantees exact bytes while the tag stays for readability",
+   "importance": "minor"
+  },
+  {
+   "item": "Build cache is misleading: a stale local latest can differ from a freshly pulled one on a clean CI runner, so environments disagree",
+   "importance": "useful"
+  },
+  {
+   "item": "Avoid bare major tags like python:3; pin the full version",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete breaking-change examples (Python 3.12 to 3.13, Debian bookworm to trixie) that surface as unrelated CI/prod failures",
+   "importance": "minor"
+  },
+  {
+   "item": "Bot-driven bumps go through review and CI, so updates are deliberate rather than accidental",
+   "importance": "minor"
+  },
+  {
+   "item": "Mention of libc changes as a breakage source",
+   "importance": "minor"
+  },
+  {
+   "item": "Debugging 'it worked yesterday' is hard",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Scan images in CI with a tool such as Trivy or Grype",
+   "importance": "useful"
+  },
+  {
+   "item": "Pinned images do not get security patches on their own, which is why updates must be managed",
+   "importance": "useful"
+  },
+  {
+   "item": "`:latest` does not necessarily mean newest or most stable; it is only the maintainer's default tag",
+   "importance": "minor"
+  },
+  {
+   "item": "Keep the version tag next to the digest as a comment or on the same line for readability",
+   "importance": "minor"
+  },
+  {
+   "item": "Exception: `:latest` may be acceptable for an internal image your own team controls and versions carefully",
+   "importance": "minor"
+  },
+  {
+   "item": "Node example (`node:22.11-bookworm-slim`) as a second example",
+   "importance": "minor"
+  },
+  {
+   "item": "Rollbacks are hard because you cannot tell which base image a past build used",
+   "importance": "minor"
+  },
+  {
+   "item": ":latest does not necessarily mean newest or most stable; it is just the maintainer's default tag",
+   "importance": "minor"
+  },
+  {
+   "item": "Scan images in CI with tools such as Trivy or Grype",
+   "importance": "useful"
+  },
+  {
+   "item": "Pinned images do not receive security patches on their own, so updating them is needed",
+   "importance": "useful"
+  },
+  {
+   "item": "Exception: :latest is acceptable for an internal image the team controls and versions carefully (though explicit tag still safer)",
+   "importance": "minor"
+  },
+  {
+   "item": "Example pin node:22.11-bookworm-slim",
+   "importance": "minor"
+  },
+  {
+   "item": "Removed packages as a possible breakage cause",
+   "importance": "minor"
+  }
+ ]
+}

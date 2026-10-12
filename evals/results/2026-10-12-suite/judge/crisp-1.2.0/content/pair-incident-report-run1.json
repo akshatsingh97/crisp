@@ -1,0 +1,141 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "candidate",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 5.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Lists possible reasons the value changed (typo, wrong environment value, test value leaking to prod) and asks to confirm which",
+   "importance": "useful"
+  },
+  {
+   "item": "Open question on why only 18% failed instead of all requests, with hypotheses (some requests got connections, or only some instances received the change)",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: alert specifically on database pool exhaustion",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: 5xx alert should fire within 5 minutes (concrete target)",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes the time of first alert and investigation start should be added to the timeline",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit statement that the pool of 5 was below what checkout needs at normal load, causing failed connection acquisition (stated as fact)",
+   "importance": "minor"
+  },
+  {
+   "item": "Timeline table explicitly places the deploy at 09:12 coinciding with error start",
+   "importance": "minor"
+  },
+  {
+   "item": "Lists open questions section (why value changed, why 18%, detection time)",
+   "importance": "minor"
+  },
+  {
+   "item": "Possible reasons the value changed (typo, wrong environment value, test value reaching production) to confirm",
+   "importance": "useful"
+  },
+  {
+   "item": "Open question on why only 18% of requests failed, with hypotheses (some requests got a connection, or only some instances got the change)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit open questions section including detection time and why the value changed",
+   "importance": "minor"
+  },
+  {
+   "item": "Alert on checkout 5xx rate should fire within 5 minutes (concrete target)",
+   "importance": "minor"
+  },
+  {
+   "item": "Timeline in table form with a 09:12\u201309:45 error-ongoing entry, and a request to add first alert and investigation start times",
+   "importance": "minor"
+  },
+  {
+   "item": "Action items: require review for config changes to database settings (specific)",
+   "importance": "minor"
+  },
+  {
+   "item": "Asserts deploy occurred at 09:12 (an unverified assumption presented as fact)",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Flags that deploy time is not provided and to check whether the deploy went out before 09:12 (timeline may not align with the deploy)",
+   "importance": "useful"
+  },
+  {
+   "item": "Flags the root-cause mechanism (connection exhaustion) as an assumption to be confirmed via error logs and pool metrics",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: automatic rollback on errors during canary rollout",
+   "importance": "useful"
+  },
+  {
+   "item": "Action item: document rollback steps so on-call can act faster",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes the pool size was 10 times too small",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes partial failure (18%) may have hidden the problem from some alerts",
+   "importance": "minor"
+  },
+  {
+   "item": "States owners and due dates are unassigned and must be added before publishing",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to complete missing fields if given deploy time, detection method, and customer impact",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that deploy time may have been before 09:12 and should be checked",
+   "importance": "useful"
+  },
+  {
+   "item": "Flags the root cause as an assumption (connection starvation) to confirm with error logs and pool metrics",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that a partial 18% failure may have hidden the problem from some alerts",
+   "importance": "minor"
+  },
+  {
+   "item": "Action item: document rollback steps so on-call can act faster",
+   "importance": "minor"
+  },
+  {
+   "item": "Alert on database pool saturation plus checkout 5xx, and an auto-rollback on errors for staged rollout",
+   "importance": "useful"
+  },
+  {
+   "item": "States pool size was 10 times too small",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to complete missing fields given deploy time, detection method, and customer impact",
+   "importance": "minor"
+  }
+ ]
+}

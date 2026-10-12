@@ -1,0 +1,109 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Explicitly states that docker system prune also removes build cache and unused networks, and details what each category covers",
+   "importance": "minor"
+  },
+  {
+   "item": "Warns that running containers are not removed by the prune command, and gives a stop-then-force-remove sequence followed by prune to cover them",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that `--filter` can be used to narrow what is pruned",
+   "importance": "minor"
+  },
+  {
+   "item": "Lists `docker volume prune -a` in the per-type commands, which covers named volumes",
+   "importance": "minor"
+  },
+  {
+   "item": "States that docker system prune -a --volumes also removes build cache",
+   "importance": "minor"
+  },
+  {
+   "item": "Compact script to remove running containers too: docker stop, docker rm -f, then prune -f",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions a --filter option to control volume pruning (vague)",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Full-reset path that removes all images and volumes by name: `docker rmi -f $(docker images -aq)` and `docker volume rm $(docker volume ls -q)`. These also delete named volumes.",
+   "importance": "useful"
+  },
+  {
+   "item": "Says the empty-list usage errors in the full-reset steps are harmless and the step can be skipped",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete backup method: run a temporary container that mounts the volume and archives it with tar",
+   "importance": "useful"
+  },
+  {
+   "item": "Says the anonymous-volume-only behavior of `--volumes` applies from Docker 23.0 onward",
+   "importance": "minor"
+  },
+  {
+   "item": "Says Docker keeps anything a running container uses when pruning",
+   "importance": "minor"
+  },
+  {
+   "item": "Says `-f` can be added to any prune command, and that Docker Desktop's disk image size lives under Settings > Resources",
+   "importance": "minor"
+  },
+  {
+   "item": "Says build cache can take many GB and recommends `docker builder prune -a`; this is also in X's per-type list, but X does not explain why",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to check what data exists first (docker system df) before running the destructive command, as a pre-step",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit step-by-step manual removal of everything: stop, rm, rmi -f, volume rm, with the note that empty-list usage errors are harmless",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation that -a removes all unused images, not only dangling ones, and that Docker keeps anything used by a running container",
+   "importance": "useful"
+  },
+  {
+   "item": "Note that docker system prune does not always clear build cache, so run docker builder prune -a separately; build cache can use many GB",
+   "importance": "useful"
+  },
+  {
+   "item": "Docker Desktop: specific Settings > Resources > Disk image size path as well as Clean/Purge data",
+   "importance": "minor"
+  },
+  {
+   "item": "How to back up a volume: run a temporary container mounting the volume and archive with tar",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that volumes often hold database data and the action cannot be undone",
+   "importance": "minor"
+  },
+  {
+   "item": "docker volume rm command for removing all volumes explicitly, and docker rmi -f for removing all images",
+   "importance": "minor"
+  }
+ ]
+}

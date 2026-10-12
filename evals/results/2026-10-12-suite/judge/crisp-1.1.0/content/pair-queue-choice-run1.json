@@ -1,0 +1,129 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 2.0,
+  "useful": 2.5,
+  "minor": 3.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Set Redis maxmemory-policy noeviction (in addition to AOF) or Redis can drop queued jobs when memory is full",
+   "importance": "critical"
+  },
+  {
+   "item": "Both options are at-least-once delivery, so every job must be idempotent",
+   "importance": "critical"
+  },
+  {
+   "item": "Redis non-atomicity with DB write means a crash between steps can lose or repeat a job; make jobs idempotent",
+   "importance": "useful"
+  },
+  {
+   "item": "BullMQ flows (parent/child jobs) and a good dashboard ecosystem",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis handles high volume with less load than a polling table",
+   "importance": "minor"
+  },
+  {
+   "item": "Atomicity framing: a row never exists without its job and vice versa",
+   "importance": "minor"
+  },
+  {
+   "item": "Do not add Redis only for the queue; move to Redis when you measure a real limit",
+   "importance": "useful"
+  },
+  {
+   "item": "Graphile Worker/pg-boss handle vacuuming-related churn but should be checked",
+   "importance": "minor"
+  },
+  {
+   "item": "Set maxmemory-policy noeviction in Redis, otherwise queued jobs can be dropped when memory is full",
+   "importance": "critical"
+  },
+  {
+   "item": "Both options deliver at-least-once, so jobs must be idempotent / safe to run twice",
+   "importance": "critical"
+  },
+  {
+   "item": "Crash between the DB write and the Redis enqueue can lose or repeat a job, so make jobs idempotent",
+   "importance": "useful"
+  },
+  {
+   "item": "BullMQ flows (parent/child jobs)",
+   "importance": "minor"
+  },
+  {
+   "item": "Postgres libraries (pg-boss, Graphile Worker) handle retries, delays, and schedules, and manage vacuuming",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete threshold of about 1,000 jobs/sec",
+   "importance": "minor"
+  },
+  {
+   "item": "Do not add Redis only for the queue; move to Redis only when a real limit is measured",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis handles high volume with less load than a polling table",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Concrete recommendation of pg-boss as the starting library for a small Node app",
+   "importance": "useful"
+  },
+  {
+   "item": "Tune autovacuum if the job table grows fast",
+   "importance": "useful"
+  },
+  {
+   "item": "Check your host's default Redis persistence settings",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis avoids table bloat from frequent inserts/deletes",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that SKIP LOCKED prevents two workers taking the same job",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis offers low latency with thousands of jobs/sec",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis can lose jobs on a crash unless AOF persistence is enabled; check host defaults (Y covers AOF too, but adds eviction)",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis avoids table bloat from frequent inserts/deletes (as a pro for Redis)",
+   "importance": "minor"
+  },
+  {
+   "item": "Tune autovacuum if the job table grows fast (specific remedy)",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete recommendation of pg-boss as the starting library, with migration path to BullMQ later",
+   "importance": "useful"
+  },
+  {
+   "item": "BullMQ mentioned as having delayed jobs, retries (Y mentions retries/delays only for Postgres libs) and Redis handles thousands of jobs/sec with low latency",
+   "importance": "minor"
+  }
+ ]
+}

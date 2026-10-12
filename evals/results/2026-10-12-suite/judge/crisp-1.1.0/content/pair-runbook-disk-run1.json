@@ -1,0 +1,177 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.5,
+  "useful": 9.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 4.5
+ },
+ "cut_items": [
+  {
+   "item": "Concrete command to force log rotation (logrotate -f) and advice to find why logs grew (error loop, log_statement=all)",
+   "importance": "useful"
+  },
+  {
+   "item": "Check pg_stat_replication for lagging replicas (replay_lag) as a WAL-retention cause",
+   "importance": "useful"
+  },
+  {
+   "item": "Run CHECKPOINT after the fix so WAL is recycled, with note it may take a few minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Use du -x with sort -h on the data directory to identify largest items; df/du commands tailored to find the biggest directory",
+   "importance": "minor"
+  },
+  {
+   "item": "Query to list largest tables (pg_total_relation_size) and run normal VACUUM; do not run VACUUM FULL on a nearly full disk since it needs extra space",
+   "importance": "useful"
+  },
+  {
+   "item": "Extending the volume / adding disk is the safe way to gain time when cause isn't fixable now (as an immediate step)",
+   "importance": "useful"
+  },
+  {
+   "item": "Verification criteria: usage under 80%, pg_wal shrinks after checkpoint, alert clears",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete escalation triggers: usage >95%, 'No space left on device' or PANIC in logs, cause not found within 15 minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Table mapping cause to action, including failed_count in pg_stat_archiver and fixing archive target",
+   "importance": "minor"
+  },
+  {
+   "item": "Replica far behind: fix network/load or rebuild the replica",
+   "importance": "minor"
+  },
+  {
+   "item": "Keep the current log file when deleting old logs",
+   "importance": "minor"
+  },
+  {
+   "item": "Force log rotation with logrotate -f /etc/logrotate.d/postgresql-common",
+   "importance": "useful"
+  },
+  {
+   "item": "Keep the current log file when deleting logs",
+   "importance": "useful"
+  },
+  {
+   "item": "Investigate why logs grew (error loop, log_statement=all)",
+   "importance": "useful"
+  },
+  {
+   "item": "pg_stat_replication query to detect lagging replicas holding WAL",
+   "importance": "useful"
+  },
+  {
+   "item": "pg_stat_archiver query includes failed_count, and the check that failed_count stops rising after the fix",
+   "importance": "useful"
+  },
+  {
+   "item": "Cause-to-action table covering archive failure, inactive slot (restart the consumer first, drop only if abandoned) and lagging replica (fix network/load or rebuild)",
+   "importance": "useful"
+  },
+  {
+   "item": "Run CHECKPOINT; to trigger WAL cleanup, and note it can take a few minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Query to list the largest tables",
+   "importance": "useful"
+  },
+  {
+   "item": "Run a normal VACUUM to reuse dead space",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not run VACUUM FULL on a nearly full disk because it needs extra space",
+   "importance": "critical"
+  },
+  {
+   "item": "Extending the volume is the safe way to buy time",
+   "importance": "useful"
+  },
+  {
+   "item": "Verification criteria: usage under 80%, pg_wal shrinks after checkpoint, alert clears",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete escalation triggers: over 95%, 'No space left on device' or PANIC in logs, no cause found within 15 minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that touching pg_wal can stop the database from starting",
+   "importance": "minor"
+  },
+  {
+   "item": "du -x with sort -h for the data directory breakdown",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Warning that dropping a replication slot can force a full replica rebuild, so only drop after the owner confirms the consumer is gone",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit instruction that diagnostic steps are read-only (du, queries) and nothing should be removed during them",
+   "importance": "minor"
+  },
+  {
+   "item": "Check that log rotation works and fix the rotation setup / escalate root cause",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that at 100% disk PostgreSQL stops accepting writes, escalate at once",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation of why pg_wal must not be touched (needed for crash recovery and replication) and definitions of replication slot and checkpoint",
+   "importance": "minor"
+  },
+  {
+   "item": "Assumptions stated: Linux, shell access, database superuser",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit rule that PostgreSQL needs pg_wal for crash recovery and replication, and removes old WAL itself once unneeded",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that dropping a replication slot can force a full replica rebuild; do not drop until owner confirms consumer is gone",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation of terms (replication slot, checkpoint) for the reader",
+   "importance": "minor"
+  },
+  {
+   "item": "Instruction to restore a down or lagging replica",
+   "importance": "minor"
+  },
+  {
+   "item": "Escalation note that at 100% disk PostgreSQL stops accepting writes, so escalate at once",
+   "importance": "useful"
+  },
+  {
+   "item": "Note that du is read-only and nothing should be removed during the investigation step",
+   "importance": "minor"
+  },
+  {
+   "item": "Check that log rotation works, fix the rotation setup and escalate the root cause",
+   "importance": "minor"
+  }
+ ]
+}

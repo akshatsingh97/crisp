@@ -1,0 +1,181 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "equal",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 5.5,
+  "minor": 5.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 4.5,
+  "minor": 4.5
+ },
+ "cut_items": [
+  {
+   "item": "Explicit command to force log rotation via logrotate -f",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit verification target: usage under 80%, and pg_wal shrinks after a checkpoint",
+   "importance": "minor"
+  },
+  {
+   "item": "Run CHECKPOINT after fixing the cause to trigger WAL removal",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not run VACUUM FULL on a nearly full disk because it needs extra space; plain VACUUM reuses dead space",
+   "importance": "useful"
+  },
+  {
+   "item": "Escalation criteria: usage over 95%, 'No space left on device' or PANIC in logs, cause not found within 15 minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Action table: restart replica/consumer for inactive slot, fix network/replica load or rebuild a far-behind replica",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning also covers editing files in pg_wal and says the database may not start",
+   "importance": "minor"
+  },
+  {
+   "item": "Keep the current log file / find why logs grew, e.g. log_statement = all",
+   "importance": "minor"
+  },
+  {
+   "item": "du command scoped to data dir subdirectories with sorting for the main data directory",
+   "importance": "minor"
+  },
+  {
+   "item": "Extend the volume as a safe way to gain time when the cause cannot be fixed immediately",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete command to force log rotation: logrotate -f /etc/logrotate.d/postgresql-common",
+   "importance": "useful"
+  },
+  {
+   "item": "Mapping table of cause to action for pg_wal, including restarting the replica or consumer for an inactive slot",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit CHECKPOINT command after the fix to trigger WAL cleanup, which may take a few minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Run a normal VACUUM to reuse dead space",
+   "importance": "minor"
+  },
+  {
+   "item": "Do not run VACUUM FULL on a nearly full disk because it needs extra space",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit escalation criteria: usage over 95%, 'No space left on device' or PANIC in the logs, or no cause found within 15 minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Extend the volume or add disk as the safe way to gain time if the cause cannot be fixed now",
+   "importance": "useful"
+  },
+  {
+   "item": "Verification target of usage under 80%",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning also covers not editing pg_wal files, and that the database may fail to start",
+   "importance": "minor"
+  },
+  {
+   "item": "Command shows the last_failed_wal column for archive failures",
+   "importance": "minor"
+  },
+  {
+   "item": "Per-version path pattern /var/lib/postgresql/*/main for du",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to check that failed_count stops rising after an archive fix",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Slot query shows retained WAL size via pg_wal_lsn_diff, so the biggest holder is identifiable",
+   "importance": "useful"
+  },
+  {
+   "item": "Dropping an abandoned slot means the consumer will need a full rebuild",
+   "importance": "useful"
+  },
+  {
+   "item": "Correct note that plain VACUUM does not return space to the OS; VACUUM FULL does but takes an exclusive lock and needs free disk, so use it in a maintenance window",
+   "importance": "useful"
+  },
+  {
+   "item": "At 100% disk PostgreSQL stops accepting writes; escalate at once and grow the volume first",
+   "importance": "useful"
+  },
+  {
+   "item": "Check that logrotate is running for the log directory, and compress old logs as an option",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines WAL for the reader",
+   "importance": "minor"
+  },
+  {
+   "item": "Assumption that pg_wal sits inside the data directory, with a note to adjust paths",
+   "importance": "minor"
+  },
+  {
+   "item": "Table query filters relkind = 'r'",
+   "importance": "minor"
+  },
+  {
+   "item": "Causes of WAL growth are ordered as a checklist",
+   "importance": "minor"
+  },
+  {
+   "item": "Retained WAL size per replication slot via pg_wal_lsn_diff, to identify which slot holds the most WAL",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that dropping a slot means the consumer needs a full rebuild",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit note that plain VACUUM does not return space to the OS",
+   "importance": "useful"
+  },
+  {
+   "item": "VACUUM FULL is possible but takes an exclusive lock and needs free disk for the table copy; use only in a maintenance window",
+   "importance": "useful"
+  },
+  {
+   "item": "Check that logrotate runs for the log directory",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that at 100% disk PostgreSQL stops accepting writes, so grow the volume first",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation that WAL is the write-ahead log and PostgreSQL removes unneeded WAL itself at the next checkpoint",
+   "importance": "minor"
+  },
+  {
+   "item": "Stated assumption that pg_wal sits inside the data directory, with a note to adjust paths if the layout differs",
+   "importance": "minor"
+  },
+  {
+   "item": "Confirm pg_wal is stable or shrinking as a verification step",
+   "importance": "minor"
+  }
+ ]
+}

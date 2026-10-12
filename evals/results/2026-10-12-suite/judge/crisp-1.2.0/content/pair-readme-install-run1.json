@@ -1,0 +1,61 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 1.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Explains what the --follow command does: keeps the file open and shows new lines as they arrive",
+   "importance": "minor"
+  },
+  {
+   "item": "Warns to set the token in every shell where you run logtail (persistence caveat)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation that logtail keeps the file open and shows new lines as they arrive (what --follow does)",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "States that the token is read from LOGTAIL_TOKEN only (no other source)",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that export syntax works in bash/zsh and that other shells such as Windows PowerShell use different syntax",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit expected result of the version check: output must show v18 or higher",
+   "importance": "minor"
+  },
+  {
+   "item": "Step to verify Node.js version is v18+ with expected output stated",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that the token is read only from LOGTAIL_TOKEN (no other source)",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that the variable must be set in the same shell session where the command is run",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that export syntax works in bash/zsh but other shells such as PowerShell use different syntax",
+   "importance": "useful"
+  }
+ ]
+}

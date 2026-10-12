@@ -1,0 +1,205 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.5,
+  "useful": 5.0,
+  "minor": 5.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 5.5,
+  "minor": 6.5
+ },
+ "cut_items": [
+  {
+   "item": "Force log rotation with logrotate -f command",
+   "importance": "useful"
+  },
+  {
+   "item": "Run du on the data directory subfolders to size them (sorted), more explicit breakdown",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit action table mapping cause to fix, incl. rebuild a far-behind replica and fix network/replica load",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not run VACUUM FULL on a nearly full disk (needs extra space); run normal VACUUM to reuse dead space",
+   "importance": "critical"
+  },
+  {
+   "item": "Extend the volume or add disk space as the safe way to gain time",
+   "importance": "useful"
+  },
+  {
+   "item": "Restart the replica or consumer for an inactive slot; confirm slot ownership with owner before dropping",
+   "importance": "useful"
+  },
+  {
+   "item": "Target: usage under 80% after fix, and pg_wal should shrink after a checkpoint",
+   "importance": "minor"
+  },
+  {
+   "item": "Escalation criteria: page DBA if usage over 95%, 'No space left on device' or PANIC, or cause not found within 15 minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that WAL deletion/edit can stop the database from starting; also says do not edit files",
+   "importance": "minor"
+  },
+  {
+   "item": "Checkpoint may take a few minutes to free WAL",
+   "importance": "minor"
+  },
+  {
+   "item": "Log growth causes such as error loop or log_statement=all",
+   "importance": "minor"
+  },
+  {
+   "item": "Force a log rotation with logrotate -f",
+   "importance": "useful"
+  },
+  {
+   "item": "Common log growth causes, such as an error loop or log_statement = all",
+   "importance": "useful"
+  },
+  {
+   "item": "Table mapping causes to actions for WAL growth, including rebuilding a replica that is far behind and fixing network or replica load",
+   "importance": "useful"
+  },
+  {
+   "item": "Checkpoint cleanup of WAL can take a few minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Run a normal VACUUM to reuse dead space",
+   "importance": "minor"
+  },
+  {
+   "item": "Section for when the cause cannot be fixed now: extend the volume or add disk space to gain time",
+   "importance": "useful"
+  },
+  {
+   "item": "Escalation criteria: page the DBA on call if usage is over 95%, logs show No space left on device or PANIC, or the cause is not found within 15 minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Verify target of under 80% usage and that pg_wal shrinks after a checkpoint",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning not to edit files in pg_wal, and that manual changes can stop the database from starting",
+   "importance": "minor"
+  },
+  {
+   "item": "last_failed_wal column in the archiver query",
+   "importance": "minor"
+  },
+  {
+   "item": "Confirm with the slot owner before dropping an abandoned slot",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Do not delete the current log file because Postgres keeps it open and space is not freed",
+   "importance": "useful"
+  },
+  {
+   "item": "Compress old rotated logs with gzip before deleting; delete only if retention policy allows",
+   "importance": "useful"
+  },
+  {
+   "item": "Dropping a slot means that replica will need a rebuild",
+   "importance": "useful"
+  },
+  {
+   "item": "Common archive_command failure causes (full disk, bad credentials, unreachable storage)",
+   "importance": "minor"
+  },
+  {
+   "item": "Risk statement: if disk fills completely, Postgres cannot write WAL and will stop",
+   "importance": "useful"
+  },
+  {
+   "item": "Record the cause and fix in incident notes",
+   "importance": "minor"
+  },
+  {
+   "item": "Definition of WAL and assumptions (superuser psql, adjust paths)",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that manual WAL deletion can break replicas",
+   "importance": "minor"
+  },
+  {
+   "item": "VACUUM FULL only in a maintenance window since it locks the table",
+   "importance": "useful"
+  },
+  {
+   "item": "Check ls -lhS to list log files by size",
+   "importance": "minor"
+  },
+  {
+   "item": "Escalate to database owner if cannot free space",
+   "importance": "minor"
+  },
+  {
+   "item": "Pg_stat_archiver query includes last_archived_time",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit explanation that WAL is the change journal needed for recovery, and manual deletion can also break replicas",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning not to delete the current log file because Postgres holds it open and space is not freed",
+   "importance": "useful"
+  },
+  {
+   "item": "Compress old rotated logs with gzip before deleting; delete only if retention policy allows",
+   "importance": "useful"
+  },
+  {
+   "item": "Check that log rotation works",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that dropping a slot means the replica will need a rebuild",
+   "importance": "useful"
+  },
+  {
+   "item": "Restore the slot's consumer first before dropping the slot",
+   "importance": "useful"
+  },
+  {
+   "item": "pg_stat_archiver query includes last_archived_time; fix archive_command causes such as full disk, bad credentials, unreachable storage",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that VACUUM FULL locks the table, so run it only in a maintenance window",
+   "importance": "useful"
+  },
+  {
+   "item": "Risk statement: if the disk fills, Postgres cannot write WAL and stops",
+   "importance": "useful"
+  },
+  {
+   "item": "Record cause and fix in incident notes",
+   "importance": "minor"
+  },
+  {
+   "item": "Assumptions about superuser psql access and adjusting paths",
+   "importance": "minor"
+  },
+  {
+   "item": "Command to compare the sizes of data, pg_wal and logs in one du command",
+   "importance": "minor"
+  }
+ ]
+}

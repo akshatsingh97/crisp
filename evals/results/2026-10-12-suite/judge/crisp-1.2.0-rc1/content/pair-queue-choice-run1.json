@@ -1,0 +1,149 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "candidate",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 1.0,
+  "useful": 1.5,
+  "minor": 4.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 6.0
+ },
+ "cut_items": [
+  {
+   "item": "Redis needs less load than a polling table at high job volume (explicit performance rationale)",
+   "importance": "minor"
+  },
+  {
+   "item": "Queue flows with parent and child jobs in BullMQ",
+   "importance": "minor"
+  },
+  {
+   "item": "Both options deliver at-least-once, so every job must be idempotent regardless of backend",
+   "importance": "critical"
+  },
+  {
+   "item": "Explicit advice not to add Redis only for the queue; start with Postgres and move when a real limit is measured",
+   "importance": "useful"
+  },
+  {
+   "item": "Libraries handle retries, delays, and schedules in Postgres (pg-boss/Graphile)",
+   "importance": "minor"
+  },
+  {
+   "item": "Postgres libraries manage vacuuming but the reader should verify it",
+   "importance": "minor"
+  },
+  {
+   "item": "Both options deliver at-least-once, so write every job to be idempotent/safe to run twice",
+   "importance": "critical"
+  },
+  {
+   "item": "With Redis, make jobs idempotent because a crash between the DB write and enqueue can lose or repeat a job",
+   "importance": "useful"
+  },
+  {
+   "item": "BullMQ supports flows with parent/child jobs",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis handles high volume with less load than a polling table",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete threshold of ~1,000 jobs/sec for Postgres",
+   "importance": "minor"
+  },
+  {
+   "item": "Libraries pg-boss/Graphile handle retries, delays, schedules and manage vacuuming (still check it)",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice: don't add Redis only for the queue; start with Postgres and move when you measure a real limit",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Postgres jobs are durable by default",
+   "importance": "minor"
+  },
+  {
+   "item": "Postgres latency is slightly higher than Redis because workers poll or use LISTEN/NOTIFY",
+   "importance": "useful"
+  },
+  {
+   "item": "Postgres throughput tops out around thousands of jobs per second, depending on hardware",
+   "importance": "minor"
+  },
+  {
+   "item": "Autovacuum must keep up with dead rows from heavy churn (explains the mechanism)",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis is one more service to run (operational cost)",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete decision steps: use BullMQ if Redis already run; pg-boss/Graphile if only Postgres and modest load; add Redis if rate limiting, complex scheduling, or very high volume is needed",
+   "importance": "useful"
+  },
+  {
+   "item": "Wrap the queue behind a small enqueue(name, payload) function so switching later is cheap",
+   "importance": "useful"
+  },
+  {
+   "item": "Bull Board as a ready-made dashboard for BullMQ",
+   "importance": "minor"
+  },
+  {
+   "item": "BullMQ features include repeatable jobs and delayed jobs",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis enqueue can run a job for data that was rolled back, not just lose a job",
+   "importance": "minor"
+  },
+  {
+   "item": "Postgres drawbacks: throughput tops out around thousands of jobs/sec depending on hardware",
+   "importance": "useful"
+  },
+  {
+   "item": "Postgres workers poll or use LISTEN/NOTIFY, so latency is slightly higher than Redis",
+   "importance": "minor"
+  },
+  {
+   "item": "Jobs durable by default in Postgres",
+   "importance": "minor"
+  },
+  {
+   "item": "BullMQ features: delayed jobs, retries, repeatable jobs (plus rate limiting, priorities)",
+   "importance": "minor"
+  },
+  {
+   "item": "Bull Board gives a ready-made dashboard",
+   "importance": "minor"
+  },
+  {
+   "item": "Decision rule: if already running Redis use BullMQ; if only Postgres and modest load use pg-boss/Graphile; if need rate limiting, complex scheduling or very high volume add Redis",
+   "importance": "useful"
+  },
+  {
+   "item": "Put queue behind a small enqueue(name, payload) wrapper so you can switch later",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis is one more service to run",
+   "importance": "minor"
+  },
+  {
+   "item": "Enqueue failure with Redis can run a job for rolled-back data",
+   "importance": "useful"
+  }
+ ]
+}

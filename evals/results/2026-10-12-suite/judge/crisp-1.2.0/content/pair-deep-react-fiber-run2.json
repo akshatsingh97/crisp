@@ -1,0 +1,297 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 15.0,
+  "minor": 8.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 5.0,
+  "minor": 6.0
+ },
+ "cut_items": [
+  {
+   "item": "Table distinguishing element, component, instance, fiber and their lifetimes",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete code example of inner component defined in a body causing remount, losing focus/state",
+   "importance": "useful"
+  },
+  {
+   "item": "State belongs to position in tree; moving a component to a different position/parent resets its state",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not use Math.random() as key (remount every render)",
+   "importance": "useful"
+  },
+  {
+   "item": "Worked begin/complete traversal order example for a sample tree",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete lastPlacedIndex examples ([B,C,D,A] only A moves; [D,A,B,C] moves A,B,C) and note that moving toward front is the expensive case",
+   "importance": "useful"
+  },
+  {
+   "item": "Starvation handling: lanes get expiration times and overdue lanes render without yielding",
+   "importance": "useful"
+  },
+  {
+   "item": "SyncLane work runs in a microtask without yielding; other work via Scheduler; entangled lanes render together",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete interruption walkthrough: transition render discarded when typing arrives, React either finishes or abandons rather than pausing mid-tree",
+   "importance": "useful"
+  },
+  {
+   "item": "Rebasing worked example with low/high/low priority updates and base queue",
+   "importance": "useful"
+  },
+  {
+   "item": "Automatic batching in React 18 via same lane",
+   "importance": "useful"
+  },
+  {
+   "item": "useDeferredValue behavior, Offscreen/Activity, hydration in priority order",
+   "importance": "minor"
+  },
+  {
+   "item": "useSyncExternalStore prevents tearing by forcing sync re-render",
+   "importance": "useful"
+  },
+  {
+   "item": "React Compiler adds memoization automatically",
+   "importance": "minor"
+  },
+  {
+   "item": "React 18 replaced effect list with subtreeFlags; commit skips subtrees with empty flags",
+   "importance": "minor"
+  },
+  {
+   "item": "setState steps detail: lane selection via requestUpdateLane, marking lanes on fiber and alternate",
+   "importance": "minor"
+  },
+  {
+   "item": "End-to-end walkthrough of a click update (10 steps) with function names",
+   "importance": "useful"
+  },
+  {
+   "item": "Time slicing works between fibers not inside one function; slow single render can't be split; commit with thousands of DOM changes still blocks",
+   "importance": "useful"
+  },
+  {
+   "item": "Reading layout in layout effect and setting state forces sync re-render before paint",
+   "importance": "minor"
+  },
+  {
+   "item": "Commit pass cleanup runs previous effect cleanup before new effect; pending passive effects flushed before new render",
+   "importance": "minor"
+  },
+  {
+   "item": "Don't add useMemo everywhere; re-render is not DOM update (wasted render does not touch DOM)",
+   "importance": "useful"
+  },
+  {
+   "item": "Bailout condition detail: reference equality of props defeated by new object; two bailout cases",
+   "importance": "minor"
+  },
+  {
+   "item": "Suspense retry via RetryLanes; use(promise); unwindWork for error boundaries",
+   "importance": "minor"
+  },
+  {
+   "item": "Source file list includes ReactFiberLane.js and caveat about names changing",
+   "importance": "minor"
+  },
+  {
+   "item": "Elements/component/instance/fiber comparison table that disambiguates the terms",
+   "importance": "useful"
+  },
+  {
+   "item": "Code example of an inner component defined in the parent body that remounts and loses focus and state",
+   "importance": "useful"
+  },
+  {
+   "item": "Position-based state: state belongs to a tree position, and moving a component to another parent resets its state",
+   "importance": "useful"
+  },
+  {
+   "item": "Worked traversal order example for a sample tree showing begin/complete sequence",
+   "importance": "useful"
+  },
+  {
+   "item": "React 16/17 effect list was replaced by subtreeFlags in 18",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete lastPlacedIndex examples: [A,B,C,D] to [B,C,D,A] moves only A, while [D,A,B,C] moves three items",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not use Math.random() as a key, since it remounts every item",
+   "importance": "useful"
+  },
+  {
+   "item": "Starvation prevention: lanes expire and then render without yielding",
+   "importance": "useful"
+  },
+  {
+   "item": "SyncLane work runs in a microtask; ensureRootIsScheduled and getNextLanes pick the lanes; entangled lanes render together",
+   "importance": "useful"
+  },
+  {
+   "item": "Interruption in practice: React discards the WIP tree and restarts rather than truly resuming mid-tree",
+   "importance": "useful"
+  },
+  {
+   "item": "Worked rebasing example with three updates of mixed priority",
+   "importance": "useful"
+  },
+  {
+   "item": "Re-rendering is not a DOM update; wasted renders only compare output",
+   "importance": "useful"
+  },
+  {
+   "item": "React Compiler adds memoization automatically",
+   "importance": "minor"
+  },
+  {
+   "item": "Automatic batching in React 18 via shared lanes",
+   "importance": "useful"
+  },
+  {
+   "item": "useDeferredValue and useTransition behavior descriptions",
+   "importance": "useful"
+  },
+  {
+   "item": "useSyncExternalStore prevents tearing by forcing a synchronous re-render",
+   "importance": "useful"
+  },
+  {
+   "item": "Offscreen/Activity, hydration in priority order, and Server Components mentions",
+   "importance": "minor"
+  },
+  {
+   "item": "End-to-end walkthrough of a click update in 10 steps with function names (dispatchSetState, scheduleUpdateOnFiber, etc.)",
+   "importance": "useful"
+  },
+  {
+   "item": "Heavy work in a single component still blocks because time slicing is between fibers; a commit with thousands of DOM changes also blocks",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not add useMemo everywhere; use transitions for slow non-urgent updates and useDeferredValue for external values",
+   "importance": "minor"
+  },
+  {
+   "item": "Reading layout in layout effects and setting state forces a synchronous re-render before paint",
+   "importance": "minor"
+  },
+  {
+   "item": "Goals of Fiber include returning multiple children and error boundaries; FiberRoot holds the current pointer; createWorkInProgress and requestUpdateLane named",
+   "importance": "minor"
+  },
+  {
+   "item": "Fiber deletions field and the Error boundaries unwindWork mention",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Update triggers list: setState/useReducer, root.render, context change, useSyncExternalStore",
+   "importance": "minor"
+  },
+  {
+   "item": "Pattern of passing children as props from the grandparent to avoid child re-render (code example)",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that in React 18+ only non-blocking lanes (transitions) use the concurrent time-sliced loop; sync/default render to completion",
+   "importance": "useful"
+  },
+  {
+   "item": "Reducer logic must be pure because rebasing may run it more than once",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not mutate state or props since reference checks drive bailouts",
+   "importance": "useful"
+  },
+  {
+   "item": "Hook implementation swapped between mount and update dispatchers; hooks throw outside render",
+   "importance": "minor"
+  },
+  {
+   "item": "useEffect/useLayoutEffect push effect objects onto fiber updateQueue with flag",
+   "importance": "minor"
+  },
+  {
+   "item": "Other element kinds: text fibers, unkeyed fragments unwrapped, portals",
+   "importance": "minor"
+  },
+  {
+   "item": "Early Fiber used expiration times, replaced by lanes",
+   "importance": "minor"
+  },
+  {
+   "item": "Scheduler uses MessageChannel because it runs sooner than setTimeout",
+   "importance": "minor"
+  },
+  {
+   "item": "Short performUnitOfWork code snippet and mental model summary",
+   "importance": "minor"
+  },
+  {
+   "item": "Keep state as low in tree as possible",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit explanation that abort is safe because the current tree is untouched (also in Y), plus mention of the portal fiber type, unkeyed fragments being unwrapped, and text fibers",
+   "importance": "minor"
+  },
+  {
+   "item": "Code example of the `<Parent children>` pattern showing how a stable children element reference avoids re-renders",
+   "importance": "useful"
+  },
+  {
+   "item": "performUnitOfWork code snippet showing memoizedProps assignment and the complete/next branching",
+   "importance": "minor"
+  },
+  {
+   "item": "Time slicing applies only to non-blocking lanes (transitions); sync and default lanes render to completion in React 18",
+   "importance": "useful"
+  },
+  {
+   "item": "Reducer logic must be pure because rebasing can run it more than once for the same update",
+   "importance": "useful"
+  },
+  {
+   "item": "Layout effects block paint, so use them only for measuring or mutating DOM before paint",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not mutate state or props, since reference checks drive bailouts",
+   "importance": "useful"
+  },
+  {
+   "item": "Keep state as low in the tree as possible; measure with the React DevTools Profiler before optimizing",
+   "importance": "useful"
+  },
+  {
+   "item": "Hooks throw an error outside a render; hook implementation is swapped between mount and update",
+   "importance": "minor"
+  },
+  {
+   "item": "Mental model summary section",
+   "importance": "minor"
+  }
+ ]
+}

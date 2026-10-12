@@ -1,0 +1,81 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "candidate",
+  "equal"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 1.5
+ },
+ "cut_items": [
+  {
+   "item": "Before/after migration example showing init() in 2.x vs 3.0 (shows the old call without options)",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that higher retries mean failed requests take longer to give up (latency impact)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains the memory fix benefit: long-running apps that reconnect often use less memory over time",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to add an on('error') example if given the handler signature",
+   "importance": "minor"
+  },
+  {
+   "item": "Before/after (2.x vs 3.0) code example showing init() with no args versus with apiKey",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns that higher retry default means failed requests take longer to give up",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes impact of memory leak fix: long-running apps that reconnect often will use less memory",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers to add on('error') example if user supplies handler signature",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Explicit migration steps: find every init() call and add apiKey to each",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete code example of on('error') handler (sdk.on('error', (err) => console.error(err)))",
+   "importance": "useful"
+  },
+  {
+   "item": "Clarifies that failed requests retry up to 5 times",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that the sdk variable in the example is a placeholder to be replaced with the real object name",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete code example for on('error') handler (sdk.on('error', ...)) with note that sdk is a placeholder",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit numbered upgrade steps: find every init() call and add apiKey to each",
+   "importance": "useful"
+  },
+  {
+   "item": "Clarifies that failed requests will retry up to 5 times",
+   "importance": "minor"
+  }
+ ]
+}

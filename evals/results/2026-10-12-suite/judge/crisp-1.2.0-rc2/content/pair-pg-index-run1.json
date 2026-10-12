@@ -1,0 +1,125 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 4.5,
+  "minor": 4.5
+ },
+ "cut_items": [
+  {
+   "item": "Set a short lock_timeout so the build does not queue behind a blocked lock",
+   "importance": "useful"
+  },
+  {
+   "item": "Partitioned tables: CONCURRENTLY not supported on parent; build on each partition then attach",
+   "importance": "useful"
+  },
+  {
+   "item": "Unique index build fails and leaves invalid index if duplicates exist (Y also mentions this)",
+   "importance": "minor"
+  },
+  {
+   "item": "Example of setting maintenance_work_mem in the main command block, and a concrete named example index",
+   "importance": "minor"
+  },
+  {
+   "item": "Set a short lock_timeout so the build does not queue behind a blocked lock (and block other queries)",
+   "importance": "useful"
+  },
+  {
+   "item": "Partitioned tables: CONCURRENTLY cannot be used on the parent; build on each partition then attach",
+   "importance": "useful"
+  },
+  {
+   "item": "Watch free WAL disk space in addition to replica lag",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete example index name and column in the command, and the maintenance_work_mem setting inline in the command block",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Lock type: SHARE UPDATE EXCLUSIVE; reads/writes continue but other schema changes and manual VACUUM on the table will wait",
+   "importance": "useful"
+  },
+  {
+   "item": "Rails-specific disable_ddl_transaction! for turning off migration transaction",
+   "importance": "minor"
+  },
+  {
+   "item": "Run in a low-traffic window",
+   "importance": "minor"
+  },
+  {
+   "item": "idle_in_transaction_session_timeout can also kill the build",
+   "importance": "useful"
+  },
+  {
+   "item": "Raise max_parallel_maintenance_workers (PG 11+) for faster parallel B-tree builds",
+   "importance": "useful"
+  },
+  {
+   "item": "pg_stat_progress_create_index is Postgres 12+; sample progress query with columns",
+   "importance": "minor"
+  },
+  {
+   "item": "Run ANALYZE after the build so planner knows the index",
+   "importance": "useful"
+  },
+  {
+   "item": "Unique index can fail on duplicates that arrive during the build, not only pre-existing ones",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that Postgres version is unknown; check version notes",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that invalid index is never used by queries but still slows writes",
+   "importance": "minor"
+  },
+  {
+   "item": "Lock type: CONCURRENTLY holds SHARE UPDATE EXCLUSIVE; reads/writes continue but other schema changes and manual VACUUM on the table wait",
+   "importance": "useful"
+  },
+  {
+   "item": "Raise max_parallel_maintenance_workers (PG11+) for faster parallel B-tree build",
+   "importance": "useful"
+  },
+  {
+   "item": "Run ANALYZE on the table after the build so the planner knows the index",
+   "importance": "useful"
+  },
+  {
+   "item": "Run during a low-traffic window",
+   "importance": "useful"
+  },
+  {
+   "item": "Check idle_in_transaction_session_timeout, which can kill the build",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit progress query columns, and note that pg_stat_progress_create_index needs PG12+",
+   "importance": "minor"
+  },
+  {
+   "item": "Rails-specific example: disable_ddl_transaction!",
+   "importance": "minor"
+  },
+  {
+   "item": "Drop-and-retry detail: INVALID index is never used by queries; note that version is unknown so check version notes",
+   "importance": "minor"
+  }
+ ]
+}

@@ -1,0 +1,105 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "candidate",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 1.0,
+  "useful": 0.5,
+  "minor": 1.0
+ },
+ "added": {
+  "critical": 0.5,
+  "useful": 4.5,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Docker Engine 25+ caveat: --volumes only removes anonymous volumes, so a separate `docker volume prune -a -f` is needed to remove named volumes",
+   "importance": "critical"
+  },
+  {
+   "item": "Explicit stop of running containers before pruning (docker stop $(docker ps -q)) as the first step in the main flow",
+   "importance": "minor"
+  },
+  {
+   "item": "Pruning with -f skips confirmation, used directly in the main command",
+   "importance": "minor"
+  },
+  {
+   "item": "Docker Engine 25+ `--volumes` on prune removes only anonymous volumes, so named volumes may remain and `docker volume prune -a -f` is needed to remove them",
+   "importance": "critical"
+  },
+  {
+   "item": "Stops running containers first (`docker stop $(docker ps -q)`) so prune also removes their resources, which gives a one-sequence full cleanup",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Explains that plain prune keeps running containers and the images, volumes, and networks they use (safe/unused-only mode vs. delete-everything mode)",
+   "importance": "useful"
+  },
+  {
+   "item": "Interactive confirmation prompt (type y) and that -f skips it",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit build cache clearing command for the manual route: docker builder prune -a -f",
+   "importance": "useful"
+  },
+  {
+   "item": "Troubleshooting: a volume in use is refused, so remove the container that uses it first",
+   "importance": "useful"
+  },
+  {
+   "item": "Docker Desktop on Mac/Windows: disk image file may not shrink after cleanup; reduce disk image size in Settings > Resources or use Troubleshoot menu clean up data",
+   "importance": "critical"
+  },
+  {
+   "item": "To keep volumes, omit --volumes from the prune command",
+   "importance": "useful"
+  },
+  {
+   "item": "Manual route uses `docker ps -aq` for stop, covering all containers including stopped ones",
+   "importance": "minor"
+  },
+  {
+   "item": "Lists exactly what the prune command removes in a per-item breakdown (the -a flag meaning, the --volumes flag meaning)",
+   "importance": "minor"
+  },
+  {
+   "item": "Distinguishes a prune-unused path (keeps running containers and the resources they use) from a delete-everything path, so the reader can pick the safer option",
+   "importance": "useful"
+  },
+  {
+   "item": "Lists exactly what `docker system prune -a --volumes` removes (stopped containers, unused networks, unused images, unused volumes, build cache) and that running containers and what they use are kept",
+   "importance": "useful"
+  },
+  {
+   "item": "The `-f` flag skips the confirmation prompt (without `-f` Docker asks for `y`)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit command to stop and remove all containers (`docker stop` then `docker rm -f`)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit `docker builder prune -a -f` to clear the build cache",
+   "importance": "minor"
+  },
+  {
+   "item": "Troubleshooting: a volume in use cannot be removed until its container is removed",
+   "importance": "useful"
+  },
+  {
+   "item": "Docker Desktop (Mac/Windows): the disk image file may not shrink after cleanup; reduce the disk image size in Settings > Resources or use the Troubleshoot menu to clean up",
+   "importance": "useful"
+  },
+  {
+   "item": "To keep volumes, leave out `--volumes`",
+   "importance": "useful"
+  }
+ ]
+}

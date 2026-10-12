@@ -1,0 +1,32 @@
+{
+ "kept": [
+  true,
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "claims": [
+  {
+   "claim": "A short lock_timeout makes the ALTER TABLE give up instead of queueing",
+   "kind": "restated"
+  },
+  {
+   "claim": "If the ALTER TABLE queues behind long-running queries, it also blocks every query that arrives after it",
+   "kind": "restated"
+  },
+  {
+   "claim": "Restore the backup to test it",
+   "kind": "restated"
+  },
+  {
+   "claim": "Steps are ordered: backup, restore test, check version, set lock_timeout, run the migration",
+   "kind": "restated"
+  },
+  {
+   "claim": "Run the migration as the final step after the checks",
+   "kind": "restated"
+  }
+ ]
+}

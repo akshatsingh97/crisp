@@ -1,0 +1,129 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "candidate",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 1.5,
+  "useful": 2.0,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Redis must be configured with maxmemory-policy noeviction (plus AOF) or it can evict/drop queued jobs when memory is full",
+   "importance": "critical"
+  },
+  {
+   "item": "Redis job and DB write are not atomic, so jobs must be idempotent since a crash between steps can lose or repeat a job",
+   "importance": "useful"
+  },
+  {
+   "item": "Both options deliver at-least-once, so every job must be safe to run twice",
+   "importance": "useful"
+  },
+  {
+   "item": "BullMQ offers flows (parent/child jobs) and a good dashboard ecosystem",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis handles high volume with less load than a polling table",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice not to add Redis only for the queue; move when a real limit is measured",
+   "importance": "minor"
+  },
+  {
+   "item": "Set Redis maxmemory-policy noeviction, otherwise Redis can drop queued jobs when memory is full",
+   "importance": "critical"
+  },
+  {
+   "item": "Both options deliver at-least-once, so write every job to be idempotent/safe to run twice",
+   "importance": "critical"
+  },
+  {
+   "item": "Redis job and DB write are not atomic: a crash between the steps can lose or repeat a job, so idempotency is needed",
+   "importance": "useful"
+  },
+  {
+   "item": "BullMQ flows (parent/child jobs) and dashboard ecosystem",
+   "importance": "minor"
+  },
+  {
+   "item": "Do not add Redis only for the queue; move to Redis when you measure a real limit",
+   "importance": "useful"
+  },
+  {
+   "item": "pg-boss/Graphile Worker handle retries, delays, and schedules, and manage vacuuming (but check it)",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Heavy job traffic on the main Postgres database can slow web queries; use a separate database or move to Redis",
+   "importance": "useful"
+  },
+  {
+   "item": "Even with AOF, a small window of job loss remains in Redis",
+   "importance": "useful"
+  },
+  {
+   "item": "Postgres jobs survive restarts with normal DB durability",
+   "importance": "minor"
+  },
+  {
+   "item": "Jobs can be inspected and fixed with plain SQL",
+   "importance": "useful"
+  },
+  {
+   "item": "Delete old jobs and tune autovacuum to manage Postgres bloat",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis has lower latency; Redis suits large volumes of short jobs",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis is a second system to operate",
+   "importance": "minor"
+  },
+  {
+   "item": "Decision rule with concrete cases, and migration later is easy if enqueue calls are wrapped in one small module",
+   "importance": "useful"
+  },
+  {
+   "item": "Redis BullMQ supports repeatable jobs",
+   "importance": "minor"
+  },
+  {
+   "item": "Postgres queues create write load and can slow main web queries; mitigate with a separate database or move to Redis",
+   "importance": "useful"
+  },
+  {
+   "item": "Jobs survive restarts with normal database durability; can inspect and fix jobs with plain SQL",
+   "importance": "minor"
+  },
+  {
+   "item": "Delete old jobs as volume grows (alongside autovacuum tuning)",
+   "importance": "minor"
+  },
+  {
+   "item": "Wrap enqueue calls in one small module so migrating the queue later is easy",
+   "importance": "useful"
+  },
+  {
+   "item": "BullMQ offers retries, delays, repeatable jobs; Redis has lower latency and suits large volumes of short jobs",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis can lose a small window of jobs on a crash even with AOF",
+   "importance": "minor"
+  }
+ ]
+}

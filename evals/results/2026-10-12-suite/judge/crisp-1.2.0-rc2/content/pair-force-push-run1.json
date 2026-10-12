@@ -1,0 +1,85 @@
+{
+ "winner": "equal",
+ "verdicts": [
+  "baseline",
+  "equal"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 3.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 1.5
+ },
+ "cut_items": [
+  {
+   "item": "Run git fetch and git log HEAD..origin/<branch> before pushing to see whether someone else pushed commits you don't recognize",
+   "importance": "useful"
+  },
+  {
+   "item": "Check that the branch is yours alone before force-pushing; force-pushing will break teammates' local copies",
+   "importance": "useful"
+  },
+  {
+   "item": "Protected branches will usually reject force pushes anyway",
+   "importance": "minor"
+  },
+  {
+   "item": "An open PR updates automatically after the force push",
+   "importance": "minor"
+  },
+  {
+   "item": "Reviewers may need to re-review, and line comments can lose their anchors after a rebase",
+   "importance": "minor"
+  },
+  {
+   "item": "Pre-push check: git fetch and git log HEAD..origin/<branch> to spot commits you don't recognize before overwriting",
+   "importance": "useful"
+  },
+  {
+   "item": "Open PR updates automatically after the force push",
+   "importance": "minor"
+  },
+  {
+   "item": "Reviewers may need to re-review, and line comments can lose their anchors after a rebase",
+   "importance": "minor"
+  },
+  {
+   "item": "Protected branches will usually reject force pushes anyway",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice not to rebase shared branches in the first place",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "If --force-with-lease is rejected, run git fetch and check git log origin/<branch> for commits you don't have, then rebase onto them or confirm they are safe to drop before retrying",
+   "importance": "useful"
+  },
+  {
+   "item": "Commits that exist only on the remote are lost by a force push",
+   "importance": "useful"
+  },
+  {
+   "item": "Teammates must rebase or reset their copies after a force push",
+   "importance": "minor"
+  },
+  {
+   "item": "Recovery steps if --force-with-lease is rejected: fetch, inspect git log origin/<branch>, rebase onto the new commits or confirm they can be dropped, then retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit warning that commits existing only on the remote are lost after a force push",
+   "importance": "minor"
+  },
+  {
+   "item": "Collaborators must rebase or reset their copies after a force push",
+   "importance": "minor"
+  }
+ ]
+}

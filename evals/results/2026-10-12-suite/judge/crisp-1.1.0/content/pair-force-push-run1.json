@@ -1,0 +1,77 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Reviewers may need to re-review and PR line comments can lose anchors after rebase; open PR updates automatically",
+   "importance": "minor"
+  },
+  {
+   "item": "Force-pushing a shared branch breaks teammates' local copies, so notify them first",
+   "importance": "useful"
+  },
+  {
+   "item": "Protected branches will usually reject force push anyway",
+   "importance": "minor"
+  },
+  {
+   "item": "Force-pushing a shared branch breaks teammates' local copies (explains the consequence)",
+   "importance": "useful"
+  },
+  {
+   "item": "Open PR updates automatically after force push",
+   "importance": "minor"
+  },
+  {
+   "item": "Reviewers may need to re-review since line comments can lose anchors after rebase",
+   "importance": "minor"
+  },
+  {
+   "item": "Provides the command in a code block with explicit mention of 'master' as well as main",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Explicit step sequence: fetch, check log, and push only if the log output is empty",
+   "importance": "useful"
+  },
+  {
+   "item": "If log shows others' commits, do not force push; talk to them or rebase on top of their work (alternative)",
+   "importance": "useful"
+  },
+  {
+   "item": "Replace your-branch placeholder with actual branch name in the git log command",
+   "importance": "minor"
+  },
+  {
+   "item": "Check team rules because some repos block force pushes on protected branches",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that if others' commits are found, talk to them or rebase on top of their work (alternative action)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit step-by-step ordering: fetch, log, then push only if output is empty",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes repository rules may block force pushes on protected branches, so check team rules",
+   "importance": "minor"
+  }
+ ]
+}

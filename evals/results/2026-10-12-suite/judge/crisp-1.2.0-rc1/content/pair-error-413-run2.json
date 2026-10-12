@@ -1,0 +1,69 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Alternative suggestion to share a link from cloud storage instead of uploading",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative wording that mentions the ability to choose a smaller file as a next step in the main message",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests showing ERR_UPLOAD_413 in small text as well as in a Details expander for support",
+   "importance": "minor"
+  },
+  {
+   "item": "Lists the specific jargon removed (request entity, payload, configured maximum)",
+   "importance": "minor"
+  },
+  {
+   "item": "Alternative next step: share a link from cloud storage instead",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains what jargon was removed (request entity, payload, configured maximum)",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Notes the assumption that compressing or splitting files is feasible for the users, which flags something to verify",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests keeping the code and technical wording in logs, not just in a Details link",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains the 25 MB limit tells users the target size",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to keep the code and 'Request entity too large' for logs or a Details link for support",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit note that the message states the 25 MB limit so users know the target size",
+   "importance": "minor"
+  },
+  {
+   "item": "Flags the assumption that compressing or splitting files is feasible for the app's users",
+   "importance": "minor"
+  }
+ ]
+}

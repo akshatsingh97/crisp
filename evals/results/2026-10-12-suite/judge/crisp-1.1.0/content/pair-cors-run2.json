@@ -1,0 +1,126 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 4.5,
+  "minor": 4.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Flask example (flask_cors)",
+   "importance": "useful"
+  },
+  {
+   "item": "Generic instruction for other servers: add the Access-Control-Allow-Origin header to responses",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains that a 500 error or redirect lacking CORS headers makes the browser show the CORS message and hide the real error, so check the server logs",
+   "importance": "useful"
+  },
+  {
+   "item": "Dev-server proxy alternative also names Create React App's proxy field",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning to avoid Access-Control-Allow-Origin: * in production unless the API is public and cookie-free",
+   "importance": "useful"
+  },
+  {
+   "item": "Preflight must also send Access-Control-Allow-Methods and Access-Control-Allow-Headers",
+   "importance": "minor"
+  },
+  {
+   "item": "Example of what counts as cross-origin (localhost:3000 vs localhost:8000)",
+   "importance": "minor"
+  },
+  {
+   "item": "Preflight is triggered by an Authorization header (explicit)",
+   "importance": "minor"
+  },
+  {
+   "item": "Flask example using flask_cors",
+   "importance": "useful"
+  },
+  {
+   "item": "Generic fallback for other servers: add the Access-Control-Allow-Origin header manually",
+   "importance": "useful"
+  },
+  {
+   "item": "Preflight response must include Access-Control-Allow-Methods and Access-Control-Allow-Headers",
+   "importance": "useful"
+  },
+  {
+   "item": "A 500 error or redirect lacking CORS headers makes the browser show the CORS message and hide the real error, so check server logs",
+   "useful": "useful",
+   "importance": "useful"
+  },
+  {
+   "item": "Example of cross-origin (localhost:3000 vs localhost:8000)",
+   "importance": "minor"
+  },
+  {
+   "item": "Nginx, API Gateway, and CDN named as proxies that can strip or not add headers",
+   "importance": "minor"
+  },
+  {
+   "item": "CRA proxy field as a dev alternative",
+   "importance": "minor"
+  },
+  {
+   "item": "Avoid Access-Control-Allow-Origin: * in production unless the API is public and cookie-free",
+   "importance": "useful"
+  },
+  {
+   "item": "Ask for the request URL as well as framework and headers",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Find the exact frontend origin and do not add a trailing slash (a mismatch in the origin string is a common cause of failure)",
+   "importance": "useful"
+  },
+  {
+   "item": "Restart the API after the change and verify in the Network tab that the response has Access-Control-Allow-Origin",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit methods and allowedHeaders configuration in the Express example",
+   "importance": "minor"
+  },
+  {
+   "item": "Set credentials: \"include\" on the frontend side when sending cookies",
+   "importance": "minor"
+  },
+  {
+   "item": "Request for failing request and response headers (X also asks for this)",
+   "importance": "minor"
+  },
+  {
+   "item": "Use exact frontend origin without trailing slash",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit Express config with methods and allowedHeaders lists",
+   "importance": "minor"
+  },
+  {
+   "item": "Redirects and error responses (401, 500) must carry the CORS headers (Y covers 500/redirect too, but not 401)",
+   "importance": "minor"
+  },
+  {
+   "item": "Restart the API and verify Access-Control-Allow-Origin in the Network tab",
+   "importance": "useful"
+  }
+ ]
+}

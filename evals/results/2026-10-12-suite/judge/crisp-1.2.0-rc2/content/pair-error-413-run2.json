@@ -1,0 +1,69 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 1.0
+ },
+ "cut_items": [
+  {
+   "item": "Shorter toast/inline alternative message for compact UI contexts",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests sharing a link from cloud storage as an alternative to uploading a large file",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests showing the error code in small text or a 'Details' expander rather than prominently",
+   "importance": "minor"
+  },
+  {
+   "item": "Offers a shorter alternative for a toast or inline message",
+   "importance": "useful"
+  },
+  {
+   "item": "Offers an alternative with an extra next step: share a link from cloud storage instead",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests putting the error code in small text or a 'Details' expander instead of the main message",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that the 'configured maximum' wording was removed as jargon",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Includes the error code ERR_UPLOAD_413 directly in the proposed message so support can find it",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests optionally showing the user's actual file size alongside the limit (e.g., 'Your file is 31 MB')",
+   "importance": "useful"
+  },
+  {
+   "item": "Keeps the error code ERR_UPLOAD_413 visible in the message so support can identify the issue",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggests optionally showing the actual file size (e.g., 'Your file is 31 MB. The maximum is 25 MB.')",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains rationale: the limit is kept so users know the target size",
+   "importance": "minor"
+  }
+ ]
+}

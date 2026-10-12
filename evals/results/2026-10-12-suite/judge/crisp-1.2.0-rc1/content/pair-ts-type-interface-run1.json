@@ -1,0 +1,113 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 5.5
+ },
+ "cut_items": [
+  {
+   "item": "Error messages and hover text often show interface names more clearly, while type aliases may expand into full structure (Y mentions clearer error messages only in a compile-speed context)",
+   "importance": "minor"
+  },
+  {
+   "item": "Check whether the linter enforces a choice, e.g. @typescript-eslint/consistent-type-definitions",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit note that the speed gap rarely matters in practice",
+   "importance": "minor"
+  },
+  {
+   "item": "Library APIs and classes others extend: declaration merging lets users augment them",
+   "importance": "minor"
+  },
+  {
+   "item": "Lint rule @typescript-eslint/consistent-type-definitions can enforce the choice; check whether your project's linter already does",
+   "importance": "useful"
+  },
+  {
+   "item": "Hover text and error messages: type aliases may expand to full structure while interfaces show their name",
+   "importance": "minor"
+  },
+  {
+   "item": "Performance gap rarely matters in practice",
+   "importance": "minor"
+  },
+  {
+   "item": "Declaration merging lets library users augment public interfaces (rationale for library API use)",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "A type alias of an object type is assignable to Record<string, unknown>, but an interface is not (a common practical gotcha)",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete declaration merging example: augmenting the built-in Window interface",
+   "importance": "useful"
+  },
+  {
+   "item": "Use interface to augment global or third-party module types",
+   "importance": "useful"
+  },
+  {
+   "item": "Type is closed and cannot be merged by accident, a reason to prefer type",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation of why interfaces compile faster: cached by name, while intersections are re-evaluated",
+   "importance": "minor"
+  },
+  {
+   "item": "TypeScript team suggests interface until you need a type-only feature",
+   "importance": "minor"
+  },
+  {
+   "item": "Side-by-side example of interface extends vs type intersection for the same shape",
+   "importance": "minor"
+  },
+  {
+   "item": "Conditional type example and fuller examples of what only type can do",
+   "importance": "minor"
+  },
+  {
+   "item": "A type alias of an object type is assignable to Record<string, unknown>, while an interface is not (implicit index signature)",
+   "importance": "useful"
+  },
+  {
+   "item": "Compiler caches interfaces by name but re-evaluates intersections each time (explanation for perf difference)",
+   "importance": "minor"
+  },
+  {
+   "item": "Type aliases are closed and cannot be accidentally merged",
+   "importance": "minor"
+  },
+  {
+   "item": "TypeScript team suggests using interface until you need a type-only feature",
+   "importance": "minor"
+  },
+  {
+   "item": "Example of augmenting the built-in Window via interface merging",
+   "importance": "minor"
+  },
+  {
+   "item": "Example of conditional type and Readonly mapped type, plus type vs interface extension side-by-side example",
+   "importance": "minor"
+  },
+  {
+   "item": "Interfaces suit augmenting global or third-party module types",
+   "importance": "minor"
+  }
+ ]
+}

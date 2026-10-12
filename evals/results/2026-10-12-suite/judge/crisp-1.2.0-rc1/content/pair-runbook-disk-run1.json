@@ -1,0 +1,177 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 4.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 4.5,
+  "minor": 7.5
+ },
+ "cut_items": [
+  {
+   "item": "Concrete command to force log rotation (logrotate -f /etc/logrotate.d/postgresql-common) and instruction to keep current log file",
+   "importance": "useful"
+  },
+  {
+   "item": "du -xh --max-depth=1 sorted breakdown of the data directory to find the largest subdirectory",
+   "importance": "minor"
+  },
+  {
+   "item": "Escalation criteria: over 95%, 'No space left on device' or PANIC in logs, or cause not found within 15 minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Verify target of under 80% usage and pg_wal shrinking after a checkpoint",
+   "importance": "minor"
+  },
+  {
+   "item": "Table mapping each WAL cause (archive failing, inactive slot, replica behind) to an action, including rebuilding a far-behind replica",
+   "importance": "minor"
+  },
+  {
+   "item": "Note that WAL removal after a checkpoint can take a few minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete command to force log rotation (logrotate -f /etc/logrotate.d/postgresql-common)",
+   "importance": "useful"
+  },
+  {
+   "item": "du -x --max-depth=1 sorted output, which shows which subdirectory of the data directory is largest",
+   "importance": "minor"
+  },
+  {
+   "item": "Table mapping each cause to an action, including restarting the replica or consumer for an inactive slot",
+   "importance": "useful"
+  },
+  {
+   "item": "Replica far behind: rebuild the replica as an option",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that WAL cleanup after a checkpoint can take a few minutes",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit escalation criteria: over 95%, 'No space left on device' or PANIC in logs, no cause found within 15 minutes",
+   "importance": "useful"
+  },
+  {
+   "item": "Verification target of under 80% usage, and that pg_wal shrinks after a checkpoint",
+   "importance": "minor"
+  },
+  {
+   "item": "log_statement = all as an example cause of log growth",
+   "importance": "minor"
+  },
+  {
+   "item": "Uses sudo for the commands",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Warns that dropping a replication slot permanently breaks that consumer",
+   "importance": "useful"
+  },
+  {
+   "item": "Query shows how much WAL each replication slot retains (pg_wal_lsn_diff with pg_size_pretty)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains why pg_wal must not be touched: needed for crash recovery",
+   "importance": "useful"
+  },
+  {
+   "item": "States the assumption about where pg_wal lives and says to replace <ver>/main with the real path",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit du commands for pg_wal, base and logs separately",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to read the PostgreSQL log for the archive error",
+   "importance": "minor"
+  },
+  {
+   "item": "Tells the reader that plain VACUUM returns little space to the disk, and that VACUUM FULL locks the table and needs room for a full copy",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns that at 100% PostgreSQL can stop and refuses writes",
+   "importance": "minor"
+  },
+  {
+   "item": "Post-incident step: write up the cause and add prevention such as a retention limit or replication slot monitor",
+   "importance": "minor"
+  },
+  {
+   "item": "Verify that failed_count stops rising and replicas show streaming",
+   "importance": "minor"
+  },
+  {
+   "item": "Restricts the largest-tables query to ordinary tables (relkind = 'r')",
+   "importance": "minor"
+  },
+  {
+   "item": "ls -lhS to list log files by size",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains why pg_wal must not be touched (needed for crash recovery) and that PostgreSQL removes old WAL itself",
+   "importance": "minor"
+  },
+  {
+   "item": "Assumption note that pg_wal lives inside the data directory, with a <ver>/main path placeholder",
+   "importance": "minor"
+  },
+  {
+   "item": "Shows retained WAL size per replication slot (pg_wal_lsn_diff) so the biggest holder is visible",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns that dropping a replication slot permanently breaks its consumer",
+   "importance": "useful"
+  },
+  {
+   "item": "Separate du commands for pg_wal, base and logs, giving a size comparison of the three areas",
+   "importance": "minor"
+  },
+  {
+   "item": "Do not delete the log file PostgreSQL is currently writing",
+   "importance": "useful"
+  },
+  {
+   "item": "Check that failed_count stops rising and replicas show 'streaming' as verification",
+   "importance": "minor"
+  },
+  {
+   "item": "Post-incident follow-up: record the cause and add prevention such as a retention limit or slot monitoring",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns that VACUUM returns little disk space to the OS, and explains that VACUUM FULL locks the table",
+   "importance": "useful"
+  },
+  {
+   "item": "Says that at 100% PostgreSQL can stop and refuse writes",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggests checking for a very low log_min_duration_statement as a cause of log growth",
+   "importance": "minor"
+  },
+  {
+   "item": "Query to list the largest tables restricts to relkind='r'",
+   "importance": "minor"
+  }
+ ]
+}

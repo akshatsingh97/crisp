@@ -1,0 +1,109 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 1.0
+ },
+ "added": {
+  "critical": 0.5,
+  "useful": 3.5,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "localStorage is acceptable for low-risk apps (internal tool, prototype); use cookies for sensitive data, payments, admin roles",
+   "importance": "useful"
+  },
+  {
+   "item": "Cross-domain API with cookies requires CORS with credentials; BFF avoids this",
+   "importance": "useful"
+  },
+  {
+   "item": "Recommends SameSite=Lax cookie for server-set session/JWT as concrete setup",
+   "importance": "minor"
+  },
+  {
+   "item": "localStorage is acceptable for low-risk apps such as internal tools or prototypes, while sensitive data, payments or admin roles warrant cookies",
+   "importance": "useful"
+  },
+  {
+   "item": "Cookie-based setup with a separate API domain needs CORS with credentials; BFF avoids this",
+   "importance": "useful"
+  },
+  {
+   "item": "Server can set the JWT itself as an HttpOnly cookie as a simple alternative",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Concrete SPA pattern: access token in JS memory only, refresh token in HttpOnly cookie scoped to the refresh endpoint, call refresh on page load to get new access token",
+   "importance": "critical"
+  },
+  {
+   "item": "Rotate refresh tokens on each use and revoke the token family on reuse",
+   "importance": "useful"
+  },
+  {
+   "item": "Check Origin header as a CSRF defence alternative to CSRF token",
+   "importance": "minor"
+  },
+  {
+   "item": "Sanitize HTML with DOMPurify",
+   "importance": "useful"
+  },
+  {
+   "item": "Pin dependency versions; server-side revocation",
+   "importance": "minor"
+  },
+  {
+   "item": "Consider Trusted Types for Chromium",
+   "importance": "minor"
+  },
+  {
+   "item": "Avoid unsafe-inline scripts in CSP",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains that localStorage is readable by all scripts including npm dependencies and analytics, and that the victim need not be online for the stolen token to work",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines XSS and CSRF terms",
+   "importance": "minor"
+  },
+  {
+   "item": "Refresh token rotation with revocation of the whole token family on reuse detection",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete SPA pattern: access token in JS memory only, refresh token in HttpOnly cookie scoped to refresh endpoint, call refresh on page load",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains cookie flag meanings (HttpOnly, Secure, SameSite Lax/Strict) and checking Origin header as CSRF defense",
+   "importance": "useful"
+  },
+  {
+   "item": "Extra localStorage mitigations: DOMPurify sanitization, pin dependency versions, server-side revocation, Trusted Types",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains why localStorage is risky: readable by npm deps and analytics, no expiry, no HttpOnly",
+   "importance": "minor"
+  },
+  {
+   "item": "Mitigations reduce but do not remove risk",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines XSS and CSRF",
+   "importance": "minor"
+  }
+ ]
+}

@@ -1,0 +1,266 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 2.5,
+  "useful": 11.5,
+  "minor": 8.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 5.5
+ },
+ "cut_items": [
+  {
+   "item": "Concrete code example of defining a component inside another component causing remount, losing focus and state",
+   "importance": "useful"
+  },
+  {
+   "item": "Table distinguishing element, component, instance, and fiber, with lifetimes",
+   "importance": "minor"
+  },
+  {
+   "item": "Full fiber field list including index, deletions, and more detail on updateQueue, with grouped annotations",
+   "importance": "minor"
+  },
+  {
+   "item": "Worked traversal order example (begin/complete order for an App tree)",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete lastPlacedIndex examples: [A,B,C,D]\u2192[B,C,D,A] moves only A, and \u2192[D,A,B,C] moves A, B, C; moving toward the front is the expensive case",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that array index keys cause state (typed text, focus, checkbox) to attach to wrong rows after reorder/insert/filter",
+   "importance": "critical"
+  },
+  {
+   "item": "Bailout case detail: when childLanes has work, the fiber is not re-rendered but its children are cloned to reach the target",
+   "importance": "useful"
+  },
+  {
+   "item": "By default, when a component re-renders all its children re-render because a new element means new props reference; re-render is not a DOM update, and a wasted render doesn't touch the DOM",
+   "importance": "critical"
+  },
+  {
+   "item": "State setter with same value may still render once more before bailing out",
+   "importance": "minor"
+  },
+  {
+   "item": "setState step marks lanes on the fiber and its alternate; the ancestor childLanes marks are how React finds the dirty fiber",
+   "importance": "minor"
+  },
+  {
+   "item": "Commit sub-phase detail: passive effects cleanup runs before the new effect; useLayoutEffect blocks paint and useEffect does not; setState in a layout effect forces a synchronous re-render before paint",
+   "importance": "useful"
+  },
+  {
+   "item": "The root.current pointer swap explanation: it publishes the new UI in React's bookkeeping; abandoned renders leave nothing half-updated",
+   "importance": "minor"
+  },
+  {
+   "item": "Lane table includes RetryLanes and the typical sources, plus the requestUpdateLane and entangled lanes concept",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete rebasing example (update 1 low, 2 high, 3 low)",
+   "importance": "useful"
+  },
+  {
+   "item": "Automatic batching in React 18 as a feature of shared lanes",
+   "importance": "useful"
+  },
+  {
+   "item": "Suspense in a transition keeps the old UI instead of the fallback; error boundaries unwind via unwindWork; hydration prioritizes parts of the page",
+   "importance": "useful"
+  },
+  {
+   "item": "End-to-end walk-through of a click\u2192setCount update in 10 steps",
+   "importance": "useful"
+  },
+  {
+   "item": "Practical caveats: time slicing works only between fibers so a slow single render can't be split; a large commit still blocks; don't add useMemo everywhere, profile first; moving a component resets its state; effects belong in useEffect",
+   "importance": "critical"
+  },
+  {
+   "item": "Source file map in the React repo (packages/react-reconciler/src) with the role of each file",
+   "importance": "useful"
+  },
+  {
+   "item": "Fiber goals list, including multiple children returns and error boundaries",
+   "importance": "minor"
+  },
+  {
+   "item": "Single-element child reconciliation deletes extra old siblings",
+   "importance": "minor"
+  },
+  {
+   "item": "Pass one of array diffing stops at first key mismatch, and matched pairs update in place (more explicit)",
+   "importance": "minor"
+  },
+  {
+   "item": "Code example of a component defined inside another component causing remount, loss of focus and state",
+   "importance": "useful"
+  },
+  {
+   "item": "Table distinguishing element, component, instance, fiber and their lifetimes",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit Fiber goals list (units of work, pause/abort, priorities, reuse, multiple children, error boundaries) and React 16 2017 history",
+   "importance": "minor"
+  },
+  {
+   "item": "Worked traversal order example for a tree showing begin/complete sequence",
+   "importance": "useful"
+  },
+  {
+   "item": "beginWork per-tag behavior (function, class, host, special types) and renderWithHooks/reconcileChildren flow",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete lastPlacedIndex examples ([A,B,C,D]->[B,C,D,A] vs [D,A,B,C])",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning: index keys cause stale state (typed text, focus, checkbox) on wrong row after reorder/insert/filter",
+   "importance": "critical"
+  },
+  {
+   "item": "Bailout details: two cases with childLanes (skip subtree vs clone children and continue); default behavior that children re-render when parent re-renders; re-render does not equal DOM update",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that same-value setState may still render once more before bailing out",
+   "importance": "minor"
+  },
+  {
+   "item": "useLayoutEffect setState before paint forces synchronous re-render; useLayoutEffect blocks paint while useEffect does not",
+   "importance": "useful"
+  },
+  {
+   "item": "Passive effect cleanup ordering: previous effect cleanup runs before new effect",
+   "importance": "minor"
+  },
+  {
+   "item": "Entangled lanes render together; RetryLanes for Suspense retry; requestUpdateLane/ensureRootIsScheduled function names",
+   "minor": "minor",
+   "importance": "minor"
+  },
+  {
+   "item": "React does not pause/resume mid-tree: render either finishes or is abandoned",
+   "importance": "useful"
+  },
+  {
+   "item": "Automatic batching in React 18 via shared lane",
+   "importance": "useful"
+  },
+  {
+   "item": "Suspense inside a transition keeps old UI instead of fallback; error boundaries via unwindWork",
+   "importance": "useful"
+  },
+  {
+   "item": "Hydration with fibers and selective priority hydration; Server Components mention",
+   "importance": "minor"
+  },
+  {
+   "item": "Limitations: time slicing works between fibers so a slow single render function still blocks; large synchronous commit still blocks",
+   "importance": "critical"
+  },
+  {
+   "item": "Optimize with profiler first; don't add useMemo everywhere",
+   "importance": "useful"
+  },
+  {
+   "item": "Effects/side effects belong in useEffect/useLayoutEffect, not render",
+   "importance": "useful"
+  },
+  {
+   "item": "Step-by-step end-to-end trace of a click update with function names",
+   "importance": "useful"
+  },
+  {
+   "item": "Source file map in React repo to verify details",
+   "importance": "useful"
+  },
+  {
+   "item": "Index field and updateQueue/effect-list detail in fiber anatomy; FiberRoot.current pointer description",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Context propagation: on a provider value change React walks the subtree, marks consumer fibers with lanes and ancestors' childLanes so consumers re-render even through a memo parent",
+   "importance": "useful"
+  },
+  {
+   "item": "Hooks dispatcher swapping between mount and update implementations; calling a hook outside a component causes the familiar error",
+   "importance": "useful"
+  },
+  {
+   "item": "Eager state computation shortcut: if the fiber has no pending work and the next state equals the current under Object.is, the render is skipped entirely",
+   "importance": "useful"
+  },
+  {
+   "item": "useInsertionEffect cleanups are mentioned in the mutation sub-phase",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to move state down or lift content up to limit the subtree React must check",
+   "importance": "useful"
+  },
+  {
+   "item": "isPending reported by transitions; useDeferredValue first renders the old value at urgent priority",
+   "importance": "minor"
+  },
+  {
+   "item": "Inserting at the front without keys makes every following index shift so every child updates",
+   "importance": "minor"
+  },
+  {
+   "item": "Moving the first item to the back costs only one move (the contrast with last-to-front)",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to go deeper on hooks, Suspense unwinding, or lane selection",
+   "importance": "minor"
+  },
+  {
+   "item": "Double buffering analogy to graphics code, and the old tree becomes the spare for the next render",
+   "importance": "minor"
+  },
+  {
+   "item": "Context propagation: on provider value change React walks the subtree, marks consumer fibers with lanes and ancestors' childLanes so consumers re-render despite memo parents",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete rule for eager state bailout: if no pending work and next state equals current under Object.is, skip render entirely",
+   "importance": "minor"
+  },
+  {
+   "item": "Dispatcher swap (mount vs update implementations) and why calling hooks outside a component errors",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to move state down or lift content up to limit re-render subtree",
+   "importance": "useful"
+  },
+  {
+   "item": "Update queue: updates applied in insertion order within processed lanes; skipped updates kept and later rebased (stated generally)",
+   "importance": "minor"
+  },
+  {
+   "item": "Deletions stored in a deletions array on parent; flags list includes Snapshot/Layout",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer of further depth areas (hooks, Suspense unwinding, lane selection)",
+   "importance": "minor"
+  }
+ ]
+}

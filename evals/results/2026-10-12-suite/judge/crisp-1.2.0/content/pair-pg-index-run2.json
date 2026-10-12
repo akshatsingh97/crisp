@@ -1,0 +1,129 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 4.0,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "Failed unique index still enforces uniqueness on new rows (invalid index caveat)",
+   "importance": "useful"
+  },
+  {
+   "item": "Concurrent build holds back vacuum cleanup (xmin horizon) while running",
+   "importance": "useful"
+  },
+  {
+   "item": "Rough index size estimate (10-30% of table size) for disk planning",
+   "importance": "minor"
+  },
+  {
+   "item": "Check for idle-in-transaction sessions specifically before starting",
+   "importance": "minor"
+  },
+  {
+   "item": "Concurrent build holds back vacuum cleanup (xmin horizon) while running",
+   "importance": "useful"
+  },
+  {
+   "item": "Rough index disk-size guide of 10-30% of table size",
+   "importance": "useful"
+  },
+  {
+   "item": "A failed unique index still enforces uniqueness on new rows",
+   "importance": "minor"
+  },
+  {
+   "item": "Idle-in-transaction sessions specifically should be checked",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to tailor advice given column types, version, partitions/replicas",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Set lock_timeout (e.g. 5s) so the build fails fast if it cannot get its brief locks, then retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete query to find long-running transactions in pg_stat_activity",
+   "importance": "useful"
+  },
+  {
+   "item": "Migration tool specifics: Rails disable_ddl_transaction!, Flyway executeInTransaction=false",
+   "importance": "useful"
+  },
+  {
+   "item": "Unique index build can fail due to existing duplicates or duplicates arriving during the build; clean data first",
+   "importance": "useful"
+  },
+  {
+   "item": "Build takes roughly 2-3x longer than a plain build",
+   "importance": "minor"
+  },
+  {
+   "item": "Replicas must replay the build too (replication load)",
+   "importance": "minor"
+  },
+  {
+   "item": "Check for redundant older indexes afterward and drop them with DROP INDEX CONCURRENTLY",
+   "importance": "minor"
+  },
+  {
+   "item": "Test the exact build on a restored copy for a real time estimate",
+   "importance": "minor"
+  },
+  {
+   "item": "Progress query includes phase and blocks/tuples columns",
+   "importance": "minor"
+  },
+  {
+   "item": "Set lock_timeout (e.g. 5s) so the build gives up quickly if it can't get its brief locks, then retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete pg_stat_activity query to find long-running transactions",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete progress-monitoring query columns (phase, blocks_done, etc.)",
+   "importance": "minor"
+  },
+  {
+   "item": "Migration-tool specifics: Rails disable_ddl_transaction!, Flyway executeInTransaction=false",
+   "importance": "useful"
+  },
+  {
+   "item": "Build typically takes 2-3x longer than a plain build",
+   "importance": "minor"
+  },
+  {
+   "item": "Unique index can fail from existing duplicates or duplicates arriving during the build; clean data first",
+   "importance": "useful"
+  },
+  {
+   "item": "Replicas must replay the build too (replica load/disk), temp files and WAL growth on replica disks",
+   "importance": "minor"
+  },
+  {
+   "item": "Post-build: check for redundant older indexes and drop them with DROP INDEX CONCURRENTLY",
+   "importance": "minor"
+  },
+  {
+   "item": "Test the exact build on a restored copy to get a real time estimate",
+   "importance": "minor"
+  }
+ ]
+}

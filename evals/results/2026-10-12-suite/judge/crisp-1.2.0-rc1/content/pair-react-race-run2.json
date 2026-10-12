@@ -1,0 +1,93 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 3.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Explicit explanation that the old effect's async callback closes over setData and writes state regardless of relevance",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete code showing setData(null)/setLoading(true) reset inside the effect when userId changes",
+   "importance": "useful"
+  },
+  {
+   "item": "Mentions RTK Query as another data library option",
+   "importance": "minor"
+  },
+  {
+   "item": "Fix 1 uses async/await with try/catch and marks abort as best option",
+   "importance": "minor"
+  },
+  {
+   "item": "Code example showing setData(null) or setLoading(true) at the start of the effect to clear stale data on userId change",
+   "importance": "minor"
+  },
+  {
+   "item": "async/await version of the abort fix",
+   "importance": "minor"
+  },
+  {
+   "item": "Names RTK Query as an additional data-library option and mentions caching",
+   "importance": "minor"
+  },
+  {
+   "item": "Says the abort fix is best and that the ignore-flag fix suits non-fetch async APIs",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Check that userId is in the effect dependency array, otherwise the effect won't re-run on a switch",
+   "importance": "useful"
+  },
+  {
+   "item": "Apply the stale-guard to setLoading and setError too, not only the data setter",
+   "importance": "useful"
+  },
+  {
+   "item": "Next likely causes if the bug persists after the fix: missing dependency or shared ref",
+   "importance": "minor"
+  },
+  {
+   "item": "React docs recommend data libraries over hand-written fetch effects",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that AbortError is expected and should be ignored, and how the ignore flag works per effect run",
+   "importance": "minor"
+  },
+  {
+   "item": "Ensure userId is in the effect's dependency array, otherwise the effect won't re-run on a switch",
+   "importance": "useful"
+  },
+  {
+   "item": "Apply the same stale guard to setLoading and setError, not only setUser",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit note that React does not cancel the old fetch, so the old .then still calls setState",
+   "importance": "minor"
+  },
+  {
+   "item": "React docs recommend data libraries over hand-written fetch effects",
+   "importance": "minor"
+  },
+  {
+   "item": "If the bug persists, a missing dependency or a shared ref is the next likely cause",
+   "importance": "minor"
+  }
+ ]
+}

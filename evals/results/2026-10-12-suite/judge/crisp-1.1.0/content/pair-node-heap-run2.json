@@ -1,0 +1,153 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 5.0,
+  "minor": 5.0
+ },
+ "added": {
+  "critical": 0.5,
+  "useful": 3.0,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Distinguish a leak from legitimate traffic-driven growth: if memory rises with traffic and falls when traffic stops, you need more headroom rather than a leak fix",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative of starting with `node --inspect` and attaching DevTools",
+   "importance": "minor"
+  },
+  {
+   "item": "Production alternatives for snapshots: `heapdump` module or `v8.writeHeapSnapshot()`",
+   "importance": "useful"
+  },
+  {
+   "item": "Snapshot needs about twice the heap size in free memory (a more conservative figure than Y's)",
+   "importance": "useful"
+  },
+  {
+   "item": "Specific fix for caches: use `lru-cache` with a `max`",
+   "importance": "minor"
+  },
+  {
+   "item": "Additional cause: metrics labels with unbounded values",
+   "importance": "useful"
+  },
+  {
+   "item": "Additional cause: unresolved promises",
+   "importance": "minor"
+  },
+  {
+   "item": "Closure example: keeping request or response objects alive",
+   "importance": "minor"
+  },
+  {
+   "item": "Use the 'Objects allocated between Snapshot 1 and Snapshot 2' view and sort by retained size",
+   "importance": "minor"
+  },
+  {
+   "item": "Verification step: run a load test and watch heapUsed for several hours for a stable band",
+   "importance": "useful"
+  },
+  {
+   "item": "Restart automatically with a process manager or Kubernetes as a safety net",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to search the code in the directory for these patterns",
+   "importance": "minor"
+  },
+  {
+   "item": "Distinguish a leak from legitimate load: if memory rises with traffic and falls when traffic stops, you need headroom, not a leak fix",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative to trigger snapshots: node --inspect, plus heapdump or v8.writeHeapSnapshot() for production",
+   "importance": "useful"
+  },
+  {
+   "item": "Snapshot needs about twice the heap size in free memory",
+   "importance": "useful"
+  },
+  {
+   "item": "Specific causes: metrics labels with unbounded values, closures holding request/response objects, unresolved promises",
+   "importance": "useful"
+  },
+  {
+   "item": "Recommends the lru-cache package with a max",
+   "importance": "minor"
+  },
+  {
+   "item": "Verify the fix with a load test and watch heapUsed for several hours, looking for a stable band",
+   "importance": "useful"
+  },
+  {
+   "item": "Restart automatically via a process manager or Kubernetes (X also says restart on a schedule or threshold)",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to search the code directory for the patterns",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Heap snapshots can contain sensitive data such as tokens and user data, so handle the files carefully",
+   "importance": "critical"
+  },
+  {
+   "item": "Warning that setting max-old-space-size too high lets the OS OOM-kill the process instead",
+   "importance": "useful"
+  },
+  {
+   "item": "Exact command to trigger the snapshot: `kill -USR2 <pid>`, with explicit take-snapshot-at-start step",
+   "importance": "useful"
+  },
+  {
+   "item": "Use the 'Comparison' view and sort by 'Size Delta' to find the growing constructors",
+   "importance": "useful"
+  },
+  {
+   "item": "Option to restart on a schedule or when memory passes a threshold",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanations of GC, TTL and LRU terms",
+   "importance": "minor"
+  },
+  {
+   "item": "Ask for the top growing constructors from the comparison, and for the deployment type (container or VM)",
+   "importance": "minor"
+  },
+  {
+   "item": "Snapshot file contains sensitive data (tokens, user data); handle with care",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit step to send kill -USR2 <pid> to trigger the snapshot, and the Comparison view sorted by Size Delta",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that too-high max-old-space-size causes an OS OOM kill instead",
+   "importance": "useful"
+  },
+  {
+   "item": "Unbounded queues when a downstream service is slow (also in Y as growing queues)",
+   "importance": "minor"
+  },
+  {
+   "item": "Definitions of GC, TTL and LRU",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to analyze the top growing constructors from the comparison",
+   "importance": "minor"
+  }
+ ]
+}

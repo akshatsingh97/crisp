@@ -1,0 +1,117 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 5.5,
+  "minor": 1.5
+ },
+ "cut_items": [
+  {
+   "item": "Only retry on network errors, 5xx and 429; do not retry card declines or other 4xx errors",
+   "importance": "useful"
+  },
+  {
+   "item": "Stripe SDK maxNetworkRetries retries automatically with idempotency key, but conflicts/redundant if you also run your own retry loop",
+   "importance": "useful"
+  },
+  {
+   "item": "/v1/charges is the legacy API; PaymentIntents is the recommended replacement and handles retries better (also in Y as recommendation, but X states legacy status)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit step-by-step scenario of how double charge happens (response lost after charge succeeded)",
+   "importance": "minor"
+  },
+  {
+   "item": "Examples of stable key sources such as checkout-session ID (Y has order ID/UUID too)",
+   "importance": "minor"
+  },
+  {
+   "item": "Stripe SDK's maxNetworkRetries auto-retries with an idempotency key, but combining it with your own retry loop undermines/duplicates retrying",
+   "importance": "useful"
+  },
+  {
+   "item": "Only retry on network errors, 5xx and 429; don't retry card declines or other 4xx errors",
+   "importance": "useful"
+  },
+  {
+   "item": "Step-by-step explanation of how the double charge happens (response lost after Stripe charged the card)",
+   "importance": "minor"
+  },
+  {
+   "item": "/v1/charges is the legacy API",
+   "importance": "minor"
+  },
+  {
+   "item": "Page refresh can also cause duplicates",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "After the 24-hour key expiry window, do not retry with the same key; check charge state first",
+   "importance": "useful"
+  },
+  {
+   "item": "Use a new key for a new purchase attempt; if cart or card changes, do not reuse the old key",
+   "importance": "useful"
+  },
+  {
+   "item": "Stripe saves and replays the result of the first request including errors, so a retry with the same key returns the same error",
+   "importance": "useful"
+  },
+  {
+   "item": "If the outcome cannot be confirmed after retries, look up the charge (by order ID in metadata or the dashboard) before creating a new one",
+   "importance": "useful"
+  },
+  {
+   "item": "Two server workers handling the same order can also double-charge; derive key from order ID",
+   "importance": "useful"
+  },
+  {
+   "item": "If retry logic wraps more than the Stripe call (e.g., order creation), the key must stay the same across all retries",
+   "importance": "useful"
+  },
+  {
+   "item": "A network error does not prove the charge failed",
+   "importance": "minor"
+  },
+  {
+   "item": "Use a new key for a new purchase attempt; if cart or card changes, don't reuse the old key",
+   "importance": "useful"
+  },
+  {
+   "item": "Stripe also saves and replays errors for a key, so a retry with the same key returns the same error result",
+   "importance": "useful"
+  },
+  {
+   "item": "After the 24-hour key window, don't retry with the same key; check the charge state first",
+   "importance": "useful"
+  },
+  {
+   "item": "If outcome can't be confirmed after retries, look up the charge (metadata order ID or dashboard) before creating a new one",
+   "importance": "useful"
+  },
+  {
+   "item": "If retry logic wraps more than the Stripe call (e.g. order creation), the key must stay the same across all retries",
+   "importance": "useful"
+  },
+  {
+   "item": "Two server workers handling the same order can both create charges; a shared order-ID-derived key fixes it",
+   "importance": "minor"
+  },
+  {
+   "item": "Definition of idempotency key and step-by-step fix list",
+   "importance": "minor"
+  }
+ ]
+}

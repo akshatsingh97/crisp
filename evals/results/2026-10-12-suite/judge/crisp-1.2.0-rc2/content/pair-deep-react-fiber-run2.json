@@ -1,0 +1,305 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.5,
+  "useful": 14.0,
+  "minor": 6.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 8.0,
+  "minor": 6.5
+ },
+ "cut_items": [
+  {
+   "item": "Table distinguishing element, component, instance, fiber with lifetimes",
+   "importance": "minor"
+  },
+  {
+   "item": "Position-based state: state belongs to tree position; moving component resets state",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete code example of inner component defined in body causing remount/lost focus",
+   "importance": "minor"
+  },
+  {
+   "item": "Example begin/complete traversal order on a sample tree",
+   "importance": "useful"
+  },
+  {
+   "item": "lastPlacedIndex worked examples ([A,B,C,D]\u2192[B,C,D,A] moves only A; \u2192[D,A,B,C] moves three) and note that moving toward front is expensive",
+   "importance": "useful"
+  },
+  {
+   "item": "React 18 replaced effect list with subtreeFlags (history from 16/17)",
+   "importance": "minor"
+  },
+  {
+   "item": "Bailout details: skipped subtree vs cloning children; wasted render doesn't touch DOM; setState with same value may still render once more",
+   "importance": "useful"
+  },
+  {
+   "item": "Detailed setState steps (pick lane, append update, mark lanes on fiber and alternate, childLanes on ancestors)",
+   "importance": "useful"
+  },
+  {
+   "item": "SyncLane work runs in a microtask without yielding; entangled lanes render together",
+   "importance": "useful"
+  },
+  {
+   "item": "Rebasing updates worked example with base queue (low/high/low priority updates)",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit statement that React does not pause/resume a partial tree; it either finishes or abandons and restarts",
+   "importance": "useful"
+  },
+  {
+   "item": "Automatic batching in React 18 via shared lane",
+   "importance": "useful"
+  },
+  {
+   "item": "Hydration uses fibers; selective hydration in priority order",
+   "importance": "minor"
+  },
+  {
+   "item": "Detailed 10-step end-to-end click-to-paint walkthrough",
+   "importance": "useful"
+  },
+  {
+   "item": "Practical caveats: time slicing works between fibers not inside one slow function; commit with thousands of DOM changes blocks; profile before adding memo/useMemo; useDeferredValue vs transitions guidance",
+   "importance": "useful"
+  },
+  {
+   "item": "Reading useLayoutEffect and setting state forces synchronous re-render before paint; useLayoutEffect blocks paint, useEffect doesn't",
+   "importance": "useful"
+  },
+  {
+   "item": "Pass-one array diffing with unkeyed handling; changing key resets state noted explicitly",
+   "importance": "minor"
+  },
+  {
+   "item": "Cleanup of previous effect before new one; pending passive effects flushed before new render",
+   "importance": "useful"
+  },
+  {
+   "item": "Source file map including ReactFiber.js, ReactFiberHooks.js, ReactFiberCommitWork.js",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete code example of component-defined-inside-component remount bug",
+   "importance": "useful"
+  },
+  {
+   "item": "State belongs to tree position; unkeyed children matched by index",
+   "importance": "useful"
+  },
+  {
+   "item": "Elements vs component vs instance vs fiber table including lifetimes",
+   "importance": "minor"
+  },
+  {
+   "item": "Worked traversal order example for begin/complete on a sample tree",
+   "importance": "useful"
+  },
+  {
+   "item": "History note: React 16/17 effect list replaced by subtreeFlags in 18",
+   "importance": "minor"
+  },
+  {
+   "item": "lastPlacedIndex worked examples showing which moves are expensive ([B,C,D,A] vs [D,A,B,C])",
+   "importance": "useful"
+  },
+  {
+   "item": "Re-rendering is not DOM updating; wasted render doesn't touch DOM; optimize with profiler first, don't add useMemo everywhere",
+   "importance": "useful"
+  },
+  {
+   "item": "Same-value setState may skip scheduling but sometimes still renders once more",
+   "importance": "useful"
+  },
+  {
+   "item": "Rules of Hooks explained: conditional hooks shift nodes",
+   "importance": "useful"
+  },
+  {
+   "item": "setState steps: marks lanes on fiber and alternate, ancestors childLanes",
+   "importance": "minor"
+  },
+  {
+   "item": "Reading layout in layout effect and setting state forces synchronous re-render before paint",
+   "importance": "minor"
+  },
+  {
+   "item": "Passive effects flushed before any new render starts",
+   "importance": "useful"
+  },
+  {
+   "item": "SyncLane work runs in a microtask without yielding; ensureRootIsScheduled; entangled lanes render together",
+   "importance": "useful"
+  },
+  {
+   "item": "React does not pause/resume mid-tree; it either finishes or abandons a render",
+   "importance": "useful"
+  },
+  {
+   "item": "Worked rebasing example with three updates of mixed priority",
+   "importance": "useful"
+  },
+  {
+   "item": "Automatic batching in React 18",
+   "importance": "useful"
+  },
+  {
+   "item": "Error boundaries via unwindWork, hydration with fibers, selective hydration",
+   "importance": "useful"
+  },
+  {
+   "item": "Fiber goals include multiple children return and error boundaries",
+   "importance": "minor"
+  },
+  {
+   "item": "Time slicing works between fibers, not inside one slow function; commit with thousands of DOM changes still blocks",
+   "importance": "critical"
+  },
+  {
+   "item": "Full end-to-end worked example of a click update with 10 steps",
+   "importance": "useful"
+  },
+  {
+   "item": "Source files map including ReactFiberHooks and ReactFiber",
+   "importance": "minor"
+  },
+  {
+   "item": "Use transitions for filtering vs useDeferredValue when value comes from outside; move state down",
+   "importance": "useful"
+  },
+  {
+   "item": "Both heuristics can be wrong in unusual cases",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Vocabulary of renderer and note that 'virtual DOM' is not a separate object",
+   "importance": "minor"
+  },
+  {
+   "item": "Fiber fields elementType/type difference and dependencies field",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete reconcileSingleElement algorithm (key match with type mismatch deletes all remaining; loop over children)",
+   "importance": "useful"
+  },
+  {
+   "item": "Example [A,B,C]\u2192[C,A,B] showing two moves where one would suffice (limitation)",
+   "importance": "useful"
+  },
+  {
+   "item": "Context propagation: provider change walks subtree and marks consumers; memo does not block context updates",
+   "importance": "useful"
+  },
+  {
+   "item": "Passing same element reference via children from stable parent bails out",
+   "importance": "useful"
+  },
+  {
+   "item": "Effects order: children before parents, all cleanups before setups",
+   "importance": "useful"
+  },
+  {
+   "item": "Dispatcher swap on mount vs update; hook nodes cloned into work-in-progress; discarded render leaves committed state intact",
+   "importance": "useful"
+  },
+  {
+   "item": "prepareFreshStack on interruption restarts",
+   "importance": "minor"
+  },
+  {
+   "item": "Renderer boundary / host config functions (createInstance, appendChild, commitUpdate etc.) enabling React Native and custom renderers",
+   "importance": "useful"
+  },
+  {
+   "item": "Virtualization advice for long lists since reconciliation visits every item",
+   "importance": "useful"
+  },
+  {
+   "item": "DevTools Profiler and Highlight updates for observing renders",
+   "importance": "useful"
+  },
+  {
+   "item": "Code of performUnitOfWork and workLoopSync",
+   "importance": "minor"
+  },
+  {
+   "item": "Multiple transition lanes so independent transitions don't entangle",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to use useLayoutEffect only for pre-paint measurement",
+   "importance": "minor"
+  },
+  {
+   "item": "Vocabulary section defining renderer and noting 'virtual DOM' is informal naming with no separate object",
+   "importance": "minor"
+  },
+  {
+   "item": "Detailed reconcileSingleElement logic (key match with differing type deletes all remaining siblings; non-matching key deletes and continues)",
+   "importance": "useful"
+  },
+  {
+   "item": "Code for performUnitOfWork and workLoopSync/shouldYield in more detail, plus memoizedProps assignment",
+   "importance": "minor"
+  },
+  {
+   "item": "Context propagation behavior: provider value change walks subtree marking consumers, so memo doesn't block context updates",
+   "importance": "useful"
+  },
+  {
+   "item": "Passing the same element reference (e.g. children from stable parent) bails out",
+   "importance": "useful"
+  },
+  {
+   "item": "Renderer boundary: react-reconciler package and host config functions (createInstance, appendChild, commitUpdate etc.); React Native and custom renderers",
+   "importance": "useful"
+  },
+  {
+   "item": "Effect ordering: children before parents, all cleanups before any new setups in a flush",
+   "importance": "useful"
+  },
+  {
+   "item": "Changing a key on purpose resets component state (explicit in key section)",
+   "importance": "minor"
+  },
+  {
+   "item": "Practical tip: virtualization for long lists since reconciliation visits every item",
+   "importance": "useful"
+  },
+  {
+   "item": "Practical tip: useLayoutEffect only for pre-paint measurement since it blocks paint",
+   "importance": "minor"
+  },
+  {
+   "item": "DevTools Profiler / Highlight updates as ways to observe",
+   "importance": "minor"
+  },
+  {
+   "item": "Aborting render costs nothing and fiber object recycling reduces allocation (double buffering benefits)",
+   "importance": "minor"
+  },
+  {
+   "item": "Hook dispatcher swap between mount and update; on update hook nodes are cloned into work-in-progress fiber",
+   "importance": "useful"
+  },
+  {
+   "item": "Starvation detail and Strict Mode double-invoke dev note",
+   "importance": "minor"
+  }
+ ]
+}

@@ -1,0 +1,129 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 4.5,
+  "minor": 6.0
+ },
+ "cut_items": [
+  {
+   "item": "Origin has no path and no trailing slash (common misconfiguration)",
+   "importance": "useful"
+  },
+  {
+   "item": "CORS middleware registered after routes is a cause (also in Y) \u2013 n/a",
+   "importance": "minor"
+  },
+  {
+   "item": "Browser sends Origin header and server must echo it; explanation of mechanism",
+   "importance": "minor"
+  },
+  {
+   "item": "Origin must have no path and no trailing slash (e.g., https://app.example.com)",
+   "importance": "useful"
+  },
+  {
+   "item": "Note that the listed libraries handle preflight automatically while manual setups often miss it",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit mention of nginx/API Gateway needing headers added or passed through",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Restart API and verify Access-Control-Allow-Origin appears in Network tab",
+   "importance": "useful"
+  },
+  {
+   "item": "Generic raw header set for any other server/framework",
+   "importance": "useful"
+  },
+  {
+   "item": "Test with curl -i to see true status behind CORS message",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not use fetch mode 'no-cors'; it gives unreadable response",
+   "importance": "useful"
+  },
+  {
+   "item": "If you don't control the API: dev proxy, and in production call your own backend which calls the third-party API",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit methods/allowedHeaders config in Express example",
+   "importance": "minor"
+  },
+  {
+   "item": "Trailing slash/http vs https URL adjustments for redirects",
+   "importance": "minor"
+  },
+  {
+   "item": "Failed preflight means real request never runs",
+   "importance": "minor"
+  },
+  {
+   "item": "Example of cross-origin: localhost:3000 calling localhost:8000",
+   "importance": "minor"
+  },
+  {
+   "item": "Avoid wildcard with cookie auth; allow only trusted origins",
+   "importance": "minor"
+  },
+  {
+   "item": "Generic fallback: any other server should send Access-Control-Allow-Origin/Methods/Headers response headers (raw header example)",
+   "importance": "useful"
+  },
+  {
+   "item": "Verify fix by checking the response in the browser Network tab for Access-Control-Allow-Origin",
+   "importance": "minor"
+  },
+  {
+   "item": "Use curl -i to test the API directly and see the true status behind a CORS error",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not use fetch mode 'no-cors'; it hides the error and gives an unreadable response",
+   "importance": "useful"
+  },
+  {
+   "item": "Production alternative if you don't control the API: call your own backend which calls the third-party API",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit mention that the dev proxy/third-party case applies when you don't control the API",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit example that localhost:3000 calling localhost:8000 is cross-origin",
+   "importance": "minor"
+  },
+  {
+   "item": "Restart the API after changing and retry",
+   "importance": "minor"
+  },
+  {
+   "item": "Express example with explicit methods and allowedHeaders configuration",
+   "importance": "minor"
+  },
+  {
+   "item": "Check the error comes from the right URL (proxy/load balancer/gateway returning error page)",
+   "importance": "minor"
+  },
+  {
+   "item": "Avoid wildcard * on APIs with cookie auth/private data (stated generally, not only production)",
+   "importance": "minor"
+  }
+ ]
+}

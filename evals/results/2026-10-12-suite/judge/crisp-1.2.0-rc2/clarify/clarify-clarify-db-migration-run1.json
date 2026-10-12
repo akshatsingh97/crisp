@@ -1,0 +1,14 @@
+{
+ "kept": [
+  true,
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "added_facts": [
+  "Run the lock_timeout setting before the ALTER TABLE as a step (set lock_timeout before the ALTER TABLE)",
+  "The version check result decides how risky the migration is"
+ ]
+}

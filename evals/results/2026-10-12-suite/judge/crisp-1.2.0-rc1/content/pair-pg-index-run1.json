@@ -1,0 +1,157 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 6.5,
+  "minor": 5.5
+ },
+ "cut_items": [
+  {
+   "item": "Set a short lock_timeout so the build doesn't queue behind a blocked lock",
+   "importance": "useful"
+  },
+  {
+   "item": "Partitioned tables: CONCURRENTLY not supported on parent; build per partition then attach",
+   "importance": "useful"
+  },
+  {
+   "item": "Check for duplicates before building a unique index",
+   "importance": "useful"
+  },
+  {
+   "item": "Query to find invalid indexes (WHERE NOT indisvalid) across the database",
+   "importance": "minor"
+  },
+  {
+   "item": "Verify with EXPLAIN that the new index is used (Y also mentions this)",
+   "importance": "minor"
+  },
+  {
+   "item": "Set a short lock_timeout so the build does not queue behind a blocked lock",
+   "importance": "useful"
+  },
+  {
+   "item": "Partitioned tables: CONCURRENTLY can't be used on the parent; build on each partition then attach",
+   "importance": "useful"
+  },
+  {
+   "item": "Pre-check for duplicates before building a unique index",
+   "importance": "minor"
+  },
+  {
+   "item": "Query to find all invalid indexes database-wide (WHERE NOT indisvalid)",
+   "importance": "minor"
+  },
+  {
+   "item": "Idle-in-transaction session can stall build for hours",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "SHARE UPDATE EXCLUSIVE lock blocks other schema changes and manual VACUUM; autovacuum may cancel itself",
+   "importance": "useful"
+  },
+  {
+   "item": "Example of disabling the migration transaction in Rails (disable_ddl_transaction!)",
+   "importance": "useful"
+  },
+  {
+   "item": "Run off-peak because the build competes with production traffic",
+   "importance": "useful"
+  },
+  {
+   "item": "Don't set maintenance_work_mem so high that it risks OOM with other sessions",
+   "importance": "useful"
+  },
+  {
+   "item": "max_parallel_maintenance_workers (PG11+) can speed the build but adds load",
+   "importance": "minor"
+  },
+  {
+   "item": "Reconsider whether the index is worth it; partial index or fewer columns reduces size and write cost",
+   "importance": "useful"
+  },
+  {
+   "item": "Run in psql or a terminal multiplexer so a dropped connection doesn't kill the build",
+   "importance": "useful"
+  },
+  {
+   "item": "pg_stat_progress_create_index requires Postgres 12+",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit recovery steps for failure: find invalid index, DROP INDEX CONCURRENTLY, fix cause, retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Duplicates can appear during the build and cause unique index failure",
+   "importance": "minor"
+  },
+  {
+   "item": "Run ANALYZE afterwards if the planner doesn't pick up the index",
+   "importance": "minor"
+  },
+  {
+   "item": "Concurrent build holds SHARE UPDATE EXCLUSIVE lock, blocking other schema changes and manual VACUUM; autovacuum may cancel",
+   "importance": "useful"
+  },
+  {
+   "item": "Parallel maintenance workers (max_parallel_maintenance_workers, PG11+) can speed build but add load",
+   "importance": "minor"
+  },
+  {
+   "item": "Run during off-peak hours because build competes with production traffic",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning not to set maintenance_work_mem so high it risks OOM with other sessions",
+   "importance": "minor"
+  },
+  {
+   "item": "Test the exact statement on a staging copy and note duration",
+   "importance": "useful"
+  },
+  {
+   "item": "Consider a partial index or fewer columns to reduce size and write cost",
+   "importance": "useful"
+  },
+  {
+   "item": "Run in psql or terminal multiplexer so a dropped connection does not kill the build",
+   "importance": "useful"
+  },
+  {
+   "item": "pg_stat_progress_create_index needs PG12+ (version note)",
+   "importance": "minor"
+  },
+  {
+   "item": "Full verification query listing indisvalid for the table's indexes",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete recovery steps if it fails: find invalid index, DROP INDEX CONCURRENTLY, fix cause, rerun",
+   "importance": "useful"
+  },
+  {
+   "item": "Run ANALYZE afterward if planner does not pick up the index",
+   "importance": "minor"
+  },
+  {
+   "item": "Rails example disable_ddl_transaction!",
+   "importance": "minor"
+  },
+  {
+   "item": "Unique index can also fail from duplicates appearing during the build",
+   "importance": "minor"
+  }
+ ]
+}

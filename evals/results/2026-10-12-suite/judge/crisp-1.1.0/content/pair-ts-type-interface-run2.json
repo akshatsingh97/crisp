@@ -1,0 +1,93 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.0,
+  "minor": 5.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 1.0
+ },
+ "cut_items": [
+  {
+   "item": "Comparison table including function types and primitives only as object members for interface, and class implementation caveat (type must be object type)",
+   "importance": "minor"
+  },
+  {
+   "item": "interface extends reports conflicting property types as an error, whereas & intersection silently reduces conflicting property to never",
+   "importance": "useful"
+  },
+  {
+   "item": "Interfaces check faster because TypeScript caches them by name (explanation of performance)",
+   "importance": "minor"
+  },
+  {
+   "item": "Interface is not assignable to index-signature types like Record<string, unknown>, while type alias of object literal is; switching to type fixes the error",
+   "importance": "useful"
+  },
+  {
+   "item": "Concrete examples of function type, keyof derived type, and conditional type; example of declaration merging use cases (extending Window, Express Request)",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit example showing duplicate type identifier error",
+   "importance": "minor"
+  },
+  {
+   "item": "Interface extends reports conflicting property types as an error, while & intersection silently reduces conflicts to never",
+   "importance": "useful"
+  },
+  {
+   "item": "Interfaces are not assignable to index-signature types like Record<string, unknown>, while type aliases are; switching to type fixes it",
+   "importance": "useful"
+  },
+  {
+   "item": "Real-world examples of declaration merging use: augmenting Window or Express Request",
+   "importance": "minor"
+  },
+  {
+   "item": "Class can implement a type only if it is an object type",
+   "importance": "minor"
+  },
+  {
+   "item": "Function types and keyof derived type examples; conditional type example code",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete duplicate identifier error example for type",
+   "importance": "minor"
+  },
+  {
+   "item": "Common rule: interface by default, type when needing extra features",
+   "importance": "minor"
+  },
+  {
+   "item": "Interfaces check faster because TypeScript caches them by name (X mentions faster checking but not the reason)",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Warning that declaration merging can hide mistakes: accidentally reusing an interface name merges silently without warning",
+   "importance": "useful"
+  },
+  {
+   "item": "Interfaces often give clearer error messages for object shapes",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that declaration merging can hide mistakes: accidentally reusing an interface name merges silently",
+   "importance": "useful"
+  },
+  {
+   "item": "Both can describe objects and a class can implement either (Y also covers this)",
+   "importance": "minor"
+  }
+ ]
+}

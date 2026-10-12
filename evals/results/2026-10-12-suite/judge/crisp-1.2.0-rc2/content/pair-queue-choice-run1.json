@@ -1,0 +1,133 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 1.0,
+  "useful": 4.0,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 3.5
+ },
+ "cut_items": [
+  {
+   "item": "Redis must be configured with maxmemory-policy noeviction (plus AOF) or it can evict queued jobs when memory is full",
+   "importance": "critical"
+  },
+  {
+   "item": "With Redis, job enqueue and DB write are not atomic, so a crash between them can lose or duplicate a job (dual-write problem)",
+   "importance": "useful"
+  },
+  {
+   "item": "Postgres queue with heavy churn needs regular vacuuming or the table bloats",
+   "importance": "useful"
+  },
+  {
+   "item": "BullMQ flows (parent/child jobs) and dashboard ecosystem",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis handles high volume with less load than a polling table",
+   "importance": "minor"
+  },
+  {
+   "item": "Both options are at-least-once delivery",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit advice not to add Redis only for the queue; move when a real limit is measured",
+   "importance": "useful"
+  },
+  {
+   "item": "Set Redis maxmemory-policy noeviction, otherwise Redis can drop queued jobs when memory is full",
+   "importance": "critical"
+  },
+  {
+   "item": "Redis job and DB write are not atomic, so a crash between them can lose or repeat a job (the dual-write problem)",
+   "importance": "useful"
+  },
+  {
+   "item": "Both options give at-least-once delivery, so every job must be idempotent",
+   "importance": "useful"
+  },
+  {
+   "item": "BullMQ flows (parent/child jobs) and dashboard ecosystem",
+   "importance": "minor"
+  },
+  {
+   "item": "Recommendation not to add Redis solely for the queue; move only when a real limit is measured",
+   "importance": "useful"
+  },
+  {
+   "item": "Postgres queue with heavy churn needs regular vacuuming; the libraries manage this but verify",
+   "importance": "useful"
+  },
+  {
+   "item": "Higher Postgres throughput threshold (~1,000 jobs/s) as the cutoff",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Long-running transactions in the same database can slow queue polling",
+   "importance": "useful"
+  },
+  {
+   "item": "Delete or archive finished jobs regularly to limit bloat",
+   "importance": "useful"
+  },
+  {
+   "item": "Keep job handlers separate from the queue library to ease later migration to BullMQ",
+   "importance": "useful"
+  },
+  {
+   "item": "Check your hosting provider's Redis persistence defaults",
+   "importance": "minor"
+  },
+  {
+   "item": "Jobs survive restarts and can be queried with plain SQL",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains SKIP LOCKED and AOF in parentheses",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions Redis delayed jobs as a BullMQ feature",
+   "importance": "minor"
+  },
+  {
+   "item": "Long-running transactions in the same database can slow queue polling in a Postgres queue",
+   "importance": "useful"
+  },
+  {
+   "item": "Delete or archive finished jobs regularly to limit table bloat and write load",
+   "importance": "useful"
+  },
+  {
+   "item": "Jobs survive restarts and can be queried with plain SQL in Postgres",
+   "importance": "minor"
+  },
+  {
+   "item": "Redis without persistence settings (AOF) can lose jobs on a crash; check hosting provider defaults",
+   "importance": "useful"
+  },
+  {
+   "item": "Keep job handlers separate from the queue library to ease migrating to BullMQ later",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggested migration path: start with pg-boss or Graphile Worker and move to BullMQ if throughput becomes a problem",
+   "importance": "minor"
+  },
+  {
+   "item": "BullMQ offers delayed jobs and a mature ecosystem; Redis has low latency",
+   "importance": "minor"
+  }
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 3.5,
+  "minor": 3.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.0,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Before/after code example for init() showing the migration",
+   "importance": "useful"
+  },
+  {
+   "item": "States that init() fails if apiKey is omitted",
+   "importance": "useful"
+  },
+  {
+   "item": "Code example of on('error') handler with a callback signature (err) and console.error usage",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains the benefit of the memory leak fix: long-running apps that reconnect often keep steady memory use",
+   "importance": "minor"
+  },
+  {
+   "item": "Upgrade steps checklist (add apiKey, check retry default, optionally add error handler)",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that the SDK object name 'sdk' is assumed and the retry option name is unknown, to be replaced before publishing",
+   "importance": "minor"
+  },
+  {
+   "item": "Advises reviewing whether the new default of 5 retries suits the app",
+   "importance": "minor"
+  },
+  {
+   "item": "Example code for on('error') handler usage showing how to listen to errors",
+   "importance": "useful"
+  },
+  {
+   "item": "Before/after code example for init() that preserves existing options alongside apiKey",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit upgrade steps checklist, including verifying whether 5 retries suits the app and optional error handler",
+   "importance": "useful"
+  },
+  {
+   "item": "Impact of the memory leak fix: long-running apps that reconnect often will keep steady memory use",
+   "importance": "minor"
+  },
+  {
+   "item": "States that init() fails if apiKey is omitted",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat to replace the placeholder SDK object name (`sdk`) before publishing",
+   "importance": "minor"
+  },
+  {
+   "item": "Advice to check if the new retry default of 5 is right and set it explicitly if not",
+   "importance": "useful"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Instructs to find every init() call in the code before upgrading",
+   "importance": "minor"
+  },
+  {
+   "item": "Caveat that the on('error') handler signature is unknown and not specified in the notes",
+   "importance": "minor"
+  },
+  {
+   "item": "States the leak occurred on each websocket reconnect",
+   "importance": "minor"
+  },
+  {
+   "item": "Notes that the handler signature for on('error') is unknown (partial overlap with Y's caveat about unknown names)",
+   "importance": "minor"
+  }
+ ]
+}

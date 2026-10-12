@@ -1,0 +1,89 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 3.0,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "Open PRs update automatically after force push, but line comments may lose anchors and reviewers may need to re-review",
+   "importance": "useful"
+  },
+  {
+   "item": "Protected branches like main/master usually reject force pushes anyway",
+   "importance": "minor"
+  },
+  {
+   "item": "Open PR updates automatically after force push; reviewers may need to re-review because line comments can lose anchors after a rebase",
+   "importance": "useful"
+  },
+  {
+   "item": "Protected branches usually reject force pushes anyway",
+   "importance": "minor"
+  },
+  {
+   "item": "Advises looking at unfamiliar commits shown by git log before overwriting",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "If --force-with-lease is rejected, someone pushed new commits: fetch, review, and rebase onto them again before retrying",
+   "importance": "useful"
+  },
+  {
+   "item": "Teammates sharing the branch must fetch and rebase onto or reset to the new history, otherwise their next push can bring the old commits back",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative for shared branches: merge the target branch into the feature branch instead of rebasing so a normal push works",
+   "importance": "useful"
+  },
+  {
+   "item": "Empty output from git log HEAD..origin/<branch> means no commits would be lost",
+   "importance": "minor"
+  },
+  {
+   "item": "Lost commits from plain --force are hard to recover",
+   "importance": "minor"
+  },
+  {
+   "item": "Also avoid force pushing shared branches such as develop",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains that if --force-with-lease is rejected, someone pushed new commits: fetch, review, and rebase onto them again before retrying",
+   "importance": "useful"
+  },
+  {
+   "item": "Alternative: if the branch is shared and force push isn't possible, merge the target branch instead of rebasing so a normal push works",
+   "importance": "useful"
+  },
+  {
+   "item": "Teammates must run git fetch and rebase onto origin/<branch> or reset to the new history, otherwise their next push can reintroduce old commits",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit explicit note that empty output from git log HEAD..origin/<branch> means no commits would be lost",
+   "importance": "minor"
+  },
+  {
+   "item": "Plain --force-lost commits are hard to recover",
+   "importance": "minor"
+  },
+  {
+   "item": "Never force push to shared branches such as develop (beyond main)",
+   "importance": "minor"
+  }
+ ]
+}

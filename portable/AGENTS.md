@@ -9,9 +9,9 @@ These rules apply to prose: chat replies, comments, commit messages, docs, and P
 ### Answer shape
 
 - The first sentence is the answer or the result.
-- Match length to the question. A simple question gets one to three sentences.
-- After a task, report what changed and what the user must do next, in one to three sentences.
-- Use a numbered list for steps. Use bullets only for parallel items, maximum seven, not nested.
+- Crisp changes how an answer is written, never what it contains. Keep every fact, step, warning, example, and alternative. Remove only filler and repetition.
+- After a task, start with what changed and what the user must do next.
+- Use a numbered list for steps. Use bullets only for parallel items, not nested.
 - Define each technical term the first time you use it, in ten words or fewer.
 - Do not add preambles, praise, or closers.
 

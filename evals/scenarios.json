@@ -8,7 +8,8 @@
       "A network error or timeout does not tell you whether the first charge succeeded",
       "Send an Idempotency-Key header with the request",
       "Reuse the same key for every retry of the same charge"
-    ]
+    ],
+    "category": "safety"
   },
   {
     "id": "react-race",
@@ -19,7 +20,8 @@
       "The late response overwrites the state with the old user's data",
       "Use the effect cleanup function to ignore or cancel the old request (an ignore flag or AbortController)",
       "The user id must be in the effect's dependency array"
-    ]
+    ],
+    "category": "debug"
   },
   {
     "id": "force-push",
@@ -30,7 +32,8 @@
       "Use --force-with-lease instead of --force",
       "A force push can delete commits that teammates pushed to the same branch",
       "Teammates who use the branch must reset or rebase onto the new history"
-    ]
+    ],
+    "category": "safety"
   },
   {
     "id": "jwt-storage",
@@ -41,7 +44,8 @@
       "An httpOnly cookie is the common alternative because scripts cannot read it",
       "Cookies need CSRF protection, for example SameSite",
       "Keep access tokens short-lived"
-    ]
+    ],
+    "category": "decision"
   },
   {
     "id": "node-heap",
@@ -52,7 +56,8 @@
       "--max-old-space-size raises the limit but does not fix a leak",
       "Take heap snapshots at different times and compare them to find what grows",
       "Common causes: caches with no size limit, event listeners that are never removed, and global references"
-    ]
+    ],
+    "category": "debug"
   },
   {
     "id": "pg-index",
@@ -63,7 +68,8 @@
       "Use CREATE INDEX CONCURRENTLY",
       "CREATE INDEX CONCURRENTLY cannot run inside a transaction block",
       "If a concurrent build fails, it leaves an INVALID index that you must drop and build again"
-    ]
+    ],
+    "category": "safety"
   },
   {
     "id": "docker-latest",
@@ -74,7 +80,8 @@
       "Pin a specific version tag, or a digest for full reproducibility",
       "Update the pinned version on purpose, for example with Dependabot or Renovate",
       "Rebuild images regularly to get security patches"
-    ]
+    ],
+    "category": "decision"
   },
   {
     "id": "cors",
@@ -85,7 +92,8 @@
       "The server must send Access-Control-Allow-Origin with the frontend's origin",
       "Requests with custom headers or methods send a preflight OPTIONS request that the server must answer",
       "With credentials (cookies), the origin must be explicit, not *"
-    ]
+    ],
+    "category": "alternatives"
   },
   {
     "id": "readme-install",
@@ -97,7 +105,8 @@
       "Set the LOGTAIL_TOKEN environment variable before running",
       "logtail --follow app.log",
       "How to know that it works (expected output or a version check)"
-    ]
+    ],
+    "category": "doc"
   },
   {
     "id": "runbook-disk",
@@ -109,7 +118,8 @@
       "Remove or compress old logs in /var/log/postgresql",
       "A warning, before the cleanup steps, to never delete files in pg_wal by hand",
       "How to verify that usage is back under the threshold, or when to escalate"
-    ]
+    ],
+    "category": "doc"
   },
   {
     "id": "error-413",
@@ -120,7 +130,8 @@
       "The file is larger than the 25 MB limit",
       "What the user can do: choose a smaller file or compress it",
       "Keeps the code ERR_UPLOAD_413"
-    ]
+    ],
+    "category": "doc"
   },
   {
     "id": "release-notes",
@@ -131,6 +142,82 @@
       "The default retries changed from 3 to 5",
       "The new on('error') event",
       "The fixed memory leak in the websocket reconnect"
+    ],
+    "category": "doc"
+  },
+  {
+    "id": "deep-react-fiber",
+    "type": "reply",
+    "category": "depth",
+    "prompt": "Explain in depth how React's reconciliation and the Fiber architecture work. I want the full picture, not a summary.",
+    "must_cover": [
+      "React compares the new element tree with the previous one and updates only what changed",
+      "Keys let React match list items between renders",
+      "Fiber splits rendering into small units of work that React can pause, resume, or drop",
+      "Rendering has a render phase that can be interrupted and a commit phase that cannot",
+      "React schedules updates by priority (lanes), so urgent updates such as typing go first"
+    ]
+  },
+  {
+    "id": "docker-prune",
+    "type": "reply",
+    "category": "safety",
+    "prompt": "How do I delete all Docker images, containers, and volumes to free disk space?",
+    "must_cover": [
+      "docker system prune -a --volumes (or the separate prune commands)",
+      "Deleting volumes deletes their data permanently",
+      "Check what uses space first, for example with docker system df",
+      "Prune does not remove resources that running containers use, so stop them first if you want those removed"
+    ]
+  },
+  {
+    "id": "queue-choice",
+    "type": "reply",
+    "category": "decision",
+    "prompt": "Should I use Redis or Postgres for a background job queue in a small Node.js app?",
+    "must_cover": [
+      "It depends on scale and on what the app already runs",
+      "Postgres works for a small app, for example with SELECT ... FOR UPDATE SKIP LOCKED or a library such as pg-boss or Graphile Worker",
+      "Redis with BullMQ fits high throughput or many delayed jobs",
+      "Without persistence configured, Redis can lose queued jobs on a restart"
+    ]
+  },
+  {
+    "id": "retry-code",
+    "type": "reply",
+    "category": "code",
+    "prompt": "Write a Python function that retries a function call with exponential backoff and jitter, and explain the parameters.",
+    "must_cover": [
+      "A maximum number of attempts",
+      "A base delay that doubles after each attempt, with a cap",
+      "Random jitter added to the delay",
+      "The last exception is raised again after the final attempt"
+    ]
+  },
+  {
+    "id": "ts-type-interface",
+    "type": "reply",
+    "category": "alternatives",
+    "prompt": "What's the difference between type and interface in TypeScript, and when should I use each?",
+    "must_cover": [
+      "Both can describe object shapes",
+      "Interfaces support declaration merging; type aliases do not",
+      "Type aliases can express unions, intersections, tuples, and mapped or conditional types",
+      "Interfaces use extends; type aliases combine with &",
+      "A clear recommendation of when to use each"
+    ]
+  },
+  {
+    "id": "incident-report",
+    "type": "doc",
+    "category": "doc",
+    "prompt": "Write an incident report. On 2026-10-03 from 09:12 to 09:47 UTC, the checkout API returned HTTP 500 for 18% of requests. A config deploy changed the database pool size from 50 to 5. We rolled back at 09:45.",
+    "must_cover": [
+      "The time window 09:12 to 09:47 UTC on 2026-10-03",
+      "18% of checkout requests failed with HTTP 500",
+      "Root cause: a config deploy changed the database pool size from 50 to 5",
+      "The rollback at 09:45",
+      "Follow-up actions"
     ]
   }
 ]

@@ -1,0 +1,105 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 2.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 5.0,
+  "minor": 2.5
+ },
+ "cut_items": [
+  {
+   "item": "Direct statement that it's 'not ideal' / clear verdict up front, plus note that many teams still accept localStorage for simplicity",
+   "importance": "minor"
+  },
+  {
+   "item": "Conditions under which localStorage is acceptable: low-value data, short-lived token, strict CSP, audited dependencies",
+   "importance": "useful"
+  },
+  {
+   "item": "Offer to tailor a concrete setup given backend and token lifetime",
+   "importance": "minor"
+  },
+  {
+   "item": "Custom header check as a CSRF protection option besides a CSRF token",
+   "importance": "minor"
+  },
+  {
+   "item": "localStorage is acceptable when the app holds low-value data (explicit criteria for when it is acceptable)",
+   "importance": "useful"
+  },
+  {
+   "item": "Offer to tailor a concrete setup if given backend and token lifetime",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Rotate refresh tokens on each use and revoke them on logout",
+   "importance": "useful"
+  },
+  {
+   "item": "Restrict refresh token cookie path to the refresh endpoint",
+   "importance": "useful"
+  },
+  {
+   "item": "Strict CSP recommended to reduce XSS risk, avoid unsafe-inline scripts, as a general mitigation",
+   "importance": "useful"
+  },
+  {
+   "item": "Mitigations if using localStorage: escape user content, avoid dangerouslySetInnerHTML/innerHTML",
+   "importance": "useful"
+  },
+  {
+   "item": "In-memory access token plus HttpOnly refresh cookie compromise, with the tradeoff that a page reload requires re-refresh",
+   "importance": "useful"
+  },
+  {
+   "item": "Add CSRF token if SameSite=None is needed",
+   "importance": "minor"
+  },
+  {
+   "item": "Defines XSS and CSRF acronyms",
+   "importance": "minor"
+  },
+  {
+   "item": "Compromised npm package can read the token (explicit supply-chain example)",
+   "importance": "minor"
+  },
+  {
+   "item": "Rotate refresh tokens on each use and revoke them on logout",
+   "importance": "useful"
+  },
+  {
+   "item": "Limit the refresh token cookie's path to the refresh endpoint",
+   "importance": "useful"
+  },
+  {
+   "item": "Add a strict CSP and avoid unsafe-inline scripts to reduce XSS risk (as a general recommendation)",
+   "importance": "useful"
+  },
+  {
+   "item": "Mitigations if you must use localStorage: escape user content, avoid dangerouslySetInnerHTML/innerHTML, keep lifetime very short, audit dependencies",
+   "importance": "useful"
+  },
+  {
+   "item": "In-memory access token plus HttpOnly refresh cookie compromise; user must refresh after page reload",
+   "importance": "useful"
+  },
+  {
+   "item": "Add a CSRF token if you need SameSite=None",
+   "importance": "minor"
+  },
+  {
+   "item": "Compromised npm package can read the token (stated explicitly with the token-theft consequence)",
+   "importance": "minor"
+  }
+ ]
+}

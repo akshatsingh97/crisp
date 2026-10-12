@@ -1,0 +1,13 @@
+{
+ "kept": [
+  true,
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "added_facts": [
+  "Without lock_timeout, the waiting ALTER TABLE blocks every query that arrives after it (the source says this only implicitly via queueing behind long-running queries)"
+ ]
+}

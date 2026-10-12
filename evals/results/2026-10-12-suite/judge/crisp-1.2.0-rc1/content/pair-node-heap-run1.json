@@ -1,0 +1,145 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 4.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 1.0,
+  "useful": 2.0,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "Distinguish leak vs limit too low: heap rises and falls but peaks near limit means limit is too low for load",
+   "importance": "useful"
+  },
+  {
+   "item": "Use Comparison view in DevTools and sort by Size Delta to find growing objects",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning: do not expose --inspect on a public port",
+   "importance": "useful"
+  },
+  {
+   "item": "Unbounded queues or streams without backpressure when producer outpaces consumer",
+   "importance": "useful"
+  },
+  {
+   "item": "Per-request data attached to long-lived objects such as DB connections",
+   "importance": "minor"
+  },
+  {
+   "item": "Run under a process manager (PM2, systemd, Kubernetes) to auto-restart while fixing",
+   "importance": "useful"
+  },
+  {
+   "item": "Ask for Node version and whether containerized",
+   "importance": "minor"
+  },
+  {
+   "item": "Take first snapshot early via SIGUSR2 and a second after growth for diffing",
+   "importance": "minor"
+  },
+  {
+   "item": "Distinguish leak versus limit too low: heap that rises and falls but peaks near the limit means limit is too low for the load",
+   "importance": "useful"
+  },
+  {
+   "item": "Use the Comparison view in DevTools and sort by Size Delta between two snapshot files",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning not to expose --inspect on a public port",
+   "importance": "useful"
+  },
+  {
+   "item": "Run under a process manager (PM2, systemd, Kubernetes) so the service restarts after a crash",
+   "importance": "useful"
+  },
+  {
+   "item": "Streams with no backpressure as a cause",
+   "importance": "minor"
+  },
+  {
+   "item": "Per-request data attached to long-lived objects such as a database connection",
+   "importance": "minor"
+  },
+  {
+   "item": "Asks whether running in a container",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Warning: writing a heap snapshot pauses the process and needs free memory about heap size; can crash a nearly full heap, so snapshot early not at limit",
+   "importance": "critical"
+  },
+  {
+   "item": "If rss grows but heapUsed stays flat, leak is outside the heap (Buffers, native addons, streams)",
+   "importance": "useful"
+  },
+  {
+   "item": "Also watch rss in memoryUsage logging",
+   "importance": "minor"
+  },
+  {
+   "item": "Use chrome://inspect to connect to --inspect and use 'Objects allocated between Snapshot 1 and 2' sorted by retained size",
+   "importance": "minor"
+  },
+  {
+   "item": "Inspect retainers list of largest objects to see what keeps them alive",
+   "importance": "useful"
+  },
+  {
+   "item": "In containers, OOMKilled happens before Node reports an error if limit is lower than heap",
+   "importance": "minor"
+  },
+  {
+   "item": "Unresolved promises can grow",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to review code or snapshot summary",
+   "importance": "minor"
+  },
+  {
+   "item": "Distinguish rss growth with flat heapUsed: leak is outside the heap (Buffers, native addons, streams)",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that taking a heap snapshot pauses the process and needs free memory about the heap size, can crash a nearly full heap; take snapshots early",
+   "importance": "critical"
+  },
+  {
+   "item": "Use --inspect with chrome://inspect, take two snapshots under load and use 'Objects allocated between Snapshot 1 and 2', sort by retained size, inspect retainers",
+   "importance": "useful"
+  },
+  {
+   "item": "Check container limit not lower than heap size, otherwise OOMKilled before Node reports an error",
+   "importance": "minor"
+  },
+  {
+   "item": "Also log rss alongside heapUsed",
+   "importance": "minor"
+  },
+  {
+   "item": "Common cause: unresolved promises or queues growing faster than they drain",
+   "importance": "minor"
+  },
+  {
+   "item": "Common cause: unbounded Prometheus metric label values such as user IDs",
+   "importance": "minor"
+  },
+  {
+   "item": "Offer to review code and request snapshot summary/framework",
+   "importance": "minor"
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 2.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 0.5,
+  "minor": 4.0
+ },
+ "cut_items": [
+  {
+   "item": "Concrete usage example calling retry with requests.get, timeout, specific exceptions and an on_retry logging lambda",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation of why jitter matters (synchronized clients cause repeated load spikes on a struggling service)",
+   "importance": "minor"
+  },
+  {
+   "item": "Caution that a timed-out POST may have succeeded; use an idempotency key or skip the retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Caution that ValueError and HTTP 400 won't be fixed by retrying",
+   "importance": "minor"
+  },
+  {
+   "item": "Direct function-call form (no decorator), so it can be used on an existing function like requests.get without modifying it",
+   "importance": "minor"
+  },
+  {
+   "item": "Async advice names the exact problem: time.sleep blocks the event loop",
+   "importance": "minor"
+  },
+  {
+   "item": "Direct function-call form that accepts func, *args, **kwargs, so no decorator is needed",
+   "importance": "minor"
+  },
+  {
+   "item": "Concrete usage example with requests.get, specific exceptions and an on_retry logging lambda",
+   "importance": "useful"
+  },
+  {
+   "item": "Explanation of why jitter matters: without it, clients that fail together retry together and cause load spikes",
+   "importance": "useful"
+  },
+  {
+   "item": "Caveat that a timed-out POST may have succeeded, with the suggestion to use an idempotency key or skip the retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Names ValueError and HTTP 400 as examples of errors a retry cannot fix",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Decorator form using functools.wraps, which preserves function metadata and is reusable across calls",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that retrying a payment call can charge twice (concrete idempotency risk)",
+   "importance": "minor"
+  },
+  {
+   "item": "Mentions HTTP 401 as a permanent error that should not be retried",
+   "importance": "minor"
+  },
+  {
+   "item": "Async advice also says to use an async def wrapper",
+   "importance": "minor"
+  },
+  {
+   "item": "Brief definitions of exponential backoff and full jitter at the start",
+   "importance": "minor"
+  },
+  {
+   "item": "Says to always narrow exceptions to errors that are safe to retry",
+   "importance": "minor"
+  },
+  {
+   "item": "Decorator form with functools.wraps, preserving function metadata and reusable via @retry",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning not to retry permanent errors such as HTTP 401 or bad input",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that retrying non-idempotent operations such as payments can cause double charges",
+   "importance": "useful"
+  }
+ ]
+}

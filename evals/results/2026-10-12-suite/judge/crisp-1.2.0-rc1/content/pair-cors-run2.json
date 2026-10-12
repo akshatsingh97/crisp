@@ -1,0 +1,133 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.0,
+  "minor": 1.5
+ },
+ "added": {
+  "critical": 1.0,
+  "useful": 8.5,
+  "minor": 2.0
+ },
+ "cut_items": [
+  {
+   "item": "Register CORS middleware before routes (ordering problem)",
+   "importance": "useful"
+  },
+  {
+   "item": "Allow-Origin * acceptable only if API is public and uses no cookies (nuance on when * is OK)",
+   "importance": "minor"
+  },
+  {
+   "item": "Register the CORS middleware before routes (ordering issue)",
+   "importance": "useful"
+  },
+  {
+   "item": "Most CORS libraries handle preflight automatically",
+   "importance": "minor"
+  },
+  {
+   "item": "Allow * is acceptable if the API is public and uses no cookies",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Do not reflect the Origin request header without checking against an allow list (security risk)",
+   "importance": "useful"
+  },
+  {
+   "item": "OPTIONS preflight returning 404/401/405 means router/auth layer blocks it; let OPTIONS pass before authentication",
+   "importance": "critical"
+  },
+  {
+   "item": "Redirects (HTTP to HTTPS, trailing slash) can fail CORS check; call final URL directly",
+   "importance": "useful"
+  },
+  {
+   "item": "Duplicate Access-Control-Allow-Origin headers across layers (nginx/gateway) cause error; set headers in only one layer",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not use mode: 'no-cors' in fetch; it yields an unreadable opaque response",
+   "importance": "useful"
+  },
+  {
+   "item": "Spring Boot @CrossOrigin example",
+   "importance": "useful"
+  },
+  {
+   "item": "Explicit raw header example including Allow-Methods and Allow-Headers values for other servers",
+   "importance": "useful"
+  },
+  {
+   "item": "Step-by-step: find exact frontend origin with no trailing slash, restart API, verify in DevTools Network tab",
+   "importance": "useful"
+  },
+  {
+   "item": "Dev proxy only works in development; production still needs CORS headers or same-origin reverse proxy; useful if you don't control the API",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not use * in production for APIs with private data; allow only trusted origins",
+   "importance": "minor"
+  },
+  {
+   "item": "Spring Boot @CrossOrigin example",
+   "importance": "useful"
+  },
+  {
+   "item": "Raw header set for other servers includes Allow-Methods and Allow-Headers values (not just Allow-Origin)",
+   "importance": "useful"
+  },
+  {
+   "item": "Origin must have no trailing slash; find exact frontend origin",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning: never reflect the Origin header without an allow-list check (lets any site call the API)",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning: don't use * in production for APIs with private data",
+   "importance": "minor"
+  },
+  {
+   "item": "If OPTIONS returns 404/401/405, router or auth layer blocks it; let OPTIONS pass before authentication",
+   "importance": "critical"
+  },
+  {
+   "item": "Redirects (HTTP to HTTPS, trailing slash) can fail the CORS check; call the final URL directly",
+   "importance": "useful"
+  },
+  {
+   "item": "Proxy/gateway can duplicate headers; duplicate Access-Control-Allow-Origin values cause an error, so set headers in only one layer",
+   "importance": "useful"
+  },
+  {
+   "item": "Do not use mode: 'no-cors' in fetch; it gives an unreadable empty response",
+   "importance": "useful"
+  },
+  {
+   "item": "Preflight response should be 200 or 204",
+   "importance": "minor"
+  },
+  {
+   "item": "Verify by restarting the API and checking response headers in the DevTools Network tab",
+   "importance": "minor"
+  },
+  {
+   "item": "Dev proxy only works in development; production needs CORS headers or a same-origin reverse proxy",
+   "importance": "useful"
+  },
+  {
+   "item": "Dev proxy is the option when you don't control the API",
+   "importance": "useful"
+  }
+ ]
+}

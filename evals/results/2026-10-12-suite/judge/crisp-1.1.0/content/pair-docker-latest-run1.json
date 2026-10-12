@@ -1,0 +1,109 @@
+{
+ "winner": "baseline",
+ "verdicts": [
+  "baseline",
+  "baseline"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 4.0,
+  "minor": 2.5
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 3.0
+ },
+ "cut_items": [
+  {
+   "item": "`:latest` doesn't mean newest or safest; it's just the maintainer's default tag and can lag or point to an unexpected variant",
+   "importance": "useful"
+  },
+  {
+   "item": "Caching is unpredictable: hosts/CI may reuse a stale local `:latest`, so different machines end up with different bases",
+   "importance": "useful"
+  },
+  {
+   "item": "Ranks pinning options by strength (digest > exact version > minor series) and notes exact tags can technically be re-pushed",
+   "importance": "useful"
+  },
+  {
+   "item": "Pinning only a minor series (e.g. node:22-alpine) is acceptable only if you accept unannounced patch updates",
+   "importance": "minor"
+  },
+  {
+   "item": "Recommends scanning images with Trivy or Grype",
+   "importance": "useful"
+  },
+  {
+   "item": "`:latest` is fine for throwaway local experiments and demos",
+   "importance": "minor"
+  },
+  {
+   "item": "CI tests each automated bump before it reaches production (also in Y as 'run tests'), plus explicit mention of rollback/debug 'worked yesterday' difficulty",
+   "importance": "minor"
+  },
+  {
+   "item": ":latest does not mean newest or safest; it is just the maintainer's default tag and can lag or be an unexpected variant",
+   "importance": "useful"
+  },
+  {
+   "item": "Caching: hosts/CI may reuse a stale local :latest so different machines end up with different bases",
+   "importance": "useful"
+  },
+  {
+   "item": "Ranked pinning options, including noting that version tags can be re-pushed and so are not fully immutable, unlike digests",
+   "importance": "useful"
+  },
+  {
+   "item": "Option to pin a minor series (e.g. node:22-alpine) if accepting patch updates without notice",
+   "importance": "minor"
+  },
+  {
+   "item": "Scan images with Trivy or Grype",
+   "importance": "useful"
+  },
+  {
+   "item": ":latest is acceptable for throwaway local experiments and demos",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Pinned images do not receive security patches automatically, so the pin must be updated on a regular schedule",
+   "importance": "useful"
+  },
+  {
+   "item": "Audit trail: you cannot say which base image a given release used",
+   "importance": "minor"
+  },
+  {
+   "item": "Rebuilding an old commit does not give you the old image, so rollbacks are unsafe",
+   "importance": "minor"
+  },
+  {
+   "item": "Deploys can break with no change in your code, making failures hard to trace",
+   "importance": "minor"
+  },
+  {
+   "item": "Explains what a digest is (unique hash of the image)",
+   "importance": "minor"
+  },
+  {
+   "item": "Rollbacks are unsafe: rebuilding an old commit does not give you the old image",
+   "importance": "useful"
+  },
+  {
+   "item": "Audits are harder: cannot say which base image a given release used",
+   "importance": "minor"
+  },
+  {
+   "item": "Pinned images do not receive security patches automatically, so the pin must be updated on a regular schedule",
+   "importance": "useful"
+  },
+  {
+   "item": "Run tests on each updater PR before merging",
+   "importance": "minor"
+  }
+ ]
+}

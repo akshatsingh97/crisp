@@ -1,0 +1,133 @@
+{
+ "winner": "candidate",
+ "verdicts": [
+  "candidate",
+  "candidate"
+ ],
+ "cut": {
+  "critical": 0.0,
+  "useful": 1.5,
+  "minor": 3.0
+ },
+ "added": {
+  "critical": 0.0,
+  "useful": 4.5,
+  "minor": 5.0
+ },
+ "cut_items": [
+  {
+   "item": "Advice to use await asyncio.sleep instead of time.sleep for asyncio code, otherwise the event loop blocks",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that a timed-out POST may have succeeded; suggests using an idempotency key or skipping retry",
+   "importance": "minor"
+  },
+  {
+   "item": "Explicit advice not to retry non-transient errors like ValueError or HTTP 400",
+   "importance": "minor"
+  },
+  {
+   "item": "Explanation of why jitter matters: desynchronizes clients to avoid repeated load spikes",
+   "importance": "minor"
+  },
+  {
+   "item": "Caution that a timed-out POST may have succeeded; use an idempotency key or skip retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Advice not to retry non-transient errors like ValueError or HTTP 400",
+   "importance": "minor"
+  },
+  {
+   "item": "For asyncio, use await asyncio.sleep instead of time.sleep to avoid blocking the event loop",
+   "importance": "useful"
+  },
+  {
+   "item": "Docstring in the code",
+   "importance": "minor"
+  },
+  {
+   "item": "Example passes a function with its own args directly (requests.get with url and timeout), showing how args forwarding works",
+   "importance": "minor"
+  }
+ ],
+ "added_items": [
+  {
+   "item": "Validates max_attempts >= 1 and raises ValueError; otherwise max_attempts=0 silently returns None without calling func",
+   "importance": "useful"
+  },
+  {
+   "item": "Notes that func cannot use the names of the retry's keyword-only parameters (e.g. max_attempts, base_delay) because they are consumed by retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Warns that the default exceptions=(Exception,) also retries bugs like TypeError, so narrow it for real code",
+   "importance": "useful"
+  },
+  {
+   "item": "Suggestion to honor the Retry-After header instead of the computed delay",
+   "importance": "useful"
+  },
+  {
+   "item": "How to use it as a decorator (wrap with functools.wraps and call retry_with_backoff inside)",
+   "importance": "minor"
+  },
+  {
+   "item": "Example defines a fetch() that calls raise_for_status(), so HTTP errors actually trigger retries (X's example with requests.get never raises on HTTP errors)",
+   "importance": "useful"
+  },
+  {
+   "item": "Type hints and a note that max_attempts=1 means no retry; also states that the original exception is re-raised with its traceback",
+   "importance": "minor"
+  },
+  {
+   "item": "Retried payment call can charge twice (idempotency caution with concrete example)",
+   "importance": "minor"
+  },
+  {
+   "item": "Validates max_attempts >= 1 (raises ValueError); without it, max_attempts=0 silently returns None",
+   "importance": "useful"
+  },
+  {
+   "item": "Type hints (Callable, TypeVar, return type)",
+   "importance": "minor"
+  },
+  {
+   "item": "Default values for each parameter listed in the explanation (5, 0.5, 30, etc.)",
+   "importance": "minor"
+  },
+  {
+   "item": "Warning that func cannot use keyword names matching the retry parameters (name collision with kwargs)",
+   "importance": "useful"
+  },
+  {
+   "item": "Warning that default Exception also retries bugs like TypeError that won't succeed on retry",
+   "importance": "useful"
+  },
+  {
+   "item": "Explains jitter=False waits exactly the cap",
+   "importance": "minor"
+  },
+  {
+   "item": "Mention that re-raise preserves the original exception and traceback",
+   "importance": "minor"
+  },
+  {
+   "item": "Suggest honoring a Retry-After header instead of the computed delay",
+   "importance": "useful"
+  },
+  {
+   "item": "How to turn it into a decorator (functools.wraps wrapper)",
+   "importance": "minor"
+  },
+  {
+   "item": "Names the thundering herd problem explicitly",
+   "importance": "minor"
+  },
+  {
+   "item": "Example of caps sequence given as 0.5, 1, 2, 4, 8",
+   "importance": "minor"
+  }
+ ]
+}
